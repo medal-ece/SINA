@@ -1,6 +1,6 @@
-task: pose
+task: detect
 mode: train
-model: yolo11m-pose.pt
+model: yolo11m.pt
 data: C:\Users\saudk\Desktop\Netlist Generator\Model training/config.yaml
 epochs: 150
 time: null
@@ -83,24 +83,24 @@ dfl: 1.5
 pose: 12.0
 kobj: 1.0
 nbs: 64
-hsv_h: 0.015
-hsv_s: 0.7
-hsv_v: 0.4
+hsv_h: 0.0
+hsv_s: 0.0
+hsv_v: 0.0
 degrees: 0.0
 translate: 0.1
 scale: 0.5
 shear: 0.0
 perspective: 0.0
-flipud: 0.0
+flipud: 0.1
 fliplr: 0.5
 bgr: 0.0
-mosaic: 1.0
+mosaic: 0.0
 mixup: 0.0
 copy_paste: 0.0
 copy_paste_mode: flip
-auto_augment: randaugment
-erasing: 0.4
+auto_augment: null
+erasing: 0.0
 crop_fraction: 1.0
 cfg: null
 tracker: botsort.yaml
-save_dir: C:\Users\saudk\Desktop\Netlist Generator\runs\pose\train
+save_dir: C:\Users\saudk\Desktop\Netlist Generator\runs\detect\train
