@@ -5,206 +5,26 @@
 1. PER-CLASS PERFORMANCE
 --------------------------------------------------
 
-Class: Resistor (ID: 0)
-  Class Statistics:
-    - Instances in Test Set: 86
-    - Weight in Weighted mAP: 0.5089 (50.9%)
-  Detection Metrics:
-    - True Positives: 64
-    - False Positives: 0
-    - False Negatives: 22
-    - Precision: 1.0000
-    - Recall: 0.7442
-    - F1 Score: 0.8533
-    - Average Precision (AP@0.5): 1.0000
-    - Average Confidence: 0.6678
-  Keypoint Metrics:
-    - Average Normalized Keypoint Distance: 0.0431
-    - Keypoint Visibility Accuracy: 0.9938
-    - Number of Evaluated Keypoints: 126
-  Recommendation:
-    - GOOD: Model performs well on this class. No immediate action needed.
-
-Class: Capacitor (ID: 1)
-  Class Statistics:
-    - Instances in Test Set: 22
-    - Weight in Weighted mAP: 0.1302 (13.0%)
-  Detection Metrics:
-    - True Positives: 16
-    - False Positives: 1
-    - False Negatives: 6
-    - Precision: 0.9412
-    - Recall: 0.7273
-    - F1 Score: 0.8205
-    - Average Precision (AP@0.5): 0.9786
-    - Average Confidence: 0.6843
-  Keypoint Metrics:
-    - Average Normalized Keypoint Distance: 0.0170
-    - Keypoint Visibility Accuracy: 0.9750
-    - Number of Evaluated Keypoints: 32
-  Recommendation:
-    - GOOD: Model performs well on this class. No immediate action needed.
-
-Class: Inductor (ID: 2)
-  Class Statistics:
-    - Instances in Test Set: 12
-    - Weight in Weighted mAP: 0.0710 (7.1%)
-  Detection Metrics:
-    - True Positives: 10
-    - False Positives: 2
-    - False Negatives: 2
-    - Precision: 0.8333
-    - Recall: 0.8333
-    - F1 Score: 0.8333
-    - Average Precision (AP@0.5): 0.9669
-    - Average Confidence: 0.7943
-  Keypoint Metrics:
-    - Average Normalized Keypoint Distance: 0.0048
-    - Keypoint Visibility Accuracy: 1.0000
-    - Number of Evaluated Keypoints: 20
-  Recommendation:
-    - GOOD: Model performs well on this class. No immediate action needed.
-
-Class: Transistor_BJT (ID: 3)
-  Class Statistics:
-    - Instances in Test Set: 16
-    - Weight in Weighted mAP: 0.0947 (9.5%)
-  Detection Metrics:
-    - True Positives: 16
-    - False Positives: 0
-    - False Negatives: 0
-    - Precision: 1.0000
-    - Recall: 1.0000
-    - F1 Score: 1.0000
-    - Average Precision (AP@0.5): 1.0000
-    - Average Confidence: 0.8361
-  Keypoint Metrics:
-    - Average Normalized Keypoint Distance: 0.0506
-    - Keypoint Visibility Accuracy: 1.0000
-    - Number of Evaluated Keypoints: 48
-  Recommendation:
-    - GOOD: Model performs well on this class. No immediate action needed.
-
-Class: Voltage_src (ID: 5)
-  Class Statistics:
-    - Instances in Test Set: 12
-    - Weight in Weighted mAP: 0.0710 (7.1%)
-  Detection Metrics:
-    - True Positives: 9
-    - False Positives: 0
-    - False Negatives: 3
-    - Precision: 1.0000
-    - Recall: 0.7500
-    - F1 Score: 0.8571
-    - Average Precision (AP@0.5): 1.0000
-    - Average Confidence: 0.8141
-  Keypoint Metrics:
-    - Average Normalized Keypoint Distance: 0.0674
-    - Keypoint Visibility Accuracy: 1.0000
-    - Number of Evaluated Keypoints: 18
-  Recommendation:
-    - CRITICAL: Very few true positives (9). Add significantly more training data!
-
-Class: Current_src (ID: 6)
-  Class Statistics:
-    - Instances in Test Set: 4
-    - Weight in Weighted mAP: 0.0237 (2.4%)
-  Detection Metrics:
-    - True Positives: 3
-    - False Positives: 1
-    - False Negatives: 1
-    - Precision: 0.7500
-    - Recall: 0.7500
-    - F1 Score: 0.7500
-    - Average Precision (AP@0.5): 0.9091
-    - Average Confidence: 0.5708
-  Keypoint Metrics:
-    - Average Normalized Keypoint Distance: 0.0036
-    - Keypoint Visibility Accuracy: 1.0000
-    - Number of Evaluated Keypoints: 6
-  Recommendation:
-    - CRITICAL: Very few true positives (3). Add significantly more training data!
-
-Class: GND (ID: 7)
-  Class Statistics:
-    - Instances in Test Set: 13
-    - Weight in Weighted mAP: 0.0769 (7.7%)
-  Detection Metrics:
-    - True Positives: 9
-    - False Positives: 0
-    - False Negatives: 4
-    - Precision: 1.0000
-    - Recall: 0.6923
-    - F1 Score: 0.8182
-    - Average Precision (AP@0.5): 1.0000
-    - Average Confidence: 0.8557
-  Keypoint Metrics:
-    - Average Normalized Keypoint Distance: 0.0060
-    - Keypoint Visibility Accuracy: 1.0000
-    - Number of Evaluated Keypoints: 9
-  Recommendation:
-    - CRITICAL: Very few true positives (9). Add significantly more training data!
-
-Class: Op-Amp_v1 (ID: 8)
-  Class Statistics:
-    - Instances in Test Set: 3
-    - Weight in Weighted mAP: 0.0178 (1.8%)
-  Detection Metrics:
-    - True Positives: 3
-    - False Positives: 0
-    - False Negatives: 0
-    - Precision: 1.0000
-    - Recall: 1.0000
-    - F1 Score: 1.0000
-    - Average Precision (AP@0.5): 1.0000
-    - Average Confidence: 0.8766
-  Keypoint Metrics:
-    - Average Normalized Keypoint Distance: 0.1348
-    - Keypoint Visibility Accuracy: 1.0000
-    - Number of Evaluated Keypoints: 9
-  Recommendation:
-    - CRITICAL: Very few true positives (3). Add significantly more training data!
-
-Class: Op-Amp_v2 (ID: 9)
-  Class Statistics:
-    - Instances in Test Set: 1
-    - Weight in Weighted mAP: 0.0059 (0.6%)
-  Detection Metrics:
-    - True Positives: 0
-    - False Positives: 0
-    - False Negatives: 1
-    - Precision: 0.0000
-    - Recall: 0.0000
-    - F1 Score: 0.0000
-    - Average Precision (AP@0.5): 0.0000
-    - Average Confidence: 0.0000
-  Keypoint Metrics:
-    - No keypoint data available for this class
-  Recommendation:
-    - CRITICAL: Very few true positives (0). Add significantly more training data!
-
 
 ==================================================
 2. OVERALL MODEL PERFORMANCE
 --------------------------------------------------
 
 Object Detection Metrics:
-  - Total Predictions: 134
-  - Total Ground Truth: 169
-  - True Positives: 130
-  - False Positives: 4
-  - False Negatives: 39
-  - Precision: 0.9701
-  - Recall: 0.7692
-  - F1 Score: 0.8581
-  - Mean Average Precision (mAP@0.5): 0.9818
-  - Weighted mAP@0.5 (by class frequency): 0.9868
-  - Average Confidence: 0.7260
+  - Total Predictions: 0
+  - Total Ground Truth: 0
+  - True Positives: 0
+  - False Positives: 0
+  - False Negatives: 0
+  - Precision: 0.0000
+  - Recall: 0.0000
+  - F1 Score: 0.0000
+  - Mean Average Precision (mAP@0.5): 0.0000
+  - Weighted mAP@0.5 (by class frequency): 0.0000
+  - Average Confidence: 0.0000
 
 Keypoint Metrics:
-  - Average Normalized Keypoint Distance: 0.0410
-  - Keypoint Visibility Accuracy: 0.9938
-  - Number of Evaluated Keypoints: 268
+  - No keypoint data available
 
 Class Distribution:
   - Total instances: 169
@@ -219,5 +39,5 @@ Class Distribution:
   - Op-Amp_v2 (ID: 9): 1 instances (0.6%)
 
 Overall Recommendation:
-  - GOOD: Overall model performance is acceptable (weighted mAP=0.99).
-    Can still improve specific classes with targeted data collection.
+  - CRITICAL: Model performance is poor (weighted mAP=0.00). Significant improvements needed.
+    Consider retraining with more data and checking annotation quality.

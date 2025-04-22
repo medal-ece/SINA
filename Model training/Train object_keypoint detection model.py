@@ -1,34 +1,34 @@
-import os
-import shutil
-from ultralytics import YOLO
-from prepare_config import prepare_config_file, prepare_paths
+# import os
+# import shutil
+# from ultralytics import YOLO
+# from prepare_config import prepare_config_file, prepare_paths
 
-def main():
-    # Step 1: Prepare configuration file and paths
-    config_path, project_path = prepare_config_file()
-    source_path, destination_path = prepare_paths(project_path)
+# def main():
+#     # Step 1: Prepare configuration file and paths
+#     config_path, project_path = prepare_config_file()
+#     source_path, destination_path = prepare_paths(project_path)
 
-    # Step 2: Load and train the YOLO model
-    model = YOLO('yolo11m-pose.pt')
-    model.train(
-        data=config_path,  # Use the prepared config file
-        epochs=150,
-        batch=-1,
-        # warmup_epochs=5,
-        device=0,
-        patience=20,  # Stop training if no improvement for 20 epochs
-        imgsz=640,
-    )
+#     # Step 2: Load and train the YOLO model
+#     model = YOLO('yolo11m-pose.pt')
+#     model.train(
+#         data=config_path,  # Use the prepared config file
+#         epochs=150,
+#         batch=-1,
+#         # warmup_epochs=5,
+#         device=0,
+#         patience=20,  # Stop training if no improvement for 20 epochs
+#         imgsz=640,
+#     )
     
-    # Step 3: Copy the 'runs' directory (YOLO training output) to the specified destination
-    # if os.path.exists(source_path):
-    #     shutil.copytree(source_path, destination_path, dirs_exist_ok=True)
-    #     print(f"Training results have been copied to {destination_path}")
-    # else:
-    #     print(f"Source path '{source_path}' does not exist. Make sure the training ran successfully.")
+#     # Step 3: Copy the 'runs' directory (YOLO training output) to the specified destination
+#     # if os.path.exists(source_path):
+#     #     shutil.copytree(source_path, destination_path, dirs_exist_ok=True)
+#     #     print(f"Training results have been copied to {destination_path}")
+#     # else:
+#     #     print(f"Source path '{source_path}' does not exist. Make sure the training ran successfully.")
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()
 
 # import os
 # import shutil
@@ -234,3 +234,77 @@ if __name__ == '__main__':
 # if __name__ == '__main__':
 #     main()
 
+
+
+# import os
+# import shutil
+# from ultralytics import YOLO
+# from prepare_config import prepare_config_file, prepare_paths
+
+# def main():
+#     # Step 1: Prepare configuration file and paths
+#     config_path, project_path = prepare_config_file()
+#     source_path, destination_path = prepare_paths(project_path)
+
+#     # Step 2: Load and train the YOLO model
+#     model = YOLO('yolo11m.pt')
+#     model.train(
+#         data=config_path,  # Use the prepared config file
+#         epochs=150,
+#         batch=-1,
+#         # warmup_epochs=5,
+#         device=0,
+#         patience=20,  # Stop training if no improvement for 20 epochs
+#         imgsz=640,
+#     )
+
+# if __name__ == '__main__':
+#     main()
+
+
+
+
+
+from ultralytics import YOLO
+from prepare_config import prepare_config_file, prepare_paths
+
+def main():
+    # Step 1: Prepare configuration file and paths
+    config_path, project_path = prepare_config_file()
+
+    # Step 2: Load and train the YOLO model
+    model = YOLO('yolo11m.pt')
+    # model.train(
+    #     data=config_path,  # Use the prepared config file
+    #     epochs=150,
+    #     batch=-1,
+    #     device=0,
+    #     patience=20,  # Stop training if no improvement for 20 epochs
+    #     imgsz=640,
+    #     flipud= 0.1,
+    # )
+    model.train(
+        data=config_path,  # Use the prepared config file
+        epochs=150,
+        batch=-1,
+        device=0,
+        patience=20,  # Stop training if no improvement for 20 epochs
+        imgsz=640,
+
+        # 🔧 Custom augmentations for schematic diagrams
+        flipud=0.1,        # Vertical flip — small chance
+        fliplr=0.5,        # Horizontal flip — keep as is
+        scale=0.5,         # Zoom in/out
+        translate=0.1,     # Slight shift
+
+        hsv_h=0.0,         # Turn off color augmentation
+        hsv_s=0.0,
+        hsv_v=0.0,
+        mosaic=0.0,        # No mosaic for structured diagrams
+        mixup=0.0,         # No mixup — preserve component integrity
+        auto_augment=None, # Disable RandAugment
+        erasing=0.0        # Don’t randomly erase lines or shapes
+    )
+
+if __name__ == '__main__':
+    main()
