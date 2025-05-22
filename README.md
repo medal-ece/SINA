@@ -23,11 +23,15 @@ Welcome to the **Netlist Generator** repository! This project is designed to con
     -   Debugging info.
     -   Script to compare true netlists with output netlists.
 
-### **3. requirements.txt**
+### **3. current_trained_model**
+
+-   
+
+### **4. requirements.txt**
 
 -   Lists all Python dependencies required to run the project.
 
-### **4. .gitignore**
+### **5. .gitignore**
 
 -   Specifies files and directories that Git should ignore.
 
