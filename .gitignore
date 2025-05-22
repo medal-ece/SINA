@@ -10,14 +10,11 @@ build/
 
 # other
 # config is now dynamicllay generated
-/Model training/config.yaml
+/model_training/config.yaml
 # Ignore model checkpoints
 runs/
-
-/Program/Results
-# /Program test/Model test/Model test results
-/Program test/Netlist generator algorithm test/Method 1/Test outputs for debugging
-# /Program test/Netlist generator algorithm test/Method 1/Test results
-/Program test/Netlist generator algorithm test/Method 2/Test outputs for debugging
-# /Program test/Netlist generator algorithm test/Method 2/Test results
-/All old models for testing purposes
+/old_detect_models
+/program_test/model_test/outputs
+/program_test/netlist_generator_algorithm_test/outputs
+/model_training/yolo11n-pose.pt
+/model_training/cvat_to_coco_keypoints/outputs
