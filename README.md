@@ -55,11 +55,11 @@ Welcome to the **Netlist Generator** repository! This project is designed to con
 
 To activate the virtual environment, run:
 
-    - Windows:
+    -  Windows:
     ```bash
     env_netlist\Scripts\activate
     ```
-    - macOS/Linux:
+    -  macOS/Linux:
     ```bash
     source env_netlist/bin/activate
     ```
