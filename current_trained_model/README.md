@@ -4,7 +4,7 @@ This folder contains resources related to the latest trained machine learning mo
 
 ## **Directory Structure**
 
-### **1. Pose/**
+### **1. `Pose/`**
 - Contains the currently deployed trained model, developed using Ultralytics YOLO.
 - This model is used in the testing and evaluation phases found in the program_test directory.
 
