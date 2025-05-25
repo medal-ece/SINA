@@ -7,7 +7,7 @@ Provides scripts and tools to validate, test, and debug both the trained YOLO mo
 ### **1. `model_test/`**
 
 -   Contains resources for evaluating the performance of the YOLO model.
--   **Contents**:
+    **Contents**:
     -   Scripts to run inference on test datasets
     -   Sample input images for model testing
     -   Debugging output visualizations (e.g., bounding boxes, keypoints, confidence scores)
