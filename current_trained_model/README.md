@@ -1,10 +1,11 @@
 # **Current Trained Model**
 
-This folder contains the resources related to the machine learning models used for analyzing and interpreting circuit schematic images. The models are designed to detect circuit components and their connections to generate a netlist. 
+This folder contains resources related to the latest trained machine learning model used for analyzing and interpreting circuit schematic images. The model is designed to detect circuit components in order to generate a netlist.
 
-## **Folder Structure**
+## **Directory Structure**
 
-### **1. Pose Folder**
-- This folder contains the **current trained model**, which is the result of training using **Ultralytics YOLO**.
+### **1. Pose/**
+- Contains the currently deployed trained model, developed using Ultralytics YOLO.
+- This model is used in the testing and evaluation phases found in the program_test directory.
 
 ---
