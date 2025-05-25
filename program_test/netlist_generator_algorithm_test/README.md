@@ -28,14 +28,14 @@ Contains tools to test, validate, and debug the netlist generation algorithm. It
 
 1. **`netlist_generator.py`**:
 - Ensure:
-        -    The trained model is available in `current_trained_model/`.
-        -    Test images are in `inputs/test_images/`.
+  - The trained model is available in `current_trained_model/`.
+  - Test images are in `inputs/test_images/`.
 - run `netlist_generator.py`
 
 2. **`netlist_graph_matcher.py`**:
 - Ensure:
-        -   Generated netlists are available.
-        -   True netlists are located in `inputs/true_netlists/`.
+   - Generated netlists are available.
+   - True netlists are located in `inputs/true_netlists/`.
 - run `netlist_graph_matcher.py`
 
 ---
