@@ -45,7 +45,7 @@ Welcome to the **Netlist Generator** repository! This project is designed to con
 -   Create a new Python virtual environment. Replace `env_netlist` with your preferred name if desired:
     -  Windows:
     ```bash
-    bash py -m venv env_netlist
+    py -m venv env_netlist
     ```
     -  macOS/Linux:
     ```bash
@@ -55,11 +55,11 @@ Welcome to the **Netlist Generator** repository! This project is designed to con
 
 To activate the virtual environment, run:
 
-   - Windows:
+    - Windows:
     ```bash
     env_netlist\Scripts\activate
     ```
-   - macOS/Linux:
+    - macOS/Linux:
     ```bash
     source env_netlist/bin/activate
     ```
