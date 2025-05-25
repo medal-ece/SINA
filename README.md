@@ -59,6 +59,9 @@ Welcome to the **Netlist Generator** repository! This project is designed to con
     env_netlist\Scripts\activate
     ```
     -   macOS/Linux:
+    ```bash
+    source env_netlist/bin/activate
+    ```
     -   Debugging tools
 
 
