@@ -12,19 +12,19 @@ This folder contains all the essential resources needed to train the YOLO model 
 ### **2. `data/`**
 
 -   Contains the datasets used for training and validation.
-      -   **Contents**:
-            -   `images/`: Circuit schematic images used during training and validation.
-            -   `labels/`: Corresponding annotation files in COCO Keypoints format.
+-   **Contents**:
+  -   `images/`: Circuit schematic images used during training and validation.
+    -   `labels/`: Corresponding annotation files in COCO Keypoints format.
 
 ### **3. `cvat_to_coco_keypoints/` Folder**
 
 -   Utilities to convert annotation files from CVAT XML format to COCO Keypoints format, which is compatible with YOLO training.
-      -  **Contents**:
-            1. **`inputs/`**: `annotations.xml` - the annotation file exported from CVAT.
-            2. **`cvat_to_coco_keypoints.py`**: Converts `annotations.xml` from CVAT to YOLO-compatible `.txt` files.
-            3. **`copy_lables_to_data.py`**: Copies labels into correct subfolders after splitting the dataset:
-                  - For each image in data/images/train, its label will be copied to data/labels/train/
-                  - For each image in data/images/val, its label will be copied to data/labels/val/ 
+-  **Contents**:
+  1. **`inputs/`**: `annotations.xml` - the annotation file exported from CVAT.
+     2. **`cvat_to_coco_keypoints.py`**: Converts `annotations.xml` from CVAT to YOLO-compatible `.txt` files.
+        3. **`copy_lables_to_data.py`**: Copies labels into correct subfolders after splitting the dataset:
+           - For each image in data/images/train, its label will be copied to data/labels/train/
+             - For each image in data/images/val, its label will be copied to data/labels/val/ 
 
 ### **4. `helper_files/` Folder**
 
