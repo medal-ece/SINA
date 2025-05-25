@@ -43,11 +43,11 @@ Welcome to the **Netlist Generator** repository! This project is designed to con
 -   Navigate to your project folder.
 
 -   Create a new Python virtual environment. Replace `env_netlist` with your preferred name if desired:
-  -    Windows:
+   -  Windows:
     ```bash
     py -m venv env_netlist
     ```
-  -    macOS/Linux:
+   -  macOS/Linux:
     ```bash
     python3 -m venv env_netlist
     ```
@@ -55,16 +55,17 @@ Welcome to the **Netlist Generator** repository! This project is designed to con
 
 To activate the virtual environment, run:
 
-  -    Windows:
+   - Windows:
     ```bash
     env_netlist\Scripts\activate
     ```
-  -    macOS/Linux:
+   - macOS/Linux:
     ```bash
     source env_netlist/bin/activate
     ```
 
 **Note:** You’ll know the environment is activated when you see the environment name in parentheses before the command prompt:
+
 ```bash
 (env_netlist) C:\your\path\here>
 ```
@@ -72,6 +73,7 @@ To activate the virtual environment, run:
 ## 3) Upgrade Pip
 
 - Run the following command to upgrade `pip`:
+
     ```bash
     py -m pip install --upgrade pip
     ```
@@ -86,6 +88,7 @@ To activate the virtual environment, run:
    - **CUDA 12.4** (for NVIDIA GPUs)
    - Copy the provided install command and run it.
         Example command:
+     
     ```bash
     pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
     ```
