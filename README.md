@@ -16,6 +16,7 @@ Welcome to the **Netlist Generator** repository! This project is designed to con
 ### **2. program_test**
 
 -   Tools and scripts to evaluate model performance and test netlist generation.
+-   Contents:
     -   Model testing scripts
     -   Netlist generation and comparison scripts
     -   Debugging tools
@@ -53,7 +54,6 @@ Welcome to the **Netlist Generator** repository! This project is designed to con
 ### Activate the Virtual Environment
 
 -   To activate the virtual environment, run:
--   Contents:
     -   Model testing scripts
     -   Netlist generation and comparison scripts
     -   Debugging tools
