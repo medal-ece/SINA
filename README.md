@@ -62,17 +62,6 @@ Welcome to the **Netlist Generator** repository! This project is designed to con
     ```bash
     source env_netlist/bin/activate
     ```
-    -   Debugging tools
-
-
-    -  Windows:
-    ```bash
-    env_netlist\Scripts\activate
-    ```
-    -  macOS/Linux:
-    ```bash
-    source env_netlist/bin/activate
-    ```
 
 **Note:** You’ll know the environment is activated when you see the environment name in parentheses before the command prompt:
 
