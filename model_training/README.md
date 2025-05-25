@@ -13,8 +13,8 @@ This folder contains all the essential resources needed to train the YOLO model 
 
 -   Contains the datasets used for training and validation.
 -   **Contents**:
-  -   `images/`: Circuit schematic images used during training and validation.
-  -   `labels/`: Corresponding annotation files in COCO Keypoints format.
+    -   `images/`: Circuit schematic images used during training and validation.
+    -   `labels/`: Corresponding annotation files in COCO Keypoints format.
 
 ### **3. `cvat_to_coco_keypoints/`**
 
