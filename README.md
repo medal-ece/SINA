@@ -2,7 +2,7 @@
 
 Welcome to the **Netlist Generator** repository! This project is designed to convert an image of a circuit schematic into a netlist, which is outputted as a text file. The netlist represents the electrical connections between circuit components, serving as a textual representation of the circuit.
 
-## **Directory Contents**
+## **Directory Structure**
 
 ### **1. model_training**
 
