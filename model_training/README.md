@@ -1,45 +1,47 @@
 # **model_training**
 
-This folder contains all the necessary resources to train the machine learning model used in the **Netlist Generator** project. It includes datasets, training scripts, configuration files, and tools to support the training workflow.
+This folder contains all the essential resources needed to train the YOLO model used in the Netlist Generator project. It includes datasets, preprocessing utilities, training scripts, configuration helpers, and annotation format conversion tools.
 
-## **Directory Contents**
+## **Directory Structure**
 
 ### **1. `train_model.py`**
 
--   A Scirpt that contains the code to train the YOLO model.
+-   Python script for training the YOLO model using Ultralytics.
+-   Handles dataset paths, configurations, and model training loops.
 
-### **2. `data/` Folder**
+### **2. `data/`**
 
--   Contains datasets required for training and validation.
+-   Contains the datasets used for training and validation.
 -   **Contents**:
--   `images/`: Images used for training and validation.
--   `labels/`: Corresponding label files in the COCO keypoints format.
+-   `images/`: Circuit schematic images used during training and validation.
+-   `labels/`: Corresponding annotation files in COCO Keypoints format.
 
 ### **3. `cvat_to_coco_keypoints/` Folder**
 
--   Contains utility scripts for converting annotation files from **CVAT format** to **COCO Keypoints** format.
--   **Contents**:
-    -   **cvat_to_coco_keypoints.py**: Use this script to convert annotations from CVAT XML format to YOLO-compatible COCO Keypoints `.txt` files.
-
-    -   **copy_lables_to_data.py**: After splitting the dataset into training and validation sets, this script copies the corresponding .txt label files into the appropriate subdirectories:
+-   Utilities to convert annotation files from CVAT XML format to COCO Keypoints format, which is compatible with YOLO training.
+    **Contents**:
+        -   **cvat_to_coco_keypoints.py**: Converts annotations.xml from CVAT to YOLO-compatible `.txt` files.
+        -   **copy_lables_to_data.py**: Copies labels into correct subfolders after splitting the dataset:
         - For each image in data/images/train, its label will be copied to data/labels/train/
         - For each image in data/images/val, its label will be copied to data/labels/val/
 
-    -   **inputs**: `annotations.xml` CVAT XML file.
+    -   **inputs**: `annotations.xml` - the annotation file exported from CVAT.
 
 ### **4. `helper_files/` Folder**
 
--    Contains utility scripts used to set up configuration files.
--    These functions are called within `train_model.py` during the training setup.
+-    Contains utility scripts for dynamically generating configuration files.
   
 ---
 
 
 ## **How to Train the Model**
 
-1. Ensure your dataset is correctly organized under the data/ folder:
-    - Images should be placed in `data/images/train/` and `data/images/val/`
-    - Labels should be placed in `data/labels/train/` and `data/labels/val/`
-2. Follow the setup instructions provided in the root directory.
-3. Once setup is complete, run `train_model.py` to begin training the YOLO model.
+1. Prepare the Dataset:
+    - Place training images in: `data/images/train/`
+    - Place validation images in: `data/images/val/`
+    - Place matching label files in: `data/labels/train/` and `data/labels/val/`
+2. Complete the Environment Setup:
+    - Follow the setup guide in the root `README.md` to configure Python, virtual environments, and install dependencies.
+3. Start Training:
+    - Run the training script `train_model.py`.
 
