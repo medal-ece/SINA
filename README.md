@@ -7,7 +7,7 @@ Welcome to the **Netlist Generator** repository! This project is designed to con
 ### **1. model_training**
 
 -   Resources for training the YOLO model.
--   Includes:
+-   Contents:
     -   Datasets
     -   Data preprocessing scripts
     -   Training pipeline and configuration
@@ -16,7 +16,7 @@ Welcome to the **Netlist Generator** repository! This project is designed to con
 ### **2. program_test**
 
 -   Tools and scripts to evaluate model performance and test netlist generation.
--   Includes:
+-   Contents:
     -   Model testing scripts
     -   Netlist generation and comparison scripts
     -   Debugging tools
