@@ -14,9 +14,9 @@ This folder contains all the essential resources needed to train the YOLO model 
 -   Contains the datasets used for training and validation.
 -   **Contents**:
   -   `images/`: Circuit schematic images used during training and validation.
-    -   `labels/`: Corresponding annotation files in COCO Keypoints format.
+  -   `labels/`: Corresponding annotation files in COCO Keypoints format.
 
-### **3. `cvat_to_coco_keypoints/` Folder**
+### **3. `cvat_to_coco_keypoints/`**
 
 -   Utilities to convert annotation files from CVAT XML format to COCO Keypoints format, which is compatible with YOLO training.
 -  **Contents**:
@@ -26,7 +26,7 @@ This folder contains all the essential resources needed to train the YOLO model 
         - For each image in data/images/train, its label will be copied to data/labels/train/
         - For each image in data/images/val, its label will be copied to data/labels/val/ 
 
-### **4. `helper_files/` Folder**
+### **4. `helper_files/`**
 
 -    Contains utility scripts for dynamically generating configuration files.
   
