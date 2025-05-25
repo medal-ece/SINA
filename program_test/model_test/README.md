@@ -1,26 +1,23 @@
 # **model_test**
 
-The **model_test** folder provides the tools and resources required to test the performance of the trained object-keypoint detection model. This folder allows users to evaluate how well the model performs on sample circuit schematic images by visualizing bounding boxes and keypoints.
+The model_test folder contains tools and resources for evaluating the performance of the trained YOLO model. It enables users to test the model on sample circuit schematic images and visualize detection results, including bounding boxes and confidence scores.
 
-## **Folder Structure**
+## **Directory Structure**
 
-### **1. `model_test.ipynb`**
+### **1. `model_test.py`**
 
--   A Jupyter Notebook for testing the trained model on the images provided in the `test_images` folder.
--   **Functionality**:
-    -   Processes all images in the `test_images` folder.
-    -   Outputs visualized results:
-        -   **Blue Boxes**: Drawn around detected components in the schematic.
-        -   **Green Dots**: Marked at the keypoints representing the connection points of each component.
+-    model_test.py is the main script for evaluating the trained model on images in the test_images/ folder. It supports two visualization methods:
+    -    OpenCV-based – customizable display of bounding boxes, labels, and confidence scores.
+    -    Ultralytics built-in – quick visualization using results.plot().
 
-### **2. inputs**
+### **2. `inputs/test_images/`**
 
--   A folder containing sample images for testing the trained model.
+-   Contains sample test images used to evaluate model performance.
 ---
 
 ## **How to Use**
 
-1. Place your test_images in the `test_images` folder.
+1. Place your test_images in the `inputs/test_images/` folder.
 2. run the `model_test.py` file.
 
 ---
