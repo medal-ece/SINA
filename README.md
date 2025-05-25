@@ -86,7 +86,7 @@ Welcome to the **Netlist Generator** repository! This project is designed to con
    - **Python** pick python
    - **CUDA 12.4** (for NVIDIA GPUs)
    - Copy the provided install command and run it.
-   - Example command:
+   - **Example command:**
      
     ```bash
     pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
