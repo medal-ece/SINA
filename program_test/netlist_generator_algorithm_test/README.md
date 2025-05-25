@@ -5,14 +5,12 @@ Contains tools to test, validate, and debug the netlist generation algorithm. It
 ## **Directory Structure**
 
 ### **1. `netlist_generator.py`**
--Main script for generating netlists from circuit schematic images.
+- Main script for generating netlists from circuit schematic images.
 - Takes model output and converts it into a structured netlist format.
--    oopp
-- wdwdwd
 
 ### **2. `netlist_graph_matcher.py`**
-        -   Compares the generated netlists with true/reference netlists.
-        -   Helps assess the accuracy of the netlist generation algorithm by identifying mismatches.
+        - Compares the generated netlists with true/reference netlists.
+        - Helps assess the accuracy of the netlist generation algorithm by identifying mismatches.
 
 ### **3. `inputs/`**
         -   `test_images/`:  Sample schematic images to be processed.
