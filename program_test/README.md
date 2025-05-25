@@ -1,37 +1,23 @@
 # **program_test**
 
-The **program_test** folder provides tools and scripts to test the functionality of the trained model and the overall netlist generation process. It serves as the validation and debugging hub for the project, ensuring the model and netlist generation algorithms perform as expected.
+Provides scripts and tools to validate, test, and debug both the trained YOLO model and the netlist generation pipeline. This serves as the project's central hub for quality assurance, ensuring that both detection and netlist creation perform reliably and accurately.
 
-## **Folder Structure**
+## **Directory Structure**
 
-### **1. model_test**
+### **1. `model_test/`**
 
--   This folder contains resources and scripts to test the performance of the YOLO model.
+-   Contains resources for evaluating the performance of the YOLO model.
+-   **Contents**:
+    -   Scripts to run inference on test datasets
+    -   Sample input images for model testing
+    -   Debugging output visualizations (e.g., bounding boxes, keypoints, confidence scores)
+
+### **2. `netlist_generator_algorithm_test/`**
+
+-   Contains tools to test and verify the accuracy of the netlist generation process based on model outputs.
 -   Includes:
-    -   Scripts for evaluating the model's performance on testing datasets.
-    -   Test input images to test model inference.
-    -   Debugging info such as bounding boxes, confidence percentage and other info.
-
-### **2. netlist_generator_algorithm_test**
-
--   This folder contains resources to test and validate the methods used for generating netlists from the outputs of the trained model.
--   Includes:
-    -   Scripts for generating netlists from the model's outputs.
-    -   Debugging info.
-    -   Script to compare true netlists with output netlists.
-
----
-
-## **Purpose**
-
-1. **Testing the Model**:
-
-    - Ensure the trained object-keypoint detection model performs as expected on testing datasets.
-    - Debug issues such as incorrect bounding boxes or keypoints.
-
-2. **Validating Netlist Generation**:
-    - Verify that the netlist generation algorithms produce correct and consistent netlists.
-    - Compare different methods for generating netlists and determine the most effective approach.
-    - Use correctly constructed netlist files as references to evaluate the quality of generated netlists.
+    -   Scripts for generating netlists from the model's inference data
+    -   Utilities for comparing generated netlists against ground truth/reference netlists
+    -   Debugging output for analyzing connectivity, component detection, and errors
 
 ---
