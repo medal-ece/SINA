@@ -68,7 +68,7 @@ env_netlist\Scripts\activate
 
 -   Run the following command to upgrade `pip`:
     ```bash
-    pip install --upgrade pip
+    py -m pip install --upgrade pip
     ```
 
 ## 4) Install PyTorch
