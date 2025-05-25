@@ -65,7 +65,7 @@ To activate the virtual environment, run:
     ```
 
 **Note:** You’ll know the environment is activated when you see the environment name in parentheses before the command prompt:
-
+```bash
 (env_netlist) C:\your\path\here>
 ```
 
