@@ -43,13 +43,13 @@ Welcome to the **Netlist Generator** repository! This project is designed to con
 -   Navigate to your project folder.
 
 -   Create a new Python virtual environment. Replace `env_netlist` with your preferred name if desired:
-   -  Windows:
-    ```bash
-    py -m venv env_netlist
-    ```
+-  Windows: ```bash py -m venv env_netlist ```
    -  macOS/Linux:
     ```bash
     python3 -m venv env_netlist
+    ```
+    ```bash
+    python3 -m venv env_netlist3343434
     ```
 ### Activate the Virtual Environment
 
