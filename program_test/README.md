@@ -15,7 +15,7 @@ Provides scripts and tools to validate, test, and debug both the trained YOLO mo
 ### **2. `netlist_generator_algorithm_test/`**
 
 -   Contains tools to test and verify the accuracy of the netlist generation process based on model outputs.
--   Includes:
+-   **Contents**:
     -   Scripts for generating netlists from the model's inference data
     -   Utilities for comparing generated netlists against ground truth/reference netlists
     -   Debugging output for analyzing connectivity, component detection, and errors
