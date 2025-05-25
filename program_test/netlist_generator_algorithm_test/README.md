@@ -14,18 +14,17 @@ Contains tools to test, validate, and debug the netlist generation algorithm. It
 -   Compares the generated netlists with true/reference netlists.
 -   Helps assess the accuracy of the netlist generation algorithm by identifying mismatches.
 
-### **3. inputs**
+### **3. `inputs/`**
 
 -   `test_images/`:  Sample schematic images to be processed.
 -   `true_netlists/`: Ground-truth netlist files used for comparison.
 
-### **4. `helper_files`**
+### **4. `helper_files/`**
 
 -   `process_images.py`:
         -   Runs the trained model on test images.
         -   Extracts components, connections, and positional data required for netlist generation.
 -   `generate_netlists.py` Takes processed data from process_images.py and constructs the actual netlist.
-
 
 ---
 
@@ -33,15 +32,14 @@ Contains tools to test, validate, and debug the netlist generation algorithm. It
 
 1. **`netlist_generator.py`**:
 - Ensure:
-    -    The trained model is placed in current_trained_model/.
-    -    Test images are in inputs/test_images/.
+    -    The trained model is available in `current_trained_model/`.
+    -    Test images are in `inputs/test_images/`.
 - run `netlist_generator.py`
 
 2. **`netlist_graph_matcher.py`**:
 - Ensure:
-    -    The trained model is placed in current_trained_model/.
-    -    Test images are in inputs/test_images/.
-- run `netlist_generator.py`
-
+    -   Generated netlists are available.
+    -   True netlists are located in `inputs/true_netlists/`.
+- run `netlist_graph_matcher.py`
 
 ---
