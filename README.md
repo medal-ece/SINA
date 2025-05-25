@@ -54,8 +54,11 @@ Welcome to the **Netlist Generator** repository! This project is designed to con
 ### Activate the Virtual Environment
 
 -   To activate the virtual environment, run:
-    -   Model testing scripts
-    -   Netlist generation and comparison scripts
+    -   Windows:
+    ```bash
+    env_netlist\Scripts\activate
+    ```
+    -   macOS/Linux:
     -   Debugging tools
 
 
