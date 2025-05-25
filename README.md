@@ -71,20 +71,20 @@ To activate the virtual environment, run:
 
 ## 3) Upgrade Pip
 
--   Run the following command to upgrade `pip`:
+- Run the following command to upgrade `pip`:
     ```bash
     py -m pip install --upgrade pip
     ```
 
 ## 4) Install PyTorch
 
--   Go to the PyTorch website (https://pytorch.org/get-started/locally/) and select the options that fit your machine for example mine were:
-    -   **Stable** always pick stable
-    -   **Windows** my machine
-    -   **Pip** 
-    -   **Python** pick python
-    -   **CUDA 12.4** (for NVIDIA GPUs)
-    -   Copy the provided install command and run it.
+- Go to the PyTorch website (https://pytorch.org/get-started/locally/) and select the options that fit your machine for example mine were:
+   - **Stable** always pick stable
+   - **Windows** my machine
+   - **Pip** 
+   - **Python** pick python
+   - **CUDA 12.4** (for NVIDIA GPUs)
+   - Copy the provided install command and run it.
         Example command:
     ```bash
     pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
@@ -92,7 +92,7 @@ To activate the virtual environment, run:
 
 ## 5) Install Ultralytics
 
--   Install the `ultralytics` package (for YOLO):
+- Install the `ultralytics` package (for YOLO):
     ```bash
     pip install ultralytics
     ```
@@ -101,7 +101,7 @@ To activate the virtual environment, run:
 ## **How to run files**
 
 - This project is written entirely in Python, so all files can be executed using the same method from the command line or terminal.
-    - For windows: `py .\file_name.py` or `python .\file_name.py`
-    - For Mac and Linux: `python3 ./file_name.py`
+   - For windows: `py .\file_name.py` or `python .\file_name.py`
+   - For Mac and Linux: `python3 ./file_name.py`
 
 ---
