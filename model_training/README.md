@@ -20,9 +20,9 @@ This folder contains all the essential resources needed to train the YOLO model 
 
 -   Utilities to convert annotation files from CVAT XML format to COCO Keypoints format, which is compatible with YOLO training.
       -  **Contents**:
-            -   **inputs**: `annotations.xml` - the annotation file exported from CVAT.
-            -   **cvat_to_coco_keypoints.py**: Converts `annotations.xml` from CVAT to YOLO-compatible `.txt` files.
-            -   **copy_lables_to_data.py**: Copies labels into correct subfolders after splitting the dataset:
+            a)   **inputs**: `annotations.xml` - the annotation file exported from CVAT.
+            b)   **cvat_to_coco_keypoints.py**: Converts `annotations.xml` from CVAT to YOLO-compatible `.txt` files.
+            c)   **copy_lables_to_data.py**: Copies labels into correct subfolders after splitting the dataset:
                   - For each image in data/images/train, its label will be copied to data/labels/train/
                   - For each image in data/images/val, its label will be copied to data/labels/val/ 
 
