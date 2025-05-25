@@ -10,7 +10,7 @@ Contains tools to test, validate, and debug the netlist generation algorithm. It
 
 ### **2. `netlist_graph_matcher.py`**
         - Compares the generated netlists with true/reference netlists.
-        - Helps assess the accuracy of the netlist generation algorithm by identifying mismatches.
+- Helps assess the accuracy of the netlist generation algorithm by identifying mismatches.
 
 ### **3. `inputs/`**
         -   `test_images/`:  Sample schematic images to be processed.
