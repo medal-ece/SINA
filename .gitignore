@@ -18,3 +18,4 @@ runs/
 /program_test/netlist_generator_algorithm_test/outputs
 /model_training/yolo11n-pose.pt
 /model_training/cvat_to_coco_keypoints/outputs
+/program_test/intersection_detection
