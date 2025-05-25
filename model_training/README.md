@@ -25,7 +25,7 @@ This folder contains all the essential resources needed to train the YOLO model 
                   - For each image in data/images/train, its label will be copied to data/labels/train/
                   - For each image in data/images/val, its label will be copied to data/labels/val/
 
-    -   **inputs**: `annotations.xml` - the annotation file exported from CVAT.
+                  -   **inputs**: `annotations.xml` - the annotation file exported from CVAT.
 
 ### **4. `helper_files/` Folder**
 
