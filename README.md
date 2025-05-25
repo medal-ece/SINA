@@ -53,8 +53,7 @@ Welcome to the **Netlist Generator** repository! This project is designed to con
     ```
 ### Activate the Virtual Environment
 
-To activate the virtual environment, run:
-
+-    To activate the virtual environment, run:
     -  Windows:
     ```bash
     env_netlist\Scripts\activate
