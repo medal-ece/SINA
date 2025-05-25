@@ -54,15 +54,7 @@ Welcome to the **Netlist Generator** repository! This project is designed to con
 ### Activate the Virtual Environment
 
 -    To activate the virtual environment, run:
-    -  Windows:
-    ```bash
-    py -m venv env_netlist
-    ```
-    -  macOS/Linux:
-    ```bash
-    python3 -m venv env_netlist
-    ```
-
+-    -    The
 
     -  Windows:
     ```bash
