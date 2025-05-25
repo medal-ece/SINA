@@ -93,6 +93,7 @@ To activate the virtual environment, run:
 ## 5) Install Ultralytics
 
 - Install the `ultralytics` package (for YOLO):
+
     ```bash
     pip install ultralytics
     ```
