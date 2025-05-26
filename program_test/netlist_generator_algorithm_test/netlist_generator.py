@@ -10,11 +10,11 @@ if __name__ == '__main__':
     PROJECT_PATH = os.path.dirname(os.path.dirname(script_dir))  # Two levels up from script
 
     # Construct paths based on new script location
-    pose_folder = os.path.join(PROJECT_PATH, 'current_trained_model', 'pose')
-    train_folders = [folder for folder in os.listdir(pose_folder) if folder.startswith('train')]
+    model_folder = os.path.join(PROJECT_PATH, 'current_trained_model')
+    train_folders = [folder for folder in os.listdir(model_folder) if folder.startswith('train')]
 
     if not train_folders:
-        raise FileNotFoundError("No 'train' folders found in the pose directory.")
+        raise FileNotFoundError("No 'train' folders found in the directory.")
 
     def extract_suffix(folder_name):
         if folder_name == "train":
@@ -23,7 +23,7 @@ if __name__ == '__main__':
             return int(folder_name[5:])
 
     latest_train_folder = max(train_folders, key=extract_suffix)
-    latest_train_path = os.path.join(pose_folder, latest_train_folder, 'weights', 'last.pt')
+    latest_train_path = os.path.join(model_folder, latest_train_folder, 'weights', 'last.pt')
 
     test_images_folder = os.path.join(script_dir, 'inputs', 'test_images')
     output_files_path = os.path.join(script_dir, 'outputs', 'debugging')

@@ -8,12 +8,12 @@ PROJECT_PATH = os.path.dirname(os.path.dirname(current_dir))  # Project path is 
 # Uses YOLO's built-in visualization (results.plot) – quick, simple, limited control.
 def process_all_images():
     # Find the latest training folder dynamically
-    pose_folder = os.path.join(PROJECT_PATH, 'current_trained_model', 'pose')
-    train_folders = [folder for folder in os.listdir(pose_folder) if folder.startswith('train')]
+    model_folder = os.path.join(PROJECT_PATH, 'current_trained_model')
+    train_folders = [folder for folder in os.listdir(model_folder) if folder.startswith('train')]
 
     # Check if there are train folders
     if not train_folders:
-        raise FileNotFoundError("No 'train' folders found in the pose directory.")
+        raise FileNotFoundError("No 'train' folders found in the directory.")
 
     # Determine the latest train folder
     def extract_suffix(folder_name):
@@ -23,7 +23,7 @@ def process_all_images():
             return int(folder_name[5:])
 
     latest_train_folder = max(train_folders, key=extract_suffix)
-    latest_model_path = os.path.join(pose_folder, latest_train_folder, 'weights', 'last.pt')
+    latest_model_path = os.path.join(model_folder, latest_train_folder, 'weights', 'last.pt')
 
     # Define the image folder and output folder paths (updated to match the second version)
     image_folder = os.path.join(current_dir, 'inputs', 'test_images')
@@ -61,11 +61,11 @@ def process_all_images():
 # Uses manual OpenCV drawing – more control, more code, fully customizable.
 def process_all_images_flexible():
     # Find the latest training folder dynamically
-    pose_folder = os.path.join(PROJECT_PATH, 'current_trained_model/pose')
-    train_folders = [folder for folder in os.listdir(pose_folder) if folder.startswith('train')]
+    model_folder = os.path.join(PROJECT_PATH, 'current_trained_model/')
+    train_folders = [folder for folder in os.listdir(model_folder) if folder.startswith('train')]
 
     if not train_folders:
-        raise FileNotFoundError("No 'train' folders found in the pose directory.")
+        raise FileNotFoundError("No 'train' folders found in the directory.")
 
     def extract_suffix(folder_name):
         if folder_name == "train":
@@ -74,7 +74,7 @@ def process_all_images_flexible():
             return int(folder_name[5:])
 
     latest_train_folder = max(train_folders, key=extract_suffix)
-    latest_model_path = os.path.join(pose_folder, latest_train_folder, 'weights', 'last.pt')
+    latest_model_path = os.path.join(model_folder, latest_train_folder, 'weights', 'last.pt')
 
     image_folder = os.path.join(current_dir, 'inputs', 'test_images')
     output_folder = os.path.join(current_dir, 'outputs', "test_results")
@@ -127,8 +127,8 @@ def process_all_images_flexible():
 # Main function with user selection
 def main():
     #  Choose between process_all_images() and process_all_images_flexible() which ever you want.
-    # process_all_images()
-    process_all_images_flexible()
+    process_all_images()
+    # process_all_images_flexible()
 
 if __name__ == '__main__':
     main()

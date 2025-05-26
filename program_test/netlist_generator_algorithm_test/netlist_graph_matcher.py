@@ -59,6 +59,9 @@ def check_isomorphism(input1, input2):
 
 
 def spectral_similarity_fixed(G1, G2):
+    if G1.number_of_nodes() == 0 or G2.number_of_nodes() == 0:
+        print("⚠️ One or both graphs are empty. Cannot compute spectral similarity.")
+        return float('inf')  # Return a high dissimilarity score
     A1 = nx.adjacency_matrix(G1).todense()
     A2 = nx.adjacency_matrix(G2).todense()
     eig1 = np.sort(np.linalg.eigvals(A1))
@@ -80,6 +83,9 @@ def explain_graph_differences(input1, input2):
     for node, neighbors in adj_dict2.items():
         for neighbor in neighbors:
             G2.add_edge(str(node), str(neighbor))
+
+    if G1.number_of_nodes() == 0 or G2.number_of_nodes() == 0:
+        return "❌ One or both graphs are empty. Cannot compute differences."
 
     ged = nx.graph_edit_distance(G1, G2)
     spectral_sim = spectral_similarity_fixed(G1, G2)

@@ -7,6 +7,7 @@ def prepare_config_file():
     """
     current_dir = os.getcwd()  # Get the current working directory
     project_path = os.path.dirname(current_dir)  # Get the parent directory (project root directory)
+    print(f"******************Project path: {project_path}")
     
     # Dynamically generate the paths
     data_section = f"""# Data
@@ -47,5 +48,7 @@ def prepare_paths(project_path):
     Prepares and returns the source and destination paths for the training output.
     """
     source_path = os.path.join(project_path, 'runs')
+    # print(f"******************Source path: {source_path}")
     destination_path = os.path.join(project_path, 'current_trained_model')
+    # print(f"******************Destination path: {destination_path}")
     return source_path, destination_path

@@ -13,12 +13,14 @@ def main():
     model.train(
         data=config_path,  # Use the prepared config file
         epochs=1,
+        project=source_path,
         patience=20,  # Stop training if no improvement for 20 epochs
         imgsz=640,
     )
     
     # Step 3: Copy the 'runs' directory (YOLO training output) to the specified destination
     if os.path.exists(source_path):
+        # print(f"*******************Copying training results from {source_path} to {destination_path}")
         shutil.copytree(source_path, destination_path, dirs_exist_ok=True)
         print(f"Training results have been copied to {destination_path}")
     else:
