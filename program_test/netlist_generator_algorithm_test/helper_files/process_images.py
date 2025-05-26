@@ -10,10 +10,7 @@ def identify_circuit_nodes(merged_labels, components, output_folder, original_im
     h, w = merged_labels.shape
     circuit_image = merged_labels.copy()
 
-    # STEP 1: Save original image
-    cv2.imwrite(os.path.join(output_folder, "1_original_image.png"), original_image)
-
-    # STEP 4: Cut out the component areas to isolate wiring nodes
+    # STEP 1: Cut out the component areas to isolate wiring nodes
     component_mask = np.zeros_like(circuit_image)
     shrink_amount = 3
     for component in components:
@@ -27,9 +24,9 @@ def identify_circuit_nodes(merged_labels, components, output_folder, original_im
 
     circuit_cut = circuit_image.copy()
     circuit_cut[component_mask == 1] = 0
-    cv2.imwrite(os.path.join(output_folder, "4_circuit_cut.png"), circuit_cut * 255)
+    cv2.imwrite(os.path.join(output_folder, "6_circuit_cut.png"), circuit_cut * 255)
 
-    # STEP 5: Connected component labeling to identify node blobs
+    # STEP 2: Connected component labeling to identify node blobs
     num_labels, node_labels, stats, centroids = cv2.connectedComponentsWithStats(
         circuit_cut.astype(np.uint8), connectivity=8)
 
@@ -37,9 +34,9 @@ def identify_circuit_nodes(merged_labels, components, output_folder, original_im
     for label_id in range(1, num_labels):
         color = np.random.randint(0, 255, 3).tolist()
         step5_node_vis[node_labels == label_id] = color
-    cv2.imwrite(os.path.join(output_folder, "5_node_labels.png"), step5_node_vis)
+    cv2.imwrite(os.path.join(output_folder, "7_node_labels.png"), step5_node_vis)
 
-    # STEP 6: Identify valid nodes and collect raw contact points
+    # STEP 3: Identify valid nodes and collect raw contact points
     valid_nodes = set()
     node_to_components = defaultdict(set)
     component_to_nodes = defaultdict(set)
@@ -66,7 +63,7 @@ def identify_circuit_nodes(merged_labels, components, output_folder, original_im
                 for cx, cy in zip(x_points, y_points):
                     raw_contact_points[comp_id].append((cx, cy))
 
-    # STEP 6 VIS: Show valid nodes and all raw contact points
+    # STEP 4: Show valid nodes and all raw contact points
     step6_vis = np.zeros((h, w, 3), dtype=np.uint8)
     for node_id in valid_nodes:
         color = np.random.randint(0, 255, 3).tolist()
@@ -87,9 +84,9 @@ def identify_circuit_nodes(merged_labels, components, output_folder, original_im
         for (cx, cy) in raw_contact_points[comp_id]:
             cv2.circle(step6_vis, (cx, cy), 2, color, -1)
 
-    cv2.imwrite(os.path.join(output_folder, "6_valid_nodes.png"), step6_vis)
+    cv2.imwrite(os.path.join(output_folder, "8_valid_nodes.png"), step6_vis)
 
-    # STEP 7: Cluster raw contact points into logical connection points
+    # STEP 5: Cluster raw contact points into logical connection points
 
     clustered_contact_points = defaultdict(list)
     cluster_vis = original_image.copy()
@@ -120,9 +117,9 @@ def identify_circuit_nodes(merged_labels, components, output_folder, original_im
             cv2.putText(cluster_vis, comp_id, (cx + 4, cy - 4),
                         cv2.FONT_HERSHEY_SIMPLEX, 0.35, component_colors[comp_id], 1)
 
-    cv2.imwrite(os.path.join(output_folder, "7_clustered_connection_points.png"), cluster_vis)
+    cv2.imwrite(os.path.join(output_folder, "9_clustered_connection_points.png"), cluster_vis)
 
-    # STEP 8: Filter clustered contact points by real node intersection
+    # STEP 6: Filter clustered contact points by real node intersection
     real_nodes = {n for n, comps in node_to_components.items() if len(comps) >= 2}
     component_to_real_nodes = {
         comp_id: [n for n in nodes if n in real_nodes]
@@ -146,9 +143,9 @@ def identify_circuit_nodes(merged_labels, components, output_folder, original_im
                     cv2.circle(step8_intersections, (x, y), 3, (0, 0, 255), -1)
                     break  # avoid duplicating same point for multiple nodes
 
-    cv2.imwrite(os.path.join(output_folder, "8_node_intersections.png"), step8_intersections)
+    cv2.imwrite(os.path.join(output_folder, "10_node_intersections.png"), step8_intersections)
 
-    # STEP 9: Final annotated result — clean output with labeled connection points
+    # STEP 7: Final annotated result — clean output with labeled connection points
     final_image = original_image.copy()
     for comp_id, points in component_connections.items():
         for (x, y) in points:
@@ -156,7 +153,7 @@ def identify_circuit_nodes(merged_labels, components, output_folder, original_im
             cv2.putText(final_image, comp_id, (x + 5, y - 5),
                         cv2.FONT_HERSHEY_SIMPLEX, 0.4, (0, 0, 255), 1)
 
-    cv2.imwrite(os.path.join(output_folder, "9_final_connection_points.png"), final_image)
+    cv2.imwrite(os.path.join(output_folder, "11_final_connection_points.png"), final_image)
 
     # Save text data
     with open(os.path.join(output_folder, "component_connections.txt"), 'w') as f:
@@ -168,6 +165,9 @@ def process_circuit_image(image_path, model_path, output_folder, first):
     os.makedirs(output_folder, exist_ok=True)
     model = YOLO(model_path)
     original_image = cv2.imread(image_path)
+
+    cv2.imwrite(os.path.join(output_folder, "1_original_image.png"), original_image)
+
     if original_image is None:
         print(f"Error: Could not read image at {image_path}")
         return None, None
@@ -189,7 +189,7 @@ def process_circuit_image(image_path, model_path, output_folder, first):
                     (x_min, y_min - 5), cv2.FONT_HERSHEY_SIMPLEX,
                     0.5, color, 2)
         # Save image with model-drawn bounding boxes
-        cv2.imwrite(os.path.join(output_folder, "1a_model_detected_boxes.png"), detection_image)
+        cv2.imwrite(os.path.join(output_folder, "2_model_detected_boxes.png"), detection_image)
         components.append({
             "id": component_id,
             "type": class_name,
@@ -199,17 +199,17 @@ def process_circuit_image(image_path, model_path, output_folder, first):
 
     gray = cv2.cvtColor(original_image, cv2.COLOR_BGR2GRAY)
     _, binary = cv2.threshold(gray, 150, 255, cv2.THRESH_BINARY_INV)
-    cv2.imwrite(os.path.join(output_folder, "2_original_binary.png"), binary)
+    cv2.imwrite(os.path.join(output_folder, "3_original_binary.png"), binary)
 
     kernel = np.ones((3, 3), np.uint8)
     thickened_binary = cv2.dilate(binary, kernel, iterations=1)
-    cv2.imwrite(os.path.join(output_folder, "3_thickened_binary.png"), thickened_binary)
+    cv2.imwrite(os.path.join(output_folder, "4_thickened_binary.png"), thickened_binary)
 
     merged_labels = np.zeros_like(thickened_binary)
     merged_labels[thickened_binary > 0] = 1
     merged_label_vis = np.zeros_like(original_image)
     merged_label_vis[merged_labels > 0] = (0, 255, 0)
-    cv2.imwrite(os.path.join(output_folder, "4_merged_labels_green.png"), merged_label_vis)
+    cv2.imwrite(os.path.join(output_folder, "5_merged_labels_green.png"), merged_label_vis)
 
     identify_circuit_nodes(merged_labels, components, output_folder, original_image)
 
