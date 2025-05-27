@@ -177,7 +177,7 @@ def identify_circuit_nodes(merged_labels, components, output_folder, original_im
     # prepare circuit_info.json for netlist generation
     save_circuit_info_json(components, component_connections, output_folder)
 
-def process_circuit_image(image_path, model_path, output_folder, first):
+def process_circuit_image(image_path, model_path, output_folder):
     os.makedirs(output_folder, exist_ok=True)
     model = YOLO(model_path)
     original_image = cv2.imread(image_path)
@@ -245,7 +245,6 @@ def process_all_images(images_folder, model_path, output_folder):
     os.makedirs(output_folder, exist_ok=True)
     image_files = [f for f in os.listdir(images_folder)
                    if f.lower().endswith(('.jpg', '.jpeg', '.png'))]
-    first = True
     for image_file in image_files:
         print(f"Processing {image_file}...")
         image_path = os.path.join(images_folder, image_file)
@@ -253,8 +252,7 @@ def process_all_images(images_folder, model_path, output_folder):
                                            os.path.splitext(image_file)[0])
         os.makedirs(image_output_folder, exist_ok=True)
         try:
-            process_circuit_image(image_path, model_path, image_output_folder, first)
-            first = False
+            process_circuit_image(image_path, model_path, image_output_folder)
         except Exception as e:
             print(f"  Error processing {image_file}: {str(e)}")
             

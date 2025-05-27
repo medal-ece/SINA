@@ -21,7 +21,7 @@ def is_point_connected_or_nearest(masked_edges, px, py):
     print(f"No connection found for point ({px}, {py})")
     return False, None
 
-def overlay_and_find_nodes_with_connected_regions( masked_edges, components, test_results_path, image_file, output_files_path):
+def overlay_and_find_nodes_with_connected_regions(masked_edges, components, test_results_path, image_file):
     labeled_edges, num_regions = connected_label(masked_edges)
     region_to_node = {}
     current_node_id = 1
@@ -120,7 +120,7 @@ def generate_netlist_for_image(image_file, output_files_path, test_results_path)
     if masked_edges is not None and len(masked_edges.shape) == 3:
         masked_edges = cv2.cvtColor(masked_edges, cv2.COLOR_BGR2GRAY)
 
-    overlay_and_find_nodes_with_connected_regions(masked_edges, components, test_results_path, image_file, output_files_path)
+    overlay_and_find_nodes_with_connected_regions(masked_edges, components, test_results_path, image_file)
 
 def generate_all_netlists(test_images_folder, output_files_path, test_results_path):
     os.makedirs(test_results_path, exist_ok=True)
