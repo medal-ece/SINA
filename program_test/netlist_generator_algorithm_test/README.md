@@ -34,7 +34,7 @@ Contains tools to test, validate, and debug the netlist generation algorithm. It
 
 2. **`netlist_graph_matcher.py`**:
 - Ensure:
-   - Generated netlists are available.
+   - Generated netlists are available in `outputs/test_results/`.
    - True netlists are located in `inputs/true_netlists/`.
 - run `netlist_graph_matcher.py`
 
