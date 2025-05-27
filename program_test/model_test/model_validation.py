@@ -4,14 +4,14 @@ import cv2
 from ultralytics import YOLO
 from collections import defaultdict
 
-def test_detection_model(model_path, test_images_dir, annotations_dir=None, output_dir='test_results'):
+def validate_detection_model(latest_model_path, validate_images_path, output_dir, annotations_path=None):
     os.makedirs(output_dir, exist_ok=True)
-    model = YOLO(model_path)
+    model = YOLO(latest_model_path)
 
-    test_images = [os.path.join(test_images_dir, f) for f in os.listdir(test_images_dir)
+    validate_images = [os.path.join(validate_images_path, f) for f in os.listdir(validate_images_path)
                    if f.lower().endswith(('.jpg', '.jpeg', '.png', '.bmp'))]
-    if not test_images:
-        print(f"No images found in {test_images_dir}")
+    if not validate_images:
+        print(f"No images found in {validate_images_path}")
         return
 
     metrics = {
@@ -32,7 +32,7 @@ def test_detection_model(model_path, test_images_dir, annotations_dir=None, outp
     all_detections = []
     class_counts = defaultdict(int)
 
-    for img_path in test_images:
+    for img_path in validate_images:
         img_filename = os.path.basename(img_path)
         print(f"Processing {img_filename}...")
 
@@ -45,8 +45,8 @@ def test_detection_model(model_path, test_images_dir, annotations_dir=None, outp
         img_height, img_width = img.shape[:2]
 
         ground_truth = []
-        if annotations_dir:
-            ann_file = os.path.join(annotations_dir, os.path.splitext(img_filename)[0] + '.txt')
+        if annotations_path:
+            ann_file = os.path.join(annotations_path, os.path.splitext(img_filename)[0] + '.txt')
             if os.path.exists(ann_file):
                 with open(ann_file, 'r') as f:
                     for line in f.readlines():
@@ -303,18 +303,13 @@ def main():
     latest_train_folder = max(train_folders, key=extract_suffix)
     latest_model_path = os.path.join(model_folder, latest_train_folder, 'weights', 'last.pt')
 
-    test_images_path = os.path.join(current_dir, 'inputs', 'validation_images')
-    annotations_path = os.path.join(current_dir, 'inputs', 'test_annotations')
+    validate_images_path = os.path.join(current_dir, 'inputs', 'validation_images')
+    annotations_path = os.path.join(current_dir, 'inputs', 'validation_annotations')
     output_dir = os.path.join(current_dir, 'outputs', 'validation_results')
 
     print(f"Using model: {latest_model_path}")
 
-    test_detection_model(
-        model_path=latest_model_path,
-        test_images_dir=test_images_path,
-        annotations_dir=annotations_path,
-        output_dir=output_dir
-    )
+    validate_detection_model(latest_model_path, validate_images_path, output_dir, annotations_path)
 
     print("Testing completed.")
 
