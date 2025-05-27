@@ -7,8 +7,8 @@ The model_test folder contains tools and resources for evaluating the performanc
 ### **1. `model_test.py`**
 
 -   This script is used to evaluate the trained model using images located in the `inputs/test_images/` directory. It supports two visualization methods:
--   OpenCV-based – customizable display of bounding boxes, labels, and confidence scores.
--   Ultralytics built-in – quick visualization using results.plot().
+    -   OpenCV-based – customizable display of bounding boxes, labels, and confidence scores.
+    -   Ultralytics built-in – quick visualization using results.plot().
 
 ### **2. `model_validation.py`**
 
