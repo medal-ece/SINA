@@ -21,10 +21,10 @@ The model_test folder contains tools and resources for evaluating the performanc
 ---
 
 ## **How to Use**
--`model_test.py`
+- `model_test.py`
     1. Place your test_images in the `inputs/test_images/` directory.
     2. run the `model_test.py` file.
--`model_validation.py`
+- `model_validation.py`
     1. Place your validation_images in the `inputs/validation_images/` directory and their corresponding annotations in the `inputs/validation_annotations/` directory.
     2. run the `model_validation.py` file.
 
