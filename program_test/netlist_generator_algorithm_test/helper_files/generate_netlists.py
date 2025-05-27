@@ -5,7 +5,6 @@ from scipy.ndimage import label as connected_label
 from scipy.spatial import distance
 import json
 import re
-from ultralytics import YOLO
 
 def find_nearest_edge(masked_edges, px, py):
     edge_points = np.argwhere(masked_edges > 0)
@@ -103,48 +102,18 @@ def parse_connections_file(file_path):
             connections_list.append(connection_points)
     return connections_list
 
-def generate_netlist_for_image(image_file, model, test_images_folder, output_files_path, test_results_path):
-    image_path = os.path.join(test_images_folder, image_file)
+def generate_netlist_for_image(image_file, output_files_path, test_results_path):
+    
+
     image_name = os.path.splitext(image_file)[0]
     image_output_folder = os.path.join(output_files_path, image_name)
     os.makedirs(image_output_folder, exist_ok=True)
 
+    # Load preprocessed circuit info
     json_path = os.path.join(image_output_folder, 'circuit_info.json')
-    connections_file_path = os.path.join(image_output_folder, "component_connections.txt")
-
-    component_connections = parse_connections_file(connections_file_path)
-    results = model(image_path)[0]
-
-    circuit_info = []
-    type_counters = {}
-    index = 0
-    for cls, bbox in zip(results.boxes.cls.cpu().numpy(), results.boxes.xyxy.cpu().numpy()):
-        class_idx = int(cls)
-        object_name = results.names[class_idx]
-        x_min, y_min, x_max, y_max = map(int, bbox)
-        bounding_box = [x_min, y_min, x_max, y_max]
-
-        # Per-type unique ID
-        if object_name not in type_counters:
-            type_counters[object_name] = 1
-        else:
-            type_counters[object_name] += 1
-        comp_id = f"{object_name}_{type_counters[object_name]}"
-
-        connection_points = component_connections[index] if index < len(component_connections) else []
-        index += 1
-
-        circuit_info.append({
-            "id": comp_id,
-            "label": object_name,
-            "bounding_box": bounding_box,
-            "connection_points": connection_points
-        })
-
-    with open(json_path, 'w') as json_file:
-        json.dump(circuit_info, json_file, indent=4)
-
-    with open(json_path, "r") as json_file:
+    if not os.path.exists(json_path):
+        raise FileNotFoundError(f"Missing circuit_info.json at: {json_path}")
+    with open(json_path, 'r') as json_file:
         components = json.load(json_file)
 
     masked_edges = cv2.imread(os.path.join(image_output_folder, "6_circuit_cut.png"))
@@ -153,11 +122,10 @@ def generate_netlist_for_image(image_file, model, test_images_folder, output_fil
 
     overlay_and_find_nodes_with_connected_regions(masked_edges, components, test_results_path, image_file, output_files_path)
 
-def generate_all_netlists(test_images_folder, output_files_path, test_results_path, model_path):
+def generate_all_netlists(test_images_folder, output_files_path, test_results_path):
     os.makedirs(test_results_path, exist_ok=True)
-    model = YOLO(model_path)
     image_files = [f for f in os.listdir(test_images_folder) if f.lower().endswith(('.jpg', '.jpeg', '.png'))]
 
-    for image_file in image_files:
-        print(f"Generating netlist for {image_file}...")
-        generate_netlist_for_image(image_file, model, test_images_folder, output_files_path, test_results_path)
+    for image_file in image_files:    
+        generate_netlist_for_image(image_file, output_files_path, test_results_path)
+

@@ -5,6 +5,25 @@ import os
 import random
 from collections import defaultdict
 from ultralytics import YOLO
+import traceback
+import json
+
+def save_circuit_info_json(components, component_connections, output_folder):
+    circuit_info = []
+    for comp in components:
+        comp_id = comp["id"]
+        circuit_info.append({
+            "id": comp_id,
+            "label": comp["type"],
+            "bounding_box": comp["bbox"],
+            "connection_points": component_connections.get(comp_id, [])
+        })
+
+    json_path = os.path.join(output_folder, "circuit_info.json")
+    with open(json_path, 'w') as f:
+        json.dump(circuit_info, f, indent=4)
+    print(f"Saved circuit_info.json to {json_path}")
+
 
 def identify_circuit_nodes(merged_labels, components, output_folder, original_image):
     h, w = merged_labels.shape
@@ -155,11 +174,8 @@ def identify_circuit_nodes(merged_labels, components, output_folder, original_im
 
     cv2.imwrite(os.path.join(output_folder, "11_final_connection_points.png"), final_image)
 
-    # Save text data
-    with open(os.path.join(output_folder, "component_connections.txt"), 'w') as f:
-        for comp_id, points in component_connections.items():
-            line = f"{comp_id} " + ", ".join(f"({x}, {y})" for (x, y) in points)
-            f.write(line + "\n")
+    # prepare circuit_info.json for netlist generation
+    save_circuit_info_json(components, component_connections, output_folder)
 
 def process_circuit_image(image_path, model_path, output_folder, first):
     os.makedirs(output_folder, exist_ok=True)
@@ -241,5 +257,5 @@ def process_all_images(images_folder, model_path, output_folder):
             first = False
         except Exception as e:
             print(f"  Error processing {image_file}: {str(e)}")
-            import traceback
+            
             traceback.print_exc()
