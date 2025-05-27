@@ -33,4 +33,4 @@ if __name__ == '__main__':
     process_all_images(test_images_folder, latest_train_path, output_files_path)
 
     # Step 2: Generate netlists from connection points
-    generate_all_netlists(test_images_folder, output_files_path, test_results_path, latest_train_path)
+    generate_all_netlists(test_images_folder, output_files_path, test_results_path)
