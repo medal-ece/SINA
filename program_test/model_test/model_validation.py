@@ -128,7 +128,7 @@ def validate_detection_model(latest_model_path, validate_images_path, output_dir
                 metrics['per_class'][gt['class_id']]['false_negatives'] += 1
                 metrics['overall']['false_negatives'] += 1
 
-        output_path_img = os.path.join(output_dir, f"result_{img_filename}")
+        output_path_img = os.path.join(output_dir, img_filename)
         cv2.imwrite(output_path_img, img)
 
     mAP, per_class_AP = calculate_map(all_detections, model.names)
