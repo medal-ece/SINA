@@ -574,494 +574,477 @@
 
 
 
+# # Version one with compoennts patters
 
+# import cv2
+# import os
+# import traceback
+# import numpy as np
+# import re
+# from PIL import Image
+# import easyocr
+# import pytesseract
 
-import cv2
-import os
-import traceback
-import numpy as np
-import re
-from PIL import Image
-import easyocr
-import pytesseract
+# # Set matplotlib to use non-interactive backend before importing pyplot
+# import matplotlib
+# matplotlib.use('Agg')  # Use non-GUI backend
+# import matplotlib.pyplot as plt
+# import matplotlib.patches as patches
 
-# Set matplotlib to use non-interactive backend before importing pyplot
-import matplotlib
-matplotlib.use('Agg')  # Use non-GUI backend
-import matplotlib.pyplot as plt
-import matplotlib.patches as patches
+# try:
+#     from paddleocr import PaddleOCR
+#     PADDLE_AVAILABLE = True
+# except ImportError:
+#     PADDLE_AVAILABLE = False
+#     print("PaddleOCR not available, will use EasyOCR + Tesseract")
 
-try:
-    from paddleocr import PaddleOCR
-    PADDLE_AVAILABLE = True
-except ImportError:
-    PADDLE_AVAILABLE = False
-    print("PaddleOCR not available, will use EasyOCR + Tesseract")
+# class CircuitOCR:
+#     def __init__(self, use_gpu=True):
+#         """Initialize OCR engines"""
+#         print("Initializing OCR engines...")
+        
+#         # Initialize EasyOCR (this works with your current setup)
+#         self.easy_reader = easyocr.Reader(['en'], gpu=use_gpu)
+        
+#         # Initialize PaddleOCR only if available
+#         if PADDLE_AVAILABLE:
+#             self.paddle_ocr = PaddleOCR(use_angle_cls=True, lang='en', use_gpu=use_gpu)
+#         else:
+#             self.paddle_ocr = None
+        
+#         # Enhanced component patterns
+#         self.component_patterns = [
+#             r'\b[RLC]\d+[A-Z]?\b',      # R1, R2, L1, C1, R1A, R1B
+#             r'\b[UV]\d+[A-Z]?\b',        # U1, U2, V1, V2
+#             r'\bQ\d+[A-Z]?\b',           # Q1, Q2 (transistors)
+#             r'\bD\d+[A-Z]?\b',           # D1, D2 (diodes)
+#             r'\b[JK]\d+[A-Z]?\b',        # J1, J2, K1, K2
+#             r'\bTP\d+\b',                # TP1, TP2 (test points)
+#             r'\bX\d+[A-Z]?\b',           # X1, X2 (crystals)
+#             r'\bT\d+[A-Z]?\b',           # T1, T2 (transformers)
+#             r'\bF\d+[A-Z]?\b',           # F1, F2 (fuses)
+#             r'\bSW\d+\b',                # SW1, SW2 (switches)
+#             r'\bM\d+[A-Z]?\b',           # M1, M2 (MOSFETs)
+#             r'\bY\d+\b',                 # Y1, Y2 (crystals/oscillators)
+#             r'\bP\d+\b',                 # P1, P2 (connectors/ports)
+#             r'\bCR\d+\b',                # CR1, CR2 (diodes, alternative)
+#             r'\bLED\d+\b',               # LED1, LED2
+#             r'\bBT\d+\b',                # BT1, BT2 (batteries)
+#             r'\bRV\d+\b',                # RV1, RV2 (variable resistors)
+#             r'\bIC\d+\b',                # IC1, IC2 (integrated circuits)
+#             r'\bZD\d+\b',                # ZD1, ZD2 (zener diodes)
+#             r'\bRN\d+\b',                # RN1, RN2 (resistor networks)
+#             r'\bCN\d+\b',                # CN1, CN2 (connectors)
+#             r'\bFL\d+\b',                # FL1, FL2 (filters)
+#             r'\bE\d+\b',                 # E1, E2 (test points)
+#             r'\bG\d+\b',                 # G1, G2 (generators)
+#             r'\bH\d+\b',                 # H1, H2 (holes/hardware)
+#             r'\bPS\d+\b',                # PS1, PS2 (power supplies)
+#             r'\bS\d+\b',                 # S1, S2 (switches alternative)
+#         ]
+        
+#         self.combined_pattern = '|'.join(self.component_patterns)
+        
+#         # Common OCR misreads
+#         self.ocr_corrections = {
+#             'O': '0', 'I': '1', 'S': '5', 'Z': '2', 'B': '8',
+#             'G': '6', 'l': '1', 'o': '0', 'i': '1', 's': '5'
+#         }
 
-class CircuitOCR:
-    def __init__(self, use_gpu=True):
-        """Initialize OCR engines"""
-        print("Initializing OCR engines...")
+#     def advanced_preprocessing(self, image):
+#         """Create multiple preprocessing versions optimized for OCR"""
+#         versions = {}
         
-        # Initialize EasyOCR (this works with your current setup)
-        self.easy_reader = easyocr.Reader(['en'], gpu=use_gpu)
+#         # Original
+#         versions['original'] = image.copy()
         
-        # Initialize PaddleOCR only if available
-        if PADDLE_AVAILABLE:
-            self.paddle_ocr = PaddleOCR(use_angle_cls=True, lang='en', use_gpu=use_gpu)
-        else:
-            self.paddle_ocr = None
+#         # Grayscale
+#         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+#         versions['gray'] = gray
         
-        # Enhanced component patterns
-        self.component_patterns = [
-            r'\b[RLC]\d+[A-Z]?\b',      # R1, R2, L1, C1, R1A, R1B
-            r'\b[UV]\d+[A-Z]?\b',        # U1, U2, V1, V2
-            r'\bQ\d+[A-Z]?\b',           # Q1, Q2 (transistors)
-            r'\bD\d+[A-Z]?\b',           # D1, D2 (diodes)
-            r'\b[JK]\d+[A-Z]?\b',        # J1, J2, K1, K2
-            r'\bTP\d+\b',                # TP1, TP2 (test points)
-            r'\bX\d+[A-Z]?\b',           # X1, X2 (crystals)
-            r'\bT\d+[A-Z]?\b',           # T1, T2 (transformers)
-            r'\bF\d+[A-Z]?\b',           # F1, F2 (fuses)
-            r'\bSW\d+\b',                # SW1, SW2 (switches)
-            r'\bM\d+[A-Z]?\b',           # M1, M2 (MOSFETs)
-            r'\bY\d+\b',                 # Y1, Y2 (crystals/oscillators)
-            r'\bP\d+\b',                 # P1, P2 (connectors/ports)
-            r'\bCR\d+\b',                # CR1, CR2 (diodes, alternative)
-            r'\bLED\d+\b',               # LED1, LED2
-            r'\bBT\d+\b',                # BT1, BT2 (batteries)
-            r'\bRV\d+\b',                # RV1, RV2 (variable resistors)
-            r'\bIC\d+\b',                # IC1, IC2 (integrated circuits)
-            r'\bZD\d+\b',                # ZD1, ZD2 (zener diodes)
-            r'\bRN\d+\b',                # RN1, RN2 (resistor networks)
-            r'\bCN\d+\b',                # CN1, CN2 (connectors)
-            r'\bFL\d+\b',                # FL1, FL2 (filters)
-            r'\bE\d+\b',                 # E1, E2 (test points)
-            r'\bG\d+\b',                 # G1, G2 (generators)
-            r'\bH\d+\b',                 # H1, H2 (holes/hardware)
-            r'\bPS\d+\b',                # PS1, PS2 (power supplies)
-            r'\bS\d+\b',                 # S1, S2 (switches alternative)
-        ]
+#         # High contrast binary (Otsu's method)
+#         _, binary = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+#         versions['binary_otsu'] = binary
         
-        self.combined_pattern = '|'.join(self.component_patterns)
+#         # Adaptive threshold (good for varying lighting)
+#         adaptive = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+#                                        cv2.THRESH_BINARY, 21, 10)
+#         versions['adaptive'] = adaptive
         
-        # Common OCR misreads
-        self.ocr_corrections = {
-            'O': '0', 'I': '1', 'S': '5', 'Z': '2', 'B': '8',
-            'G': '6', 'l': '1', 'o': '0', 'i': '1', 's': '5'
-        }
+#         # Inverted versions (for white text on dark background)
+#         versions['inverted_gray'] = cv2.bitwise_not(gray)
+#         versions['inverted_binary'] = cv2.bitwise_not(binary)
+#         versions['inverted_adaptive'] = cv2.bitwise_not(adaptive)
+        
+#         # Enhanced contrast using CLAHE
+#         clahe = cv2.createCLAHE(clipLimit=3.0, tileGridSize=(8,8))
+#         enhanced = clahe.apply(gray)
+#         versions['enhanced_contrast'] = enhanced
+        
+#         # Denoised version
+#         denoised = cv2.fastNlMeansDenoising(gray, None, 20, 7, 21)
+#         versions['denoised'] = denoised
+        
+#         # Edge-preserved smoothing
+#         bilateral = cv2.bilateralFilter(gray, 9, 75, 75)
+#         versions['bilateral'] = bilateral
+        
+#         # Morphological operations to clean text
+#         kernel_close = cv2.getStructuringElement(cv2.MORPH_RECT, (3,3))
+#         morph_close = cv2.morphologyEx(binary, cv2.MORPH_CLOSE, kernel_close)
+#         versions['morph_close'] = morph_close
+        
+#         # Dilated version (makes text thicker)
+#         kernel_dilate = cv2.getStructuringElement(cv2.MORPH_RECT, (2,2))
+#         dilated = cv2.dilate(binary, kernel_dilate, iterations=1)
+#         versions['dilated'] = dilated
+        
+#         # Super resolution attempt (resize)
+#         height, width = gray.shape
+#         if width < 2000:
+#             scale = 2000 / width
+#             new_width = int(width * scale)
+#             new_height = int(height * scale)
+#             resized = cv2.resize(gray, (new_width, new_height), interpolation=cv2.INTER_CUBIC)
+#             versions['upscaled'] = resized
+        
+#         return versions
 
-    def advanced_preprocessing(self, image):
-        """Create multiple preprocessing versions optimized for OCR"""
-        versions = {}
-        
-        # Original
-        versions['original'] = image.copy()
-        
-        # Grayscale
-        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-        versions['gray'] = gray
-        
-        # High contrast binary (Otsu's method)
-        _, binary = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
-        versions['binary_otsu'] = binary
-        
-        # Adaptive threshold (good for varying lighting)
-        adaptive = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
-                                       cv2.THRESH_BINARY, 21, 10)
-        versions['adaptive'] = adaptive
-        
-        # Inverted versions (for white text on dark background)
-        versions['inverted_gray'] = cv2.bitwise_not(gray)
-        versions['inverted_binary'] = cv2.bitwise_not(binary)
-        versions['inverted_adaptive'] = cv2.bitwise_not(adaptive)
-        
-        # Enhanced contrast using CLAHE
-        clahe = cv2.createCLAHE(clipLimit=3.0, tileGridSize=(8,8))
-        enhanced = clahe.apply(gray)
-        versions['enhanced_contrast'] = enhanced
-        
-        # Denoised version
-        denoised = cv2.fastNlMeansDenoising(gray, None, 20, 7, 21)
-        versions['denoised'] = denoised
-        
-        # Edge-preserved smoothing
-        bilateral = cv2.bilateralFilter(gray, 9, 75, 75)
-        versions['bilateral'] = bilateral
-        
-        # Morphological operations to clean text
-        kernel_close = cv2.getStructuringElement(cv2.MORPH_RECT, (3,3))
-        morph_close = cv2.morphologyEx(binary, cv2.MORPH_CLOSE, kernel_close)
-        versions['morph_close'] = morph_close
-        
-        # Dilated version (makes text thicker)
-        kernel_dilate = cv2.getStructuringElement(cv2.MORPH_RECT, (2,2))
-        dilated = cv2.dilate(binary, kernel_dilate, iterations=1)
-        versions['dilated'] = dilated
-        
-        # Super resolution attempt (resize)
-        height, width = gray.shape
-        if width < 2000:
-            scale = 2000 / width
-            new_width = int(width * scale)
-            new_height = int(height * scale)
-            resized = cv2.resize(gray, (new_width, new_height), interpolation=cv2.INTER_CUBIC)
-            versions['upscaled'] = resized
-        
-        return versions
-
-    def extract_text_with_easyocr(self, image, detail=1, width_ths=0.7, height_ths=0.7):
-        """Extract text using EasyOCR with configurable parameters"""
-        try:
-            # Run EasyOCR with specific settings
-            results = self.easy_reader.readtext(
-                image, 
-                detail=detail,
-                width_ths=width_ths,
-                height_ths=height_ths,
-                paragraph=False,
-                text_threshold=0.3,
-                low_text=0.3,
-                mag_ratio=1.5
-            )
+#     def extract_text_with_easyocr(self, image, detail=1, width_ths=0.7, height_ths=0.7):
+#         """Extract text using EasyOCR with configurable parameters"""
+#         try:
+#             # Run EasyOCR with specific settings
+#             results = self.easy_reader.readtext(
+#                 image, 
+#                 detail=detail,
+#                 width_ths=width_ths,
+#                 height_ths=height_ths,
+#                 paragraph=False,
+#                 text_threshold=0.3,
+#                 low_text=0.3,
+#                 mag_ratio=1.5
+#             )
             
-            if detail == 1:
-                texts = [result[1].upper() for result in results if result[2] > 0.2]
-            else:
-                texts = [text.upper() for text in results]
+#             if detail == 1:
+#                 texts = [result[1].upper() for result in results if result[2] > 0.2]
+#             else:
+#                 texts = [text.upper() for text in results]
             
-            return texts
-        except Exception as e:
-            print(f"    EasyOCR error: {e}")
-            return []
+#             return texts
+#         except Exception as e:
+#             print(f"    EasyOCR error: {e}")
+#             return []
 
-    def extract_text_with_tesseract(self, image):
-        """Extract text using Tesseract with multiple configurations"""
-        texts = []
+#     def extract_text_with_tesseract(self, image):
+#         """Extract text using Tesseract with multiple configurations"""
+#         texts = []
         
-        # Different Tesseract configurations for circuit diagrams
-        configs = [
-            r'--psm 11 -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',  # Only alphanumeric
-            r'--psm 8',   # Single word
-            r'--psm 11',  # Sparse text
-            r'--psm 12',  # Sparse text with OSD
-            r'--psm 13',  # Raw line
-            r'--psm 6',   # Uniform block
-        ]
+#         # Different Tesseract configurations for circuit diagrams
+#         configs = [
+#             r'--psm 11 -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',  # Only alphanumeric
+#             r'--psm 8',   # Single word
+#             r'--psm 11',  # Sparse text
+#             r'--psm 12',  # Sparse text with OSD
+#             r'--psm 13',  # Raw line
+#             r'--psm 6',   # Uniform block
+#         ]
         
-        for config in configs:
-            try:
-                text = pytesseract.image_to_string(image, config=config)
-                if text.strip():
-                    texts.append(text.upper())
-            except:
-                pass
+#         for config in configs:
+#             try:
+#                 text = pytesseract.image_to_string(image, config=config)
+#                 if text.strip():
+#                     texts.append(text.upper())
+#             except:
+#                 pass
         
-        # Also try getting individual words with bounding boxes
-        try:
-            data = pytesseract.image_to_data(image, output_type=pytesseract.Output.DICT)
-            for i, word in enumerate(data['text']):
-                if word.strip():
-                    texts.append(word.upper())
-        except:
-            pass
+#         # Also try getting individual words with bounding boxes
+#         try:
+#             data = pytesseract.image_to_data(image, output_type=pytesseract.Output.DICT)
+#             for i, word in enumerate(data['text']):
+#                 if word.strip():
+#                     texts.append(word.upper())
+#         except:
+#             pass
         
-        return texts
+#         return texts
 
-    def extract_text_with_paddle(self, image):
-        """Extract text using PaddleOCR if available"""
-        if not self.paddle_ocr:
-            return []
+#     def extract_text_with_paddle(self, image):
+#         """Extract text using PaddleOCR if available"""
+#         if not self.paddle_ocr:
+#             return []
         
-        try:
-            result = self.paddle_ocr.ocr(image, cls=True)
-            texts = []
-            if result and result[0]:
-                for line in result[0]:
-                    if line[1][1] > 0.3:  # Confidence threshold
-                        texts.append(line[1][0].upper())
-            return texts
-        except Exception as e:
-            print(f"    PaddleOCR error: {e}")
-            return []
+#         try:
+#             result = self.paddle_ocr.ocr(image, cls=True)
+#             texts = []
+#             if result and result[0]:
+#                 for line in result[0]:
+#                     if line[1][1] > 0.3:  # Confidence threshold
+#                         texts.append(line[1][0].upper())
+#             return texts
+#         except Exception as e:
+#             print(f"    PaddleOCR error: {e}")
+#             return []
 
-    def correct_ocr_errors(self, text):
-        """Correct common OCR misreads"""
-        corrected = text
-        for wrong, right in self.ocr_corrections.items():
-            corrected = corrected.replace(wrong, right)
-        return corrected
+#     def correct_ocr_errors(self, text):
+#         """Correct common OCR misreads"""
+#         corrected = text
+#         for wrong, right in self.ocr_corrections.items():
+#             corrected = corrected.replace(wrong, right)
+#         return corrected
 
-    def extract_components_from_texts(self, texts):
-        """Extract valid component labels from OCR text results"""
-        all_text = ' '.join(texts)
+#     def extract_components_from_texts(self, texts):
+#         """Extract valid component labels from OCR text results"""
+#         all_text = ' '.join(texts)
         
-        # Also create version without spaces
-        no_space_text = ''.join(texts).replace(' ', '')
+#         # Also create version without spaces
+#         no_space_text = ''.join(texts).replace(' ', '')
         
-        # Combine both versions
-        combined_text = all_text + ' ' + no_space_text
+#         # Combine both versions
+#         combined_text = all_text + ' ' + no_space_text
         
-        # Apply OCR corrections
-        corrected_text = self.correct_ocr_errors(combined_text)
+#         # Apply OCR corrections
+#         corrected_text = self.correct_ocr_errors(combined_text)
         
-        # Find all matches
-        matches = re.findall(self.combined_pattern, corrected_text, re.IGNORECASE)
+#         # Find all matches
+#         matches = re.findall(self.combined_pattern, corrected_text, re.IGNORECASE)
         
-        # Clean and deduplicate
-        components = set()
-        for match in matches:
-            comp = match.upper().strip()
-            # Validate component format
-            if re.match(r'^[A-Z]{1,3}\d{1,3}[A-Z]?$', comp):
-                components.add(comp)
+#         # Clean and deduplicate
+#         components = set()
+#         for match in matches:
+#             comp = match.upper().strip()
+#             # Validate component format
+#             if re.match(r'^[A-Z]{1,3}\d{1,3}[A-Z]?$', comp):
+#                 components.add(comp)
         
-        return list(components)
+#         return list(components)
 
-    def process_image(self, image_path):
-        """Main processing function"""
-        # Read image
-        image = cv2.imread(image_path)
+#     def process_image(self, image_path):
+#         """Main processing function"""
+#         # Read image
+#         image = cv2.imread(image_path)
         
-        # Get all preprocessing versions
-        versions = self.advanced_preprocessing(image)
+#         # Get all preprocessing versions
+#         versions = self.advanced_preprocessing(image)
         
-        all_components = set()
+#         all_components = set()
         
-        print("  Processing with multiple OCR engines and preprocessing...")
+#         print("  Processing with multiple OCR engines and preprocessing...")
         
-        # Process each version
-        for version_name, processed_img in versions.items():
-            # Convert grayscale to BGR for EasyOCR if needed
-            if len(processed_img.shape) == 2:
-                img_for_ocr = cv2.cvtColor(processed_img, cv2.COLOR_GRAY2BGR)
-            else:
-                img_for_ocr = processed_img
+#         # Process each version
+#         for version_name, processed_img in versions.items():
+#             # Convert grayscale to BGR for EasyOCR if needed
+#             if len(processed_img.shape) == 2:
+#                 img_for_ocr = cv2.cvtColor(processed_img, cv2.COLOR_GRAY2BGR)
+#             else:
+#                 img_for_ocr = processed_img
             
-            # EasyOCR
-            texts = self.extract_text_with_easyocr(img_for_ocr)
-            components = self.extract_components_from_texts(texts)
-            if components:
-                all_components.update(components)
+#             # EasyOCR
+#             texts = self.extract_text_with_easyocr(img_for_ocr)
+#             components = self.extract_components_from_texts(texts)
+#             if components:
+#                 all_components.update(components)
             
-            # EasyOCR with different parameters
-            texts = self.extract_text_with_easyocr(img_for_ocr, width_ths=0.5, height_ths=0.5)
-            components = self.extract_components_from_texts(texts)
-            if components:
-                all_components.update(components)
+#             # EasyOCR with different parameters
+#             texts = self.extract_text_with_easyocr(img_for_ocr, width_ths=0.5, height_ths=0.5)
+#             components = self.extract_components_from_texts(texts)
+#             if components:
+#                 all_components.update(components)
             
-            # Tesseract
-            texts = self.extract_text_with_tesseract(processed_img)
-            components = self.extract_components_from_texts(texts)
-            if components:
-                all_components.update(components)
+#             # Tesseract
+#             texts = self.extract_text_with_tesseract(processed_img)
+#             components = self.extract_components_from_texts(texts)
+#             if components:
+#                 all_components.update(components)
             
-            # PaddleOCR if available
-            if PADDLE_AVAILABLE:
-                texts = self.extract_text_with_paddle(img_for_ocr)
-                components = self.extract_components_from_texts(texts)
-                if components:
-                    all_components.update(components)
+#             # PaddleOCR if available
+#             if PADDLE_AVAILABLE:
+#                 texts = self.extract_text_with_paddle(img_for_ocr)
+#                 components = self.extract_components_from_texts(texts)
+#                 if components:
+#                     all_components.update(components)
         
-        # Try cropping and processing regions
-        height, width = image.shape[:2]
-        # Process in quadrants
-        quadrants = [
-            (0, 0, width//2, height//2),
-            (width//2, 0, width, height//2),
-            (0, height//2, width//2, height),
-            (width//2, height//2, width, height)
-        ]
+#         # Try cropping and processing regions
+#         height, width = image.shape[:2]
+#         # Process in quadrants
+#         quadrants = [
+#             (0, 0, width//2, height//2),
+#             (width//2, 0, width, height//2),
+#             (0, height//2, width//2, height),
+#             (width//2, height//2, width, height)
+#         ]
         
-        for x1, y1, x2, y2 in quadrants:
-            cropped = image[y1:y2, x1:x2]
-            texts = self.extract_text_with_easyocr(cropped)
-            components = self.extract_components_from_texts(texts)
-            all_components.update(components)
+#         for x1, y1, x2, y2 in quadrants:
+#             cropped = image[y1:y2, x1:x2]
+#             texts = self.extract_text_with_easyocr(cropped)
+#             components = self.extract_components_from_texts(texts)
+#             all_components.update(components)
         
-        return list(all_components), versions
+#         return list(all_components), versions
 
-    def visualize_results(self, image, components, output_path):
-        """Create visualization of detected components"""
-        try:
-            # Set matplotlib to use non-interactive backend
-            import matplotlib
-            matplotlib.use('Agg')  # Use non-GUI backend
-            import matplotlib.pyplot as plt
-            import matplotlib.patches as patches
+#     def visualize_results(self, image, components, output_path):
+#         """Create visualization of detected components"""
+#         try:
+#             # Set matplotlib to use non-interactive backend
+#             import matplotlib
+#             matplotlib.use('Agg')  # Use non-GUI backend
+#             import matplotlib.pyplot as plt
+#             import matplotlib.patches as patches
             
-            # Run EasyOCR to get bounding boxes
-            results = self.easy_reader.readtext(image, detail=1)
+#             # Run EasyOCR to get bounding boxes
+#             results = self.easy_reader.readtext(image, detail=1)
             
-            fig, ax = plt.subplots(1, figsize=(15, 10))
-            ax.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
+#             fig, ax = plt.subplots(1, figsize=(15, 10))
+#             ax.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
             
-            # Draw bounding boxes for detected components
-            found_count = 0
-            for (bbox, text, prob) in results:
-                text_upper = text.upper()
-                # Check if this text matches any component
-                for comp in components:
-                    if comp in text_upper or text_upper in comp:
-                        # Draw bounding box
-                        points = bbox
-                        rect = patches.Polygon(points, fill=False, edgecolor='lime', linewidth=3)
-                        ax.add_patch(rect)
+#             # Draw bounding boxes for detected components
+#             found_count = 0
+#             for (bbox, text, prob) in results:
+#                 text_upper = text.upper()
+#                 # Check if this text matches any component
+#                 for comp in components:
+#                     if comp in text_upper or text_upper in comp:
+#                         # Draw bounding box
+#                         points = bbox
+#                         rect = patches.Polygon(points, fill=False, edgecolor='lime', linewidth=3)
+#                         ax.add_patch(rect)
                         
-                        # Add label
-                        ax.text(points[0][0], points[0][1]-5, comp, 
-                               bbox=dict(boxstyle="round,pad=0.3", facecolor="yellow", alpha=0.8),
-                               fontsize=10, fontweight='bold')
-                        found_count += 1
-                        break
+#                         # Add label
+#                         ax.text(points[0][0], points[0][1]-5, comp, 
+#                                bbox=dict(boxstyle="round,pad=0.3", facecolor="yellow", alpha=0.8),
+#                                fontsize=10, fontweight='bold')
+#                         found_count += 1
+#                         break
             
-            ax.set_title(f'Circuit OCR Results - Found {len(components)} unique components ({found_count} visualized)', 
-                        fontsize=16, fontweight='bold')
-            ax.axis('off')
-            plt.tight_layout()
-            plt.savefig(output_path, dpi=200, bbox_inches='tight')
-            plt.close()
-        except Exception as e:
-            print(f"    Warning: Could not create visualization: {e}")
-            # Create a simple text visualization instead
-            with open(output_path.replace('.png', '_visualization.txt'), 'w') as f:
-                f.write(f"Found {len(components)} components:\n")
-                f.write('\n'.join(components))
+#             ax.set_title(f'Circuit OCR Results - Found {len(components)} unique components ({found_count} visualized)', 
+#                         fontsize=16, fontweight='bold')
+#             ax.axis('off')
+#             plt.tight_layout()
+#             plt.savefig(output_path, dpi=200, bbox_inches='tight')
+#             plt.close()
+#         except Exception as e:
+#             print(f"    Warning: Could not create visualization: {e}")
+#             # Create a simple text visualization instead
+#             with open(output_path.replace('.png', '_visualization.txt'), 'w') as f:
+#                 f.write(f"Found {len(components)} components:\n")
+#                 f.write('\n'.join(components))
 
-def process_circuit_image(image_path, output_folder, ocr_engine):
-    """Process a single circuit image"""
-    os.makedirs(output_folder, exist_ok=True)
+# def process_circuit_image(image_path, output_folder, ocr_engine):
+#     """Process a single circuit image"""
+#     os.makedirs(output_folder, exist_ok=True)
     
-    # Save original
-    image = cv2.imread(image_path)
-    cv2.imwrite(os.path.join(output_folder, "1_original.png"), image)
+#     # Save original
+#     image = cv2.imread(image_path)
+#     cv2.imwrite(os.path.join(output_folder, "1_original.png"), image)
     
-    # Extract components
-    components, versions = ocr_engine.process_image(image_path)
+#     # Extract components
+#     components, versions = ocr_engine.process_image(image_path)
     
-    # Save some preprocessing versions for debugging
-    for i, (name, img) in enumerate(list(versions.items())[:4]):
-        cv2.imwrite(os.path.join(output_folder, f"2_preprocess_{name}.png"), img)
+#     # Save some preprocessing versions for debugging
+#     for i, (name, img) in enumerate(list(versions.items())[:4]):
+#         cv2.imwrite(os.path.join(output_folder, f"2_preprocess_{name}.png"), img)
     
-    # Sort components
-    def sort_key(comp):
-        match = re.match(r'([A-Z]+)(\d+)([A-Z]?)', comp)
-        if match:
-            prefix, number, suffix = match.groups()
-            return (prefix, int(number), suffix or '')
-        return (comp, 0, '')
+#     # Sort components
+#     def sort_key(comp):
+#         match = re.match(r'([A-Z]+)(\d+)([A-Z]?)', comp)
+#         if match:
+#             prefix, number, suffix = match.groups()
+#             return (prefix, int(number), suffix or '')
+#         return (comp, 0, '')
     
-    components.sort(key=sort_key)
+#     components.sort(key=sort_key)
     
-    # Visualize
-    if components:
-        ocr_engine.visualize_results(image, components, 
-                                   os.path.join(output_folder, "3_detected_components.png"))
+#     # Visualize
+#     if components:
+#         ocr_engine.visualize_results(image, components, 
+#                                    os.path.join(output_folder, "3_detected_components.png"))
     
-    # Save results
-    with open(os.path.join(output_folder, "components.txt"), 'w') as f:
-        if components:
-            f.write('\n'.join(components))
-            print(f"  Found {len(components)} components: {', '.join(components[:15])}{'...' if len(components) > 15 else ''}")
-        else:
-            f.write("No components detected")
-            print("  No components detected")
+#     # Save results
+#     with open(os.path.join(output_folder, "components.txt"), 'w') as f:
+#         if components:
+#             f.write('\n'.join(components))
+#             print(f"  Found {len(components)} components: {', '.join(components[:15])}{'...' if len(components) > 15 else ''}")
+#         else:
+#             f.write("No components detected")
+#             print("  No components detected")
     
-    # Save detailed summary
-    with open(os.path.join(output_folder, "summary.txt"), 'w') as f:
-        f.write(f"Image: {os.path.basename(image_path)}\n")
-        f.write(f"Total components found: {len(components)}\n\n")
+#     # Save detailed summary
+#     with open(os.path.join(output_folder, "summary.txt"), 'w') as f:
+#         f.write(f"Image: {os.path.basename(image_path)}\n")
+#         f.write(f"Total components found: {len(components)}\n\n")
         
-        # Group by type
-        component_types = {}
-        for comp in components:
-            comp_type = re.match(r'([A-Z]+)', comp).group(1)
-            if comp_type not in component_types:
-                component_types[comp_type] = []
-            component_types[comp_type].append(comp)
+#         # Group by type
+#         component_types = {}
+#         for comp in components:
+#             comp_type = re.match(r'([A-Z]+)', comp).group(1)
+#             if comp_type not in component_types:
+#                 component_types[comp_type] = []
+#             component_types[comp_type].append(comp)
         
-        for comp_type, comps in sorted(component_types.items()):
-            f.write(f"{comp_type} ({len(comps)}): {', '.join(comps)}\n")
+#         for comp_type, comps in sorted(component_types.items()):
+#             f.write(f"{comp_type} ({len(comps)}): {', '.join(comps)}\n")
     
-    return components
+#     return components
 
-def process_all_images(images_folder, output_folder, use_gpu=True):
-    """Process all images in folder"""
-    os.makedirs(output_folder, exist_ok=True)
+# def process_all_images(images_folder, output_folder, use_gpu=True):
+#     """Process all images in folder"""
+#     os.makedirs(output_folder, exist_ok=True)
     
-    # Initialize OCR engine
-    ocr_engine = CircuitOCR(use_gpu=use_gpu)
+#     # Initialize OCR engine
+#     ocr_engine = CircuitOCR(use_gpu=use_gpu)
     
-    # Get image files
-    image_files = [f for f in os.listdir(images_folder)
-                   if f.lower().endswith(('.jpg', '.jpeg', '.png', '.bmp', '.tiff', '.tif'))]
+#     # Get image files
+#     image_files = [f for f in os.listdir(images_folder)
+#                    if f.lower().endswith(('.jpg', '.jpeg', '.png', '.bmp', '.tiff', '.tif'))]
     
-    if not image_files:
-        print(f"No image files found in {images_folder}")
-        return
+#     if not image_files:
+#         print(f"No image files found in {images_folder}")
+#         return
     
-    all_components = []
-    components_per_image = {}
+#     all_components = []
+#     components_per_image = {}
     
-    for image_file in image_files:
-        print(f"\nProcessing {image_file}...")
+#     for image_file in image_files:
+#         print(f"\nProcessing {image_file}...")
         
-        image_path = os.path.join(images_folder, image_file)
-        image_output_folder = os.path.join(output_folder, os.path.splitext(image_file)[0])
+#         image_path = os.path.join(images_folder, image_file)
+#         image_output_folder = os.path.join(output_folder, os.path.splitext(image_file)[0])
         
-        try:
-            components = process_circuit_image(image_path, image_output_folder, ocr_engine)
-            all_components.extend(components)
-            components_per_image[image_file] = components
-        except Exception as e:
-            print(f"  Error: {str(e)}")
-            traceback.print_exc()
-            components_per_image[image_file] = []
+#         try:
+#             components = process_circuit_image(image_path, image_output_folder, ocr_engine)
+#             all_components.extend(components)
+#             components_per_image[image_file] = components
+#         except Exception as e:
+#             print(f"  Error: {str(e)}")
+#             traceback.print_exc()
+#             components_per_image[image_file] = []
     
-    # Summary
-    print("\n" + "="*60)
-    print("OVERALL SUMMARY")
-    print("="*60)
+#     # Summary
+#     print("\n" + "="*60)
+#     print("OVERALL SUMMARY")
+#     print("="*60)
     
-    unique_components = list(dict.fromkeys(all_components))
-    print(f"Total components found: {len(all_components)}")
-    print(f"Total unique components: {len(unique_components)}")
-    print(f"Images processed: {len(image_files)}")
+#     unique_components = list(dict.fromkeys(all_components))
+#     print(f"Total components found: {len(all_components)}")
+#     print(f"Total unique components: {len(unique_components)}")
+#     print(f"Images processed: {len(image_files)}")
     
-    # Save overall summary
-    with open(os.path.join(output_folder, "overall_summary.txt"), 'w') as f:
-        f.write("Circuit Schematic OCR Results\n")
-        f.write("="*40 + "\n\n")
-        f.write(f"OCR Engines used: EasyOCR, Tesseract{', PaddleOCR' if PADDLE_AVAILABLE else ''}\n")
-        f.write(f"Total images processed: {len(image_files)}\n")
-        f.write(f"Total components found: {len(all_components)}\n")
-        f.write(f"Total unique components: {len(unique_components)}\n\n")
+#     # Save overall summary
+#     with open(os.path.join(output_folder, "overall_summary.txt"), 'w') as f:
+#         f.write("Circuit Schematic OCR Results\n")
+#         f.write("="*40 + "\n\n")
+#         f.write(f"OCR Engines used: EasyOCR, Tesseract{', PaddleOCR' if PADDLE_AVAILABLE else ''}\n")
+#         f.write(f"Total images processed: {len(image_files)}\n")
+#         f.write(f"Total components found: {len(all_components)}\n")
+#         f.write(f"Total unique components: {len(unique_components)}\n\n")
         
-        f.write("Components per image:\n")
-        f.write("-"*40 + "\n")
-        for img, comps in components_per_image.items():
-            f.write(f"{img}: {len(comps)} components\n")
+#         f.write("Components per image:\n")
+#         f.write("-"*40 + "\n")
+#         for img, comps in components_per_image.items():
+#             f.write(f"{img}: {len(comps)} components\n")
         
-        f.write("\n" + "-"*40 + "\n")
-        f.write("All unique components (sorted):\n")
-        f.write('\n'.join(sorted(unique_components)))
+#         f.write("\n" + "-"*40 + "\n")
+#         f.write("All unique components (sorted):\n")
+#         f.write('\n'.join(sorted(unique_components)))
 
-if __name__ == "__main__":
-    # Configuration
-    images_folder = "circuit_images"
-    output_folder = "outputs"
-    use_gpu = True  # Set to False if no GPU
-    
-    print("High-Accuracy Circuit Schematic OCR")
-    print("="*60)
-    print(f"Using: EasyOCR + Tesseract{' + PaddleOCR' if PADDLE_AVAILABLE else ''}")
-    print(f"GPU: {'Enabled' if use_gpu else 'Disabled'}")
-    print("="*60)
-    
-    if os.path.exists(images_folder):
-        process_all_images(images_folder, output_folder, use_gpu)
-    else:
-        print(f"\nError: '{images_folder}' folder not found!")
-        print("Please create the folder and add your circuit schematic images.")
-        
-    print("\nDone! Check the 'outputs' folder for results.")
+
+
