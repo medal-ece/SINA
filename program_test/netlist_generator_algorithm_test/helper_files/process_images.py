@@ -1046,5 +1046,870 @@
 #         f.write("All unique components (sorted):\n")
 #         f.write('\n'.join(sorted(unique_components)))
 
+# version that works well but no confidence rates
+
+# import cv2
+# import os
+# import traceback
+# import numpy as np
+# import re
+# from PIL import Image
+# import easyocr
+# import pytesseract
+
+# # Set matplotlib to use non-interactive backend before importing pyplot
+# import matplotlib
+# matplotlib.use('Agg')  # Use non-GUI backend
+# import matplotlib.pyplot as plt
+# import matplotlib.patches as patches
+
+# try:
+#     from paddleocr import PaddleOCR
+#     PADDLE_AVAILABLE = True
+# except ImportError:
+#     PADDLE_AVAILABLE = False
+#     print("PaddleOCR not available, will use EasyOCR + Tesseract")
+
+# class CircuitOCR:
+#     def __init__(self, use_gpu=True):
+#         """Initialize OCR engines"""
+#         print("Initializing OCR engines...")
+        
+#         # Initialize EasyOCR (this works with your current setup)
+#         self.easy_reader = easyocr.Reader(['en'], gpu=use_gpu)
+        
+#         # Initialize PaddleOCR only if available
+#         if PADDLE_AVAILABLE:
+#             self.paddle_ocr = PaddleOCR(use_angle_cls=True, lang='en', use_gpu=use_gpu)
+#         else:
+#             self.paddle_ocr = None
+        
+#         # No filtering - capture all text
+#         self.component_patterns = []  # Empty - we'll capture everything
+#         self.combined_pattern = None  # No pattern matching
+        
+#         # Common OCR misreads
+#         self.ocr_corrections = {
+#             'O': '0', 'I': '1', 'S': '5', 'Z': '2', 'B': '8',
+#             'G': '6', 'l': '1', 'o': '0', 'i': '1', 's': '5'
+#         }
+
+#     def advanced_preprocessing(self, image):
+#         """Create multiple preprocessing versions optimized for OCR"""
+#         versions = {}
+        
+#         # Original
+#         versions['original'] = image.copy()
+        
+#         # Grayscale
+#         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+#         versions['gray'] = gray
+        
+#         # High contrast binary (Otsu's method)
+#         _, binary = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+#         versions['binary_otsu'] = binary
+        
+#         # Adaptive threshold (good for varying lighting)
+#         adaptive = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+#                                        cv2.THRESH_BINARY, 21, 10)
+#         versions['adaptive'] = adaptive
+        
+#         # Inverted versions (for white text on dark background)
+#         versions['inverted_gray'] = cv2.bitwise_not(gray)
+#         versions['inverted_binary'] = cv2.bitwise_not(binary)
+#         versions['inverted_adaptive'] = cv2.bitwise_not(adaptive)
+        
+#         # Enhanced contrast using CLAHE
+#         clahe = cv2.createCLAHE(clipLimit=3.0, tileGridSize=(8,8))
+#         enhanced = clahe.apply(gray)
+#         versions['enhanced_contrast'] = enhanced
+        
+#         # Denoised version
+#         denoised = cv2.fastNlMeansDenoising(gray, None, 20, 7, 21)
+#         versions['denoised'] = denoised
+        
+#         # Edge-preserved smoothing
+#         bilateral = cv2.bilateralFilter(gray, 9, 75, 75)
+#         versions['bilateral'] = bilateral
+        
+#         # Morphological operations to clean text
+#         kernel_close = cv2.getStructuringElement(cv2.MORPH_RECT, (3,3))
+#         morph_close = cv2.morphologyEx(binary, cv2.MORPH_CLOSE, kernel_close)
+#         versions['morph_close'] = morph_close
+        
+#         # Dilated version (makes text thicker)
+#         kernel_dilate = cv2.getStructuringElement(cv2.MORPH_RECT, (2,2))
+#         dilated = cv2.dilate(binary, kernel_dilate, iterations=1)
+#         versions['dilated'] = dilated
+        
+#         # Super resolution attempt (resize)
+#         height, width = gray.shape
+#         if width < 2000:
+#             scale = 2000 / width
+#             new_width = int(width * scale)
+#             new_height = int(height * scale)
+#             resized = cv2.resize(gray, (new_width, new_height), interpolation=cv2.INTER_CUBIC)
+#             versions['upscaled'] = resized
+        
+#         return versions
+
+#     def extract_text_with_easyocr(self, image, detail=1, width_ths=0.7, height_ths=0.7):
+#         """Extract text using EasyOCR with configurable parameters"""
+#         try:
+#             # Run EasyOCR with specific settings
+#             results = self.easy_reader.readtext(
+#                 image, 
+#                 detail=detail,
+#                 width_ths=width_ths,
+#                 height_ths=height_ths,
+#                 paragraph=False,
+#                 text_threshold=0.3,
+#                 low_text=0.3,
+#                 mag_ratio=1.5
+#             )
+            
+#             if detail == 1:
+#                 texts = [result[1].upper() for result in results if result[2] > 0.2]
+#             else:
+#                 texts = [text.upper() for text in results]
+            
+#             return texts
+#         except Exception as e:
+#             print(f"    EasyOCR error: {e}")
+#             return []
+
+#     def extract_text_with_tesseract(self, image):
+#         """Extract text using Tesseract with multiple configurations"""
+#         texts = []
+        
+#         # Different Tesseract configurations for circuit diagrams
+#         configs = [
+#             r'--psm 11 -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',  # Only alphanumeric
+#             r'--psm 8',   # Single word
+#             r'--psm 11',  # Sparse text
+#             r'--psm 12',  # Sparse text with OSD
+#             r'--psm 13',  # Raw line
+#             r'--psm 6',   # Uniform block
+#         ]
+        
+#         for config in configs:
+#             try:
+#                 text = pytesseract.image_to_string(image, config=config)
+#                 if text.strip():
+#                     texts.append(text.upper())
+#             except:
+#                 pass
+        
+#         # Also try getting individual words with bounding boxes
+#         try:
+#             data = pytesseract.image_to_data(image, output_type=pytesseract.Output.DICT)
+#             for i, word in enumerate(data['text']):
+#                 if word.strip():
+#                     texts.append(word.upper())
+#         except:
+#             pass
+        
+#         return texts
+
+#     def extract_text_with_paddle(self, image):
+#         """Extract text using PaddleOCR if available"""
+#         if not self.paddle_ocr:
+#             return []
+        
+#         try:
+#             result = self.paddle_ocr.ocr(image, cls=True)
+#             texts = []
+#             if result and result[0]:
+#                 for line in result[0]:
+#                     if line[1][1] > 0.3:  # Confidence threshold
+#                         texts.append(line[1][0].upper())
+#             return texts
+#         except Exception as e:
+#             print(f"    PaddleOCR error: {e}")
+#             return []
+
+#     def correct_ocr_errors(self, text):
+#         """Correct common OCR misreads"""
+#         corrected = text
+#         for wrong, right in self.ocr_corrections.items():
+#             corrected = corrected.replace(wrong, right)
+#         return corrected
+
+#     def extract_components_from_texts(self, texts):
+#         """Extract ALL text from OCR results (no filtering)"""
+#         # Clean and process all text
+#         all_text_items = []
+        
+#         for text in texts:
+#             # Split by common separators and clean
+#             items = re.split(r'[\s,;:\n\r\t]+', text)
+#             for item in items:
+#                 item = item.strip()
+#                 # Apply OCR corrections
+#                 corrected = self.correct_ocr_errors(item)
+#                 if corrected and len(corrected) > 0:  # Keep everything non-empty
+#                     all_text_items.append(corrected)
+        
+#         # Remove exact duplicates while preserving order
+#         seen = set()
+#         unique_items = []
+#         for item in all_text_items:
+#             if item not in seen:
+#                 seen.add(item)
+#                 unique_items.append(item)
+        
+#         return unique_items
+
+#     def process_image(self, image_path):
+#         """Main processing function"""
+#         # Read image
+#         image = cv2.imread(image_path)
+        
+#         # Get all preprocessing versions
+#         versions = self.advanced_preprocessing(image)
+        
+#         all_components = set()
+        
+#         print("  Processing with multiple OCR engines and preprocessing...")
+        
+#         # Process each version
+#         for version_name, processed_img in versions.items():
+#             # Convert grayscale to BGR for EasyOCR if needed
+#             if len(processed_img.shape) == 2:
+#                 img_for_ocr = cv2.cvtColor(processed_img, cv2.COLOR_GRAY2BGR)
+#             else:
+#                 img_for_ocr = processed_img
+            
+#             # EasyOCR
+#             texts = self.extract_text_with_easyocr(img_for_ocr)
+#             components = self.extract_components_from_texts(texts)
+#             if components:
+#                 all_components.update(components)
+            
+#             # EasyOCR with different parameters
+#             texts = self.extract_text_with_easyocr(img_for_ocr, width_ths=0.5, height_ths=0.5)
+#             components = self.extract_components_from_texts(texts)
+#             if components:
+#                 all_components.update(components)
+            
+#             # Tesseract
+#             texts = self.extract_text_with_tesseract(processed_img)
+#             components = self.extract_components_from_texts(texts)
+#             if components:
+#                 all_components.update(components)
+            
+#             # PaddleOCR if available
+#             if PADDLE_AVAILABLE:
+#                 texts = self.extract_text_with_paddle(img_for_ocr)
+#                 components = self.extract_components_from_texts(texts)
+#                 if components:
+#                     all_components.update(components)
+        
+#         # Try cropping and processing regions
+#         height, width = image.shape[:2]
+#         # Process in quadrants
+#         quadrants = [
+#             (0, 0, width//2, height//2),
+#             (width//2, 0, width, height//2),
+#             (0, height//2, width//2, height),
+#             (width//2, height//2, width, height)
+#         ]
+        
+#         for x1, y1, x2, y2 in quadrants:
+#             cropped = image[y1:y2, x1:x2]
+#             texts = self.extract_text_with_easyocr(cropped)
+#             components = self.extract_components_from_texts(texts)
+#             all_components.update(components)
+        
+#         return list(all_components), versions
+
+#     def visualize_results(self, image, all_text, output_path):
+#         """Create visualization of detected text"""
+#         try:
+#             # Set matplotlib to use non-interactive backend
+#             import matplotlib
+#             matplotlib.use('Agg')  # Use non-GUI backend
+#             import matplotlib.pyplot as plt
+#             import matplotlib.patches as patches
+            
+#             # Run EasyOCR to get bounding boxes
+#             results = self.easy_reader.readtext(image, detail=1)
+            
+#             fig, ax = plt.subplots(1, figsize=(15, 10))
+#             ax.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
+            
+#             # Draw bounding boxes for all detected text
+#             for i, (bbox, text, prob) in enumerate(results):
+#                 if prob > 0.2:  # Show all text with reasonable confidence
+#                     # Draw bounding box
+#                     points = bbox
+#                     rect = patches.Polygon(points, fill=False, edgecolor='lime', linewidth=2)
+#                     ax.add_patch(rect)
+                    
+#                     # Add label
+#                     ax.text(points[0][0], points[0][1]-5, text, 
+#                            bbox=dict(boxstyle="round,pad=0.3", facecolor="yellow", alpha=0.7),
+#                            fontsize=8)
+            
+#             ax.set_title(f'Circuit OCR Results - Found {len(all_text)} text items', 
+#                         fontsize=16, fontweight='bold')
+#             ax.axis('off')
+#             plt.tight_layout()
+#             plt.savefig(output_path, dpi=200, bbox_inches='tight')
+#             plt.close()
+#         except Exception as e:
+#             print(f"    Warning: Could not create visualization: {e}")
+#             # Create a simple text visualization instead
+#             with open(output_path.replace('.png', '_visualization.txt'), 'w') as f:
+#                 f.write(f"Found {len(all_text)} text items:\n")
+#                 f.write('\n'.join(all_text))
+
+# def process_circuit_image(image_path, output_folder, ocr_engine):
+#     """Process a single circuit image and extract ALL text"""
+#     os.makedirs(output_folder, exist_ok=True)
+    
+#     # Save original
+#     image = cv2.imread(image_path)
+#     cv2.imwrite(os.path.join(output_folder, "1_original.png"), image)
+    
+#     # Extract all text
+#     all_text, versions = ocr_engine.process_image(image_path)
+    
+#     # Save some preprocessing versions for debugging
+#     for i, (name, img) in enumerate(list(versions.items())[:4]):
+#         cv2.imwrite(os.path.join(output_folder, f"2_preprocess_{name}.png"), img)
+    
+#     # No sorting needed for general text
+    
+#     # Visualize
+#     if all_text:
+#         ocr_engine.visualize_results(image, all_text, 
+#                                    os.path.join(output_folder, "3_detected_text.png"))
+    
+#     # Save results - all extracted text
+#     with open(os.path.join(output_folder, "extracted_text.txt"), 'w', encoding='utf-8') as f:
+#         if all_text:
+#             f.write('\n'.join(all_text))
+#             print(f"  Found {len(all_text)} text items: {', '.join(all_text[:10])}{'...' if len(all_text) > 10 else ''}")
+#         else:
+#             f.write("No text detected")
+#             print("  No text detected")
+    
+#     # Save detailed summary
+#     with open(os.path.join(output_folder, "summary.txt"), 'w', encoding='utf-8') as f:
+#         f.write(f"Image: {os.path.basename(image_path)}\n")
+#         f.write(f"Total text items found: {len(all_text)}\n\n")
+#         f.write("All extracted text:\n")
+#         f.write("-" * 40 + "\n")
+#         for item in all_text:
+#             f.write(f"{item}\n")
+    
+#     return all_text
+
+# def process_all_images(images_folder, output_folder, use_gpu=True):
+#     """Process all images in folder and extract ALL text"""
+#     os.makedirs(output_folder, exist_ok=True)
+    
+#     # Initialize OCR engine
+#     ocr_engine = CircuitOCR(use_gpu=use_gpu)
+    
+#     # Get image files
+#     image_files = [f for f in os.listdir(images_folder)
+#                    if f.lower().endswith(('.jpg', '.jpeg', '.png', '.bmp', '.tiff', '.tif'))]
+    
+#     if not image_files:
+#         print(f"No image files found in {images_folder}")
+#         return
+    
+#     all_text_items = []
+#     text_per_image = {}
+    
+#     for image_file in image_files:
+#         print(f"\nProcessing {image_file}...")
+        
+#         image_path = os.path.join(images_folder, image_file)
+#         image_output_folder = os.path.join(output_folder, os.path.splitext(image_file)[0])
+        
+#         try:
+#             text_items = process_circuit_image(image_path, image_output_folder, ocr_engine)
+#             all_text_items.extend(text_items)
+#             text_per_image[image_file] = text_items
+#         except Exception as e:
+#             print(f"  Error: {str(e)}")
+#             traceback.print_exc()
+#             text_per_image[image_file] = []
+    
+#     # Summary
+#     print("\n" + "="*60)
+#     print("OVERALL SUMMARY")
+#     print("="*60)
+    
+#     unique_text_items = list(dict.fromkeys(all_text_items))
+#     print(f"Total text items found: {len(all_text_items)}")
+#     print(f"Total unique text items: {len(unique_text_items)}")
+#     print(f"Images processed: {len(image_files)}")
+    
+#     # Save overall summary
+#     with open(os.path.join(output_folder, "overall_summary.txt"), 'w', encoding='utf-8') as f:
+#         f.write("Circuit Image Text Extraction Results\n")
+#         f.write("="*40 + "\n\n")
+#         f.write(f"OCR Engines used: EasyOCR, Tesseract{', PaddleOCR' if PADDLE_AVAILABLE else ''}\n")
+#         f.write(f"Total images processed: {len(image_files)}\n")
+#         f.write(f"Total text items found: {len(all_text_items)}\n")
+#         f.write(f"Total unique text items: {len(unique_text_items)}\n\n")
+        
+#         f.write("Text items per image:\n")
+#         f.write("-"*40 + "\n")
+#         for img, items in text_per_image.items():
+#             f.write(f"{img}: {len(items)} text items\n")
+        
+#         f.write("\n" + "-"*40 + "\n")
+#         f.write("All unique text items:\n")
+#         for item in sorted(unique_text_items):
+#             f.write(f"{item}\n")
 
 
+import cv2
+import os
+import traceback
+import numpy as np
+import re
+from PIL import Image
+import easyocr
+import pytesseract
+
+# Set matplotlib to use non-interactive backend before importing pyplot
+import matplotlib
+matplotlib.use('Agg')  # Use non-GUI backend
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+
+try:
+    from paddleocr import PaddleOCR
+    PADDLE_AVAILABLE = True
+except ImportError:
+    PADDLE_AVAILABLE = False
+    print("PaddleOCR not available, will use EasyOCR + Tesseract")
+
+class CircuitOCR:
+    def __init__(self, use_gpu=True):
+        """Initialize OCR engines"""
+        print("Initializing OCR engines...")
+        
+        # Initialize EasyOCR (this works with your current setup)
+        self.easy_reader = easyocr.Reader(['en'], gpu=use_gpu)
+        
+        # Initialize PaddleOCR only if available
+        if PADDLE_AVAILABLE:
+            self.paddle_ocr = PaddleOCR(use_angle_cls=True, lang='en', use_gpu=use_gpu)
+        else:
+            self.paddle_ocr = None
+        
+        # No filtering - capture all text
+        self.component_patterns = []  # Empty - we'll capture everything
+        self.combined_pattern = None  # No pattern matching
+        
+        # Common OCR misreads
+        self.ocr_corrections = {
+            'O': '0', 'I': '1', 'S': '5', 'Z': '2', 'B': '8',
+            'G': '6', 'l': '1', 'o': '0', 'i': '1', 's': '5'
+        }
+
+    def advanced_preprocessing(self, image):
+        """Create multiple preprocessing versions optimized for OCR"""
+        versions = {}
+        
+        # Original
+        versions['original'] = image.copy()
+        
+        # Grayscale
+        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        versions['gray'] = gray
+        
+        # High contrast binary (Otsu's method)
+        _, binary = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+        versions['binary_otsu'] = binary
+        
+        # Adaptive threshold (good for varying lighting)
+        adaptive = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+                                       cv2.THRESH_BINARY, 21, 10)
+        versions['adaptive'] = adaptive
+        
+        # Inverted versions (for white text on dark background)
+        versions['inverted_gray'] = cv2.bitwise_not(gray)
+        versions['inverted_binary'] = cv2.bitwise_not(binary)
+        versions['inverted_adaptive'] = cv2.bitwise_not(adaptive)
+        
+        # Enhanced contrast using CLAHE
+        clahe = cv2.createCLAHE(clipLimit=3.0, tileGridSize=(8,8))
+        enhanced = clahe.apply(gray)
+        versions['enhanced_contrast'] = enhanced
+        
+        # Denoised version
+        denoised = cv2.fastNlMeansDenoising(gray, None, 20, 7, 21)
+        versions['denoised'] = denoised
+        
+        # Edge-preserved smoothing
+        bilateral = cv2.bilateralFilter(gray, 9, 75, 75)
+        versions['bilateral'] = bilateral
+        
+        # Morphological operations to clean text
+        kernel_close = cv2.getStructuringElement(cv2.MORPH_RECT, (3,3))
+        morph_close = cv2.morphologyEx(binary, cv2.MORPH_CLOSE, kernel_close)
+        versions['morph_close'] = morph_close
+        
+        # Dilated version (makes text thicker)
+        kernel_dilate = cv2.getStructuringElement(cv2.MORPH_RECT, (2,2))
+        dilated = cv2.dilate(binary, kernel_dilate, iterations=1)
+        versions['dilated'] = dilated
+        
+        # Super resolution attempt (resize)
+        height, width = gray.shape
+        if width < 2000:
+            scale = 2000 / width
+            new_width = int(width * scale)
+            new_height = int(height * scale)
+            resized = cv2.resize(gray, (new_width, new_height), interpolation=cv2.INTER_CUBIC)
+            versions['upscaled'] = resized
+        
+        return versions
+
+    def extract_text_with_easyocr(self, image, detail=1, width_ths=0.7, height_ths=0.7):
+        """Extract text using EasyOCR with confidence scores"""
+        try:
+            # Run EasyOCR with specific settings
+            results = self.easy_reader.readtext(
+                image, 
+                detail=detail,
+                width_ths=width_ths,
+                height_ths=height_ths,
+                paragraph=False,
+                text_threshold=0.3,
+                low_text=0.3,
+                mag_ratio=1.5
+            )
+            
+            if detail == 1:
+                # Return tuples of (text, confidence)
+                text_with_conf = [(result[1].upper(), result[2]) for result in results if result[2] > 0.2]
+            else:
+                # When detail=0, no confidence scores available
+                text_with_conf = [(text.upper(), 0.0) for text in results]
+            
+            return text_with_conf
+        except Exception as e:
+            print(f"    EasyOCR error: {e}")
+            return []
+
+    def extract_text_with_tesseract(self, image):
+        """Extract text using Tesseract with confidence scores"""
+        text_with_conf = []
+        
+        # Try getting individual words with confidence scores
+        try:
+            data = pytesseract.image_to_data(image, output_type=pytesseract.Output.DICT)
+            for i, word in enumerate(data['text']):
+                if word.strip():
+                    confidence = float(data['conf'][i])
+                    if confidence > 0:  # Tesseract uses -1 for no confidence
+                        text_with_conf.append((word.upper(), confidence / 100.0))  # Normalize to 0-1
+        except:
+            pass
+        
+        # Also try different configurations without confidence scores
+        configs = [
+            r'--psm 11 -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
+            r'--psm 8',
+            r'--psm 12',
+            r'--psm 13',
+        ]
+        
+        for config in configs:
+            try:
+                text = pytesseract.image_to_string(image, config=config)
+                if text.strip():
+                    # Split into words and assign default confidence
+                    words = text.upper().split()
+                    for word in words:
+                        if word.strip():
+                            text_with_conf.append((word, 0.5))  # Default confidence
+            except:
+                pass
+        
+        return text_with_conf
+
+    def extract_text_with_paddle(self, image):
+        """Extract text using PaddleOCR with confidence scores"""
+        if not self.paddle_ocr:
+            return []
+        
+        try:
+            result = self.paddle_ocr.ocr(image, cls=True)
+            text_with_conf = []
+            if result and result[0]:
+                for line in result[0]:
+                    if line[1][1] > 0.3:  # Confidence threshold
+                        text_with_conf.append((line[1][0].upper(), line[1][1]))
+            return text_with_conf
+        except Exception as e:
+            print(f"    PaddleOCR error: {e}")
+            return []
+
+    def correct_ocr_errors(self, text):
+        """Correct common OCR misreads"""
+        corrected = text
+        for wrong, right in self.ocr_corrections.items():
+            corrected = corrected.replace(wrong, right)
+        return corrected
+
+    def extract_components_from_texts(self, text_with_conf_list):
+        """Extract ALL text with confidence scores (no filtering)"""
+        # Combine all results
+        all_items = {}  # Use dict to track best confidence for each text
+        
+        for text, conf in text_with_conf_list:
+            # Split by common separators and clean
+            items = re.split(r'[\s,;:\n\r\t]+', text)
+            for item in items:
+                item = item.strip()
+                # Apply OCR corrections
+                corrected = self.correct_ocr_errors(item)
+                if corrected and len(corrected) > 0:
+                    # Keep the highest confidence for each unique text
+                    if corrected not in all_items or conf > all_items[corrected]:
+                        all_items[corrected] = conf
+        
+        # Convert to list of tuples sorted by confidence
+        return sorted([(text, conf) for text, conf in all_items.items()], 
+                     key=lambda x: x[1], reverse=True)
+
+    def process_image(self, image_path):
+        """Main processing function that returns text with confidence scores"""
+        # Read image
+        image = cv2.imread(image_path)
+        
+        # Get all preprocessing versions
+        versions = self.advanced_preprocessing(image)
+        
+        all_text_with_conf = []  # List of (text, confidence) tuples
+        
+        print("  Processing with multiple OCR engines and preprocessing...")
+        
+        # Process each version
+        for version_name, processed_img in versions.items():
+            # Convert grayscale to BGR for EasyOCR if needed
+            if len(processed_img.shape) == 2:
+                img_for_ocr = cv2.cvtColor(processed_img, cv2.COLOR_GRAY2BGR)
+            else:
+                img_for_ocr = processed_img
+            
+            # EasyOCR
+            text_conf_list = self.extract_text_with_easyocr(img_for_ocr)
+            all_text_with_conf.extend(text_conf_list)
+            
+            # EasyOCR with different parameters
+            text_conf_list = self.extract_text_with_easyocr(img_for_ocr, width_ths=0.5, height_ths=0.5)
+            all_text_with_conf.extend(text_conf_list)
+            
+            # Tesseract
+            text_conf_list = self.extract_text_with_tesseract(processed_img)
+            all_text_with_conf.extend(text_conf_list)
+            
+            # PaddleOCR if available
+            if PADDLE_AVAILABLE:
+                text_conf_list = self.extract_text_with_paddle(img_for_ocr)
+                all_text_with_conf.extend(text_conf_list)
+        
+        # Try cropping and processing regions
+        height, width = image.shape[:2]
+        quadrants = [
+            (0, 0, width//2, height//2),
+            (width//2, 0, width, height//2),
+            (0, height//2, width//2, height),
+            (width//2, height//2, width, height)
+        ]
+        
+        for x1, y1, x2, y2 in quadrants:
+            cropped = image[y1:y2, x1:x2]
+            text_conf_list = self.extract_text_with_easyocr(cropped)
+            all_text_with_conf.extend(text_conf_list)
+        
+        # Process and deduplicate
+        final_results = self.extract_components_from_texts(all_text_with_conf)
+        
+        return final_results, versions
+
+    def visualize_results(self, image, all_text, output_path):
+        """Create visualization of detected text"""
+        try:
+            # Set matplotlib to use non-interactive backend
+            import matplotlib
+            matplotlib.use('Agg')  # Use non-GUI backend
+            import matplotlib.pyplot as plt
+            import matplotlib.patches as patches
+            
+            # Run EasyOCR to get bounding boxes
+            results = self.easy_reader.readtext(image, detail=1)
+            
+            fig, ax = plt.subplots(1, figsize=(15, 10))
+            ax.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
+            
+            # Draw bounding boxes for all detected text
+            for i, (bbox, text, prob) in enumerate(results):
+                if prob > 0.2:  # Show all text with reasonable confidence
+                    # Draw bounding box
+                    points = bbox
+                    rect = patches.Polygon(points, fill=False, edgecolor='lime', linewidth=2)
+                    ax.add_patch(rect)
+                    
+                    # Add label
+                    ax.text(points[0][0], points[0][1]-5, text, 
+                           bbox=dict(boxstyle="round,pad=0.3", facecolor="yellow", alpha=0.7),
+                           fontsize=8)
+            
+            ax.set_title(f'Circuit OCR Results - Found {len(all_text)} text items', 
+                        fontsize=16, fontweight='bold')
+            ax.axis('off')
+            plt.tight_layout()
+            plt.savefig(output_path, dpi=200, bbox_inches='tight')
+            plt.close()
+        except Exception as e:
+            print(f"    Warning: Could not create visualization: {e}")
+            # Create a simple text visualization instead
+            with open(output_path.replace('.png', '_visualization.txt'), 'w') as f:
+                f.write(f"Found {len(all_text)} text items:\n")
+                f.write('\n'.join(all_text))
+
+def process_circuit_image(image_path, output_folder, ocr_engine):
+    """Process a single circuit image and extract ALL text with confidence scores"""
+    os.makedirs(output_folder, exist_ok=True)
+    
+    # Save original
+    image = cv2.imread(image_path)
+    cv2.imwrite(os.path.join(output_folder, "1_original.png"), image)
+    
+    # Extract all text with confidence
+    text_with_conf, versions = ocr_engine.process_image(image_path)
+    
+    # Save some preprocessing versions for debugging
+    for i, (name, img) in enumerate(list(versions.items())[:4]):
+        cv2.imwrite(os.path.join(output_folder, f"2_preprocess_{name}.png"), img)
+    
+    # Visualize (pass just the text for visualization)
+    all_text = [text for text, conf in text_with_conf]
+    if all_text:
+        ocr_engine.visualize_results(image, all_text, 
+                                   os.path.join(output_folder, "3_detected_text.png"))
+    
+    # Save results with confidence scores
+    with open(os.path.join(output_folder, "extracted_text_with_confidence.txt"), 'w', encoding='utf-8') as f:
+        if text_with_conf:
+            for text, conf in text_with_conf:
+                f.write(f"{text}\t{conf:.3f}\n")
+            print(f"  Found {len(text_with_conf)} text items")
+            # Show top 10 with confidence
+            print("  Top detections:")
+            for text, conf in text_with_conf[:10]:
+                print(f"    {text} (confidence: {conf:.3f})")
+            if len(text_with_conf) > 10:
+                print(f"    ... and {len(text_with_conf) - 10} more")
+        else:
+            f.write("No text detected")
+            print("  No text detected")
+    
+    # Save just the text (without confidence) for compatibility
+    with open(os.path.join(output_folder, "extracted_text.txt"), 'w', encoding='utf-8') as f:
+        if all_text:
+            f.write('\n'.join(all_text))
+    
+    # Save detailed summary
+    with open(os.path.join(output_folder, "summary.txt"), 'w', encoding='utf-8') as f:
+        f.write(f"Image: {os.path.basename(image_path)}\n")
+        f.write(f"Total text items found: {len(text_with_conf)}\n\n")
+        f.write("All extracted text with confidence scores:\n")
+        f.write("-" * 50 + "\n")
+        f.write("Text\t\t\tConfidence\n")
+        f.write("-" * 50 + "\n")
+        for text, conf in text_with_conf:
+            f.write(f"{text:<20}\t{conf:.3f}\n")
+    
+    return text_with_conf
+
+def process_all_images(images_folder, output_folder, use_gpu=True):
+    """Process all images in folder and extract ALL text with confidence"""
+    os.makedirs(output_folder, exist_ok=True)
+    
+    # Initialize OCR engine
+    ocr_engine = CircuitOCR(use_gpu=use_gpu)
+    
+    # Get image files
+    image_files = [f for f in os.listdir(images_folder)
+                   if f.lower().endswith(('.jpg', '.jpeg', '.png', '.bmp', '.tiff', '.tif'))]
+    
+    if not image_files:
+        print(f"No image files found in {images_folder}")
+        return
+    
+    all_text_with_conf = []
+    text_per_image = {}
+    
+    for image_file in image_files:
+        print(f"\nProcessing {image_file}...")
+        
+        image_path = os.path.join(images_folder, image_file)
+        image_output_folder = os.path.join(output_folder, os.path.splitext(image_file)[0])
+        
+        try:
+            text_conf_items = process_circuit_image(image_path, image_output_folder, ocr_engine)
+            all_text_with_conf.extend(text_conf_items)
+            text_per_image[image_file] = text_conf_items
+        except Exception as e:
+            print(f"  Error: {str(e)}")
+            traceback.print_exc()
+            text_per_image[image_file] = []
+    
+    # Summary
+    print("\n" + "="*60)
+    print("OVERALL SUMMARY")
+    print("="*60)
+    
+    # Get unique text items
+    unique_text_dict = {}
+    for text, conf in all_text_with_conf:
+        if text not in unique_text_dict or conf > unique_text_dict[text]:
+            unique_text_dict[text] = conf
+    
+    print(f"Total text items found: {len(all_text_with_conf)}")
+    print(f"Total unique text items: {len(unique_text_dict)}")
+    print(f"Images processed: {len(image_files)}")
+    
+    # Save overall summary with confidence scores
+    with open(os.path.join(output_folder, "overall_summary_with_confidence.txt"), 'w', encoding='utf-8') as f:
+        f.write("Circuit Image Text Extraction Results (with Confidence)\n")
+        f.write("="*60 + "\n\n")
+        f.write(f"OCR Engines used: EasyOCR, Tesseract{', PaddleOCR' if PADDLE_AVAILABLE else ''}\n")
+        f.write(f"Total images processed: {len(image_files)}\n")
+        f.write(f"Total text items found: {len(all_text_with_conf)}\n")
+        f.write(f"Total unique text items: {len(unique_text_dict)}\n\n")
+        
+        f.write("Text items per image:\n")
+        f.write("-"*60 + "\n")
+        for img, items in text_per_image.items():
+            f.write(f"{img}: {len(items)} text items\n")
+        
+        f.write("\n" + "-"*60 + "\n")
+        f.write("All unique text items (sorted by confidence):\n")
+        f.write("-"*60 + "\n")
+        f.write("Text\t\t\t\tBest Confidence\n")
+        f.write("-"*60 + "\n")
+        
+        # Sort by confidence
+        sorted_items = sorted(unique_text_dict.items(), key=lambda x: x[1], reverse=True)
+        for text, conf in sorted_items:
+            f.write(f"{text:<30}\t{conf:.3f}\n")
+    
+    # Also save simple text-only version
+    with open(os.path.join(output_folder, "overall_summary.txt"), 'w', encoding='utf-8') as f:
+        f.write("All unique text items:\n")
+        for text, _ in sorted_items:
+            f.write(f"{text}\n")
