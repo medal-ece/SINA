@@ -7,7 +7,6 @@ def prepare_config_file():
     """
     current_dir = os.getcwd()  # Get the current working directory
     project_path = os.path.dirname(current_dir)  # Get the parent directory (project root directory)
-    print(f"******************Project path: {project_path}")
     
     # Dynamically generate the paths
     data_section = f"""# Data

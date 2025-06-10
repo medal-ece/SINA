@@ -23,3 +23,6 @@ runs/
 /model_training/data/labels/train.cache
 /model_training/data/labels/val.cache
 /program_test/netlist_generator_algorithm_test/processed_image
+model_training/yolo11n.pt
+model_training/data/labels/train.cache
+model_training/data/labels/val.cache
