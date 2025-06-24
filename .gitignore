@@ -19,7 +19,6 @@ runs/
 /model_training/yolo11n-pose.pt
 /model_training/cvat_to_coco_keypoints/outputs
 /program_test/intersection_detection
-/current_trained_model
 /model_training/data/labels/train.cache
 /model_training/data/labels/val.cache
 /program_test/netlist_generator_algorithm_test/processed_image
