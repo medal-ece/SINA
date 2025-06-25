@@ -1,0 +1,20 @@
+Text Assignment Statistics
+========================================
+
+Total texts detected: 82
+Total texts with locations: 47
+Total texts assigned to components: 47
+Total components: 11
+
+Texts per component:
+  Voltage_src_1 (Voltage_src): 7 texts
+  Transistor_BJT_1 (Transistor_BJT): 3 texts
+  Transistor_BJT_2 (Transistor_BJT): 4 texts
+  Resistor_1 (Resistor): 6 texts
+  GND_1 (GND): 0 texts
+  Resistor_2 (Resistor): 8 texts
+  Resistor_3 (Resistor): 2 texts
+  GND_2 (GND): 0 texts
+  Resistor_4 (Resistor): 8 texts
+  GND_3 (GND): 0 texts
+  Resistor_5 (Resistor): 9 texts

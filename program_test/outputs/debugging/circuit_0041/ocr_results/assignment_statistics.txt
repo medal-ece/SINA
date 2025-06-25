@@ -1,0 +1,13 @@
+Text Assignment Statistics
+========================================
+
+Total texts detected: 61
+Total texts with locations: 31
+Total texts assigned to components: 31
+Total components: 4
+
+Texts per component:
+  Voltage_src_1 (Voltage_src): 6 texts
+  Capacitor_1 (Capacitor): 4 texts
+  Capacitor_2 (Capacitor): 7 texts
+  Capacitor_3 (Capacitor): 14 texts

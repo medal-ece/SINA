@@ -1,0 +1,21 @@
+Image: simple_circuit_0004.jpg
+Total text items found: 14
+
+All extracted text with confidence scores:
+--------------------------------------------------
+Text			Confidence
+--------------------------------------------------
+R                   	1.000
+L                   	0.996
+V                   	0.986
+C                   	0.948
++                   	0.917
+[                   	0.875
+1                   	0.578
+CL                  	0.500
+LE                  	0.500
+NL                  	0.500
+LL                  	0.500
+CE                  	0.500
+L_                  	0.424
+N                   	0.269

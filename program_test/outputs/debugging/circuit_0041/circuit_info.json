@@ -1,0 +1,82 @@
+[
+    {
+        "id": "Voltage_src_1",
+        "label": "Voltage_src",
+        "bounding_box": [
+            31,
+            78,
+            94,
+            159
+        ],
+        "connection_points": [
+            [
+                61,
+                78
+            ],
+            [
+                61,
+                159
+            ]
+        ]
+    },
+    {
+        "id": "Capacitor_1",
+        "label": "Capacitor",
+        "bounding_box": [
+            165,
+            29,
+            241,
+            95
+        ],
+        "connection_points": [
+            [
+                165,
+                62
+            ],
+            [
+                241,
+                62
+            ]
+        ]
+    },
+    {
+        "id": "Capacitor_2",
+        "label": "Capacitor",
+        "bounding_box": [
+            514,
+            29,
+            579,
+            95
+        ],
+        "connection_points": [
+            [
+                514,
+                62
+            ],
+            [
+                579,
+                62
+            ]
+        ]
+    },
+    {
+        "id": "Capacitor_3",
+        "label": "Capacitor",
+        "bounding_box": [
+            343,
+            28,
+            413,
+            95
+        ],
+        "connection_points": [
+            [
+                343,
+                62
+            ],
+            [
+                413,
+                62
+            ]
+        ]
+    }
+]

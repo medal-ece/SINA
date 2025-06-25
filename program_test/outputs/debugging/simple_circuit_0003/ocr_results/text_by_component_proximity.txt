@@ -1,0 +1,83 @@
+OCR Text Assigned to Nearest Components
+============================================================
+Note: Each text appears only under its closest component
+============================================================
+
+Component: Transistor_BJT_1 (Type: Transistor_BJT)
+Bounding Box: [322, 188, 400, 300]
+----------------------------------------
+Assigned Text (7 items, sorted by distance):
+  1. QL              (conf: 0.670, dist: 47.9px)
+  2. A1              (conf: 0.830, dist: 47.9px)
+  3. Q1              (conf: 0.990, dist: 49.4px)
+  4. 01              (conf: 0.967, dist: 49.6px)
+  5. 2NJ904          (conf: 0.953, dist: 70.1px)
+  6. 2N3904          (conf: 0.999, dist: 70.8px)
+  7. 2NJJ06          (conf: 0.507, dist: 72.2px)
+
+Component: Resistor_1 (Type: Resistor)
+Bounding Box: [378, 78, 414, 177]
+----------------------------------------
+Assigned Text (13 items, sorted by distance):
+  1. >               (conf: 0.890, dist: 10.8px)
+  2. «2              (conf: 0.250, dist: 11.5px)
+  3. <7              (conf: 0.550, dist: 20.5px)
+  4. RC              (conf: 0.980, dist: 38.5px)
+  5. 1P0             (conf: 0.314, dist: 45.6px)
+  6. 1K              (conf: 0.983, dist: 46.1px)
+  7. 1A              (conf: 0.530, dist: 46.2px)
+  8. 1K0             (conf: 0.861, dist: 46.7px)
+  9. [               (conf: 0.280, dist: 53.1px)
+  10. K               (conf: 0.604, dist: 54.0px)
+  11. +30V            (conf: 0.908, dist: 114.2px)
+  12. +J0V            (conf: 0.894, dist: 114.7px)
+  13. J0V             (conf: 0.516, dist: 118.5px)
+
+Component: GND_1 (Type: GND)
+Bounding Box: [70, 433, 124, 478]
+----------------------------------------
+  No text assigned to this component
+
+Component: Resistor_2 (Type: Resistor)
+Bounding Box: [79, 287, 115, 386]
+----------------------------------------
+Assigned Text (4 items, sorted by distance):
+  1. VW              (conf: 0.460, dist: 1.8px)
+  2. R2              (conf: 0.994, dist: 36.4px)
+  3. 10              (conf: 0.879, dist: 52.8px)
+  4. K0              (conf: 0.879, dist: 52.8px)
+
+Component: GND_2 (Type: GND)
+Bounding Box: [369, 435, 423, 479]
+----------------------------------------
+Assigned Text (2 items, sorted by distance):
+  1. VY              (conf: 0.400, dist: 6.2px)
+  2. L               (conf: 1.000, dist: 16.1px)
+
+Component: Resistor_3 (Type: Resistor)
+Bounding Box: [378, 317, 414, 416]
+----------------------------------------
+Assigned Text (8 items, sorted by distance):
+  1. RE              (conf: 1.000, dist: 38.2px)
+  2. 1+0             (conf: 0.207, dist: 45.0px)
+  3. 1KA             (conf: 0.130, dist: 46.7px)
+  4. 1KQ             (conf: 0.922, dist: 47.8px)
+  5. 8(DC)=200       (conf: 0.650, dist: 107.5px)
+  6. 8(0C)=200       (conf: 0.530, dist: 107.9px)
+  7. 8(DC)-200       (conf: 0.986, dist: 107.9px)
+  8. P(DC)-200       (conf: 0.797, dist: 108.2px)
+
+Component: Resistor_4 (Type: Resistor)
+Bounding Box: [79, 106, 115, 205]
+----------------------------------------
+Assigned Text (9 items, sorted by distance):
+  1. 2               (conf: 0.835, dist: 1.5px)
+  2. VA              (conf: 0.520, dist: 2.9px)
+  3. <               (conf: 0.680, dist: 12.0px)
+  4. R1              (conf: 0.999, dist: 35.7px)
+  5. KD              (conf: 0.370, dist: 51.0px)
+  6. 22              (conf: 0.898, dist: 51.5px)
+  7. KQ              (conf: 0.898, dist: 51.5px)
+  8. 22K             (conf: 0.230, dist: 51.6px)
+  9. 22KQ            (conf: 0.690, dist: 52.1px)
+

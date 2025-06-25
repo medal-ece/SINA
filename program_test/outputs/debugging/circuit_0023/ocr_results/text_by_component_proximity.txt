@@ -1,0 +1,59 @@
+OCR Text Assigned to Nearest Components
+============================================================
+Note: Each text appears only under its closest component
+============================================================
+
+Component: Transistor_BJT_1 (Type: Transistor_BJT)
+Bounding Box: [228, 215, 303, 320]
+----------------------------------------
+Assigned Text (2 items, sorted by distance):
+  1. _               (conf: 0.331, dist: 44.5px)
+  2. 3               (conf: 1.000, dist: 69.3px)
+
+Component: Transistor_BJT_2 (Type: Transistor_BJT)
+Bounding Box: [231, 404, 304, 505]
+----------------------------------------
+Assigned Text (7 items, sorted by distance):
+  1. TR2             (conf: 0.990, dist: 47.1px)
+  2. 2               (conf: 0.904, dist: 47.1px)
+  3. '8              (conf: 0.526, dist: 66.6px)
+  4. "8              (conf: 0.562, dist: 67.3px)
+  5. 18              (conf: 0.995, dist: 67.4px)
+  6. L8              (conf: 0.327, dist: 68.0px)
+  7. L               (conf: 0.954, dist: 88.0px)
+
+Component: Transistor_BJT_3 (Type: Transistor_BJT)
+Bounding Box: [42, 399, 109, 509]
+----------------------------------------
+Assigned Text (6 items, sorted by distance):
+  1. TR1             (conf: 1.000, dist: 42.4px)
+  2. TR              (conf: 1.000, dist: 50.5px)
+  3. T               (conf: 1.000, dist: 53.8px)
+  4. 16              (conf: 0.646, dist: 68.5px)
+  5. TP              (conf: 0.397, dist: 74.9px)
+  6. 8               (conf: 1.000, dist: 75.7px)
+
+Component: Resistor_1 (Type: Resistor)
+Bounding Box: [27, 94, 59, 198]
+----------------------------------------
+Assigned Text (3 items, sorted by distance):
+  1. ER              (conf: 0.693, dist: 22.4px)
+  2. R1              (conf: 0.628, dist: 42.4px)
+  3. 1               (conf: 0.995, dist: 70.0px)
+
+Component: Resistor_2 (Type: Resistor)
+Bounding Box: [282, 99, 313, 199]
+----------------------------------------
+Assigned Text (6 items, sorted by distance):
+  1. R}              (conf: 0.557, dist: 13.9px)
+  2. R               (conf: 1.000, dist: 31.7px)
+  3. 5               (conf: 0.741, dist: 66.0px)
+  4. 12              (conf: 0.413, dist: 67.4px)
+  5. CC              (conf: 0.997, dist: 121.1px)
+  6. +V              (conf: 0.982, dist: 136.0px)
+
+Component: GND_1 (Type: GND)
+Bounding Box: [302, 616, 348, 651]
+----------------------------------------
+  No text assigned to this component
+

@@ -1,0 +1,41 @@
+OCR Text Assigned to Nearest Components
+============================================================
+Note: Each text appears only under its closest component
+============================================================
+
+Component: Transistor_BJT_1 (Type: Transistor_BJT)
+Bounding Box: [125, 247, 220, 387]
+----------------------------------------
+Assigned Text (12 items, sorted by distance):
+  1. TR              (conf: 1.000, dist: 44.1px)
+  2. TR1             (conf: 0.990, dist: 52.4px)
+  3. 1R1             (conf: 0.715, dist: 61.8px)
+  4. 1               (conf: 1.000, dist: 77.3px)
+  5. AC              (conf: 0.668, dist: 152.4px)
+  6. ^C              (conf: 0.204, dist: 152.7px)
+  7. 8               (conf: 0.557, dist: 152.7px)
+  8. 0               (conf: 0.226, dist: 153.0px)
+  9. 1C              (conf: 0.997, dist: 153.5px)
+  10. V               (conf: 0.988, dist: 165.5px)
+  11. V2              (conf: 0.999, dist: 177.4px)
+  12. Y2              (conf: 0.370, dist: 179.4px)
+
+Component: Resistor_1 (Type: Resistor)
+Bounding Box: [59, 373, 101, 506]
+----------------------------------------
+Assigned Text (3 items, sorted by distance):
+  1. 2               (conf: 0.999, dist: 34.7px)
+  2. R2              (conf: 0.995, dist: 50.4px)
+  3. Y1              (conf: 1.000, dist: 189.1px)
+
+Component: Resistor_2 (Type: Resistor)
+Bounding Box: [59, 135, 101, 266]
+----------------------------------------
+Assigned Text (6 items, sorted by distance):
+  1. <               (conf: 0.773, dist: 2.8px)
+  2. R               (conf: 0.998, dist: 51.7px)
+  3. R1              (conf: 0.536, dist: 51.8px)
+  4. 1R              (conf: 0.865, dist: 87.8px)
+  5. 4               (conf: 0.676, dist: 90.2px)
+  6. '               (conf: 0.446, dist: 143.1px)
+

@@ -1,0 +1,42 @@
+OCR Text Assigned to Nearest Components
+============================================================
+Note: Each text appears only under its closest component
+============================================================
+
+Component: Capacitor_1 (Type: Capacitor)
+Bounding Box: [243, 181, 329, 260]
+----------------------------------------
+Assigned Text (3 items, sorted by distance):
+  1. L_              (conf: 0.501, dist: 11.2px)
+  2. L               (conf: 0.938, dist: 15.5px)
+  3. CX              (conf: 1.000, dist: 63.0px)
+
+Component: Capacitor_2 (Type: Capacitor)
+Bounding Box: [384, 62, 480, 148]
+----------------------------------------
+Assigned Text (1 items, sorted by distance):
+  1. |               (conf: 0.750, dist: 129.4px)
+
+Component: Capacitor_3 (Type: Capacitor)
+Bounding Box: [121, 62, 217, 148]
+----------------------------------------
+Assigned Text (2 items, sorted by distance):
+  1. F               (conf: 0.824, dist: 28.5px)
+  2. 1.              (conf: 0.080, dist: 124.1px)
+
+Component: Capacitor_4 (Type: Capacitor)
+Bounding Box: [390, 290, 477, 376]
+----------------------------------------
+Assigned Text (2 items, sorted by distance):
+  1. C               (conf: 0.957, dist: 58.2px)
+  2. 1               (conf: 0.640, dist: 135.5px)
+
+Component: Capacitor_5 (Type: Capacitor)
+Bounding Box: [126, 290, 211, 376]
+----------------------------------------
+Assigned Text (4 items, sorted by distance):
+  1. 4               (conf: 0.645, dist: 10.5px)
+  2. T               (conf: 0.571, dist: 14.3px)
+  3. 7               (conf: 1.000, dist: 16.1px)
+  4. 41              (conf: 0.223, dist: 18.0px)
+

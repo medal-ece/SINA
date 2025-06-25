@@ -1,0 +1,13 @@
+Text Assignment Statistics
+========================================
+
+Total texts detected: 27
+Total texts with locations: 20
+Total texts assigned to components: 20
+Total components: 4
+
+Texts per component:
+  Voltage_src_1 (Voltage_src): 4 texts
+  Resistor_1 (Resistor): 7 texts
+  Resistor_2 (Resistor): 2 texts
+  Resistor_3 (Resistor): 7 texts

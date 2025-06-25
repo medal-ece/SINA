@@ -1,0 +1,50 @@
+OCR Text Assigned to Nearest Components
+============================================================
+Note: Each text appears only under its closest component
+============================================================
+
+Component: Voltage_src_1 (Type: Voltage_src)
+Bounding Box: [43, 144, 128, 260]
+----------------------------------------
+Assigned Text (3 items, sorted by distance):
+  1. =               (conf: 0.753, dist: 5.7px)
+  2. V               (conf: 0.999, dist: 63.6px)
+  3. 1               (conf: 0.761, dist: 64.0px)
+
+Component: Capacitor_1 (Type: Capacitor)
+Bounding Box: [305, 283, 358, 334]
+----------------------------------------
+Assigned Text (32 items, sorted by distance):
+  1. 7               (conf: 0.733, dist: 23.3px)
+  2. 4               (conf: 0.816, dist: 25.3px)
+  3. C35             (conf: 0.410, dist: 33.6px)
+  4. C               (conf: 0.700, dist: 48.1px)
+  5. C3              (conf: 0.999, dist: 48.5px)
+  6. 1V5             (conf: 0.653, dist: 59.1px)
+  7. LVA             (conf: 0.432, dist: 61.0px)
+  8. 1VA             (conf: 0.464, dist: 63.0px)
+  9. V5              (conf: 0.255, dist: 65.6px)
+  10. V3              (conf: 0.688, dist: 67.0px)
+  11. T-              (conf: 0.909, dist: 87.6px)
+  12. C2=1V2          (conf: 0.369, dist: 99.3px)
+  13. C27             (conf: 0.679, dist: 99.8px)
+  14. F               (conf: 0.360, dist: 99.8px)
+  15. WV2             (conf: 0.360, dist: 99.8px)
+  16. C@LV2           (conf: 0.338, dist: 107.8px)
+  17. (               (conf: 0.210, dist: 111.5px)
+  18. -               (conf: 0.210, dist: 111.5px)
+  19. #               (conf: 0.994, dist: 112.1px)
+  20. #1V2            (conf: 0.870, dist: 113.2px)
+  21. #VV             (conf: 0.268, dist: 113.3px)
+  22. C2              (conf: 0.987, dist: 114.4px)
+  23. 1V2             (conf: 0.973, dist: 120.2px)
+  24. V2              (conf: 0.980, dist: 122.5px)
+  25. +               (conf: 0.992, dist: 130.7px)
+  26. T               (conf: 0.960, dist: 191.5px)
+  27. C1FWV1          (conf: 0.652, dist: 203.1px)
+  28. C1=1V1          (conf: 0.218, dist: 205.6px)
+  29. C1              (conf: 1.000, dist: 213.3px)
+  30. V1              (conf: 0.996, dist: 215.4px)
+  31. 1V1             (conf: 0.659, dist: 219.7px)
+  32. #LV             (conf: 0.961, dist: 222.7px)
+

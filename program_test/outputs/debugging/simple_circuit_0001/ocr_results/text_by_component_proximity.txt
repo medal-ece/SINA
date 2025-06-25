@@ -1,0 +1,32 @@
+OCR Text Assigned to Nearest Components
+============================================================
+Note: Each text appears only under its closest component
+============================================================
+
+Component: Voltage_src_1 (Type: Voltage_src)
+Bounding Box: [54, 118, 116, 198]
+----------------------------------------
+Assigned Text (8 items, sorted by distance):
+  1. (*)             (conf: 0.860, dist: 2.5px)
+  2. ME              (conf: 0.520, dist: 16.8px)
+  3. V5              (conf: 1.000, dist: 50.0px)
+  4. 15              (conf: 0.999, dist: 119.2px)
+  5. ~               (conf: 0.218, dist: 129.8px)
+  6. R               (conf: 1.000, dist: 163.4px)
+  7. P               (conf: 0.671, dist: 163.7px)
+  8. R1              (conf: 0.894, dist: 164.4px)
+
+Component: Resistor_1 (Type: Resistor)
+Bounding Box: [360, 57, 442, 83]
+----------------------------------------
+Assigned Text (9 items, sorted by distance):
+  1. M               (conf: 0.984, dist: 11.5px)
+  2. R2              (conf: 0.994, dist: 27.1px)
+  3. R0              (conf: 0.580, dist: 27.1px)
+  4. P2              (conf: 0.380, dist: 27.4px)
+  5. N               (conf: 0.340, dist: 166.0px)
+  6. <               (conf: 0.987, dist: 191.1px)
+  7. RY              (conf: 0.869, dist: 228.0px)
+  8. R6              (conf: 0.900, dist: 228.2px)
+  9. R3              (conf: 0.981, dist: 228.4px)
+

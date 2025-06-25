@@ -1,0 +1,12 @@
+Text Assignment Statistics
+========================================
+
+Total texts detected: 27
+Total texts with locations: 21
+Total texts assigned to components: 21
+Total components: 3
+
+Texts per component:
+  Transistor_BJT_1 (Transistor_BJT): 12 texts
+  Resistor_1 (Resistor): 3 texts
+  Resistor_2 (Resistor): 6 texts
