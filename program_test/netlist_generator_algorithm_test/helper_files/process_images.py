@@ -118,6 +118,9 @@ def process_circuit_image(image_path, model_path, output_folder, use_ocr=True, u
             print(f"  Warning: OCR processing failed: {str(e)}")
             traceback.print_exc()
 
+    # process_circuit_ocr_with_verification(image_path, output_folder)
+
+    
 def process_all_images(images_folder, model_path, output_folder, use_ocr=True, use_gpu=True):
     os.makedirs(output_folder, exist_ok=True)
     image_files = [f for f in os.listdir(images_folder)

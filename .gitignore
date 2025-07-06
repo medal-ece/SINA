@@ -25,3 +25,4 @@ runs/
 model_training/yolo11n.pt
 model_training/data/labels/train.cache
 model_training/data/labels/val.cache
+/.env
