@@ -42,24 +42,47 @@ def generate_named_netlist(raw_netlist_lines, api_lines, ocr_text, image_path=No
     "You are a circuit assistant tasked with transforming a raw netlist into a labeled and value-annotated version.\n\n"
     "You are provided with the following data:\n"
     "- A RAW NETLIST showing internal component IDs and their node connections. Example: `Resistor_1 1 2`\n"
-    "- A LABEL:VALUE list, extracted by an API vision model. It may include some parenthetical descriptions before each label — these should be ignored.\n"
-    "- OCR results that show the surrounding detected text for each component ID, with confidence scores.\n\n"
+    "- A LABEL:VALUE list from an API vision model. Each line may have parenthetical descriptions before the label — ignore these completely. Example: `(This component was drawn like two parallel lines which fits capacitor description)C3: 100uF`\n"
+    "- OCR results showing detected text with confidence scores, organized by component and proximity.\n\n"
 
     "Your job is to:\n"
-    "1. Start by parsing the LABEL:VALUE list. For each line, extract the component label and its value (e.g., `R1: 10kΩ`). Ignore any parenthetical explanation that comes before the label.\n\n"
-    "2. Next, for each component in the RAW NETLIST:\n"
-    "   - Match the internal ID (like `Resistor_3`) to a real-world label (like `R1`, `Qp`, `V1`) using OCR. Only accept OCR labels with confidence ≥ 0.9.\n"
-    "   - Then match the component to the correct VALUE:\n"
-    "     - Use the API’s value for that label as the default, if available.\n"
-    "     - If the OCR includes pieces of the value (like '10' and 'V') near the component, consider that confirmation.\n"
-    "     - If OCR contradicts the API, you may omit or correct the value — only if clearly wrong.\n\n"
-    "3. Construct the final line for each component in this format:\n"
-    "   - `<LABEL> <NODE1> <NODE2> [<VALUE>]`\n"
-    "   - Or `<LABEL> <NODE1> <NODE2> <NODE3> [<VALUE>]`\n"
-    "   - Include the value only if it was confidently determined.\n"
-    "   - Do NOT include any reasoning or explanation in your output.\n\n"
-    "4. Do NOT invent any labels or values. Only use what is supported by the API or OCR.\n"
-    "5. OCR is about 90% accurate. Its purpose is to assist and confirm API values and labels, not replace them.\n\n"
+    "1. Parse the LABEL:VALUE list. For each line, extract only the component label and its value after the colon. Completely ignore any parenthetical text before the label.\n\n"
+    
+    "2. For each component in the RAW NETLIST:\n"
+    "   a) LABEL MATCHING: Find the real-world label using this process:\n"
+    "      - Start with API labels for components of the same type\n"
+    "      - Use OCR text near that component ID as hints to help match which API label belongs to which raw netlist component\n"
+    "      - OCR may be noisy/inaccurate, so use it as supporting evidence, not definitive proof\n"
+    "      - Match OCR hints to API labels using case-insensitive comparison and partial matching\n"
+    "      - For components without useful OCR hints, assign remaining unused API labels of the same type\n"
+    "      - Example: Transistor_BJT_1 has nearby OCR 'T_' and '3' → API has Tr1,Tr2,Tr3 → OCR '3' suggests this might be Tr3\n\n"
+    
+    "   b) VALUE ASSIGNMENT: Determine the component value using this priority:\n"
+    "      - PRIMARY: Use the API's value for the matched label as the default\n"
+    "      - VALIDATION: Check if the API value makes sense for the component type:\n"
+    "        * Resistors should have resistance values (Ω, kΩ, MΩ)\n"
+    "        * Capacitors should have capacitance values (F, uF, nF, pF)\n"
+    "        * Voltage sources should have voltage values (V, mV)\n"
+    "        * Current sources should have current values (A, mA, uA)\n"
+    "      - ASSISTANCE: Use OCR text near the component as hints to help confirm, enhance, or correct values\n"
+    "      - CORRECTION: If API value doesn't make sense, look for value hints in OCR near the component\n"
+    "      - ENHANCEMENT: If API has label but no value, use OCR value hints if they make sense for the component\n\n"
+    
+    "3. Output format for each component:\n"
+    "   - `component ID:<LABEL>, <NODE1> <NODE2>, <VALUE>` (for 2-terminal components)\n"
+    "   - `component ID:<LABEL>, <NODE1> <NODE2> <NODE3>, <VALUE>` (for 3-terminal components)\n"
+    "   - Include the value only if confidently determined and sensible\n"
+    "   - If no confident label/value match found, copy the original raw netlist line\n\n"
+    
+    "4. IMPORTANT GUIDELINES:\n"
+    "   - The API is your PRIMARY source, OCR is only for HINTS and ASSISTANCE\n"
+    "   - OCR is ~90% accurate and noisy — use it as supporting evidence, not definitive answers\n"
+    "   - Use OCR hints to help match API labels to raw netlist components (TR1 suggests Tr1)\n"
+    "   - For components without useful OCR hints, assign remaining unused API labels of the same type\n"
+    "   - Do NOT require minimum confidence thresholds for OCR — treat all OCR as potentially useful hints\n"
+    "   - Do NOT invent any labels or values not supported by the data\n"
+    "   - Do NOT include any reasoning, comments, or explanations in your output\n"
+    "   - Always validate that values make sense for the component type\n\n"
 
     "=== RAW NETLIST ===\n"
     f"{raw_netlist_text}\n\n"
@@ -67,7 +90,7 @@ def generate_named_netlist(raw_netlist_lines, api_lines, ocr_text, image_path=No
     f"{component_label_text}\n\n"
     "=== OCR RESULTS ===\n"
     f"{ocr_text}\n\n"
-    "Now only output the final netlist, one line per component. No comments, no reasoning, no extra text."
+    "Output only the final netlist, one line per component. No comments, no reasoning, no extra text."
 )
 
     headers = {
@@ -84,7 +107,7 @@ def generate_named_netlist(raw_netlist_lines, api_lines, ocr_text, image_path=No
             }
         ],
         "max_tokens": 1500,
-        "temperature": 0.3
+        "temperature": 0
     }
 
     response = requests.post(
