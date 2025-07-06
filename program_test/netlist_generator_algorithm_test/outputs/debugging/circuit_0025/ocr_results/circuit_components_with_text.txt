@@ -1,0 +1,77 @@
+CIRCUIT COMPONENT ANALYSIS
+================================================================================
+ALL DETECTED TEXT IN CIRCUIT:
+----------------------------------------
+- 1 (confidence: 1.00)
+- TR (confidence: 1.00)
+- Y1 (confidence: 1.00)
+- 2 (confidence: 1.00)
+- V2 (confidence: 1.00)
+- R (confidence: 1.00)
+- 1C (confidence: 1.00)
+- R2 (confidence: 1.00)
+- TR1 (confidence: 0.99)
+- V (confidence: 0.99)
+- 1R (confidence: 0.87)
+- < (confidence: 0.77)
+- 4A (confidence: 0.76)
+- 1R1 (confidence: 0.72)
+- 4 (confidence: 0.68)
+- AC (confidence: 0.67)
+- 8 (confidence: 0.56)
+- R1 (confidence: 0.54)
+- 40 (confidence: 0.51)
+- 4^ (confidence: 0.50)
+- T (confidence: 0.50)
+- (EH (confidence: 0.50)
+- S (confidence: 0.50)
+- = (confidence: 0.50)
+- 1S (confidence: 0.50)
+- 0Y (confidence: 0.50)
+- ' (confidence: 0.45)
+- 21" (confidence: 0.38)
+- Y2 (confidence: 0.37)
+- A1 (confidence: 0.35)
+- 0 (confidence: 0.23)
+- - (confidence: 0.21)
+- ^C (confidence: 0.20)
+
+COMPONENTS WITH ASSOCIATED TEXT:
+================================================================================
+
+COMPONENT Transistor_BJT_1:
+  Nearby Text:
+    - TR (conf: 1.00, dist: 44.1px)
+    - TR1 (conf: 0.99, dist: 52.4px)
+    - 1R1 (conf: 0.72, dist: 61.8px)
+    - 1 (conf: 1.00, dist: 77.3px)
+    - AC (conf: 0.67, dist: 152.4px)
+    - ^C (conf: 0.20, dist: 152.7px)
+    - 8 (conf: 0.56, dist: 152.7px)
+    - 0 (conf: 0.23, dist: 153.0px)
+    - 1C (conf: 1.00, dist: 153.5px)
+    - V (conf: 0.99, dist: 165.5px)
+    - 4^ (conf: 0.50, dist: 172.8px)
+    - A1 (conf: 0.35, dist: 172.9px)
+    - 4A (conf: 0.76, dist: 173.4px)
+    - 40 (conf: 0.51, dist: 173.8px)
+    - V2 (conf: 1.00, dist: 177.4px)
+    - Y2 (conf: 0.37, dist: 178.9px)
+
+COMPONENT Resistor_1:
+  Nearby Text:
+    - 2 (conf: 1.00, dist: 34.7px)
+    - - (conf: 0.21, dist: 45.9px)
+    - R2 (conf: 1.00, dist: 50.4px)
+    - Y1 (conf: 1.00, dist: 189.1px)
+
+COMPONENT Resistor_2:
+  Nearby Text:
+    - < (conf: 0.77, dist: 2.8px)
+    - 21" (conf: 0.38, dist: 46.4px)
+    - R (conf: 1.00, dist: 51.7px)
+    - R1 (conf: 0.54, dist: 51.8px)
+    - 1R (conf: 0.87, dist: 87.8px)
+    - 4 (conf: 0.68, dist: 90.2px)
+    - ' (conf: 0.45, dist: 143.1px)
+

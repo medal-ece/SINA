@@ -30,7 +30,7 @@ if __name__ == '__main__':
     test_results_path = os.path.join(script_dir, 'outputs', 'test_results')
 
     # Step 1: Detect components and generate connection points
-    process_all_images(test_images_folder, latest_train_path, output_files_path, use_ocr=True, use_gpu=True)
+    process_all_images(test_images_folder, latest_train_path, output_files_path, use_ocr=False, use_gpu=True)
     
     # Step 2: Generate netlists from connection points
     approved_images_path = os.path.join(script_dir, 'outputs', 'approved_images')

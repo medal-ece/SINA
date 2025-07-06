@@ -1,0 +1,85 @@
+CIRCUIT COMPONENT ANALYSIS
+================================================================================
+ALL DETECTED TEXT IN CIRCUIT:
+----------------------------------------
+- 2 (confidence: 1.00)
+- 1 (confidence: 1.00)
+- R (confidence: 1.00)
+- TR (confidence: 1.00)
+- TR1 (confidence: 1.00)
+- TR4 (confidence: 0.98)
+- R2 (confidence: 0.98)
+- TR2 (confidence: 0.98)
+- RA (confidence: 0.81)
+- 7 (confidence: 0.67)
+- + (confidence: 0.65)
+- 1R (confidence: 0.61)
+- TRA (confidence: 0.59)
+- T (confidence: 0.50)
+- 4 (confidence: 0.50)
+- TR. (confidence: 0.50)
+- SR (confidence: 0.50)
+- 28 (confidence: 0.50)
+- WR (confidence: 0.50)
+- FAL (confidence: 0.50)
+- A (confidence: 0.50)
+- = (confidence: 0.50)
+- VV (confidence: 0.50)
+- E (confidence: 0.50)
+- —=— (confidence: 0.50)
+- — (confidence: 0.50)
+- {YAY (confidence: 0.50)
+- 71 (confidence: 0.50)
+- TF (confidence: 0.50)
+- RS (confidence: 0.50)
+- 11 (confidence: 0.50)
+- _ (confidence: 0.50)
+- AE (confidence: 0.50)
+- TH (confidence: 0.50)
+- TRC (confidence: 0.29)
+- AAT (confidence: 0.29)
+- TR3 (confidence: 0.28)
+- KK (confidence: 0.28)
+- R~ (confidence: 0.24)
+- CRQ (confidence: 0.22)
+
+COMPONENTS WITH ASSOCIATED TEXT:
+================================================================================
+
+COMPONENT Transistor_BJT_1:
+  Nearby Text:
+    - TRC (conf: 0.29, dist: 41.5px)
+    - TR (conf: 1.00, dist: 41.7px)
+    - TR2 (conf: 0.98, dist: 42.4px)
+
+COMPONENT Transistor_BJT_2:
+  Nearby Text:
+    - TR4 (conf: 0.98, dist: 39.5px)
+    - TRA (conf: 0.59, dist: 40.1px)
+
+COMPONENT Transistor_BJT_3:
+  Nearby Text:
+    - TR1 (conf: 1.00, dist: 43.5px)
+    - 1R (conf: 0.61, dist: 44.9px)
+
+COMPONENT Resistor_1:
+  Nearby Text:
+    - 7 (conf: 0.67, dist: 19.5px)
+    - RA (conf: 0.81, dist: 30.4px)
+    - R~ (conf: 0.24, dist: 32.0px)
+    - R2 (conf: 0.98, dist: 32.5px)
+    - KK (conf: 0.28, dist: 36.1px)
+    - 2 (conf: 1.00, dist: 124.2px)
+
+COMPONENT Transistor_BJT_4:
+  Nearby Text:
+    - TR3 (conf: 0.28, dist: 44.8px)
+    - AAT (conf: 0.29, dist: 46.3px)
+
+COMPONENT Resistor_2:
+  Nearby Text:
+    - CRQ (conf: 0.22, dist: 20.9px)
+    - R (conf: 1.00, dist: 25.6px)
+    - + (conf: 0.65, dist: 139.3px)
+    - 1 (conf: 1.00, dist: 157.0px)
+

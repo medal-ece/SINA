@@ -1,0 +1,102 @@
+[
+    {
+        "id": "Inductor_1",
+        "label": "Inductor",
+        "bounding_box": [
+            553,
+            81,
+            746,
+            121
+        ],
+        "connection_points": [
+            [
+                553,
+                101
+            ],
+            [
+                746,
+                100
+            ]
+        ]
+    },
+    {
+        "id": "Inductor_2",
+        "label": "Inductor",
+        "bounding_box": [
+            189,
+            79,
+            392,
+            120
+        ],
+        "connection_points": [
+            [
+                392,
+                100
+            ],
+            [
+                189,
+                101
+            ]
+        ]
+    },
+    {
+        "id": "Voltage_src_1",
+        "label": "Voltage_src",
+        "bounding_box": [
+            805,
+            256,
+            892,
+            387
+        ],
+        "connection_points": [
+            [
+                848,
+                256
+            ],
+            [
+                848,
+                387
+            ]
+        ]
+    },
+    {
+        "id": "Voltage_src_2",
+        "label": "Voltage_src",
+        "bounding_box": [
+            64,
+            256,
+            149,
+            387
+        ],
+        "connection_points": [
+            [
+                105,
+                256
+            ],
+            [
+                105,
+                387
+            ]
+        ]
+    },
+    {
+        "id": "Capacitor_1",
+        "label": "Capacitor",
+        "bounding_box": [
+            426,
+            293,
+            499,
+            360
+        ],
+        "connection_points": [
+            [
+                462,
+                293
+            ],
+            [
+                462,
+                360
+            ]
+        ]
+    }
+]

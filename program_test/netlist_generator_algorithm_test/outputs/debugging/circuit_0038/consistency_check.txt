@@ -1,0 +1,11 @@
+Component Consistency Check
+========================================
+API Component Types (6 total):
+  Capacitor: 6
+
+Object Detection Types (5 total):
+  Capacitor: 5
+
+⚠️  Mismatch in 'Capacitor': API=6, Detection=5
+
+❌ Result: FAIL — Mismatched component types or counts.

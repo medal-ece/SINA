@@ -1,0 +1,9 @@
+number of components: 4
+types:
+  Resistor: 3
+  Voltage_src: 1
+
+(This compoennt was drawn like zig-zag line which fits resistor descpriciton)R1: 50.5Ω
+(This compoennt was drawn like zig-zag line which fits resistor descpriciton)R2: 1.54Ω
+(This compoennt was drawn like zig-zag line which fits resistor descpriciton)R3: 55.83Ω
+(This compoennt was drawn like a circle with a plus and minus sign which fits voltage source descpriciton)V1: 10V

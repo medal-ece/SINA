@@ -1,0 +1,7 @@
+```
+Transistor_BJT_1:Q1, 2 3 4, 2N3904
+Resistor_1:RC, 1 2, 1kΩ
+Resistor_2:R2, 3 5, 10kΩ
+Resistor_3:RE, 4 5, 1kΩ
+Resistor_4:R1, 1 3, 22kΩ
+```

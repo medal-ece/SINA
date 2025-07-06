@@ -1,0 +1,11 @@
+📝 Approval Summary
+==============================
+✅ Passed: 13
+❌ Failed: 4
+📊 Pass Rate: 76.47%
+
+❌ Failed Images:
+  - circuit_0022.jpg
+  - circuit_0038.jpg
+  - circuit_0039.jpg
+  - simple_circuit_0001.jpg

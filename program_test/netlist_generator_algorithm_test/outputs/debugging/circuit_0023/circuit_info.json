@@ -1,0 +1,130 @@
+[
+    {
+        "id": "Transistor_BJT_1",
+        "label": "Transistor_BJT",
+        "bounding_box": [
+            228,
+            215,
+            303,
+            320
+        ],
+        "connection_points": [
+            [
+                228,
+                267
+            ],
+            [
+                299,
+                215
+            ],
+            [
+                299,
+                320
+            ]
+        ]
+    },
+    {
+        "id": "Transistor_BJT_2",
+        "label": "Transistor_BJT",
+        "bounding_box": [
+            231,
+            404,
+            304,
+            505
+        ],
+        "connection_points": [
+            [
+                299,
+                404
+            ],
+            [
+                231,
+                453
+            ],
+            [
+                299,
+                505
+            ]
+        ]
+    },
+    {
+        "id": "Transistor_BJT_3",
+        "label": "Transistor_BJT",
+        "bounding_box": [
+            42,
+            399,
+            109,
+            509
+        ],
+        "connection_points": [
+            [
+                42,
+                407
+            ],
+            [
+                109,
+                453
+            ],
+            [
+                45,
+                509
+            ]
+        ]
+    },
+    {
+        "id": "Resistor_1",
+        "label": "Resistor",
+        "bounding_box": [
+            27,
+            94,
+            59,
+            198
+        ],
+        "connection_points": [
+            [
+                44,
+                94
+            ],
+            [
+                44,
+                198
+            ]
+        ]
+    },
+    {
+        "id": "Resistor_2",
+        "label": "Resistor",
+        "bounding_box": [
+            282,
+            99,
+            313,
+            199
+        ],
+        "connection_points": [
+            [
+                298,
+                99
+            ],
+            [
+                299,
+                199
+            ]
+        ]
+    },
+    {
+        "id": "GND_1",
+        "label": "GND",
+        "bounding_box": [
+            302,
+            616,
+            348,
+            651
+        ],
+        "connection_points": [
+            [
+                326,
+                616
+            ]
+        ]
+    }
+]

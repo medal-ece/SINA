@@ -1,0 +1,67 @@
+CIRCUIT COMPONENT ANALYSIS
+================================================================================
+ALL DETECTED TEXT IN CIRCUIT:
+----------------------------------------
+- VS (confidence: 1.00)
+- R (confidence: 1.00)
+- 1S (confidence: 1.00)
+- R2 (confidence: 0.99)
+- < (confidence: 0.99)
+- M (confidence: 0.98)
+- R3 (confidence: 0.98)
+- R6 (confidence: 0.90)
+- R1 (confidence: 0.89)
+- RY (confidence: 0.87)
+- (*) (confidence: 0.86)
+- P (confidence: 0.67)
+- R0 (confidence: 0.58)
+- ME (confidence: 0.52)
+- V5 (confidence: 0.50)
+- 0F (confidence: 0.50)
+- RQ (confidence: 0.50)
+- 1 (confidence: 0.50)
+- V (confidence: 0.50)
+- 00 (confidence: 0.50)
+- 15 (confidence: 0.50)
+- 00} (confidence: 0.50)
+- AL (confidence: 0.50)
+- A (confidence: 0.50)
+- FE (confidence: 0.50)
+- AT (confidence: 0.50)
+- 1EEE (confidence: 0.50)
+- \-—————_ (confidence: 0.50)
+- TE (confidence: 0.50)
+- V. (confidence: 0.50)
+- CE (confidence: 0.50)
+- 6} (confidence: 0.50)
+- (+) (confidence: 0.50)
+- P2 (confidence: 0.38)
+- N (confidence: 0.34)
+- ~ (confidence: 0.22)
+
+COMPONENTS WITH ASSOCIATED TEXT:
+================================================================================
+
+COMPONENT Voltage_src_1:
+  Nearby Text:
+    - (*) (conf: 0.86, dist: 2.5px)
+    - ME (conf: 0.52, dist: 16.8px)
+    - VS (conf: 1.00, dist: 50.0px)
+    - 1S (conf: 1.00, dist: 119.2px)
+    - ~ (conf: 0.22, dist: 129.8px)
+    - R (conf: 1.00, dist: 163.4px)
+    - P (conf: 0.67, dist: 163.7px)
+    - R1 (conf: 0.89, dist: 164.4px)
+
+COMPONENT Resistor_1:
+  Nearby Text:
+    - M (conf: 0.98, dist: 11.5px)
+    - R2 (conf: 0.99, dist: 27.1px)
+    - R0 (conf: 0.58, dist: 27.1px)
+    - P2 (conf: 0.38, dist: 27.4px)
+    - N (conf: 0.34, dist: 166.0px)
+    - < (conf: 0.99, dist: 191.1px)
+    - RY (conf: 0.87, dist: 228.0px)
+    - R6 (conf: 0.90, dist: 228.2px)
+    - R3 (conf: 0.98, dist: 228.4px)
+
