@@ -1,0 +1,13 @@
+```
+Transistor_BJT_1:Tr3, 2 3 4
+Transistor_BJT_2:Tr2, 4 4 5
+Transistor_BJT_3:Tr1, 2 4 5
+Resistor_1:R1, 1 2
+Resistor_2:R, 1 3
+===
+Q1 2 3 4
+Q2 4 4 5
+Q3 2 4 5
+R1 1 2
+R2 1 3
+```

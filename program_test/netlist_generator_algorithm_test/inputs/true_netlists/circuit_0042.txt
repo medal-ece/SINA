@@ -1,4 +1,4 @@
-Voltage_src_9 9 2
-Capacitor_9 9 2
-Capacitor_2 9 2
-Capacitor_3 9 2
+V1, 1 2, 1V
+C3, 1 2, 30µF
+C2, 1 2, 20µF
+C1, 1 2, 10µF

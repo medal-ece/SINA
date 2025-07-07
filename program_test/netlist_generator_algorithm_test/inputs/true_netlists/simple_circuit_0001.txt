@@ -1,4 +1,4 @@
-Voltage_src_9 9 4
-Resistor_9 2 9
-Resistor_2 3 2
-Resistor_3 4 3
+Vs, 1 4
+R1, 2 1
+R2, 3 2
+R3, 4 3

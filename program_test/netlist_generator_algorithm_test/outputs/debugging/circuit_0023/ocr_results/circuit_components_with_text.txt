@@ -1,0 +1,102 @@
+CIRCUIT COMPONENT ANALYSIS
+================================================================================
+ALL DETECTED TEXT IN CIRCUIT:
+----------------------------------------
+- 3 (confidence: 1.00)
+- R (confidence: 1.00)
+- TR (confidence: 1.00)
+- T (confidence: 1.00)
+- TR1 (confidence: 1.00)
+- 8 (confidence: 1.00)
+- CC (confidence: 1.00)
+- +VCC (confidence: 1.00)
+- 18 (confidence: 1.00)
+- 1 (confidence: 0.99)
+- TR2 (confidence: 0.99)
+- +V (confidence: 0.98)
+- L (confidence: 0.95)
+- +CC (confidence: 0.93)
+- 2 (confidence: 0.90)
+- 5 (confidence: 0.74)
+- ER (confidence: 0.69)
+- 16 (confidence: 0.65)
+- R1 (confidence: 0.63)
+- "8 (confidence: 0.56)
+- R} (confidence: 0.56)
+- FCC (confidence: 0.53)
+- '8 (confidence: 0.53)
+- LE (confidence: 0.50)
+- FA (confidence: 0.50)
+- LL (confidence: 0.50)
+- 1N (confidence: 0.50)
+- 2R (confidence: 0.50)
+- TC (confidence: 0.50)
+- R> (confidence: 0.50)
+- = (confidence: 0.50)
+- 1R (confidence: 0.50)
+- AE (confidence: 0.50)
+- RY (confidence: 0.50)
+- 4V (confidence: 0.50)
+- C (confidence: 0.50)
+- LY (confidence: 0.50)
+- SR (confidence: 0.50)
+- RA (confidence: 0.50)
+- A (confidence: 0.50)
+- MR (confidence: 0.50)
+- 0 (confidence: 0.50)
+- T0 (confidence: 0.50)
+- 12 (confidence: 0.41)
+- TP (confidence: 0.40)
+- NCC (confidence: 0.36)
+- _ (confidence: 0.33)
+- L8 (confidence: 0.33)
+
+COMPONENTS WITH ASSOCIATED TEXT:
+================================================================================
+
+COMPONENT Transistor_BJT_1:
+  Nearby Text:
+    - _ (conf: 0.33, dist: 44.5px)
+    - 3 (conf: 1.00, dist: 69.3px)
+
+COMPONENT Transistor_BJT_2:
+  Nearby Text:
+    - TR2 (conf: 0.99, dist: 47.1px)
+    - 2 (conf: 0.90, dist: 47.1px)
+    - '8 (conf: 0.53, dist: 66.6px)
+    - "8 (conf: 0.56, dist: 67.3px)
+    - 18 (conf: 1.00, dist: 67.4px)
+    - L8 (conf: 0.33, dist: 68.0px)
+    - L (conf: 0.95, dist: 88.0px)
+
+COMPONENT Transistor_BJT_3:
+  Nearby Text:
+    - TR1 (conf: 1.00, dist: 42.4px)
+    - TR (conf: 1.00, dist: 50.5px)
+    - T (conf: 1.00, dist: 53.8px)
+    - 16 (conf: 0.65, dist: 68.5px)
+    - TP (conf: 0.40, dist: 74.9px)
+    - 8 (conf: 1.00, dist: 75.7px)
+
+COMPONENT Resistor_1:
+  Nearby Text:
+    - ER (conf: 0.69, dist: 22.4px)
+    - R1 (conf: 0.63, dist: 42.4px)
+    - 1 (conf: 0.99, dist: 70.0px)
+
+COMPONENT Resistor_2:
+  Nearby Text:
+    - R} (conf: 0.56, dist: 13.9px)
+    - R (conf: 1.00, dist: 31.7px)
+    - 5 (conf: 0.74, dist: 66.0px)
+    - 12 (conf: 0.41, dist: 67.4px)
+    - CC (conf: 1.00, dist: 121.1px)
+    - NCC (conf: 0.36, dist: 125.3px)
+    - +VCC (conf: 1.00, dist: 125.6px)
+    - FCC (conf: 0.53, dist: 126.1px)
+    - +CC (conf: 0.93, dist: 126.3px)
+    - +V (conf: 0.98, dist: 136.0px)
+
+COMPONENT GND_1:
+  No nearby text found
+

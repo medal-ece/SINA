@@ -1,0 +1,56 @@
+CIRCUIT COMPONENT ANALYSIS
+================================================================================
+ALL DETECTED TEXT IN CIRCUIT:
+----------------------------------------
+- CX (confidence: 1.00)
+- 7 (confidence: 1.00)
+- C (confidence: 0.96)
+- L (confidence: 0.94)
+- F (confidence: 0.82)
+- | (confidence: 0.75)
+- 4 (confidence: 0.65)
+- 1 (confidence: 0.64)
+- T (confidence: 0.57)
+- L_ (confidence: 0.50)
+- EH (confidence: 0.50)
+- EY (confidence: 0.50)
+- CEA (confidence: 0.50)
+- PEH (confidence: 0.50)
+- REY (confidence: 0.50)
+- E (confidence: 0.50)
+- FEY (confidence: 0.50)
+- TL (confidence: 0.50)
+- 0N (confidence: 0.50)
+- 41 (confidence: 0.22)
+- 1. (confidence: 0.08)
+
+COMPONENTS WITH ASSOCIATED TEXT:
+================================================================================
+
+COMPONENT Capacitor_1:
+  Nearby Text:
+    - L_ (conf: 0.50, dist: 11.2px)
+    - L (conf: 0.94, dist: 15.5px)
+    - CX (conf: 1.00, dist: 63.0px)
+
+COMPONENT Capacitor_2:
+  Nearby Text:
+    - | (conf: 0.75, dist: 129.4px)
+
+COMPONENT Capacitor_3:
+  Nearby Text:
+    - F (conf: 0.82, dist: 28.5px)
+    - 1. (conf: 0.08, dist: 124.1px)
+
+COMPONENT Capacitor_4:
+  Nearby Text:
+    - C (conf: 0.96, dist: 58.2px)
+    - 1 (conf: 0.64, dist: 135.5px)
+
+COMPONENT Capacitor_5:
+  Nearby Text:
+    - 4 (conf: 0.65, dist: 10.5px)
+    - T (conf: 0.57, dist: 14.3px)
+    - 7 (conf: 1.00, dist: 16.1px)
+    - 41 (conf: 0.22, dist: 18.0px)
+

@@ -12,7 +12,7 @@ def main():
     model = YOLO('yolo11n-pose.pt')
     model.train(
         data=config_path,  # Use the prepared config file
-        epochs=1,
+        epochs=100,
         project=source_path,
         patience=20,  # Stop training if no improvement for 20 epochs
         imgsz=640,

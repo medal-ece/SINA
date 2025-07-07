@@ -1,6 +1,6 @@
-Transistor_BJT_9 4 5 6
-Transistor_BJT_2 2 3 4
-Transistor_BJT_3 3 4 5
-Resistor_9 5 6
-Transistor_BJT_4 9 2 3
-Resistor_2 9 2
+Tr2, 3 4 5
+Tr4, 1 2 3
+Tr1, 4 5 6
+R2, 5 6
+Tr3, 2 3 4
+R1, 1 2

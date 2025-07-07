@@ -1,0 +1,42 @@
+[
+    {
+        "id": "Voltage_src_1",
+        "label": "Voltage_src",
+        "bounding_box": [
+            54,
+            118,
+            116,
+            198
+        ],
+        "connection_points": [
+            [
+                84,
+                118
+            ],
+            [
+                83,
+                198
+            ]
+        ]
+    },
+    {
+        "id": "Resistor_1",
+        "label": "Resistor",
+        "bounding_box": [
+            360,
+            57,
+            442,
+            83
+        ],
+        "connection_points": [
+            [
+                360,
+                70
+            ],
+            [
+                442,
+                71
+            ]
+        ]
+    }
+]

@@ -1,0 +1,92 @@
+CIRCUIT COMPONENT ANALYSIS
+================================================================================
+ALL DETECTED TEXT IN CIRCUIT:
+----------------------------------------
+- 2 (confidence: 1.00)
+- 0 (confidence: 1.00)
+- 1 (confidence: 1.00)
+- N (confidence: 1.00)
+- 100 (confidence: 1.00)
+- 60 (confidence: 1.00)
+- H2 (confidence: 1.00)
+- F (confidence: 1.00)
+- V (confidence: 1.00)
+- C1 (confidence: 1.00)
+- R (confidence: 1.00)
+- 12 (confidence: 0.94)
+- HF (confidence: 0.92)
+- 12V (confidence: 0.91)
+- 30 (confidence: 0.90)
+- Q (confidence: 0.90)
+- PF (confidence: 0.90)
+- CY (confidence: 0.89)
+- V1 (confidence: 0.89)
+- C (confidence: 0.84)
+- 300 (confidence: 0.81)
+- UF (confidence: 0.80)
+- 02 (confidence: 0.78)
+- 302 (confidence: 0.63)
+- L_ (confidence: 0.58)
+- 01 (confidence: 0.56)
+- VY (confidence: 0.52)
+- Q2 (confidence: 0.51)
+- Q0 (confidence: 0.50)
+- 60H (confidence: 0.50)
+- 100UF (confidence: 0.50)
+- ET (confidence: 0.50)
+- 30Q (confidence: 0.50)
+- 60H2 (confidence: 0.50)
+- 100F (confidence: 0.50)
+- RY (confidence: 0.50)
+- AT (confidence: 0.50)
+- C0NE (confidence: 0.50)
+- M (confidence: 0.46)
+- R1 (confidence: 0.32)
+- VV (confidence: 0.29)
+- MV (confidence: 0.20)
+
+COMPONENTS WITH ASSOCIATED TEXT:
+================================================================================
+
+COMPONENT Voltage_src_1:
+  Nearby Text:
+    - V (conf: 1.00, dist: 72.9px)
+    - V1 (conf: 0.89, dist: 74.7px)
+    - VY (conf: 0.52, dist: 75.0px)
+    - VV (conf: 0.29, dist: 76.7px)
+    - 12 (conf: 0.94, dist: 87.0px)
+    - 12V (conf: 0.91, dist: 87.1px)
+    - 60 (conf: 1.00, dist: 96.1px)
+    - H2 (conf: 1.00, dist: 96.1px)
+    - 1 (conf: 1.00, dist: 168.2px)
+    - 0 (conf: 1.00, dist: 170.0px)
+
+COMPONENT Capacitor_1:
+  Nearby Text:
+    - L_ (conf: 0.58, dist: 10.4px)
+    - 01 (conf: 0.56, dist: 66.0px)
+    - C1 (conf: 1.00, dist: 70.0px)
+    - CY (conf: 0.89, dist: 70.6px)
+    - C (conf: 0.84, dist: 71.0px)
+    - 100 (conf: 1.00, dist: 84.7px)
+    - PF (conf: 0.90, dist: 108.5px)
+    - F (conf: 1.00, dist: 110.0px)
+    - HF (conf: 0.92, dist: 142.3px)
+    - UF (conf: 0.80, dist: 143.0px)
+    - 2 (conf: 1.00, dist: 167.9px)
+
+COMPONENT Resistor_1:
+  Nearby Text:
+    - MV (conf: 0.20, dist: 5.5px)
+    - N (conf: 1.00, dist: 11.8px)
+    - M (conf: 0.46, dist: 44.0px)
+    - R1 (conf: 0.32, dist: 48.2px)
+    - R (conf: 1.00, dist: 48.7px)
+    - Q2 (conf: 0.51, dist: 49.9px)
+    - 300 (conf: 0.81, dist: 50.0px)
+    - 02 (conf: 0.78, dist: 50.0px)
+    - 302 (conf: 0.63, dist: 50.0px)
+    - 30 (conf: 0.90, dist: 50.5px)
+    - Q (conf: 0.90, dist: 50.5px)
+    - Q0 (conf: 0.50, dist: 60.8px)
+

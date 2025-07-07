@@ -1,0 +1,4 @@
+Voltage_src_9 9 4
+Capacitor_9 2 3
+Capacitor_2 9 2
+Capacitor_3 3 4

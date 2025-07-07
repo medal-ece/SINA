@@ -1,0 +1,371 @@
+{
+    "total_text_items": 40,
+    "text_with_confidence": [
+        {
+            "text": "2",
+            "confidence": 1.0,
+            "center": [
+                108.0,
+                643.0
+            ]
+        },
+        {
+            "text": "1",
+            "confidence": 0.9999995231628986,
+            "center": [
+                117.5,
+                31.0
+            ]
+        },
+        {
+            "text": "R",
+            "confidence": 0.9999928474554167,
+            "center": [
+                221.5,
+                169.0
+            ]
+        },
+        {
+            "text": "TR",
+            "confidence": 0.9997641543823836,
+            "center": [
+                74.5,
+                379.5
+            ]
+        },
+        {
+            "text": "TR1",
+            "confidence": 0.9964357592699008,
+            "center": [
+                212.75,
+                468.0
+            ]
+        },
+        {
+            "text": "TR4",
+            "confidence": 0.9849915976932496,
+            "center": [
+                76.64475,
+                215.46525000000003
+            ]
+        },
+        {
+            "text": "R2",
+            "confidence": 0.9833609701793107,
+            "center": [
+                55.0,
+                522.0
+            ]
+        },
+        {
+            "text": "TR2",
+            "confidence": 0.9752214551545328,
+            "center": [
+                74.00000000000001,
+                378.25
+            ]
+        },
+        {
+            "text": "RA",
+            "confidence": 0.8074260733469556,
+            "center": [
+                57.091125000000005,
+                520.7475000000001
+            ]
+        },
+        {
+            "text": "7",
+            "confidence": 0.6691938516974041,
+            "center": [
+                89.20275000000001,
+                539.9257500000001
+            ]
+        },
+        {
+            "text": "+",
+            "confidence": 0.6471256661507709,
+            "center": [
+                171.0,
+                30.0
+            ]
+        },
+        {
+            "text": "1R",
+            "confidence": 0.6122589703551035,
+            "center": [
+                214.0,
+                469.0
+            ]
+        },
+        {
+            "text": "TRA",
+            "confidence": 0.5916725397109985,
+            "center": [
+                76.00000000000001,
+                215.25
+            ]
+        },
+        {
+            "text": "T",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "4",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "TR.",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "SR",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "28",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "WR",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "FAL",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "A",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "=",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "VV",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "E",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "\u2014=\u2014",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "\u2014",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "{YAY",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "71",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "TF",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "RS",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "11",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "_",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "AE",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "TH",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "TRC",
+            "confidence": 0.29303276144320123,
+            "center": [
+                74.75000000000001,
+                379.49999999999994
+            ]
+        },
+        {
+            "text": "AAT",
+            "confidence": 0.29,
+            "center": [
+                149.5,
+                259.0
+            ]
+        },
+        {
+            "text": "TR3",
+            "confidence": 0.28449171928579664,
+            "center": [
+                214.25,
+                307.5
+            ]
+        },
+        {
+            "text": "KK",
+            "confidence": 0.28228599871730625,
+            "center": [
+                51.5,
+                518.0
+            ]
+        },
+        {
+            "text": "R~",
+            "confidence": 0.24260406910441998,
+            "center": [
+                55.5,
+                520.0
+            ]
+        },
+        {
+            "text": "CRQ",
+            "confidence": 0.21516380672434798,
+            "center": [
+                215.5,
+                174.5
+            ]
+        }
+    ],
+    "text_by_component": {
+        "Transistor_BJT_1": [
+            {
+                "text": "TRC",
+                "confidence": 0.29303276144320123,
+                "distance": 41.49472858086915
+            },
+            {
+                "text": "TR",
+                "confidence": 0.9997641543823836,
+                "distance": 41.743262929483606
+            },
+            {
+                "text": "TR2",
+                "confidence": 0.9752214551545328,
+                "distance": 42.391773966183564
+            }
+        ],
+        "Transistor_BJT_2": [
+            {
+                "text": "TR4",
+                "confidence": 0.9849915976932496,
+                "distance": 39.47208393440863
+            },
+            {
+                "text": "TRA",
+                "confidence": 0.5916725397109985,
+                "distance": 40.1318140631594
+            }
+        ],
+        "Transistor_BJT_3": [
+            {
+                "text": "TR1",
+                "confidence": 0.9964357592699008,
+                "distance": 43.538058064181044
+            },
+            {
+                "text": "1R",
+                "confidence": 0.6122589703551035,
+                "distance": 44.90267252625394
+            }
+        ],
+        "Resistor_1": [
+            {
+                "text": "7",
+                "confidence": 0.6691938516974041,
+                "distance": 19.500233860777264
+            },
+            {
+                "text": "RA",
+                "confidence": 0.8074260733469556,
+                "distance": 30.40988219338616
+            },
+            {
+                "text": "R~",
+                "confidence": 0.24260406910441998,
+                "distance": 32.00390601161052
+            },
+            {
+                "text": "R2",
+                "confidence": 0.9833609701793107,
+                "distance": 32.53459696999488
+            },
+            {
+                "text": "KK",
+                "confidence": 0.28228599871730625,
+                "distance": 36.08670115153226
+            },
+            {
+                "text": "2",
+                "confidence": 1.0,
+                "distance": 124.20346210955636
+            }
+        ],
+        "Transistor_BJT_4": [
+            {
+                "text": "TR3",
+                "confidence": 0.28449171928579664,
+                "distance": 44.800251115367644
+            },
+            {
+                "text": "AAT",
+                "confidence": 0.29,
+                "distance": 46.28714724413247
+            }
+        ],
+        "Resistor_2": [
+            {
+                "text": "CRQ",
+                "confidence": 0.21516380672434798,
+                "distance": 20.89258241577618
+            },
+            {
+                "text": "R",
+                "confidence": 0.9999928474554167,
+                "distance": 25.578311124857326
+            },
+            {
+                "text": "+",
+                "confidence": 0.6471256661507709,
+                "distance": 139.26234236145822
+            },
+            {
+                "text": "1",
+                "confidence": 0.9999995231628986,
+                "distance": 157.0294558355215
+            }
+        ]
+    }
+}

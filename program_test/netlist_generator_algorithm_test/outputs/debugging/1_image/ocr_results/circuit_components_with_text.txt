@@ -1,0 +1,174 @@
+CIRCUIT COMPONENT ANALYSIS
+================================================================================
+ALL DETECTED TEXT IN CIRCUIT:
+----------------------------------------
+- QN (confidence: 1.00)
+- 10 (confidence: 1.00)
+- R3 (confidence: 1.00)
+- QP (confidence: 1.00)
+- R1 (confidence: 1.00)
+- R2 (confidence: 1.00)
+- R4 (confidence: 1.00)
+- W (confidence: 0.99)
+- V1 (confidence: 0.99)
+- < (confidence: 0.97)
+- R' (confidence: 0.96)
+- VT (confidence: 0.95)
+- V (confidence: 0.95)
+- R5 (confidence: 0.92)
+- 1KQ (confidence: 0.90)
+- ' (confidence: 0.90)
+- KQ (confidence: 0.88)
+- 3KQ (confidence: 0.88)
+- 10KQ (confidence: 0.82)
+- 2KQ (confidence: 0.82)
+- 1KN (confidence: 0.82)
+- 3 (confidence: 0.80)
+- K0 (confidence: 0.78)
+- ~ (confidence: 0.75)
+- 3K0 (confidence: 0.74)
+- 2 (confidence: 0.73)
+- KN (confidence: 0.70)
+- RS (confidence: 0.68)
+- AN (confidence: 0.67)
+- WV (confidence: 0.64)
+- AAA (confidence: 0.61)
+- V4 (confidence: 0.61)
+- VW (confidence: 0.59)
+- "RA (confidence: 0.59)
+- N (confidence: 0.56)
+- VA (confidence: 0.56)
+- ERK0 (confidence: 0.50)
+- M1 (confidence: 0.50)
+- Q (confidence: 0.50)
+- 10V (confidence: 0.50)
+- ET (confidence: 0.50)
+- 2KAQ (confidence: 0.50)
+- 1K0 (confidence: 0.50)
+- 2Q (confidence: 0.50)
+- 8EE (confidence: 0.50)
+- 2KA (confidence: 0.50)
+- 3K (confidence: 0.50)
+- 3Q (confidence: 0.50)
+- 10K0 (confidence: 0.50)
+- RE (confidence: 0.50)
+- 2K0 (confidence: 0.50)
+- M (confidence: 0.50)
+- RT (confidence: 0.50)
+- RA (confidence: 0.50)
+- EE (confidence: 0.50)
+- 1V (confidence: 0.50)
+- 1 (confidence: 0.50)
+- R (confidence: 0.50)
+- P (confidence: 0.50)
+- NEE (confidence: 0.50)
+- "RS (confidence: 0.50)
+- UA (confidence: 0.50)
+- “HEY (confidence: 0.50)
+- VV (confidence: 0.50)
+- 0U (confidence: 0.50)
+- LY (confidence: 0.50)
+- . (confidence: 0.50)
+- "RE (confidence: 0.50)
+- MATE) (confidence: 0.50)
+- MUA) (confidence: 0.50)
+- 4 (confidence: 0.50)
+- € (confidence: 0.50)
+- 6 (confidence: 0.50)
+- E (confidence: 0.50)
+- 7 (confidence: 0.45)
+- R141 (confidence: 0.45)
+- QJ11 (confidence: 0.43)
+- V" (confidence: 0.39)
+- KA (confidence: 0.31)
+- EN (confidence: 0.27)
+- N4 (confidence: 0.22)
+- DT (confidence: 0.21)
+- LE0 (confidence: 0.12)
+- ” (confidence: 0.08)
+- ART (confidence: 0.05)
+
+COMPONENTS WITH ASSOCIATED TEXT:
+================================================================================
+
+COMPONENT Voltage_src_1:
+  Nearby Text:
+    - VW (conf: 0.59, dist: 47.3px)
+    - V" (conf: 0.39, dist: 47.5px)
+    - V1 (conf: 0.99, dist: 48.3px)
+    - V4 (conf: 0.61, dist: 48.3px)
+    - VT (conf: 0.95, dist: 49.2px)
+    - 10 (conf: 1.00, dist: 50.3px)
+    - V (conf: 0.95, dist: 56.1px)
+
+COMPONENT Transistor_BJT_1:
+  Nearby Text:
+    - ” (conf: 0.08, dist: 30.5px)
+    - QP (conf: 1.00, dist: 40.8px)
+    - 7 (conf: 0.45, dist: 43.4px)
+
+COMPONENT Transistor_BJT_2:
+  Nearby Text:
+    - EN (conf: 0.27, dist: 40.5px)
+    - QJ11 (conf: 0.43, dist: 43.7px)
+    - QN (conf: 1.00, dist: 44.1px)
+    - AN (conf: 0.67, dist: 44.2px)
+
+COMPONENT Resistor_1:
+  Nearby Text:
+    - < (conf: 0.97, dist: 8.7px)
+    - ERK0 (conf: 0.50, dist: 26.0px)
+    - R3 (conf: 1.00, dist: 36.9px)
+    - 3K0 (conf: 0.74, dist: 45.5px)
+    - 3KQ (conf: 0.88, dist: 46.0px)
+    - 3 (conf: 0.80, dist: 46.3px)
+
+COMPONENT GND_1:
+  No nearby text found
+
+COMPONENT Resistor_2:
+  Nearby Text:
+    - VA (conf: 0.56, dist: 1.0px)
+    - "RA (conf: 0.59, dist: 29.9px)
+    - R4 (conf: 1.00, dist: 36.6px)
+    - N4 (conf: 0.22, dist: 37.4px)
+    - LE0 (conf: 0.12, dist: 38.4px)
+    - 2KQ (conf: 0.82, dist: 45.7px)
+    - 2 (conf: 0.73, dist: 45.9px)
+    - KN (conf: 0.70, dist: 46.0px)
+
+COMPONENT Resistor_3:
+  Nearby Text:
+    - R141 (conf: 0.45, dist: 35.4px)
+    - R1 (conf: 1.00, dist: 35.6px)
+
+COMPONENT GND_2:
+  No nearby text found
+
+COMPONENT Resistor_4:
+  Nearby Text:
+    - WV (conf: 0.64, dist: 1.0px)
+    - ~ (conf: 0.75, dist: 5.0px)
+    - DT (conf: 0.21, dist: 22.0px)
+    - ART (conf: 0.05, dist: 27.1px)
+    - R2 (conf: 1.00, dist: 37.4px)
+    - 1KQ (conf: 0.90, dist: 45.3px)
+    - 1KN (conf: 0.82, dist: 46.6px)
+    - KQ (conf: 0.88, dist: 51.8px)
+
+COMPONENT GND_3:
+  No nearby text found
+
+COMPONENT Resistor_5:
+  Nearby Text:
+    - N (conf: 0.56, dist: 4.6px)
+    - W (conf: 0.99, dist: 8.6px)
+    - ' (conf: 0.90, dist: 16.6px)
+    - AAA (conf: 0.61, dist: 21.2px)
+    - R' (conf: 0.96, dist: 34.5px)
+    - R5 (conf: 0.92, dist: 36.2px)
+    - RS (conf: 0.68, dist: 36.5px)
+    - K0 (conf: 0.78, dist: 58.0px)
+    - 10KQ (conf: 0.82, dist: 59.0px)
+    - KA (conf: 0.31, dist: 61.1px)
+

@@ -1,0 +1,82 @@
+[
+    {
+        "id": "Voltage_src_1",
+        "label": "Voltage_src",
+        "bounding_box": [
+            230,
+            327,
+            378,
+            488
+        ],
+        "connection_points": [
+            [
+                306,
+                327
+            ],
+            [
+                306,
+                488
+            ]
+        ]
+    },
+    {
+        "id": "Resistor_1",
+        "label": "Resistor",
+        "bounding_box": [
+            267,
+            46,
+            343,
+            249
+        ],
+        "connection_points": [
+            [
+                306,
+                46
+            ],
+            [
+                306,
+                249
+            ]
+        ]
+    },
+    {
+        "id": "Resistor_2",
+        "label": "Resistor",
+        "bounding_box": [
+            10,
+            180,
+            84,
+            381
+        ],
+        "connection_points": [
+            [
+                44,
+                180
+            ],
+            [
+                44,
+                381
+            ]
+        ]
+    },
+    {
+        "id": "Resistor_3",
+        "label": "Resistor",
+        "bounding_box": [
+            529,
+            180,
+            606,
+            380
+        ],
+        "connection_points": [
+            [
+                567,
+                180
+            ],
+            [
+                567,
+                380
+            ]
+        ]
+    }
+]

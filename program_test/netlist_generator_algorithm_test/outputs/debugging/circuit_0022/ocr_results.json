@@ -1,0 +1,469 @@
+{
+    "total_text_items": 50,
+    "text_with_confidence": [
+        {
+            "text": "2",
+            "confidence": 1.0,
+            "center": [
+                293.0,
+                328.0
+            ]
+        },
+        {
+            "text": "R",
+            "confidence": 0.9999938011265499,
+            "center": [
+                20.5,
+                154.0
+            ]
+        },
+        {
+            "text": "R2",
+            "confidence": 0.9988502590696037,
+            "center": [
+                300.0,
+                186.5
+            ]
+        },
+        {
+            "text": "TR",
+            "confidence": 0.9987105500649928,
+            "center": [
+                37.22572584461365,
+                278.75
+            ]
+        },
+        {
+            "text": "+V",
+            "confidence": 0.9932045340779161,
+            "center": [
+                147.0,
+                15.5
+            ]
+        },
+        {
+            "text": "1",
+            "confidence": 0.9912250272532788,
+            "center": [
+                290.62800000000004,
+                618.5160000000001
+            ]
+        },
+        {
+            "text": "12",
+            "confidence": 0.9900853344920204,
+            "center": [
+                287.408,
+                324.668
+            ]
+        },
+        {
+            "text": "TR1",
+            "confidence": 0.9856386503238248,
+            "center": [
+                37.98299240479018,
+                279.75
+            ]
+        },
+        {
+            "text": "+CC",
+            "confidence": 0.9834071397781372,
+            "center": [
+                168.25,
+                25.23589438028096
+            ]
+        },
+        {
+            "text": "[",
+            "confidence": 0.9641004085233931,
+            "center": [
+                20.5,
+                217.5
+            ]
+        },
+        {
+            "text": "TR2",
+            "confidence": 0.932844739948668,
+            "center": [
+                279.75,
+                379.0
+            ]
+        },
+        {
+            "text": "'C",
+            "confidence": 0.7426731175347352,
+            "center": [
+                199.0,
+                31.0
+            ]
+        },
+        {
+            "text": "NCC",
+            "confidence": 0.7128163290813931,
+            "center": [
+                168.5,
+                25.236305458866287
+            ]
+        },
+        {
+            "text": "11",
+            "confidence": 0.7032877386892539,
+            "center": [
+                22.5,
+                220.0
+            ]
+        },
+        {
+            "text": "R~",
+            "confidence": 0.6800302526423996,
+            "center": [
+                302.312,
+                187.174
+            ]
+        },
+        {
+            "text": "<",
+            "confidence": 0.6639793123980695,
+            "center": [
+                54.096000000000004,
+                151.064
+            ]
+        },
+        {
+            "text": "R1",
+            "confidence": 0.5654608736687194,
+            "center": [
+                94.0,
+                473.5
+            ]
+        },
+        {
+            "text": "4V",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "CC",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "T",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "H",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "C",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "HT",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "CE",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "1R",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "RN",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "SR",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "EL",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "\u2018F1",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "X",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "//",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "RE",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "C4",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "2R",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "L",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "ET",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "FAL",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "A",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "\u201cLS",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "SLR",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "TH1",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "TH",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "+VCC",
+            "confidence": 0.4398444905185035,
+            "center": [
+                168.5,
+                25.486305458866283
+            ]
+        },
+        {
+            "text": "_",
+            "confidence": 0.4398444905185035,
+            "center": [
+                168.5,
+                25.486305458866283
+            ]
+        },
+        {
+            "text": "NCE",
+            "confidence": 0.4257468826367413,
+            "center": [
+                168.5,
+                25.486305458866283
+            ]
+        },
+        {
+            "text": "F",
+            "confidence": 0.37457295011765623,
+            "center": [
+                56.50000000000001,
+                125.0
+            ]
+        },
+        {
+            "text": "K",
+            "confidence": 0.36053201766330645,
+            "center": [
+                91.5,
+                470.5
+            ]
+        },
+        {
+            "text": "4VCC",
+            "confidence": 0.29639264941215515,
+            "center": [
+                168.5,
+                24.985015042188877
+            ]
+        },
+        {
+            "text": "%",
+            "confidence": 0.2317319127991233,
+            "center": [
+                286.0,
+                320.25
+            ]
+        },
+        {
+            "text": "(",
+            "confidence": 0.21792556063556479,
+            "center": [
+                263.0,
+                158.5
+            ]
+        }
+    ],
+    "text_by_component": {
+        "Transistor_BJT_1": [
+            {
+                "text": "TR2",
+                "confidence": 0.932844739948668,
+                "distance": 54.75228305742145
+            },
+            {
+                "text": "12",
+                "confidence": 0.9900853344920204,
+                "distance": 82.41749018260627
+            },
+            {
+                "text": "%",
+                "confidence": 0.2317319127991233,
+                "distance": 84.34490203918669
+            },
+            {
+                "text": "2",
+                "confidence": 1.0,
+                "distance": 84.70094450476925
+            }
+        ],
+        "Transistor_BJT_2": [
+            {
+                "text": "TR1",
+                "confidence": 0.9856386503238248,
+                "distance": 53.51042509969936
+            },
+            {
+                "text": "TR",
+                "confidence": 0.9987105500649928,
+                "distance": 54.40344714205757
+            }
+        ],
+        "Resistor_1": [
+            {
+                "text": "K",
+                "confidence": 0.36053201766330645,
+                "distance": 37.26258176777342
+            },
+            {
+                "text": "R1",
+                "confidence": 0.5654608736687194,
+                "distance": 40.38873605350878
+            }
+        ],
+        "Resistor_2": [
+            {
+                "text": "(",
+                "confidence": 0.21792556063556479,
+                "distance": 22.94558781116753
+            },
+            {
+                "text": "R2",
+                "confidence": 0.9988502590696037,
+                "distance": 41.862871377868956
+            },
+            {
+                "text": "R~",
+                "confidence": 0.6800302526423996,
+                "distance": 44.24488241593598
+            },
+            {
+                "text": "'C",
+                "confidence": 0.7426731175347352,
+                "distance": 161.3699166511528
+            }
+        ],
+        "Resistor_3": [
+            {
+                "text": "<",
+                "confidence": 0.6639793123980695,
+                "distance": 3.0905196973971796
+            },
+            {
+                "text": "F",
+                "confidence": 0.37457295011765623,
+                "distance": 23.08679276123039
+            },
+            {
+                "text": "R",
+                "confidence": 0.9999938011265499,
+                "distance": 34.52535300326414
+            },
+            {
+                "text": "[",
+                "confidence": 0.9641004085233931,
+                "distance": 77.37086014773263
+            },
+            {
+                "text": "11",
+                "confidence": 0.7032877386892539,
+                "distance": 78.79086241436883
+            },
+            {
+                "text": "+V",
+                "confidence": 0.9932045340779161,
+                "distance": 161.59362611192313
+            },
+            {
+                "text": "+VCC",
+                "confidence": 0.4398444905185035,
+                "distance": 167.34875365570613
+            },
+            {
+                "text": "_",
+                "confidence": 0.4398444905185035,
+                "distance": 167.34875365570613
+            },
+            {
+                "text": "NCE",
+                "confidence": 0.4257468826367413,
+                "distance": 167.34875365570613
+            },
+            {
+                "text": "+CC",
+                "confidence": 0.9834071397781372,
+                "distance": 167.36214664197377
+            },
+            {
+                "text": "NCC",
+                "confidence": 0.7128163290813931,
+                "distance": 167.5318617379655
+            },
+            {
+                "text": "4VCC",
+                "confidence": 0.29639264941215515,
+                "distance": 167.7160890438675
+            }
+        ],
+        "GND_1": [
+            {
+                "text": "1",
+                "confidence": 0.9912250272532788,
+                "distance": 5.9853688273989505
+            }
+        ]
+    }
+}

@@ -1,0 +1,10 @@
+number of components: 6
+types:
+  Capacitor: 6
+
+(This compoennt was drawn like two parallel lines which fits capacitor descpriciton)C: 
+(This compoennt was drawn like two parallel lines which fits capacitor descpriciton)C: 
+(This compoennt was drawn like two parallel lines which fits capacitor descpriciton)C: 
+(This compoennt was drawn like two parallel lines which fits capacitor descpriciton)C: 
+(This compoennt was drawn like two parallel lines which fits capacitor descpriciton)C: 
+(This compoennt was drawn like two parallel lines which fits capacitor descpriciton)Cx:

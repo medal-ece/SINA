@@ -1,0 +1,66 @@
+CIRCUIT COMPONENT ANALYSIS
+================================================================================
+ALL DETECTED TEXT IN CIRCUIT:
+----------------------------------------
+- 45 (confidence: 1.00)
+- 5 (confidence: 1.00)
+- CT0TAL (confidence: 1.00)
+- VS (confidence: 1.00)
+- 5.45 (confidence: 1.00)
+- PF (confidence: 0.95)
+- +) (confidence: 0.92)
+- UF (confidence: 0.90)
+- 1V (confidence: 0.87)
+- 545 (confidence: 0.83)
+- T (confidence: 0.67)
+- +)VS (confidence: 0.62)
+- 1VV (confidence: 0.50)
+- C (confidence: 0.50)
+- 545F (confidence: 0.50)
+- 0DE (confidence: 0.50)
+- 60 (confidence: 0.50)
+- FE (confidence: 0.50)
+- V (confidence: 0.50)
+- 00 (confidence: 0.50)
+- DE (confidence: 0.50)
+- 545UF (confidence: 0.50)
+- 45F (confidence: 0.50)
+- 0LE (confidence: 0.50)
+- TE (confidence: 0.50)
+- AL (confidence: 0.50)
+- X (confidence: 0.50)
+- 1C (confidence: 0.50)
+- 04 (confidence: 0.50)
+- 0E (confidence: 0.50)
+- 1 (confidence: 0.50)
+- © (confidence: 0.50)
+- —T~ (confidence: 0.50)
+- NF (confidence: 0.50)
+- HF (confidence: 0.45)
+- LL (confidence: 0.38)
+- L (confidence: 0.31)
+
+COMPONENTS WITH ASSOCIATED TEXT:
+================================================================================
+
+COMPONENT Voltage_src_1:
+  Nearby Text:
+    - +) (conf: 0.92, dist: 6.2px)
+    - +)VS (conf: 0.62, dist: 23.7px)
+    - T (conf: 0.67, dist: 43.1px)
+    - VS (conf: 1.00, dist: 46.5px)
+    - 1V (conf: 0.87, dist: 51.3px)
+
+COMPONENT Capacitor_1:
+  Nearby Text:
+    - LL (conf: 0.38, dist: 2.2px)
+    - L (conf: 0.31, dist: 28.5px)
+    - 5 (conf: 1.00, dist: 43.0px)
+    - 5.45 (conf: 1.00, dist: 54.9px)
+    - CT0TAL (conf: 1.00, dist: 61.1px)
+    - 45 (conf: 1.00, dist: 61.7px)
+    - 545 (conf: 0.83, dist: 67.2px)
+    - PF (conf: 0.95, dist: 67.8px)
+    - HF (conf: 0.45, dist: 87.0px)
+    - UF (conf: 0.90, dist: 87.0px)
+

@@ -1,0 +1,13 @@
+Component Consistency Check
+========================================
+API Component Types (4 total):
+  Resistor: 2
+  Transistor_BJT: 2
+
+Object Detection Types (5 total):
+  Resistor: 3
+  Transistor_BJT: 2
+
+⚠️  Mismatch in 'Resistor': API=2, Detection=3
+
+❌ Result: FAIL — Mismatched component types or counts.

@@ -1,0 +1,11 @@
+number of components: 6
+types:
+  Resistor: 2
+  Transistor_BJT: 4
+
+(This compoennt was drawn like zig-zag line which fits resistor descpriciton)R1: 
+(This compoennt was drawn like zig-zag line which fits resistor descpriciton)R2: 
+(This compoennt was drawn like a three-terminal device with an arrow which fits BJT transistor descpriciton)Tr1: 
+(This compoennt was drawn like a three-terminal device with an arrow which fits BJT transistor descpriciton)Tr2: 
+(This compoennt was drawn like a three-terminal device with an arrow which fits BJT transistor descpriciton)Tr3: 
+(This compoennt was drawn like a three-terminal device with an arrow which fits BJT transistor descpriciton)Tr4:
