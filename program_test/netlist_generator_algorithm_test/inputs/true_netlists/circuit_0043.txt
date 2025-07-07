@@ -1,2 +1,2 @@
-Voltage_src_9 9 2
-Capacitor_9 9 2
+Vs, 1 2, 1V
+Ctotal, 1 2, 5.45µF
