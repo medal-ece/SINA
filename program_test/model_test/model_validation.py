@@ -303,8 +303,8 @@ def main():
     latest_train_folder = max(train_folders, key=extract_suffix)
     latest_model_path = os.path.join(model_folder, latest_train_folder, 'weights', 'last.pt')
 
-    validate_images_path = os.path.join(current_dir, 'inputs', 'validation_images')
-    annotations_path = os.path.join(current_dir, 'inputs', 'validation_annotations')
+    validate_images_path = os.path.join(current_dir, 'inputs', 'more_validation_images')
+    annotations_path = os.path.join(current_dir, 'inputs', 'more_validation_annotations')
     output_dir = os.path.join(current_dir, 'outputs', 'validation_results')
 
     print(f"Using model: {latest_model_path}")
