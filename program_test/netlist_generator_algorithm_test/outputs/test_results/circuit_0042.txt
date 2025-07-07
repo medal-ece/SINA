@@ -3,4 +3,9 @@ Voltage_src_1:V1, 1 2, 1V
 Capacitor_1:C3, 1 2, 30µF
 Capacitor_2:C2, 1 2, 20µF
 Capacitor_3:C1, 1 2, 10µF
+===
+V1 1 2 DC 1
+C3 1 2 30u
+C2 1 2 20u
+C1 1 2 10u
 ```

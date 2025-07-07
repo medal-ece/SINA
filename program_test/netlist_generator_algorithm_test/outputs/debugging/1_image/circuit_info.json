@@ -24,14 +24,14 @@
         "label": "Transistor_BJT",
         "bounding_box": [
             22,
-            182,
+            183,
             89,
             294
         ],
         "connection_points": [
             [
                 25,
-                182
+                183
             ],
             [
                 89,

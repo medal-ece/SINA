@@ -91,7 +91,10 @@ def generate_named_netlist(raw_netlist_lines, api_lines, ocr_text, image_path=No
     "=== OCR RESULTS ===\n"
     f"{ocr_text}\n\n"
     "Output only the final netlist, one line per component. No comments, no reasoning, no extra text."
+
+    "After finishing add === to a new line then provide a netlist compatible with LTspice. IMPORTANT: keep nodes names the same (the provided numbers) don't use the N### convention."
 )
+
 
     headers = {
         "Authorization": f"Bearer {api_key}",

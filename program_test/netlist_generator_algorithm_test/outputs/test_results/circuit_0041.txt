@@ -4,3 +4,10 @@ Capacitor_1:C1, 1 2, 10µF
 Capacitor_2:C3, 3 4, 30µF
 Capacitor_3:C2, 2 3, 20µF
 ```
+```
+===
+Vs 1 4 DC 1
+C1 1 2 10u
+C3 3 4 30u
+C2 2 3 20u
+```

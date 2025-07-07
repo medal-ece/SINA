@@ -6,3 +6,12 @@ Resistor_1:R2, 5 6
 Transistor_BJT_4:Tr3, 2 3 4
 Resistor_2:R1, 1 2
 ```
+===
+```
+Q1 3 4 5
+Q2 1 2 3
+Q3 4 5 6
+R1 5 6
+Q4 2 3 4
+R2 1 2
+```
