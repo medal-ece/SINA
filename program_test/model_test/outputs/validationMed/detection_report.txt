@@ -1,0 +1,61 @@
+============================================================
+      DETECTION MODEL PERFORMANCE REPORT
+============================================================
+
+
+✅ GOOD PERFORMANCE
+------------------------------------------------------------
+Class                 F1   AP    TP    FP   FN    Samples
+------------------------------------------------------------
+Resistor             0.95 1.00  212    5   18      230
+Capacitor            0.87 1.00   55    1   16       71
+Inductor             0.71 0.91   21   16    1       22
+Transistor_BJT       0.91 0.99   72    1   14       86
+Transistor_MOSFET    0.99 1.00  337    3    4      341
+Voltage_src          0.76 0.94   22    4   10       32
+Current_src          0.86 0.96   15    3    2       17
+GND                  0.88 0.94   70    8   12       82
+Op-Amp_v1            0.77 0.98   20    3    9       29
+
+
+❌ CRITICAL – Very Poor or Data Deficient
+------------------------------------------------------------
+Class                 F1   AP    TP    FP   FN    Samples
+------------------------------------------------------------
+Op-Amp_v2            0.00 0.00    0    4    0        0
+
+
+============================================================
+🔍 OVERALL MODEL PERFORMANCE
+------------------------------------------------------------
+Total Predictions: 872
+Total Ground Truth: 910
+Precision: 0.94
+Recall: 0.91
+F1 Score: 0.92
+Mean Average Precision (mAP@0.5): 0.87
+Weighted mAP@0.5: 0.99
+Average Confidence: 0.78
+
+Class Distribution:
+  - Transistor_MOSFET (ID: 4): 341 instances (37.5%)
+  - Resistor (ID: 0): 230 instances (25.3%)
+  - Transistor_BJT (ID: 3): 86 instances (9.5%)
+  - GND (ID: 7): 82 instances (9.0%)
+  - Capacitor (ID: 1): 71 instances (7.8%)
+  - Voltage_src (ID: 5): 32 instances (3.5%)
+  - Op-Amp_v1 (ID: 8): 29 instances (3.2%)
+  - Inductor (ID: 2): 22 instances (2.4%)
+  - Current_src (ID: 6): 17 instances (1.9%)
+  - Op-Amp_v2 (ID: 9): 0 instances (0.0%)
+
+📖 LEGEND (Abbreviations Used)
+------------------------------------------------------------
+TP  = True Positives
+FP  = False Positives
+FN  = False Negatives
+F1  = F1 Score (harmonic mean of precision and recall)
+AP  = Average Precision at IoU=0.5
+mAP = Mean Average Precision across all classes
+IoU = Intersection over Union (box overlap metric)
+Conf = Model’s average confidence for correct detections
