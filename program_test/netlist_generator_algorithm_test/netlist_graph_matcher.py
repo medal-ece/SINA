@@ -13,12 +13,28 @@ class Component:
 
 def read_netlist(file_path):
     components = []
+    print(file_path)
     with open(file_path, 'r') as file:
         for line in file:
             parts = line.strip().split()
             name = parts[0]
-            nodes = list(map(int, parts[1:]))
-            components.append(Component(name, nodes))
+            if name == '===':
+                break
+
+            if name == '```':
+                pass
+            else:
+                usedParts = []
+                for part in parts[1:]:
+                    if ',' in part:
+                        part = part[:-1]
+                        usedParts.append(part)
+                        break
+                    else:
+                        usedParts.append(part)
+
+                nodes = list(map(int, usedParts))
+                components.append(Component(name, nodes))
     return components
 
 

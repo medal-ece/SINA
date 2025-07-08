@@ -126,7 +126,8 @@ def check_component_consistency(api_response_lines, circuit_json_path, image_pat
 
 def extract_components_from_image_api(image_path, output_path=None):
     load_dotenv()   
-    api_key = os.getenv("OPENAI_API_KEY")
+    # api_key = os.getenv("OPENAI_API_KEY")
+    api_key = "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"
 
     if not api_key:
         raise RuntimeError("OPENAI_API_KEY not found in environment.")
