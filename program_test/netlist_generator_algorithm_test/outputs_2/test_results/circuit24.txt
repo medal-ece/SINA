@@ -1,0 +1,11 @@
+```
+Inductor_1:L3, 1 2, 10m
+Inductor_2:L1, 1 2, 10m
+Inductor_3:L2, 1 2, 10m
+Voltage_src_1:V1, 1 2, 1
+===
+L3 1 2 10m
+L1 1 2 10m
+L2 1 2 10m
+V1 1 2 DC 1
+```

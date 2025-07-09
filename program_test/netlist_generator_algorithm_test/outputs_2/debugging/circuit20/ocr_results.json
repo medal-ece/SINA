@@ -1,0 +1,1012 @@
+{
+    "total_text_items": 108,
+    "text_with_confidence": [
+        {
+            "text": "3",
+            "confidence": 0.9999995231628986,
+            "center": [
+                350.67375,
+                181.90200000000002
+            ]
+        },
+        {
+            "text": "0",
+            "confidence": 0.9999983310706426,
+            "center": [
+                189.90825,
+                329.11024999999995
+            ]
+        },
+        {
+            "text": "1",
+            "confidence": 0.999993562708724,
+            "center": [
+                186.172,
+                38.75025
+            ]
+        },
+        {
+            "text": "R2",
+            "confidence": 0.9921998877687593,
+            "center": [
+                310.5,
+                238.5
+            ]
+        },
+        {
+            "text": "2",
+            "confidence": 0.9817096076429586,
+            "center": [
+                189.3745,
+                122.976
+            ]
+        },
+        {
+            "text": "RSHUNTT",
+            "confidence": 0.9795783217939876,
+            "center": [
+                142.5,
+                127.5
+            ]
+        },
+        {
+            "text": "L1",
+            "confidence": 0.9706990675028296,
+            "center": [
+                159.5,
+                238.5
+            ]
+        },
+        {
+            "text": "RSHUNT2",
+            "confidence": 0.9658661950454296,
+            "center": [
+                293.5,
+                128.75
+            ]
+        },
+        {
+            "text": "RSHUNT1",
+            "confidence": 0.9325085049927727,
+            "center": [
+                142.8315,
+                126.92575
+            ]
+        },
+        {
+            "text": "R",
+            "confidence": 0.93,
+            "center": [
+                124.257,
+                125.538
+            ]
+        },
+        {
+            "text": "1H",
+            "confidence": 0.93,
+            "center": [
+                221.5,
+                237.5
+            ]
+        },
+        {
+            "text": "H",
+            "confidence": 0.9297043923666395,
+            "center": [
+                221.5,
+                238.0
+            ]
+        },
+        {
+            "text": "6.3KQ",
+            "confidence": 0.91,
+            "center": [
+                381.5,
+                237.5
+            ]
+        },
+        {
+            "text": "SHUNT2",
+            "confidence": 0.91,
+            "center": [
+                301.2485,
+                130.55525
+            ]
+        },
+        {
+            "text": "LT",
+            "confidence": 0.8891902857219938,
+            "center": [
+                159.0,
+                238.0
+            ]
+        },
+        {
+            "text": "RE",
+            "confidence": 0.88,
+            "center": [
+                309.5,
+                238.0
+            ]
+        },
+        {
+            "text": "S",
+            "confidence": 0.86,
+            "center": [
+                338.5,
+                130.0
+            ]
+        },
+        {
+            "text": "6.3K",
+            "confidence": 0.8511028694847769,
+            "center": [
+                381.5,
+                237.0
+            ]
+        },
+        {
+            "text": "19",
+            "confidence": 0.85,
+            "center": [
+                222.0,
+                125.5
+            ]
+        },
+        {
+            "text": "R2_",
+            "confidence": 0.8476255745321587,
+            "center": [
+                310.5,
+                238.5
+            ]
+        },
+        {
+            "text": "\u00b0",
+            "confidence": 0.84,
+            "center": [
+                344.5,
+                330.5
+            ]
+        },
+        {
+            "text": "SHUNT1",
+            "confidence": 0.84,
+            "center": [
+                149.45,
+                130.55525
+            ]
+        },
+        {
+            "text": "1N",
+            "confidence": 0.8269228184964214,
+            "center": [
+                369.5,
+                126.0
+            ]
+        },
+        {
+            "text": "Q",
+            "confidence": 0.82,
+            "center": [
+                228.872,
+                125.11099999999999
+            ]
+        },
+        {
+            "text": "RSHUN12",
+            "confidence": 0.8168721783338053,
+            "center": [
+                294.0,
+                129.25
+            ]
+        },
+        {
+            "text": "6.3K0",
+            "confidence": 0.8106200489308916,
+            "center": [
+                381.0,
+                236.5
+            ]
+        },
+        {
+            "text": "_",
+            "confidence": 0.8091011653367954,
+            "center": [
+                294.5,
+                129.0
+            ]
+        },
+        {
+            "text": "ASHUN12",
+            "confidence": 0.8091011653367954,
+            "center": [
+                294.5,
+                129.0
+            ]
+        },
+        {
+            "text": "10",
+            "confidence": 0.7917487646874157,
+            "center": [
+                369.5,
+                125.0
+            ]
+        },
+        {
+            "text": "REHUNE",
+            "confidence": 0.76,
+            "center": [
+                294.0,
+                127.0
+            ]
+        },
+        {
+            "text": "ASHUNTT",
+            "confidence": 0.7124121991428823,
+            "center": [
+                142.0,
+                129.0
+            ]
+        },
+        {
+            "text": "31H",
+            "confidence": 0.7066681967287188,
+            "center": [
+                193.5,
+                240.0
+            ]
+        },
+        {
+            "text": "L",
+            "confidence": 0.6589833115971752,
+            "center": [
+                193.5,
+                243.5
+            ]
+        },
+        {
+            "text": "314",
+            "confidence": 0.6589833115971752,
+            "center": [
+                193.5,
+                243.5
+            ]
+        },
+        {
+            "text": "LY",
+            "confidence": 0.59,
+            "center": [
+                159.5,
+                238.0
+            ]
+        },
+        {
+            "text": "6.3KN",
+            "confidence": 0.58241063460095,
+            "center": [
+                381.0,
+                237.0
+            ]
+        },
+        {
+            "text": "6.3",
+            "confidence": 0.5580809096010725,
+            "center": [
+                381.20425,
+                237.1985
+            ]
+        },
+        {
+            "text": "K",
+            "confidence": 0.5580809096010725,
+            "center": [
+                381.20425,
+                237.1985
+            ]
+        },
+        {
+            "text": "RENUNTT",
+            "confidence": 0.51,
+            "center": [
+                142.5,
+                127.0
+            ]
+        },
+        {
+            "text": "RS60K0",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "FEL",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "REEHUNTT",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "REHUNT2",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "=",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "\u00a9",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "S0K0",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "6",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "F",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "RSK",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "CE",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "SHUNT",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "NM",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "1)",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "S0AKA",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "P",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "A",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "63K0",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "PESNUNTT",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "FASNUN2",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "1A",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "RS600",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "F1",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "RSK0",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "CEE",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "RESHUNTT",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "\u00a9)",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "S0AK0",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "RP",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "NE?",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "RESNUNTT",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "RS09K0",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "PET",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "RAN1",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "S10",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "RASA",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "&)",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "S09K0",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "RS60",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "FE",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "N",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "RS6310",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "RSHUNTE",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "CAL",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "4",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "ET",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "8S",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "(",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "1Q",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "63KQ",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "KQ",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "63KN",
+            "confidence": 0.49915722012519836,
+            "center": [
+                381.0,
+                236.0
+            ]
+        },
+        {
+            "text": "RSHUNL2",
+            "confidence": 0.49650502386100803,
+            "center": [
+                293.5,
+                129.25
+            ]
+        },
+        {
+            "text": "RSHUNLT",
+            "confidence": 0.4817289474371237,
+            "center": [
+                142.5,
+                127.0
+            ]
+        },
+        {
+            "text": "REHUNTE",
+            "confidence": 0.48,
+            "center": [
+                294.5,
+                127.0
+            ]
+        },
+        {
+            "text": "K0",
+            "confidence": 0.4712841958721363,
+            "center": [
+                381.5,
+                238.0
+            ]
+        },
+        {
+            "text": "LE)",
+            "confidence": 0.44,
+            "center": [
+                377.0,
+                125.5
+            ]
+        },
+        {
+            "text": "KN",
+            "confidence": 0.42243738637236605,
+            "center": [
+                381.5,
+                238.0
+            ]
+        },
+        {
+            "text": "81+",
+            "confidence": 0.4106356841800681,
+            "center": [
+                206.5,
+                242.5
+            ]
+        },
+        {
+            "text": "RENUNT2",
+            "confidence": 0.39,
+            "center": [
+                294.5,
+                127.0
+            ]
+        },
+        {
+            "text": "REHUNTT",
+            "confidence": 0.33,
+            "center": [
+                142.5,
+                127.0
+            ]
+        },
+        {
+            "text": "02",
+            "confidence": 0.3197472095489502,
+            "center": [
+                370.0,
+                126.0
+            ]
+        },
+        {
+            "text": "31+",
+            "confidence": 0.31237566904267094,
+            "center": [
+                207.0,
+                246.0
+            ]
+        },
+        {
+            "text": "311",
+            "confidence": 0.2740179157497684,
+            "center": [
+                206.5,
+                245.0
+            ]
+        },
+        {
+            "text": "63K2",
+            "confidence": 0.2633123993873596,
+            "center": [
+                381.5,
+                238.0
+            ]
+        },
+        {
+            "text": "109",
+            "confidence": 0.25,
+            "center": [
+                222.0,
+                125.5
+            ]
+        },
+        {
+            "text": "S12",
+            "confidence": 0.23,
+            "center": [
+                222.0,
+                125.5
+            ]
+        },
+        {
+            "text": "NY",
+            "confidence": 0.16,
+            "center": [
+                201.5,
+                182.0
+            ]
+        },
+        {
+            "text": "N0",
+            "confidence": 0.1,
+            "center": [
+                201.5,
+                182.0
+            ]
+        }
+    ],
+    "text_by_component": {
+        "Resistor_1": [
+            {
+                "text": "2",
+                "confidence": 0.9817096076429586,
+                "distance": 1.0194735160856419
+            },
+            {
+                "text": "19",
+                "confidence": 0.85,
+                "distance": 33.55964838909967
+            },
+            {
+                "text": "109",
+                "confidence": 0.25,
+                "distance": 33.55964838909967
+            },
+            {
+                "text": "S12",
+                "confidence": 0.23,
+                "distance": 33.55964838909967
+            },
+            {
+                "text": "SHUNT1",
+                "confidence": 0.84,
+                "distance": 39.68222590231678
+            },
+            {
+                "text": "Q",
+                "confidence": 0.82,
+                "distance": 40.40412980129632
+            },
+            {
+                "text": "RSHUNT1",
+                "confidence": 0.9325085049927727,
+                "distance": 45.796808352902715
+            },
+            {
+                "text": "RENUNTT",
+                "confidence": 0.51,
+                "distance": 46.13296001775737
+            },
+            {
+                "text": "RSHUNLT",
+                "confidence": 0.4817289474371237,
+                "distance": 46.13296001775737
+            },
+            {
+                "text": "REHUNTT",
+                "confidence": 0.33,
+                "distance": 46.13296001775737
+            },
+            {
+                "text": "RSHUNTT",
+                "confidence": 0.9795783217939876,
+                "distance": 46.17358552246078
+            },
+            {
+                "text": "ASHUNTT",
+                "confidence": 0.7124121991428823,
+                "distance": 46.82413907377262
+            },
+            {
+                "text": "R",
+                "confidence": 0.93,
+                "distance": 64.27531791442186
+            },
+            {
+                "text": "1",
+                "confidence": 0.999993562708724,
+                "distance": 84.78171801197769
+            }
+        ],
+        "Resistor_2": [
+            {
+                "text": "S",
+                "confidence": 0.86,
+                "distance": 6.800735254367722
+            },
+            {
+                "text": "10",
+                "confidence": 0.7917487646874157,
+                "distance": 33.03407331831786
+            },
+            {
+                "text": "1N",
+                "confidence": 0.8269228184964214,
+                "distance": 33.094561486745825
+            },
+            {
+                "text": "02",
+                "confidence": 0.3197472095489502,
+                "distance": 33.59315406448165
+            },
+            {
+                "text": "SHUNT2",
+                "confidence": 0.91,
+                "distance": 35.95058837922547
+            },
+            {
+                "text": "LE)",
+                "confidence": 0.44,
+                "distance": 40.549352645880795
+            },
+            {
+                "text": "REHUNTE",
+                "confidence": 0.48,
+                "distance": 42.14558102577303
+            },
+            {
+                "text": "RENUNT2",
+                "confidence": 0.39,
+                "distance": 42.14558102577303
+            },
+            {
+                "text": "_",
+                "confidence": 0.8091011653367954,
+                "distance": 42.358588267315994
+            },
+            {
+                "text": "ASHUN12",
+                "confidence": 0.8091011653367954,
+                "distance": 42.358588267315994
+            },
+            {
+                "text": "REHUNE",
+                "confidence": 0.76,
+                "distance": 42.64387412044079
+            },
+            {
+                "text": "RSHUN12",
+                "confidence": 0.8168721783338053,
+                "distance": 42.88720671715517
+            },
+            {
+                "text": "RSHUNT2",
+                "confidence": 0.9658661950454296,
+                "distance": 43.31930862790864
+            },
+            {
+                "text": "RSHUNL2",
+                "confidence": 0.49650502386100803,
+                "distance": 43.382744265433466
+            }
+        ],
+        "Resistor_3": [
+            {
+                "text": "R2",
+                "confidence": 0.9921998877687593,
+                "distance": 27.073972741361768
+            },
+            {
+                "text": "R2_",
+                "confidence": 0.8476255745321587,
+                "distance": 27.073972741361768
+            },
+            {
+                "text": "RE",
+                "confidence": 0.88,
+                "distance": 28.040149785619906
+            },
+            {
+                "text": "6.3K0",
+                "confidence": 0.8106200489308916,
+                "distance": 43.5
+            },
+            {
+                "text": "6.3KN",
+                "confidence": 0.58241063460095,
+                "distance": 43.502873468312416
+            },
+            {
+                "text": "63KN",
+                "confidence": 0.49915722012519836,
+                "distance": 43.502873468312416
+            },
+            {
+                "text": "6.3",
+                "confidence": 0.5580809096010725,
+                "distance": 43.70983150633848
+            },
+            {
+                "text": "K",
+                "confidence": 0.5580809096010725,
+                "distance": 43.70983150633848
+            },
+            {
+                "text": "6.3K",
+                "confidence": 0.8511028694847769,
+                "distance": 44.0028408173836
+            },
+            {
+                "text": "6.3KQ",
+                "confidence": 0.91,
+                "distance": 44.01136216933077
+            },
+            {
+                "text": "K0",
+                "confidence": 0.4712841958721363,
+                "distance": 44.02556075736003
+            },
+            {
+                "text": "KN",
+                "confidence": 0.42243738637236605,
+                "distance": 44.02556075736003
+            },
+            {
+                "text": "63K2",
+                "confidence": 0.2633123993873596,
+                "distance": 44.02556075736003
+            },
+            {
+                "text": "3",
+                "confidence": 0.9999995231628986,
+                "distance": 56.16484036354504
+            },
+            {
+                "text": "\u00b0",
+                "confidence": 0.84,
+                "distance": 94.26027795418386
+            }
+        ],
+        "Inductor_1": [
+            {
+                "text": "31H",
+                "confidence": 0.7066681967287188,
+                "distance": 5.0990195135927845
+            },
+            {
+                "text": "L",
+                "confidence": 0.6589833115971752,
+                "distance": 6.726812023536855
+            },
+            {
+                "text": "314",
+                "confidence": 0.6589833115971752,
+                "distance": 6.726812023536855
+            },
+            {
+                "text": "81+",
+                "confidence": 0.4106356841800681,
+                "distance": 18.33712082089225
+            },
+            {
+                "text": "311",
+                "confidence": 0.2740179157497684,
+                "distance": 18.973665961010276
+            },
+            {
+                "text": "31+",
+                "confidence": 0.31237566904267094,
+                "distance": 19.78004044485248
+            },
+            {
+                "text": "L1",
+                "confidence": 0.9706990675028296,
+                "distance": 29.004310024546353
+            },
+            {
+                "text": "LY",
+                "confidence": 0.59,
+                "distance": 29.017236257093817
+            },
+            {
+                "text": "LT",
+                "confidence": 0.8891902857219938,
+                "distance": 29.516944286290883
+            },
+            {
+                "text": "H",
+                "confidence": 0.9297043923666395,
+                "distance": 33.015148038438355
+            },
+            {
+                "text": "1H",
+                "confidence": 0.93,
+                "distance": 33.03407331831786
+            },
+            {
+                "text": "NY",
+                "confidence": 0.16,
+                "distance": 58.463663928973865
+            },
+            {
+                "text": "N0",
+                "confidence": 0.1,
+                "distance": 58.463663928973865
+            },
+            {
+                "text": "0",
+                "confidence": 0.9999983310706426,
+                "distance": 90.12125344847902
+            }
+        ],
+        "Voltage_src_1": []
+    }
+}

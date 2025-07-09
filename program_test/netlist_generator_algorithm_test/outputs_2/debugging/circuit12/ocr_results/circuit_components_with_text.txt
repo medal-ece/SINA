@@ -1,0 +1,71 @@
+CIRCUIT COMPONENT ANALYSIS
+================================================================================
+ALL DETECTED TEXT IN CIRCUIT:
+----------------------------------------
+- 3 (confidence: 1.00)
+- L1 (confidence: 1.00)
+- + (confidence: 1.00)
+- V1 (confidence: 0.99)
+- 10 (confidence: 0.99)
+- MH (confidence: 0.99)
+- 3V (confidence: 0.97)
+- V (confidence: 0.93)
+- 3L1 (confidence: 0.90)
+- 1 (confidence: 0.72)
+- V4 (confidence: 0.62)
+- "4 (confidence: 0.60)
+- UU (confidence: 0.55)
+- 10MH (confidence: 0.50)
+- 0E (confidence: 0.50)
+- 0F (confidence: 0.50)
+- M1 (confidence: 0.50)
+- L141 (confidence: 0.50)
+- 40H (confidence: 0.50)
+- PF (confidence: 0.50)
+- "40 (confidence: 0.50)
+- EE (confidence: 0.50)
+- LL (confidence: 0.50)
+- PE (confidence: 0.50)
+- A (confidence: 0.50)
+- 4 (confidence: 0.50)
+- 410MH (confidence: 0.50)
+- S (confidence: 0.50)
+- AL (confidence: 0.50)
+- © (confidence: 0.50)
+- VJ (confidence: 0.41)
+- 410 (confidence: 0.26)
+- R1MH (confidence: 0.23)
+- U1 (confidence: 0.17)
+
+COMPONENTS WITH ASSOCIATED TEXT:
+================================================================================
+
+COMPONENT Inductor_1:
+  Nearby Text:
+    - 3 (conf: 1.00, dist: 2.3px)
+    - 3L1 (conf: 0.90, dist: 20.7px)
+    - 1 (conf: 0.72, dist: 35.1px)
+    - UU (conf: 0.55, dist: 35.1px)
+    - U1 (conf: 0.17, dist: 35.1px)
+    - L1 (conf: 1.00, dist: 36.0px)
+    - 410 (conf: 0.26, dist: 39.8px)
+    - R1MH (conf: 0.23, dist: 40.8px)
+    - 10 (conf: 0.99, dist: 55.7px)
+    - MH (conf: 0.99, dist: 55.7px)
+    - "4 (conf: 0.60, dist: 72.4px)
+
+COMPONENT Voltage_src_1:
+  Nearby Text:
+    - + (conf: 1.00, dist: 3.7px)
+    - V4 (conf: 0.62, dist: 51.3px)
+    - VJ (conf: 0.41, dist: 51.4px)
+    - V1 (conf: 0.99, dist: 52.7px)
+    - 3V (conf: 0.97, dist: 57.6px)
+    - V (conf: 0.93, dist: 57.6px)
+
+COMPONENT GND_1:
+  No nearby text found
+
+COMPONENT GND_2:
+  No nearby text found
+

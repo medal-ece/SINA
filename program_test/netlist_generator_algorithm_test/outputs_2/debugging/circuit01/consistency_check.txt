@@ -1,0 +1,14 @@
+Component Consistency Check
+========================================
+API Component Types (4 total):
+  Op-Amp: 1
+  Resistor: 2
+  Voltage_src: 1
+
+Object Detection Types (3 total):
+  Resistor: 2
+  Voltage_src: 1
+
+⚠️  Mismatch in 'Op-Amp': API=1, Detection=0
+
+❌ Result: FAIL — Mismatched component types or counts.

@@ -1,0 +1,100 @@
+CIRCUIT COMPONENT ANALYSIS
+================================================================================
+ALL DETECTED TEXT IN CIRCUIT:
+----------------------------------------
+- 12 (confidence: 1.00)
+- 1 (confidence: 1.00)
+- V1N (confidence: 1.00)
+- R3 (confidence: 1.00)
+- 470K (confidence: 1.00)
+- + (confidence: 1.00)
+- U (confidence: 1.00)
+- 8 (confidence: 1.00)
+- Y (confidence: 1.00)
+- C1 (confidence: 1.00)
+- 10K (confidence: 0.99)
+- 4.7U (confidence: 0.98)
+- U1 (confidence: 0.98)
+- R1 (confidence: 0.93)
+- A (confidence: 0.91)
+- R2 (confidence: 0.78)
+- 4.7P (confidence: 0.70)
+- 6 (confidence: 0.67)
+- 470 (confidence: 0.50)
+- V (confidence: 0.50)
+- CE (confidence: 0.50)
+- 09/ (confidence: 0.50)
+- 0P (confidence: 0.50)
+- TE (confidence: 0.50)
+- S (confidence: 0.50)
+- ~ (confidence: 0.50)
+- 00/ (confidence: 0.50)
+- 0P1N (confidence: 0.50)
+- EE (confidence: 0.50)
+- 0A (confidence: 0.50)
+- & (confidence: 0.50)
+- HE (confidence: 0.50)
+- 90/ (confidence: 0.50)
+- ST (confidence: 0.50)
+- 0F (confidence: 0.50)
+- SN (confidence: 0.50)
+- 0E (confidence: 0.50)
+- 5 (confidence: 0.50)
+- RA (confidence: 0.50)
+- * (confidence: 0.50)
+- CA (confidence: 0.50)
+- FE (confidence: 0.50)
+- CV (confidence: 0.50)
+- V1 (confidence: 0.50)
+- > (confidence: 0.50)
+- 2 (confidence: 0.46)
+- 9 (confidence: 0.44)
+- H6 (confidence: 0.43)
+- 76 (confidence: 0.42)
+
+COMPONENTS WITH ASSOCIATED TEXT:
+================================================================================
+
+COMPONENT Voltage_src_1:
+  Nearby Text:
+    - V1N (conf: 1.00, dist: 147.9px)
+
+COMPONENT Op-Amp_v1_1:
+  Nearby Text:
+    - + (conf: 1.00, dist: 62.6px)
+    - U (conf: 1.00, dist: 103.1px)
+    - U1 (conf: 0.98, dist: 114.6px)
+    - 1 (conf: 1.00, dist: 128.9px)
+    - 6 (conf: 0.67, dist: 160.4px)
+    - 8 (conf: 1.00, dist: 164.1px)
+    - 2 (conf: 0.46, dist: 178.9px)
+    - 10K (conf: 0.99, dist: 302.4px)
+    - R2 (conf: 0.78, dist: 328.0px)
+
+COMPONENT GND_1:
+  Nearby Text:
+    - 12 (conf: 1.00, dist: 117.1px)
+
+COMPONENT Capacitor_1:
+  Nearby Text:
+    - H6 (conf: 0.43, dist: 9.6px)
+    - 76 (conf: 0.42, dist: 19.1px)
+    - Y (conf: 1.00, dist: 23.1px)
+    - A (conf: 0.91, dist: 31.2px)
+    - C1 (conf: 1.00, dist: 74.6px)
+    - 4.7P (conf: 0.70, dist: 82.3px)
+    - 4.7U (conf: 0.98, dist: 85.0px)
+    - R1 (conf: 0.93, dist: 323.7px)
+
+COMPONENT Resistor_1:
+  Nearby Text:
+    - R3 (conf: 1.00, dist: 96.2px)
+    - 470K (conf: 1.00, dist: 140.6px)
+    - 9 (conf: 0.44, dist: 156.1px)
+
+COMPONENT GND_2:
+  No nearby text found
+
+COMPONENT GND_3:
+  No nearby text found
+

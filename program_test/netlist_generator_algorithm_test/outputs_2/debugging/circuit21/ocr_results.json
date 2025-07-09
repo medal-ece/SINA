@@ -1,0 +1,197 @@
+{
+    "total_text_items": 17,
+    "text_with_confidence": [
+        {
+            "text": "5",
+            "confidence": 1.0,
+            "center": [
+                308.5,
+                955.0
+            ]
+        },
+        {
+            "text": "47",
+            "confidence": 1.0,
+            "center": [
+                917.0,
+                485.0
+            ]
+        },
+        {
+            "text": "100",
+            "confidence": 0.9999884373223668,
+            "center": [
+                1327.0,
+                983.0
+            ]
+        },
+        {
+            "text": "Q1",
+            "confidence": 0.9990878112215827,
+            "center": [
+                852.5,
+                710.5
+            ]
+        },
+        {
+            "text": "M1",
+            "confidence": 0.9763986680595701,
+            "center": [
+                1280.5,
+                707.5
+            ]
+        },
+        {
+            "text": "V1",
+            "confidence": 0.9758018971819089,
+            "center": [
+                501.0,
+                217.0
+            ]
+        },
+        {
+            "text": "V2",
+            "confidence": 0.9658569806209253,
+            "center": [
+                327.0,
+                777.5
+            ]
+        },
+        {
+            "text": "F",
+            "confidence": 0.9478170531625132,
+            "center": [
+                1184.5,
+                739.0
+            ]
+        },
+        {
+            "text": "R2",
+            "confidence": 0.9312584783090848,
+            "center": [
+                1306.5,
+                901.0
+            ]
+        },
+        {
+            "text": "R1",
+            "confidence": 0.7173242035961639,
+            "center": [
+                912.5,
+                406.0
+            ]
+        },
+        {
+            "text": "PA",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "V",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "AS",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "S",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "4/7",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "QL",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "J",
+            "confidence": 0.49101906061128275,
+            "center": [
+                1187.0,
+                663.5
+            ]
+        }
+    ],
+    "text_by_component": {
+        "Voltage_src_1": [
+            {
+                "text": "V2",
+                "confidence": 0.9658569806209253,
+                "distance": 124.8048476622603
+            }
+        ],
+        "Transistor_BJT_1": [
+            {
+                "text": "Q1",
+                "confidence": 0.9990878112215827,
+                "distance": 77.59188101857049
+            }
+        ],
+        "Transistor_MOSFET_1": [
+            {
+                "text": "J",
+                "confidence": 0.49101906061128275,
+                "distance": 29.71952220342716
+            },
+            {
+                "text": "F",
+                "confidence": 0.9478170531625132,
+                "distance": 46.671725916233264
+            },
+            {
+                "text": "M1",
+                "confidence": 0.9763986680595701,
+                "distance": 101.11874208078342
+            }
+        ],
+        "GND_1": [
+            {
+                "text": "5",
+                "confidence": 1.0,
+                "distance": 85.03675675847474
+            }
+        ],
+        "Voltage_src_2": [
+            {
+                "text": "V1",
+                "confidence": 0.9758018971819089,
+                "distance": 99.10221995495358
+            }
+        ],
+        "Resistor_1": [
+            {
+                "text": "R1",
+                "confidence": 0.7173242035961639,
+                "distance": 80.05623023850174
+            },
+            {
+                "text": "47",
+                "confidence": 1.0,
+                "distance": 88.25106231655232
+            }
+        ],
+        "Resistor_2": [
+            {
+                "text": "R2",
+                "confidence": 0.9312584783090848,
+                "distance": 81.15417426109393
+            },
+            {
+                "text": "100",
+                "confidence": 0.9999884373223668,
+                "distance": 108.26472186266402
+            }
+        ],
+        "GND_2": [],
+        "GND_3": [],
+        "GND_4": []
+    }
+}

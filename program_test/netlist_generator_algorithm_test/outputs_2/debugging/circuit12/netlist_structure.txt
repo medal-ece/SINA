@@ -1,0 +1,2 @@
+Inductor_1 1 2
+Voltage_src_1 1 2

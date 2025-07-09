@@ -1,0 +1,122 @@
+[
+    {
+        "id": "Inductor_1",
+        "label": "Inductor",
+        "bounding_box": [
+            314,
+            49,
+            408,
+            71
+        ],
+        "connection_points": [
+            [
+                314,
+                61
+            ],
+            [
+                408,
+                61
+            ]
+        ]
+    },
+    {
+        "id": "Inductor_2",
+        "label": "Inductor",
+        "bounding_box": [
+            124,
+            49,
+            219,
+            72
+        ],
+        "connection_points": [
+            [
+                219,
+                61
+            ],
+            [
+                124,
+                61
+            ]
+        ]
+    },
+    {
+        "id": "Capacitor_1",
+        "label": "Capacitor",
+        "bounding_box": [
+            241,
+            161,
+            283,
+            200
+        ],
+        "connection_points": [
+            [
+                262,
+                161
+            ],
+            [
+                262,
+                200
+            ]
+        ]
+    },
+    {
+        "id": "Resistor_1",
+        "label": "Resistor",
+        "bounding_box": [
+            455,
+            151,
+            485,
+            211
+        ],
+        "connection_points": [
+            [
+                469,
+                151
+            ],
+            [
+                469,
+                211
+            ]
+        ]
+    },
+    {
+        "id": "Voltage_src_1",
+        "label": "Voltage_src",
+        "bounding_box": [
+            50,
+            96,
+            95,
+            156
+        ],
+        "connection_points": [
+            [
+                72,
+                96
+            ],
+            [
+                72,
+                156
+            ]
+        ]
+    },
+    {
+        "id": "Voltage_src_2",
+        "label": "Voltage_src",
+        "bounding_box": [
+            51,
+            223,
+            95,
+            269
+        ],
+        "connection_points": [
+            [
+                72,
+                223
+            ],
+            [
+                72,
+                269
+            ]
+        ]
+    }
+]

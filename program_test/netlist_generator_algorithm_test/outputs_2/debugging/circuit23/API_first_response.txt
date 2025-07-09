@@ -1,0 +1,16 @@
+number of components: 10
+(This component was drawn like a circle with + and - symbols which fits voltage source description)V1: 5
+(This component was drawn like a circle with + and - symbols which fits voltage source description)V2: 9
+(This component was drawn like zig-zag line which fits resistor description)R1: 10k
+(This component was drawn like zig-zag line which fits resistor description)R2: 10k
+(This component was drawn like zig-zag line which fits resistor description)R3: 47k
+(This component was drawn like zig-zag line which fits resistor description)R4: 2.2k
+(This component was drawn like zig-zag line which fits resistor description)R5: 100
+(This component was drawn like two parallel lines which fits capacitor description)C1: 10µ
+(This component was drawn like two parallel lines which fits capacitor description)C2: 2.2µ
+(This component was drawn like a triangle with three lines which fits BJT description)Q1: NPN
+types:
+  Voltage_src: 2
+  Resistor: 5
+  Capacitor: 2
+  Transistor_BJT: 1

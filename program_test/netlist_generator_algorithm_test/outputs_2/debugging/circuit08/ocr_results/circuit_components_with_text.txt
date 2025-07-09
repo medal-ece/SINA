@@ -1,0 +1,100 @@
+CIRCUIT COMPONENT ANALYSIS
+================================================================================
+ALL DETECTED TEXT IN CIRCUIT:
+----------------------------------------
+- 3 (confidence: 1.00)
+- 220 (confidence: 1.00)
+- 2.2 (confidence: 1.00)
+- V1N (confidence: 1.00)
+- VCC (confidence: 1.00)
+- R3 (confidence: 1.00)
+- 2.2K (confidence: 1.00)
+- Q1 (confidence: 1.00)
+- Q2 (confidence: 1.00)
+- R4 (confidence: 1.00)
+- C1 (confidence: 0.99)
+- 10K (confidence: 0.98)
+- R1 (confidence: 0.98)
+- R2 (confidence: 0.97)
+- H (confidence: 0.90)
+- 2.2U (confidence: 0.87)
+- 2.24 (confidence: 0.60)
+- V (confidence: 0.50)
+- C (confidence: 0.50)
+- 22U (confidence: 0.50)
+- V22K (confidence: 0.50)
+- 8AD (confidence: 0.50)
+- CL (confidence: 0.50)
+- 10 (confidence: 0.50)
+- CAD (confidence: 0.50)
+- VEC (confidence: 0.50)
+- SET (confidence: 0.50)
+- RAD (confidence: 0.50)
+- V22 (confidence: 0.50)
+- RAY (confidence: 0.50)
+- 4 (confidence: 0.39)
+- 5 (confidence: 0.32)
+- HF (confidence: 0.22)
+
+COMPONENTS WITH ASSOCIATED TEXT:
+================================================================================
+
+COMPONENT Voltage_src_1:
+  Nearby Text:
+    - V1N (conf: 1.00, dist: 115.3px)
+
+COMPONENT Transistor_BJT_1:
+  Nearby Text:
+    - Q2 (conf: 1.00, dist: 77.2px)
+
+COMPONENT Transistor_BJT_2:
+  Nearby Text:
+    - Q1 (conf: 1.00, dist: 68.0px)
+
+COMPONENT Resistor_1:
+  Nearby Text:
+    - 2.2K (conf: 1.00, dist: 57.6px)
+    - R1 (conf: 0.98, dist: 62.5px)
+
+COMPONENT Resistor_2:
+  Nearby Text:
+    - R3 (conf: 1.00, dist: 74.9px)
+    - 10K (conf: 0.98, dist: 91.7px)
+
+COMPONENT Resistor_3:
+  Nearby Text:
+    - R2 (conf: 0.97, dist: 74.5px)
+
+COMPONENT Resistor_4:
+  Nearby Text:
+    - R4 (conf: 1.00, dist: 72.7px)
+    - 220 (conf: 1.00, dist: 95.3px)
+
+COMPONENT GND_1:
+  Nearby Text:
+    - 3 (conf: 1.00, dist: 75.6px)
+
+COMPONENT Capacitor_1:
+  Nearby Text:
+    - HF (conf: 0.22, dist: 3.8px)
+    - H (conf: 0.90, dist: 4.6px)
+    - 5 (conf: 0.32, dist: 25.0px)
+    - C1 (conf: 0.99, dist: 57.1px)
+    - 2.2 (conf: 1.00, dist: 60.6px)
+    - 2.2U (conf: 0.87, dist: 62.6px)
+    - 2.24 (conf: 0.60, dist: 63.0px)
+    - 4 (conf: 0.39, dist: 78.4px)
+
+COMPONENT Voltage_src_2:
+  Nearby Text:
+    - VCC (conf: 1.00, dist: 91.5px)
+
+COMPONENT GND_2:
+  No nearby text found
+
+COMPONENT GND_3:
+  No nearby text found
+
+COMPONENT GND_4:
+  No nearby text found
+

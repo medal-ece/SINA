@@ -1,0 +1,128 @@
+CIRCUIT COMPONENT ANALYSIS
+================================================================================
+ALL DETECTED TEXT IN CIRCUIT:
+----------------------------------------
+- 20 (confidence: 1.00)
+- 2 (confidence: 1.00)
+- A (confidence: 1.00)
+- PF_ (confidence: 1.00)
+- PF (confidence: 1.00)
+- 35H (confidence: 1.00)
+- M (confidence: 0.99)
+- V (confidence: 0.99)
+- 5 (confidence: 0.98)
+- H (confidence: 0.98)
+- 10 (confidence: 0.97)
+- $ (confidence: 0.97)
+- T (confidence: 0.96)
+- 35 (confidence: 0.96)
+- 5H (confidence: 0.93)
+- N (confidence: 0.92)
+- 3 (confidence: 0.89)
+- { (confidence: 0.88)
+- 42 (confidence: 0.85)
+- 50 (confidence: 0.83)
+- @ (confidence: 0.83)
+- 40 (confidence: 0.80)
+- SH (confidence: 0.65)
+- Q (confidence: 0.61)
+- UF (confidence: 0.59)
+- 0 (confidence: 0.51)
+- 2A (confidence: 0.50)
+- 200 (confidence: 0.50)
+- 100 (confidence: 0.50)
+- 20F (confidence: 0.50)
+- PEER (confidence: 0.50)
+- SAL (confidence: 0.50)
+- 202F (confidence: 0.50)
+- 8AL (confidence: 0.50)
+- 109 (confidence: 0.50)
+- = (confidence: 0.50)
+- 209 (confidence: 0.50)
+- J (confidence: 0.50)
+- 209. (confidence: 0.50)
+- 8 (confidence: 0.50)
+- WF (confidence: 0.50)
+- 1 (confidence: 0.50)
+- MN (confidence: 0.50)
+- HH (confidence: 0.50)
+- ACRES (confidence: 0.50)
+- LVA (confidence: 0.50)
+- NY (confidence: 0.50)
+- ~~ (confidence: 0.50)
+- |1 (confidence: 0.50)
+- 1042 (confidence: 0.50)
+- WN (confidence: 0.50)
+- 0PAS (confidence: 0.50)
+- 49 (confidence: 0.50)
+- PEE (confidence: 0.50)
+- FN (confidence: 0.50)
+- 0N (confidence: 0.50)
+- | (confidence: 0.50)
+- 10) (confidence: 0.50)
+- ~ (confidence: 0.50)
+- (2 (confidence: 0.50)
+- S (confidence: 0.46)
+- 2500 (confidence: 0.40)
+- 0_. (confidence: 0.40)
+- 240 (confidence: 0.38)
+- 41} (confidence: 0.27)
+- $) (confidence: 0.27)
+
+COMPONENTS WITH ASSOCIATED TEXT:
+================================================================================
+
+COMPONENT Resistor_1:
+  Nearby Text:
+    - { (conf: 0.88, dist: 0.4px)
+    - 240 (conf: 0.38, dist: 30.8px)
+    - 40 (conf: 0.80, dist: 48.6px)
+    - 41} (conf: 0.27, dist: 49.1px)
+    - $) (conf: 0.27, dist: 49.1px)
+
+COMPONENT Resistor_2:
+  Nearby Text:
+    - 2500 (conf: 0.40, dist: 33.5px)
+    - (2 (conf: 0.50, dist: 47.6px)
+    - 50 (conf: 0.83, dist: 48.0px)
+    - @ (conf: 0.83, dist: 48.0px)
+    - 0 (conf: 0.51, dist: 48.5px)
+
+COMPONENT Inductor_1:
+  Nearby Text:
+    - 3 (conf: 0.89, dist: 3.2px)
+    - 35 (conf: 0.96, dist: 26.1px)
+    - 35H (conf: 1.00, dist: 27.1px)
+    - 5 (conf: 0.98, dist: 39.6px)
+    - H (conf: 0.98, dist: 39.6px)
+    - 5H (conf: 0.93, dist: 39.6px)
+    - S (conf: 0.46, dist: 40.0px)
+    - SH (conf: 0.65, dist: 40.0px)
+
+COMPONENT Capacitor_1:
+  Nearby Text:
+    - T (conf: 0.96, dist: 16.1px)
+    - UF (conf: 0.59, dist: 40.9px)
+    - PF_ (conf: 1.00, dist: 42.2px)
+    - PF (conf: 1.00, dist: 58.1px)
+    - 20 (conf: 1.00, dist: 77.0px)
+
+COMPONENT Resistor_3:
+  Nearby Text:
+    - V (conf: 0.99, dist: 17.2px)
+    - N (conf: 0.92, dist: 31.5px)
+
+COMPONENT Resistor_4:
+  Nearby Text:
+    - M (conf: 0.99, dist: 18.4px)
+    - 42 (conf: 0.85, dist: 28.5px)
+    - 10 (conf: 0.97, dist: 29.5px)
+    - $ (conf: 0.97, dist: 29.5px)
+    - Q (conf: 0.61, dist: 29.5px)
+    - 0_. (conf: 0.40, dist: 59.7px)
+
+COMPONENT Current_src_1:
+  Nearby Text:
+    - 2 (conf: 1.00, dist: 46.3px)
+    - A (conf: 1.00, dist: 46.3px)
+

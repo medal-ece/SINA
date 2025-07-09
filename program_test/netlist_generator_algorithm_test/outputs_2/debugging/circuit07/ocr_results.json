@@ -1,0 +1,139 @@
+{
+    "total_text_items": 12,
+    "text_with_confidence": [
+        {
+            "text": "4",
+            "confidence": 1.0,
+            "center": [
+                769.0,
+                301.0
+            ]
+        },
+        {
+            "text": "9",
+            "confidence": 1.0,
+            "center": [
+                1030.5,
+                615.0
+            ]
+        },
+        {
+            "text": "Q1",
+            "confidence": 0.9988728422446324,
+            "center": [
+                546.0,
+                525.0
+            ]
+        },
+        {
+            "text": "V1",
+            "confidence": 0.9725718176511716,
+            "center": [
+                767.0,
+                123.0
+            ]
+        },
+        {
+            "text": "V2",
+            "confidence": 0.9575832725608575,
+            "center": [
+                1047.0,
+                459.0
+            ]
+        },
+        {
+            "text": "100M",
+            "confidence": 0.8003021478652954,
+            "center": [
+                87.5,
+                831.5
+            ]
+        },
+        {
+            "text": "1",
+            "confidence": 0.7666254329347453,
+            "center": [
+                129.0,
+                674.0
+            ]
+        },
+        {
+            "text": "11",
+            "confidence": 0.5272094897395762,
+            "center": [
+                123.5,
+                677.0
+            ]
+        },
+        {
+            "text": "EX",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "0H",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "AH",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "EH",
+            "confidence": 0.5,
+            "center": null
+        }
+    ],
+    "text_by_component": {
+        "Transistor_BJT_1": [
+            {
+                "text": "Q1",
+                "confidence": 0.9988728422446324,
+                "distance": 69.07966415668217
+            }
+        ],
+        "Current_src_1": [
+            {
+                "text": "1",
+                "confidence": 0.7666254329347453,
+                "distance": 103.07764064044152
+            },
+            {
+                "text": "11",
+                "confidence": 0.5272094897395762,
+                "distance": 104.39947317874741
+            },
+            {
+                "text": "100M",
+                "confidence": 0.8003021478652954,
+                "distance": 131.7137046779871
+            }
+        ],
+        "Voltage_src_1": [
+            {
+                "text": "9",
+                "confidence": 1.0,
+                "distance": 98.93684854491778
+            },
+            {
+                "text": "V2",
+                "confidence": 0.9575832725608575,
+                "distance": 110.66277603602758
+            }
+        ],
+        "Voltage_src_2": [
+            {
+                "text": "V1",
+                "confidence": 0.9725718176511716,
+                "distance": 85.50146197580483
+            },
+            {
+                "text": "4",
+                "confidence": 1.0,
+                "distance": 92.51216136270949
+            }
+        ]
+    }
+}

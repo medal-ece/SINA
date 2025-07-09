@@ -1,0 +1,86 @@
+[
+    {
+        "id": "Transistor_BJT_1",
+        "label": "Transistor_BJT",
+        "bounding_box": [
+            417,
+            442,
+            547,
+            660
+        ],
+        "connection_points": [
+            [
+                535,
+                442
+            ],
+            [
+                417,
+                552
+            ],
+            [
+                535,
+                660
+            ]
+        ]
+    },
+    {
+        "id": "Current_src_1",
+        "label": "Current_src",
+        "bounding_box": [
+            127,
+            683,
+            261,
+            825
+        ],
+        "connection_points": [
+            [
+                194,
+                683
+            ],
+            [
+                194,
+                825
+            ]
+        ]
+    },
+    {
+        "id": "Voltage_src_1",
+        "label": "Voltage_src",
+        "bounding_box": [
+            902,
+            469,
+            1036,
+            606
+        ],
+        "connection_points": [
+            [
+                970,
+                469
+            ],
+            [
+                970,
+                606
+            ]
+        ]
+    },
+    {
+        "id": "Voltage_src_2",
+        "label": "Voltage_src",
+        "bounding_box": [
+            696,
+            142,
+            839,
+            275
+        ],
+        "connection_points": [
+            [
+                696,
+                210
+            ],
+            [
+                839,
+                210
+            ]
+        ]
+    }
+]

@@ -1,0 +1,45 @@
+CIRCUIT COMPONENT ANALYSIS
+================================================================================
+ALL DETECTED TEXT IN CIRCUIT:
+----------------------------------------
+- 1 (confidence: 1.00)
+- V1NPUT (confidence: 1.00)
+- VCC (confidence: 1.00)
+- Q1 (confidence: 1.00)
+- 1K (confidence: 0.97)
+- R1 (confidence: 0.91)
+- V (confidence: 0.50)
+- A (confidence: 0.50)
+- AE (confidence: 0.50)
+- VN (confidence: 0.50)
+
+COMPONENTS WITH ASSOCIATED TEXT:
+================================================================================
+
+COMPONENT Voltage_src_1:
+  Nearby Text:
+    - V1NPUT (conf: 1.00, dist: 207.3px)
+
+COMPONENT Transistor_BJT_1:
+  Nearby Text:
+    - Q1 (conf: 1.00, dist: 149.3px)
+
+COMPONENT Voltage_src_2:
+  Nearby Text:
+    - 1 (conf: 1.00, dist: 148.1px)
+    - VCC (conf: 1.00, dist: 152.6px)
+
+COMPONENT GND_1:
+  No nearby text found
+
+COMPONENT GND_2:
+  No nearby text found
+
+COMPONENT GND_3:
+  No nearby text found
+
+COMPONENT Resistor_1:
+  Nearby Text:
+    - R1 (conf: 0.91, dist: 118.5px)
+    - 1K (conf: 0.97, dist: 131.4px)
+

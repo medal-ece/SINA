@@ -1,0 +1,40 @@
+CIRCUIT COMPONENT ANALYSIS
+================================================================================
+ALL DETECTED TEXT IN CIRCUIT:
+----------------------------------------
+- 4 (confidence: 1.00)
+- 9 (confidence: 1.00)
+- Q1 (confidence: 1.00)
+- V1 (confidence: 0.97)
+- V2 (confidence: 0.96)
+- 100M (confidence: 0.80)
+- 1 (confidence: 0.77)
+- 11 (confidence: 0.53)
+- EX (confidence: 0.50)
+- 0H (confidence: 0.50)
+- AH (confidence: 0.50)
+- EH (confidence: 0.50)
+
+COMPONENTS WITH ASSOCIATED TEXT:
+================================================================================
+
+COMPONENT Transistor_BJT_1:
+  Nearby Text:
+    - Q1 (conf: 1.00, dist: 69.1px)
+
+COMPONENT Current_src_1:
+  Nearby Text:
+    - 1 (conf: 0.77, dist: 103.1px)
+    - 11 (conf: 0.53, dist: 104.4px)
+    - 100M (conf: 0.80, dist: 131.7px)
+
+COMPONENT Voltage_src_1:
+  Nearby Text:
+    - 9 (conf: 1.00, dist: 98.9px)
+    - V2 (conf: 0.96, dist: 110.7px)
+
+COMPONENT Voltage_src_2:
+  Nearby Text:
+    - V1 (conf: 0.97, dist: 85.5px)
+    - 4 (conf: 1.00, dist: 92.5px)
+

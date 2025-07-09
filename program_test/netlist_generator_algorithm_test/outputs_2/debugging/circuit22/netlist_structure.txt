@@ -1,0 +1,4 @@
+Transistor_MOSFET_1 2 3 4
+Voltage_src_1 3 4
+Resistor_1 1 2
+Voltage_src_2 1 4

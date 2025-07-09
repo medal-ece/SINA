@@ -1,0 +1,73 @@
+CIRCUIT COMPONENT ANALYSIS
+================================================================================
+ALL DETECTED TEXT IN CIRCUIT:
+----------------------------------------
+- 10 (confidence: 1.00)
+- R3 (confidence: 1.00)
+- 40K (confidence: 1.00)
+- 20K (confidence: 1.00)
+- 100K (confidence: 0.99)
+- U1 (confidence: 0.99)
+- 10K (confidence: 0.99)
+- R4 (confidence: 0.99)
+- U2 (confidence: 0.98)
+- R2 (confidence: 0.92)
+- V1 (confidence: 0.89)
+- RS (confidence: 0.88)
+- R5 (confidence: 0.80)
+- R1 (confidence: 0.80)
+- U| (confidence: 0.53)
+- FEE (confidence: 0.50)
+- FE (confidence: 0.50)
+- SE (confidence: 0.50)
+- 5/\ (confidence: 0.50)
+- A (confidence: 0.50)
+- C0 (confidence: 0.50)
+- 1ES (confidence: 0.50)
+- EA (confidence: 0.50)
+- EP (confidence: 0.50)
+- EE (confidence: 0.50)
+- S3 (confidence: 0.50)
+- 8EE (confidence: 0.50)
+- $3 (confidence: 0.50)
+- ~ (confidence: 0.50)
+
+COMPONENTS WITH ASSOCIATED TEXT:
+================================================================================
+
+COMPONENT GND_1:
+  No nearby text found
+
+COMPONENT Resistor_1:
+  Nearby Text:
+    - R5 (conf: 0.80, dist: 76.5px)
+    - 100K (conf: 0.99, dist: 77.0px)
+    - RS (conf: 0.88, dist: 77.5px)
+    - R2 (conf: 0.92, dist: 357.1px)
+
+COMPONENT Voltage_src_1:
+  Nearby Text:
+    - V1 (conf: 0.89, dist: 143.6px)
+    - 10 (conf: 1.00, dist: 144.6px)
+
+COMPONENT Resistor_2:
+  Nearby Text:
+    - R1 (conf: 0.80, dist: 74.5px)
+
+COMPONENT Resistor_3:
+  Nearby Text:
+    - R4 (conf: 0.99, dist: 76.8px)
+    - 20K (conf: 1.00, dist: 78.1px)
+
+COMPONENT Resistor_4:
+  Nearby Text:
+    - R3 (conf: 1.00, dist: 76.5px)
+    - 10K (conf: 0.99, dist: 78.6px)
+    - U| (conf: 0.53, dist: 247.8px)
+    - U1 (conf: 0.99, dist: 250.5px)
+    - 40K (conf: 1.00, dist: 324.7px)
+
+COMPONENT Op-Amp_v2_1:
+  Nearby Text:
+    - U2 (conf: 0.98, dist: 93.3px)
+

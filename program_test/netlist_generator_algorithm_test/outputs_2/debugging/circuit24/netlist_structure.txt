@@ -1,0 +1,4 @@
+Inductor_1 1 2
+Inductor_2 1 2
+Inductor_3 1 2
+Voltage_src_1 1 2

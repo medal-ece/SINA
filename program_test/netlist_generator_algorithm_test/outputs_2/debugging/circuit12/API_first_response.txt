@@ -1,0 +1,6 @@
+number of components: 2
+(This component was drawn like a circle with + and - symbols which fits voltage source description)V1: 3 V
+(This component was drawn like a series of loops which fits inductor description)L1: 10 mH
+types:
+  Voltage_src: 1
+  Inductor: 1

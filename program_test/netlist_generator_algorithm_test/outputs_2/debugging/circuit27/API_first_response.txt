@@ -1,0 +1,8 @@
+number of components: 4
+(This component was drawn like a circle with + and - symbols which fits voltage source description)V1: 9
+(This component was drawn like two parallel lines which fits capacitor description)C1: 10µ
+(This component was drawn like two parallel lines which fits capacitor description)C2: 10µ
+(This component was drawn like two parallel lines which fits capacitor description)C3: 10µ
+types:
+  Voltage_src: 1
+  Capacitor: 3

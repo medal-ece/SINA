@@ -1,0 +1,8 @@
+number of components: 3
+(This component was drawn like zig-zag line which fits resistor description)R1: 1k
+(This component was drawn like a series of loops which fits inductor description)L1: 10m
+(This component was drawn like a circle with + and - symbols which fits voltage source description)V1: 9V
+types:
+  Resistor: 1
+  Inductor: 1
+  Voltage_src: 1

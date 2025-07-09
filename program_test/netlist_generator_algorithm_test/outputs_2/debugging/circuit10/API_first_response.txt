@@ -1,0 +1,11 @@
+number of components: 6
+(This component was drawn like two parallel lines which fits capacitor description)C1: 20µF
+(This component was drawn like zig-zag line which fits resistor description)R1: 20Ω
+(This component was drawn like zig-zag line which fits resistor description)R2: 50Ω
+(This component was drawn like zig-zag line which fits resistor description)R3: 10Ω
+(This component was drawn like zig-zag line which fits resistor description)R4: 40Ω
+(This component was drawn like a series of loops which fits inductor description)L1: 5H
+types:
+  Capacitor: 1
+  Resistor: 4
+  Inductor: 1

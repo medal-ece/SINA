@@ -1,0 +1,167 @@
+{
+    "total_text_items": 16,
+    "text_with_confidence": [
+        {
+            "text": "9",
+            "confidence": 1.0,
+            "center": [
+                221.0,
+                467.0
+            ]
+        },
+        {
+            "text": "1",
+            "confidence": 0.9999991655351472,
+            "center": [
+                720.135,
+                404.23499999999996
+            ]
+        },
+        {
+            "text": "C1",
+            "confidence": 0.9945870821466746,
+            "center": [
+                485.0,
+                281.0
+            ]
+        },
+        {
+            "text": "C3",
+            "confidence": 0.9937488698631859,
+            "center": [
+                987.5,
+                281.5
+            ]
+        },
+        {
+            "text": "C2",
+            "confidence": 0.9894347811513646,
+            "center": [
+                739.0,
+                279.5
+            ]
+        },
+        {
+            "text": "V1",
+            "confidence": 0.9851957689265971,
+            "center": [
+                240.0,
+                260.5
+            ]
+        },
+        {
+            "text": "10U",
+            "confidence": 0.870721128089827,
+            "center": [
+                1008.5,
+                408.0
+            ]
+        },
+        {
+            "text": "10P",
+            "confidence": 0.8438235933900472,
+            "center": [
+                759.0,
+                409.5
+            ]
+        },
+        {
+            "text": "10",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "6EER",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "10Y",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "10PU",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "0Y",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "0P",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "10PY",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "X",
+            "confidence": 0.42557468713653535,
+            "center": [
+                423.2475,
+                332.71875
+            ]
+        }
+    ],
+    "text_by_component": {
+        "Voltage_src_1": [
+            {
+                "text": "9",
+                "confidence": 1.0,
+                "distance": 129.1559135308949
+            },
+            {
+                "text": "V1",
+                "confidence": 0.9851957689265971,
+                "distance": 145.01896427709033
+            }
+        ],
+        "Capacitor_1": [
+            {
+                "text": "1",
+                "confidence": 0.9999991655351472,
+                "distance": 73.51696028808585
+            },
+            {
+                "text": "C2",
+                "confidence": 0.9894347811513646,
+                "distance": 85.26576100639693
+            },
+            {
+                "text": "10P",
+                "confidence": 0.8438235933900472,
+                "distance": 103.15158748172517
+            }
+        ],
+        "Capacitor_2": [
+            {
+                "text": "X",
+                "confidence": 0.42557468713653535,
+                "distance": 13.12551362090261
+            },
+            {
+                "text": "C1",
+                "confidence": 0.9945870821466746,
+                "distance": 81.1865136583657
+            }
+        ],
+        "Capacitor_3": [
+            {
+                "text": "C3",
+                "confidence": 0.9937488698631859,
+                "distance": 83.48652585896721
+            },
+            {
+                "text": "10U",
+                "confidence": 0.870721128089827,
+                "distance": 101.85406226557681
+            }
+        ]
+    }
+}

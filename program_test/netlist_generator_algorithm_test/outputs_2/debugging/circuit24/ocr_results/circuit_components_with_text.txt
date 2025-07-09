@@ -1,0 +1,42 @@
+CIRCUIT COMPONENT ANALYSIS
+================================================================================
+ALL DETECTED TEXT IN CIRCUIT:
+----------------------------------------
+- L3 (confidence: 1.00)
+- 1 (confidence: 1.00)
+- 10M (confidence: 0.99)
+- V1 (confidence: 0.96)
+- L1 (confidence: 0.93)
+- L2 (confidence: 0.92)
+- FE (confidence: 0.50)
+- 6EER (confidence: 0.50)
+- FER (confidence: 0.50)
+- 22 (confidence: 0.50)
+- 2S (confidence: 0.50)
+- E (confidence: 0.50)
+- <L3 (confidence: 0.50)
+- 2 (confidence: 0.50)
+- TEER (confidence: 0.50)
+- CR (confidence: 0.50)
+
+COMPONENTS WITH ASSOCIATED TEXT:
+================================================================================
+
+COMPONENT Inductor_1:
+  Nearby Text:
+    - L3 (conf: 1.00, dist: 84.8px)
+    - 10M (conf: 0.99, dist: 128.9px)
+
+COMPONENT Inductor_2:
+  Nearby Text:
+    - L1 (conf: 0.93, dist: 83.1px)
+
+COMPONENT Inductor_3:
+  Nearby Text:
+    - L2 (conf: 0.92, dist: 87.1px)
+
+COMPONENT Voltage_src_1:
+  Nearby Text:
+    - 1 (conf: 1.00, dist: 128.3px)
+    - V1 (conf: 0.96, dist: 144.3px)
+

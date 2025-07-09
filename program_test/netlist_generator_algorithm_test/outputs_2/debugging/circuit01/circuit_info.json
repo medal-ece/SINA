@@ -1,0 +1,94 @@
+[
+    {
+        "id": "Voltage_src_1",
+        "label": "Voltage_src",
+        "bounding_box": [
+            249,
+            646,
+            422,
+            822
+        ],
+        "connection_points": [
+            [
+                336,
+                646
+            ],
+            [
+                337,
+                822
+            ]
+        ]
+    },
+    {
+        "id": "GND_1",
+        "label": "GND",
+        "bounding_box": [
+            291,
+            867,
+            381,
+            920
+        ],
+        "connection_points": [
+            [
+                336,
+                867
+            ]
+        ]
+    },
+    {
+        "id": "Resistor_1",
+        "label": "Resistor",
+        "bounding_box": [
+            493,
+            456,
+            714,
+            557
+        ],
+        "connection_points": [
+            [
+                714,
+                506
+            ],
+            [
+                493,
+                506
+            ]
+        ]
+    },
+    {
+        "id": "GND_2",
+        "label": "GND",
+        "bounding_box": [
+            664,
+            696,
+            756,
+            756
+        ],
+        "connection_points": [
+            [
+                710,
+                696
+            ]
+        ]
+    },
+    {
+        "id": "Resistor_2",
+        "label": "Resistor",
+        "bounding_box": [
+            798,
+            209,
+            1005,
+            305
+        ],
+        "connection_points": [
+            [
+                798,
+                257
+            ],
+            [
+                1005,
+                257
+            ]
+        ]
+    }
+]

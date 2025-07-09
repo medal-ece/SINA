@@ -1,0 +1,102 @@
+[
+    {
+        "id": "Resistor_1",
+        "label": "Resistor",
+        "bounding_box": [
+            174,
+            95,
+            203,
+            152
+        ],
+        "connection_points": [
+            [
+                187,
+                95
+            ],
+            [
+                188,
+                152
+            ]
+        ]
+    },
+    {
+        "id": "Resistor_2",
+        "label": "Resistor",
+        "bounding_box": [
+            322,
+            95,
+            351,
+            152
+        ],
+        "connection_points": [
+            [
+                335,
+                95
+            ],
+            [
+                336,
+                152
+            ]
+        ]
+    },
+    {
+        "id": "Resistor_3",
+        "label": "Resistor",
+        "bounding_box": [
+            323,
+            208,
+            352,
+            265
+        ],
+        "connection_points": [
+            [
+                336,
+                208
+            ],
+            [
+                336,
+                265
+            ]
+        ]
+    },
+    {
+        "id": "Inductor_1",
+        "label": "Inductor",
+        "bounding_box": [
+            177,
+            207,
+            200,
+            271
+        ],
+        "connection_points": [
+            [
+                188,
+                207
+            ],
+            [
+                189,
+                271
+            ]
+        ]
+    },
+    {
+        "id": "Voltage_src_1",
+        "label": "Voltage_src",
+        "bounding_box": [
+            18,
+            145,
+            65,
+            200
+        ],
+        "connection_points": [
+            [
+                41,
+                145
+            ],
+            [
+                41,
+                200
+            ]
+        ]
+    }
+]

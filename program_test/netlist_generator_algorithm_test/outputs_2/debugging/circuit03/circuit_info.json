@@ -1,0 +1,134 @@
+[
+    {
+        "id": "Voltage_src_1",
+        "label": "Voltage_src",
+        "bounding_box": [
+            424,
+            1267,
+            598,
+            1446
+        ],
+        "connection_points": [
+            [
+                511,
+                1267
+            ],
+            [
+                511,
+                1446
+            ]
+        ]
+    },
+    {
+        "id": "Op-Amp_v1_1",
+        "label": "Op-Amp_v1",
+        "bounding_box": [
+            861,
+            747,
+            1063,
+            932
+        ],
+        "connection_points": [
+            [
+                861,
+                798
+            ],
+            [
+                1063,
+                839
+            ],
+            [
+                861,
+                881
+            ]
+        ]
+    },
+    {
+        "id": "GND_1",
+        "label": "GND",
+        "bounding_box": [
+            464,
+            1492,
+            557,
+            1546
+        ],
+        "connection_points": [
+            [
+                511,
+                1492
+            ]
+        ]
+    },
+    {
+        "id": "Capacitor_1",
+        "label": "Capacitor",
+        "bounding_box": [
+            938,
+            413,
+            1007,
+            516
+        ],
+        "connection_points": [
+            [
+                938,
+                466
+            ],
+            [
+                1007,
+                466
+            ]
+        ]
+    },
+    {
+        "id": "Resistor_1",
+        "label": "Resistor",
+        "bounding_box": [
+            1086,
+            914,
+            1178,
+            1131
+        ],
+        "connection_points": [
+            [
+                1133,
+                914
+            ],
+            [
+                1133,
+                1131
+            ]
+        ]
+    },
+    {
+        "id": "GND_2",
+        "label": "GND",
+        "bounding_box": [
+            754,
+            1150,
+            848,
+            1216
+        ],
+        "connection_points": [
+            [
+                801,
+                1150
+            ]
+        ]
+    },
+    {
+        "id": "GND_3",
+        "label": "GND",
+        "bounding_box": [
+            1084,
+            1153,
+            1178,
+            1217
+        ],
+        "connection_points": [
+            [
+                1133,
+                1153
+            ]
+        ]
+    }
+]

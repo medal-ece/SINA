@@ -1,0 +1,206 @@
+[
+    {
+        "id": "Transistor_BJT_1",
+        "label": "Transistor_BJT",
+        "bounding_box": [
+            1113,
+            517,
+            1251,
+            750
+        ],
+        "connection_points": [
+            [
+                1240,
+                517
+            ],
+            [
+                1113,
+                627
+            ],
+            [
+                1240,
+                750
+            ]
+        ]
+    },
+    {
+        "id": "Voltage_src_1",
+        "label": "Voltage_src",
+        "bounding_box": [
+            373,
+            775,
+            528,
+            942
+        ],
+        "connection_points": [
+            [
+                451,
+                775
+            ],
+            [
+                451,
+                942
+            ]
+        ]
+    },
+    {
+        "id": "Voltage_src_2",
+        "label": "Voltage_src",
+        "bounding_box": [
+            49,
+            520,
+            206,
+            691
+        ],
+        "connection_points": [
+            [
+                127,
+                520
+            ],
+            [
+                127,
+                691
+            ]
+        ]
+    },
+    {
+        "id": "Resistor_1",
+        "label": "Resistor",
+        "bounding_box": [
+            767,
+            252,
+            848,
+            454
+        ],
+        "connection_points": [
+            [
+                809,
+                252
+            ],
+            [
+                809,
+                454
+            ]
+        ]
+    },
+    {
+        "id": "Resistor_2",
+        "label": "Resistor",
+        "bounding_box": [
+            769,
+            864,
+            850,
+            1062
+        ],
+        "connection_points": [
+            [
+                809,
+                864
+            ],
+            [
+                809,
+                1062
+            ]
+        ]
+    },
+    {
+        "id": "Resistor_3",
+        "label": "Resistor",
+        "bounding_box": [
+            1197,
+            254,
+            1280,
+            448
+        ],
+        "connection_points": [
+            [
+                1240,
+                254
+            ],
+            [
+                1240,
+                448
+            ]
+        ]
+    },
+    {
+        "id": "Resistor_4",
+        "label": "Resistor",
+        "bounding_box": [
+            1201,
+            871,
+            1281,
+            1061
+        ],
+        "connection_points": [
+            [
+                1240,
+                1061
+            ],
+            [
+                1240,
+                871
+            ]
+        ]
+    },
+    {
+        "id": "Capacitor_1",
+        "label": "Capacitor",
+        "bounding_box": [
+            1466,
+            443,
+            1516,
+            524
+        ],
+        "connection_points": [
+            [
+                1466,
+                483
+            ],
+            [
+                1516,
+                483
+            ]
+        ]
+    },
+    {
+        "id": "Resistor_5",
+        "label": "Resistor",
+        "bounding_box": [
+            1630,
+            867,
+            1712,
+            1063
+        ],
+        "connection_points": [
+            [
+                1671,
+                867
+            ],
+            [
+                1671,
+                1063
+            ]
+        ]
+    },
+    {
+        "id": "Capacitor_2",
+        "label": "Capacitor",
+        "bounding_box": [
+            676,
+            622,
+            723,
+            704
+        ],
+        "connection_points": [
+            [
+                723,
+                663
+            ],
+            [
+                676,
+                663
+            ]
+        ]
+    }
+]

@@ -1,0 +1,13 @@
+```
+Transistor_MOSFET_1:M1, 2 3 4, BS170
+Voltage_src_1:Vgg, 3 4, 5V
+Resistor_1:R1, 1 2, 1kΩ
+Voltage_src_2:Vdd, 1 4, 10V
+```
+===
+```
+M1 2 3 4 BS170
+Vgg 3 4 DC 5
+R1 1 2 1k
+Vdd 1 4 DC 10
+```

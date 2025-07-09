@@ -1,0 +1,633 @@
+{
+    "total_text_items": 60,
+    "text_with_confidence": [
+        {
+            "text": "2",
+            "confidence": 1.0,
+            "center": [
+                288.351,
+                35.024
+            ]
+        },
+        {
+            "text": "1",
+            "confidence": 0.9999961853063724,
+            "center": [
+                65.471,
+                34.825
+            ]
+        },
+        {
+            "text": "0",
+            "confidence": 0.9999949932161059,
+            "center": [
+                67.7595,
+                214.2235
+            ]
+        },
+        {
+            "text": "60",
+            "confidence": 0.9983361050842529,
+            "center": [
+                121.0,
+                135.0
+            ]
+        },
+        {
+            "text": "H2",
+            "confidence": 0.9983361050842529,
+            "center": [
+                121.0,
+                135.0
+            ]
+        },
+        {
+            "text": "C1",
+            "confidence": 0.9930117238709005,
+            "center": [
+                244.5,
+                128.0
+            ]
+        },
+        {
+            "text": "30",
+            "confidence": 0.9849245548248291,
+            "center": [
+                169.0,
+                72.0
+            ]
+        },
+        {
+            "text": "100",
+            "confidence": 0.974296983330999,
+            "center": [
+                340.0,
+                123.5
+            ]
+        },
+        {
+            "text": "PF",
+            "confidence": 0.974296983330999,
+            "center": [
+                340.0,
+                123.5
+            ]
+        },
+        {
+            "text": "12",
+            "confidence": 0.9509236812591553,
+            "center": [
+                117.5,
+                113.0
+            ]
+        },
+        {
+            "text": "V",
+            "confidence": 0.9509236812591553,
+            "center": [
+                117.5,
+                113.0
+            ]
+        },
+        {
+            "text": "300",
+            "confidence": 0.91,
+            "center": [
+                169.0,
+                73.0
+            ]
+        },
+        {
+            "text": "R1",
+            "confidence": 0.8391399442762199,
+            "center": [
+                167.0,
+                19.5
+            ]
+        },
+        {
+            "text": "1CC",
+            "confidence": 0.8216667823904475,
+            "center": [
+                340.0,
+                123.5
+            ]
+        },
+        {
+            "text": "JF",
+            "confidence": 0.8216667823904475,
+            "center": [
+                340.0,
+                123.5
+            ]
+        },
+        {
+            "text": "\u2014=",
+            "confidence": 0.77,
+            "center": [
+                292.5,
+                124.5
+            ]
+        },
+        {
+            "text": "12V",
+            "confidence": 0.7612758851715601,
+            "center": [
+                117.5,
+                113.0
+            ]
+        },
+        {
+            "text": "UF",
+            "confidence": 0.73,
+            "center": [
+                357.7025,
+                124.773
+            ]
+        },
+        {
+            "text": "RY",
+            "confidence": 0.72,
+            "center": [
+                167.0,
+                20.5
+            ]
+        },
+        {
+            "text": "UR",
+            "confidence": 0.65,
+            "center": [
+                358.0,
+                123.5
+            ]
+        },
+        {
+            "text": "Q",
+            "confidence": 0.6374445163356147,
+            "center": [
+                170.0,
+                73.0
+            ]
+        },
+        {
+            "text": "N",
+            "confidence": 0.6063196659088135,
+            "center": [
+                168.0,
+                73.0
+            ]
+        },
+        {
+            "text": "HF",
+            "confidence": 0.5984758520353872,
+            "center": [
+                340.0,
+                123.5
+            ]
+        },
+        {
+            "text": "'60",
+            "confidence": 0.5955824142706898,
+            "center": [
+                120.0,
+                135.0
+            ]
+        },
+        {
+            "text": "02",
+            "confidence": 0.5251873000420245,
+            "center": [
+                168.0,
+                73.0
+            ]
+        },
+        {
+            "text": "C",
+            "confidence": 0.52,
+            "center": [
+                243.97400000000002,
+                128.6535
+            ]
+        },
+        {
+            "text": "R",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "60H2",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "100F",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "ET",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "VV",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "CC",
+            "confidence": 0.5,
+            "center": [
+                244.0,
+                128.5
+            ]
+        },
+        {
+            "text": "1004F",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "6",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "100UF",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "W",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "EDT",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "AAA",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "W&",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "6Y",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "W&)",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "\"@)",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "A",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "AA",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "~)",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "1CE",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "60H",
+            "confidence": 0.5,
+            "center": null
+        },
+        {
+            "text": "S",
+            "confidence": 0.4856280865004834,
+            "center": [
+                274.1225,
+                123.28050000000002
+            ]
+        },
+        {
+            "text": "AC6",
+            "confidence": 0.47,
+            "center": [
+                326.0,
+                124.0
+            ]
+        },
+        {
+            "text": "=",
+            "confidence": 0.42,
+            "center": [
+                292.5,
+                124.5
+            ]
+        },
+        {
+            "text": "MF",
+            "confidence": 0.3582106894224911,
+            "center": [
+                340.0,
+                124.0
+            ]
+        },
+        {
+            "text": "P4F",
+            "confidence": 0.3538776214649637,
+            "center": [
+                340.0,
+                123.5
+            ]
+        },
+        {
+            "text": "VS",
+            "confidence": 0.31,
+            "center": [
+                31.5,
+                128.5
+            ]
+        },
+        {
+            "text": "Q2",
+            "confidence": 0.29711830316756793,
+            "center": [
+                168.45350000000002,
+                72.834
+            ]
+        },
+        {
+            "text": "6C",
+            "confidence": 0.24278096254270204,
+            "center": [
+                121.0,
+                135.5
+            ]
+        },
+        {
+            "text": ".V",
+            "confidence": 0.24278096254270204,
+            "center": [
+                121.0,
+                135.5
+            ]
+        },
+        {
+            "text": "M",
+            "confidence": 0.23583971533236436,
+            "center": [
+                172.63250000000002,
+                48.158
+            ]
+        },
+        {
+            "text": "'S00",
+            "confidence": 0.23496542870998383,
+            "center": [
+                169.0,
+                73.5
+            ]
+        },
+        {
+            "text": "YJ",
+            "confidence": 0.21,
+            "center": [
+                31.5,
+                128.5
+            ]
+        },
+        {
+            "text": "YF",
+            "confidence": 0.11,
+            "center": [
+                358.0,
+                125.0
+            ]
+        }
+    ],
+    "text_by_component": {
+        "Voltage_src_1": [
+            {
+                "text": "VS",
+                "confidence": 0.31,
+                "distance": 39.319206502675
+            },
+            {
+                "text": "YJ",
+                "confidence": 0.21,
+                "distance": 39.319206502675
+            },
+            {
+                "text": "12",
+                "confidence": 0.9509236812591553,
+                "distance": 48.158592172114
+            },
+            {
+                "text": "V",
+                "confidence": 0.9509236812591553,
+                "distance": 48.158592172114
+            },
+            {
+                "text": "12V",
+                "confidence": 0.7612758851715601,
+                "distance": 48.158592172114
+            },
+            {
+                "text": "'60",
+                "confidence": 0.5955824142706898,
+                "distance": 50.81830378908765
+            },
+            {
+                "text": "60",
+                "confidence": 0.9983361050842529,
+                "distance": 51.79285665031424
+            },
+            {
+                "text": "H2",
+                "confidence": 0.9983361050842529,
+                "distance": 51.79285665031424
+            },
+            {
+                "text": "6C",
+                "confidence": 0.24278096254270204,
+                "distance": 51.906165337077255
+            },
+            {
+                "text": ".V",
+                "confidence": 0.24278096254270204,
+                "distance": 51.906165337077255
+            },
+            {
+                "text": "1",
+                "confidence": 0.9999961853063724,
+                "distance": 88.817489640273
+            },
+            {
+                "text": "0",
+                "confidence": 0.9999949932161059,
+                "distance": 90.7648819340388
+            }
+        ],
+        "Capacitor_1": [
+            {
+                "text": "S",
+                "confidence": 0.4856280865004834,
+                "distance": 6.921646227596438
+            },
+            {
+                "text": "\u2014=",
+                "confidence": 0.77,
+                "distance": 11.672617529928752
+            },
+            {
+                "text": "=",
+                "confidence": 0.42,
+                "distance": 11.672617529928752
+            },
+            {
+                "text": "C1",
+                "confidence": 0.9930117238709005,
+                "distance": 36.9120576505835
+            },
+            {
+                "text": "CC",
+                "confidence": 0.5,
+                "distance": 37.48332962798263
+            },
+            {
+                "text": "C",
+                "confidence": 0.52,
+                "distance": 37.53385456158212
+            },
+            {
+                "text": "AC6",
+                "confidence": 0.47,
+                "distance": 45.0249930594109
+            },
+            {
+                "text": "100",
+                "confidence": 0.974296983330999,
+                "distance": 59.00847396772772
+            },
+            {
+                "text": "PF",
+                "confidence": 0.974296983330999,
+                "distance": 59.00847396772772
+            },
+            {
+                "text": "1CC",
+                "confidence": 0.8216667823904475,
+                "distance": 59.00847396772772
+            },
+            {
+                "text": "JF",
+                "confidence": 0.8216667823904475,
+                "distance": 59.00847396772772
+            },
+            {
+                "text": "HF",
+                "confidence": 0.5984758520353872,
+                "distance": 59.00847396772772
+            },
+            {
+                "text": "P4F",
+                "confidence": 0.3538776214649637,
+                "distance": 59.00847396772772
+            },
+            {
+                "text": "MF",
+                "confidence": 0.3582106894224911,
+                "distance": 59.01906471641176
+            },
+            {
+                "text": "UF",
+                "confidence": 0.73,
+                "distance": 76.73617162231902
+            },
+            {
+                "text": "UR",
+                "confidence": 0.65,
+                "distance": 77.00649323271382
+            },
+            {
+                "text": "YF",
+                "confidence": 0.11,
+                "distance": 77.04057372579724
+            },
+            {
+                "text": "2",
+                "confidence": 1.0,
+                "distance": 87.78432534911913
+            }
+        ],
+        "Resistor_1": [
+            {
+                "text": "M",
+                "confidence": 0.23583971533236436,
+                "distance": 3.2008624228479636
+            },
+            {
+                "text": "30",
+                "confidence": 0.9849245548248291,
+                "distance": 24.50510150968569
+            },
+            {
+                "text": "Q2",
+                "confidence": 0.29711830316756793,
+                "distance": 25.355605262939395
+            },
+            {
+                "text": "300",
+                "confidence": 0.91,
+                "distance": 25.5049014897137
+            },
+            {
+                "text": "Q",
+                "confidence": 0.6374445163356147,
+                "distance": 25.5049014897137
+            },
+            {
+                "text": "N",
+                "confidence": 0.6063196659088135,
+                "distance": 25.544079548889602
+            },
+            {
+                "text": "02",
+                "confidence": 0.5251873000420245,
+                "distance": 25.544079548889602
+            },
+            {
+                "text": "'S00",
+                "confidence": 0.23496542870998383,
+                "distance": 26.004807247891687
+            },
+            {
+                "text": "RY",
+                "confidence": 0.72,
+                "distance": 27.115493725912497
+            },
+            {
+                "text": "R1",
+                "confidence": 0.8391399442762199,
+                "distance": 28.111385593741193
+            }
+        ]
+    }
+}

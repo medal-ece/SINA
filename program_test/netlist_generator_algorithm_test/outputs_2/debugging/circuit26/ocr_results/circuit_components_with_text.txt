@@ -1,0 +1,58 @@
+CIRCUIT COMPONENT ANALYSIS
+================================================================================
+ALL DETECTED TEXT IN CIRCUIT:
+----------------------------------------
+- 5 (confidence: 1.00)
+- 10K (confidence: 0.98)
+- V2 (confidence: 0.97)
+- R1 (confidence: 0.92)
+- M1 (confidence: 0.90)
+- V1 (confidence: 0.89)
+- U1 (confidence: 0.85)
+- F (confidence: 0.53)
+- A (confidence: 0.50)
+- UN (confidence: 0.50)
+- 10 (confidence: 0.50)
+- 0L (confidence: 0.50)
+- 4 (confidence: 0.50)
+- 0U (confidence: 0.50)
+- J (confidence: 0.48)
+- AL (confidence: 0.44)
+- 0N (confidence: 0.31)
+
+COMPONENTS WITH ASSOCIATED TEXT:
+================================================================================
+
+COMPONENT Transistor_MOSFET_1:
+  Nearby Text:
+    - F (conf: 0.53, dist: 58.9px)
+    - M1 (conf: 0.90, dist: 95.0px)
+
+COMPONENT Voltage_src_1:
+  Nearby Text:
+    - V1 (conf: 0.89, dist: 115.6px)
+    - AL (conf: 0.44, dist: 116.7px)
+
+COMPONENT GND_1:
+  Nearby Text:
+    - 0N (conf: 0.31, dist: 97.9px)
+    - UN (conf: 0.50, dist: 98.3px)
+    - U1 (conf: 0.85, dist: 98.6px)
+    - 5 (conf: 1.00, dist: 99.9px)
+
+COMPONENT Voltage_src_2:
+  Nearby Text:
+    - V2 (conf: 0.97, dist: 93.5px)
+    - J (conf: 0.48, dist: 98.0px)
+
+COMPONENT GND_2:
+  No nearby text found
+
+COMPONENT Resistor_1:
+  Nearby Text:
+    - R1 (conf: 0.92, dist: 71.8px)
+    - 10K (conf: 0.98, dist: 94.4px)
+
+COMPONENT GND_3:
+  No nearby text found
+

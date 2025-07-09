@@ -1,0 +1,6 @@
+number of components: 2
+(This component was drawn like a circle with a sine wave inside which fits voltage source description)V1: 15V, 60Hz
+(This component was drawn like zig-zag line which fits resistor description)R_load: 10kΩ
+types:
+  Voltage_src: 1
+  Resistor: 1
