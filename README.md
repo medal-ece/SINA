@@ -108,3 +108,4 @@ Welcome to the **Netlist Generator** repository! This project is designed to con
    - For Mac and Linux: `python3 ./file_name.py`
 
 ---
+Test
