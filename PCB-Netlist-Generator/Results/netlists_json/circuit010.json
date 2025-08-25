@@ -1,0 +1,136 @@
+{
+  "image": "circuit010.png",
+  "components": [
+    {
+      "component_id": 1,
+      "bbox": [
+        677,
+        398,
+        830,
+        551
+      ],
+      "pin_count": 7,
+      "pins": [
+        {
+          "x": 675,
+          "y": 460,
+          "label": "VDD"
+        },
+        {
+          "x": 832,
+          "y": 460,
+          "label": "SNS"
+        },
+        {
+          "x": 675,
+          "y": 475,
+          "label": "OUT"
+        },
+        {
+          "x": 832,
+          "y": 475,
+          "label": "SNS"
+        },
+        {
+          "x": 675,
+          "y": 490,
+          "label": "OUT"
+        },
+        {
+          "x": 832,
+          "y": 490,
+          "label": "SYNC"
+        },
+        {
+          "x": 832,
+          "y": 511,
+          "label": "VDD"
+        }
+      ],
+      "connected": [
+        4
+      ]
+    },
+    {
+      "component_id": 2,
+      "bbox": [
+        761,
+        248,
+        808,
+        326
+      ],
+      "pin_count": 4,
+      "pins": [
+        {
+          "x": 759,
+          "y": 265,
+          "label": "LEDA"
+        },
+        {
+          "x": 759,
+          "y": 280,
+          "label": "OUT"
+        },
+        {
+          "x": 759,
+          "y": 295,
+          "label": "OUT"
+        },
+        {
+          "x": 759,
+          "y": 310,
+          "label": ""
+        }
+      ],
+      "connected": []
+    },
+    {
+      "component_id": 3,
+      "bbox": [
+        813,
+        632,
+        844,
+        649
+      ],
+      "pin_count": 2,
+      "pins": [
+        {
+          "x": 811,
+          "y": 640,
+          "label": "1K"
+        },
+        {
+          "x": 846,
+          "y": 640,
+          "label": "1K"
+        }
+      ],
+      "connected": []
+    },
+    {
+      "component_id": 4,
+      "bbox": [
+        917,
+        390,
+        950,
+        408
+      ],
+      "pin_count": 2,
+      "pins": [
+        {
+          "x": 915,
+          "y": 400,
+          "label": "R1"
+        },
+        {
+          "x": 952,
+          "y": 400,
+          "label": "10K"
+        }
+      ],
+      "connected": [
+        1
+      ]
+    }
+  ]
+}

@@ -1,0 +1,460 @@
+{
+  "image": "circuit030.png",
+  "components": [
+    {
+      "component_id": 1,
+      "bbox": [
+        456,
+        407,
+        504,
+        468
+      ],
+      "pin_count": 3,
+      "pins": [
+        {
+          "x": 506,
+          "y": 423,
+          "label": ""
+        },
+        {
+          "x": 506,
+          "y": 438,
+          "label": "X2"
+        },
+        {
+          "x": 506,
+          "y": 453,
+          "label": "X2"
+        }
+      ],
+      "connected": []
+    },
+    {
+      "component_id": 2,
+      "bbox": [
+        404,
+        242,
+        451,
+        273
+      ],
+      "pin_count": 1,
+      "pins": [
+        {
+          "x": 453,
+          "y": 258,
+          "label": "JP2"
+        }
+      ],
+      "connected": [
+        4
+      ]
+    },
+    {
+      "component_id": 3,
+      "bbox": [
+        523,
+        185,
+        572,
+        209
+      ],
+      "pin_count": 2,
+      "pins": [
+        {
+          "x": 548,
+          "y": 183,
+          "label": "X1"
+        },
+        {
+          "x": 548,
+          "y": 211,
+          "label": ""
+        }
+      ],
+      "connected": [
+        4,
+        6,
+        7
+      ]
+    },
+    {
+      "component_id": 4,
+      "bbox": [
+        472,
+        248,
+        504,
+        265
+      ],
+      "pin_count": 2,
+      "pins": [
+        {
+          "x": 470,
+          "y": 258,
+          "label": "R1"
+        },
+        {
+          "x": 506,
+          "y": 258,
+          "label": "MMBT2222"
+        }
+      ],
+      "connected": [
+        2,
+        3,
+        6,
+        7
+      ]
+    },
+    {
+      "component_id": 5,
+      "bbox": [
+        125,
+        68,
+        340,
+        115
+      ],
+      "pin_count": 12,
+      "pins": [
+        {
+          "x": 158,
+          "y": 117,
+          "label": "VBAT"
+        },
+        {
+          "x": 173,
+          "y": 117,
+          "label": "EN"
+        },
+        {
+          "x": 188,
+          "y": 117,
+          "label": "USB"
+        },
+        {
+          "x": 203,
+          "y": 117,
+          "label": "GPIO13"
+        },
+        {
+          "x": 218,
+          "y": 117,
+          "label": "GPIO12"
+        },
+        {
+          "x": 233,
+          "y": 117,
+          "label": "GPIO11"
+        },
+        {
+          "x": 248,
+          "y": 117,
+          "label": "GPIO10"
+        },
+        {
+          "x": 263,
+          "y": 117,
+          "label": "GPIO9"
+        },
+        {
+          "x": 278,
+          "y": 117,
+          "label": "GPIO6"
+        },
+        {
+          "x": 293,
+          "y": 117,
+          "label": "GPIO5"
+        },
+        {
+          "x": 308,
+          "y": 117,
+          "label": "GPIOSCL"
+        },
+        {
+          "x": 323,
+          "y": 117,
+          "label": "GPIOSDA"
+        }
+      ],
+      "connected": []
+    },
+    {
+      "component_id": 6,
+      "bbox": [
+        509,
+        302,
+        525,
+        333
+      ],
+      "pin_count": 2,
+      "pins": [
+        {
+          "x": 518,
+          "y": 300,
+          "label": "10K"
+        },
+        {
+          "x": 518,
+          "y": 335,
+          "label": "10K"
+        }
+      ],
+      "connected": [
+        3,
+        4,
+        7
+      ]
+    },
+    {
+      "component_id": 7,
+      "bbox": [
+        479,
+        62,
+        495,
+        93
+      ],
+      "pin_count": 2,
+      "pins": [
+        {
+          "x": 488,
+          "y": 60,
+          "label": "3.3V"
+        },
+        {
+          "x": 488,
+          "y": 95,
+          "label": "1K"
+        }
+      ],
+      "connected": [
+        3,
+        4,
+        6
+      ]
+    },
+    {
+      "component_id": 8,
+      "bbox": [
+        85,
+        323,
+        337,
+        368
+      ],
+      "pin_count": 18,
+      "pins": [
+        {
+          "x": 98,
+          "y": 322,
+          "label": "RESET"
+        },
+        {
+          "x": 113,
+          "y": 322,
+          "label": ""
+        },
+        {
+          "x": 128,
+          "y": 322,
+          "label": "AREF"
+        },
+        {
+          "x": 143,
+          "y": 322,
+          "label": "GND"
+        },
+        {
+          "x": 158,
+          "y": 322,
+          "label": "GPIOAO"
+        },
+        {
+          "x": 173,
+          "y": 322,
+          "label": "GPIOA1"
+        },
+        {
+          "x": 188,
+          "y": 322,
+          "label": "GPIOA2"
+        },
+        {
+          "x": 203,
+          "y": 322,
+          "label": "GPIOA3"
+        },
+        {
+          "x": 218,
+          "y": 322,
+          "label": "GPIOA4"
+        },
+        {
+          "x": 233,
+          "y": 322,
+          "label": "GPIOA5"
+        },
+        {
+          "x": 248,
+          "y": 322,
+          "label": "GPIOSCK"
+        },
+        {
+          "x": 263,
+          "y": 322,
+          "label": "GPIOMOSI"
+        },
+        {
+          "x": 278,
+          "y": 322,
+          "label": "GPIOMISO"
+        },
+        {
+          "x": 293,
+          "y": 322,
+          "label": "GPIORX"
+        },
+        {
+          "x": 308,
+          "y": 322,
+          "label": "GPIOTX"
+        },
+        {
+          "x": 323,
+          "y": 322,
+          "label": "NC"
+        },
+        {
+          "x": 195,
+          "y": 367,
+          "label": ""
+        },
+        {
+          "x": 338,
+          "y": 340,
+          "label": "JP1"
+        }
+      ],
+      "connected": [
+        9
+      ]
+    },
+    {
+      "component_id": 9,
+      "bbox": [
+        72,
+        121,
+        363,
+        320
+      ],
+      "pin_count": 21,
+      "pins": [
+        {
+          "x": 98,
+          "y": 322,
+          "label": "RESET"
+        },
+        {
+          "x": 113,
+          "y": 322,
+          "label": ""
+        },
+        {
+          "x": 128,
+          "y": 322,
+          "label": "AREF"
+        },
+        {
+          "x": 143,
+          "y": 322,
+          "label": "GND"
+        },
+        {
+          "x": 158,
+          "y": 322,
+          "label": "GPIOAO"
+        },
+        {
+          "x": 173,
+          "y": 322,
+          "label": "GPIOA1"
+        },
+        {
+          "x": 188,
+          "y": 322,
+          "label": "GPIOA2"
+        },
+        {
+          "x": 203,
+          "y": 322,
+          "label": "GPIOA3"
+        },
+        {
+          "x": 218,
+          "y": 322,
+          "label": "GPIOA4"
+        },
+        {
+          "x": 233,
+          "y": 322,
+          "label": "GPIOA5"
+        },
+        {
+          "x": 248,
+          "y": 322,
+          "label": "GPIOSCK"
+        },
+        {
+          "x": 263,
+          "y": 322,
+          "label": "GPIOMOSI"
+        },
+        {
+          "x": 278,
+          "y": 322,
+          "label": "GPIOMISO"
+        },
+        {
+          "x": 293,
+          "y": 322,
+          "label": "GPIORX"
+        },
+        {
+          "x": 308,
+          "y": 322,
+          "label": "GPIOTX"
+        },
+        {
+          "x": 323,
+          "y": 322,
+          "label": "NC"
+        },
+        {
+          "x": 70,
+          "y": 122,
+          "label": "JP3"
+        },
+        {
+          "x": 70,
+          "y": 182,
+          "label": ""
+        },
+        {
+          "x": 70,
+          "y": 242,
+          "label": ""
+        },
+        {
+          "x": 70,
+          "y": 317,
+          "label": ""
+        },
+        {
+          "x": 70,
+          "y": 303,
+          "label": ""
+        }
+      ],
+      "connected": [
+        8
+      ]
+    }
+  ]
+}

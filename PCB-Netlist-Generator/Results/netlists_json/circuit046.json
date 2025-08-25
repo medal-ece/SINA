@@ -1,0 +1,244 @@
+{
+  "image": "circuit046.png",
+  "components": [
+    {
+      "component_id": 1,
+      "bbox": [
+        317,
+        225,
+        439,
+        394
+      ],
+      "pin_count": 14,
+      "pins": [
+        {
+          "x": 315,
+          "y": 242,
+          "label": "VDD"
+        },
+        {
+          "x": 441,
+          "y": 242,
+          "label": "SDA"
+        },
+        {
+          "x": 315,
+          "y": 257,
+          "label": "VDD_10"
+        },
+        {
+          "x": 441,
+          "y": 257,
+          "label": "SCL"
+        },
+        {
+          "x": 441,
+          "y": 272,
+          "label": "CS"
+        },
+        {
+          "x": 441,
+          "y": 287,
+          "label": "SDOI"
+        },
+        {
+          "x": 441,
+          "y": 302,
+          "label": "PICO_AUX"
+        },
+        {
+          "x": 441,
+          "y": 317,
+          "label": "SCX"
+        },
+        {
+          "x": 441,
+          "y": 332,
+          "label": "POCI_AUX"
+        },
+        {
+          "x": 441,
+          "y": 347,
+          "label": "OCS_AUX"
+        },
+        {
+          "x": 315,
+          "y": 362,
+          "label": "GND"
+        },
+        {
+          "x": 441,
+          "y": 362,
+          "label": "INT1"
+        },
+        {
+          "x": 315,
+          "y": 377,
+          "label": "GND"
+        },
+        {
+          "x": 441,
+          "y": 377,
+          "label": "INT2"
+        }
+      ],
+      "connected": []
+    },
+    {
+      "component_id": 2,
+      "bbox": [
+        212,
+        736,
+        254,
+        845
+      ],
+      "pin_count": 6,
+      "pins": [
+        {
+          "x": 256,
+          "y": 752,
+          "label": "POCI"
+        },
+        {
+          "x": 256,
+          "y": 767,
+          "label": "CS"
+        },
+        {
+          "x": 256,
+          "y": 782,
+          "label": "SCL"
+        },
+        {
+          "x": 256,
+          "y": 797,
+          "label": "SDA"
+        },
+        {
+          "x": 256,
+          "y": 812,
+          "label": ""
+        },
+        {
+          "x": 256,
+          "y": 827,
+          "label": ""
+        }
+      ],
+      "connected": []
+    },
+    {
+      "component_id": 3,
+      "bbox": [
+        213,
+        902,
+        254,
+        1009
+      ],
+      "pin_count": 6,
+      "pins": [
+        {
+          "x": 256,
+          "y": 917,
+          "label": "INT2"
+        },
+        {
+          "x": 256,
+          "y": 932,
+          "label": "INT1"
+        },
+        {
+          "x": 256,
+          "y": 947,
+          "label": "OCS"
+        },
+        {
+          "x": 256,
+          "y": 962,
+          "label": "SCX"
+        },
+        {
+          "x": 256,
+          "y": 977,
+          "label": "PICO_AUX"
+        },
+        {
+          "x": 256,
+          "y": 992,
+          "label": "POCI_AUX"
+        }
+      ],
+      "connected": []
+    },
+    {
+      "component_id": 4,
+      "bbox": [
+        527,
+        856,
+        583,
+        933
+      ],
+      "pin_count": 4,
+      "pins": [
+        {
+          "x": 585,
+          "y": 872,
+          "label": "ISCL"
+        },
+        {
+          "x": 585,
+          "y": 887,
+          "label": "SDA"
+        },
+        {
+          "x": 585,
+          "y": 902,
+          "label": "UCC"
+        },
+        {
+          "x": 585,
+          "y": 917,
+          "label": "GND"
+        }
+      ],
+      "connected": [
+        5
+      ]
+    },
+    {
+      "component_id": 5,
+      "bbox": [
+        527,
+        752,
+        583,
+        830
+      ],
+      "pin_count": 4,
+      "pins": [
+        {
+          "x": 585,
+          "y": 767,
+          "label": "ISCL"
+        },
+        {
+          "x": 585,
+          "y": 782,
+          "label": "SDA"
+        },
+        {
+          "x": 585,
+          "y": 797,
+          "label": "UCC"
+        },
+        {
+          "x": 585,
+          "y": 812,
+          "label": "GND-"
+        }
+      ],
+      "connected": [
+        4
+      ]
+    }
+  ]
+}

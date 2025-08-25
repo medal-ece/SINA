@@ -1,0 +1,213 @@
+{
+  "image": "circuit001.png",
+  "components": [
+    {
+      "component_id": 1,
+      "bbox": [
+        209,
+        239,
+        302,
+        300
+      ],
+      "pin_count": 6,
+      "pins": [
+        {
+          "x": 277,
+          "y": 237,
+          "label": ""
+        },
+        {
+          "x": 207,
+          "y": 256,
+          "label": "MISO"
+        },
+        {
+          "x": 207,
+          "y": 271,
+          "label": "SCK"
+        },
+        {
+          "x": 304,
+          "y": 271,
+          "label": "MOSI"
+        },
+        {
+          "x": 207,
+          "y": 286,
+          "label": "RST"
+        },
+        {
+          "x": 255,
+          "y": 301,
+          "label": "2X3THM"
+        }
+      ],
+      "connected": []
+    },
+    {
+      "component_id": 2,
+      "bbox": [
+        396,
+        269,
+        442,
+        314
+      ],
+      "pin_count": 6,
+      "pins": [
+        {
+          "x": 440,
+          "y": 267,
+          "label": "C1"
+        },
+        {
+          "x": 394,
+          "y": 285,
+          "label": "C1"
+        },
+        {
+          "x": 444,
+          "y": 285,
+          "label": "C1"
+        },
+        {
+          "x": 394,
+          "y": 293,
+          "label": "100uF"
+        },
+        {
+          "x": 444,
+          "y": 293,
+          "label": "0.1uF"
+        },
+        {
+          "x": 420,
+          "y": 316,
+          "label": ""
+        }
+      ],
+      "connected": []
+    },
+    {
+      "component_id": 3,
+      "bbox": [
+        59,
+        433,
+        106,
+        466
+      ],
+      "pin_count": 1,
+      "pins": [
+        {
+          "x": 108,
+          "y": 461,
+          "label": "VCC"
+        }
+      ],
+      "connected": [
+        5
+      ]
+    },
+    {
+      "component_id": 4,
+      "bbox": [
+        59,
+        508,
+        106,
+        541
+      ],
+      "pin_count": 1,
+      "pins": [
+        {
+          "x": 108,
+          "y": 516,
+          "label": ""
+        }
+      ],
+      "connected": [
+        5
+      ]
+    },
+    {
+      "component_id": 5,
+      "bbox": [
+        200,
+        389,
+        532,
+        526
+      ],
+      "pin_count": 8,
+      "pins": [
+        {
+          "x": 534,
+          "y": 421,
+          "label": "PCINTO"
+        },
+        {
+          "x": 534,
+          "y": 436,
+          "label": "PCINT1"
+        },
+        {
+          "x": 534,
+          "y": 451,
+          "label": "PCINT2"
+        },
+        {
+          "x": 534,
+          "y": 466,
+          "label": "PCINT3"
+        },
+        {
+          "x": 198,
+          "y": 481,
+          "label": "VCC"
+        },
+        {
+          "x": 534,
+          "y": 481,
+          "label": "PCINT4"
+        },
+        {
+          "x": 198,
+          "y": 496,
+          "label": "GND"
+        },
+        {
+          "x": 534,
+          "y": 496,
+          "label": "PCINT5"
+        }
+      ],
+      "connected": [
+        3,
+        4,
+        6
+      ]
+    },
+    {
+      "component_id": 6,
+      "bbox": [
+        617,
+        483,
+        627,
+        506
+      ],
+      "pin_count": 2,
+      "pins": [
+        {
+          "x": 615,
+          "y": 501,
+          "label": "RST"
+        },
+        {
+          "x": 629,
+          "y": 501,
+          "label": ""
+        }
+      ],
+      "connected": [
+        5
+      ]
+    }
+  ]
+}

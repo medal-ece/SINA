@@ -1,0 +1,258 @@
+{
+  "image": "circuit017.png",
+  "components": [
+    {
+      "component_id": 1,
+      "bbox": [
+        903,
+        295,
+        1054,
+        551
+      ],
+      "pin_count": 21,
+      "pins": [
+        {
+          "x": 978,
+          "y": 294,
+          "label": "FGPMMOPA6H"
+        },
+        {
+          "x": 901,
+          "y": 355,
+          "label": "VCC"
+        },
+        {
+          "x": 1056,
+          "y": 355,
+          "label": "NC"
+        },
+        {
+          "x": 901,
+          "y": 370,
+          "label": "NRESET"
+        },
+        {
+          "x": 1056,
+          "y": 370,
+          "label": "GND"
+        },
+        {
+          "x": 901,
+          "y": 385,
+          "label": "VBACKUP"
+        },
+        {
+          "x": 1056,
+          "y": 385,
+          "label": "NC"
+        },
+        {
+          "x": 901,
+          "y": 400,
+          "label": "VBACKUP"
+        },
+        {
+          "x": 1056,
+          "y": 400,
+          "label": "NC"
+        },
+        {
+          "x": 901,
+          "y": 415,
+          "label": "FIX"
+        },
+        {
+          "x": 1056,
+          "y": 415,
+          "label": "NO"
+        },
+        {
+          "x": 901,
+          "y": 430,
+          "label": "NC"
+        },
+        {
+          "x": 1056,
+          "y": 430,
+          "label": "NC"
+        },
+        {
+          "x": 901,
+          "y": 445,
+          "label": "NC"
+        },
+        {
+          "x": 1056,
+          "y": 445,
+          "label": "RTCM"
+        },
+        {
+          "x": 901,
+          "y": 460,
+          "label": "GND"
+        },
+        {
+          "x": 1056,
+          "y": 460,
+          "label": "1PPS"
+        },
+        {
+          "x": 901,
+          "y": 475,
+          "label": "TX"
+        },
+        {
+          "x": 1056,
+          "y": 475,
+          "label": "GND"
+        },
+        {
+          "x": 901,
+          "y": 490,
+          "label": "RX"
+        },
+        {
+          "x": 1056,
+          "y": 490,
+          "label": "EX_ANT"
+        }
+      ],
+      "connected": [
+        4,
+        6
+      ]
+    },
+    {
+      "component_id": 2,
+      "bbox": [
+        400,
+        354,
+        448,
+        506
+      ],
+      "pin_count": 9,
+      "pins": [
+        {
+          "x": 450,
+          "y": 370,
+          "label": "ENABLE"
+        },
+        {
+          "x": 450,
+          "y": 385,
+          "label": "VBACKUP"
+        },
+        {
+          "x": 450,
+          "y": 400,
+          "label": "VBACKUP"
+        },
+        {
+          "x": 450,
+          "y": 415,
+          "label": "FIX"
+        },
+        {
+          "x": 450,
+          "y": 430,
+          "label": "TX"
+        },
+        {
+          "x": 450,
+          "y": 445,
+          "label": "RX"
+        },
+        {
+          "x": 450,
+          "y": 460,
+          "label": "RX"
+        },
+        {
+          "x": 450,
+          "y": 475,
+          "label": "1PPS"
+        },
+        {
+          "x": 450,
+          "y": 490,
+          "label": "1PPS"
+        }
+      ],
+      "connected": []
+    },
+    {
+      "component_id": 3,
+      "bbox": [
+        664,
+        654,
+        755,
+        715
+      ],
+      "pin_count": 0,
+      "pins": [],
+      "connected": []
+    },
+    {
+      "component_id": 4,
+      "bbox": [
+        716,
+        548,
+        733,
+        581
+      ],
+      "pin_count": 2,
+      "pins": [
+        {
+          "x": 724,
+          "y": 546,
+          "label": "3.3V"
+        },
+        {
+          "x": 724,
+          "y": 583,
+          "label": "Lok"
+        }
+      ],
+      "connected": [
+        1
+      ]
+    },
+    {
+      "component_id": 5,
+      "bbox": [
+        581,
+        608,
+        598,
+        641
+      ],
+      "pin_count": 0,
+      "pins": [],
+      "connected": []
+    },
+    {
+      "component_id": 6,
+      "bbox": [
+        679,
+        406,
+        708,
+        424
+      ],
+      "pin_count": 2,
+      "pins": [
+        {
+          "x": 678,
+          "y": 415,
+          "label": "R1"
+        },
+        {
+          "x": 710,
+          "y": 415,
+          "label": "R1"
+        }
+      ],
+      "connected": [
+        1
+      ]
+    }
+  ]
+}

@@ -1,0 +1,347 @@
+{
+  "image": "circuit045.png",
+  "components": [
+    {
+      "component_id": 1,
+      "bbox": [
+        318,
+        527,
+        358,
+        573
+      ],
+      "pin_count": 2,
+      "pins": [
+        {
+          "x": 360,
+          "y": 542,
+          "label": "R-"
+        },
+        {
+          "x": 360,
+          "y": 557,
+          "label": "B"
+        }
+      ],
+      "connected": []
+    },
+    {
+      "component_id": 2,
+      "bbox": [
+        318,
+        166,
+        358,
+        243
+      ],
+      "pin_count": 4,
+      "pins": [
+        {
+          "x": 360,
+          "y": 183,
+          "label": "Terminal"
+        },
+        {
+          "x": 360,
+          "y": 198,
+          "label": "Terminal"
+        },
+        {
+          "x": 360,
+          "y": 213,
+          "label": "Terminal"
+        },
+        {
+          "x": 360,
+          "y": 228,
+          "label": "Spring"
+        }
+      ],
+      "connected": []
+    },
+    {
+      "component_id": 3,
+      "bbox": [
+        317,
+        331,
+        359,
+        423
+      ],
+      "pin_count": 5,
+      "pins": [
+        {
+          "x": 361,
+          "y": 348,
+          "label": "E-"
+        },
+        {
+          "x": 361,
+          "y": 363,
+          "label": "A-"
+        },
+        {
+          "x": 361,
+          "y": 378,
+          "label": "A-"
+        },
+        {
+          "x": 361,
+          "y": 393,
+          "label": "Shield"
+        },
+        {
+          "x": 361,
+          "y": 408,
+          "label": "Shield"
+        }
+      ],
+      "connected": []
+    },
+    {
+      "component_id": 4,
+      "bbox": [
+        1007,
+        330,
+        1129,
+        469
+      ],
+      "pin_count": 16,
+      "pins": [
+        {
+          "x": 1005,
+          "y": 348,
+          "label": "REFP"
+        },
+        {
+          "x": 1131,
+          "y": 348,
+          "label": "AVDD"
+        },
+        {
+          "x": 1005,
+          "y": 363,
+          "label": "VININ"
+        },
+        {
+          "x": 1131,
+          "y": 363,
+          "label": "DVDD"
+        },
+        {
+          "x": 1005,
+          "y": 378,
+          "label": "VINIP"
+        },
+        {
+          "x": 1131,
+          "y": 378,
+          "label": "SDIO"
+        },
+        {
+          "x": 1005,
+          "y": 393,
+          "label": "VIN2N"
+        },
+        {
+          "x": 1131,
+          "y": 393,
+          "label": "SCLK"
+        },
+        {
+          "x": 1005,
+          "y": 408,
+          "label": "VIN2P"
+        },
+        {
+          "x": 1131,
+          "y": 408,
+          "label": "DRDY"
+        },
+        {
+          "x": 1005,
+          "y": 423,
+          "label": "VBG"
+        },
+        {
+          "x": 1131,
+          "y": 423,
+          "label": "XOUT"
+        },
+        {
+          "x": 1005,
+          "y": 438,
+          "label": "REFN"
+        },
+        {
+          "x": 1131,
+          "y": 438,
+          "label": "XIN"
+        },
+        {
+          "x": 1005,
+          "y": 453,
+          "label": "AVSS"
+        },
+        {
+          "x": 1131,
+          "y": 453,
+          "label": "DVSS"
+        }
+      ],
+      "connected": []
+    },
+    {
+      "component_id": 5,
+      "bbox": [
+        432,
+        839,
+        483,
+        918
+      ],
+      "pin_count": 5,
+      "pins": [
+        {
+          "x": 484,
+          "y": 879,
+          "label": "-GND"
+        },
+        {
+          "x": 430,
+          "y": 857,
+          "label": "SCL"
+        },
+        {
+          "x": 430,
+          "y": 872,
+          "label": "SDA"
+        },
+        {
+          "x": 430,
+          "y": 887,
+          "label": "UCC"
+        },
+        {
+          "x": 430,
+          "y": 902,
+          "label": "-GND"
+        }
+      ],
+      "connected": []
+    },
+    {
+      "component_id": 6,
+      "bbox": [
+        207,
+        797,
+        261,
+        872
+      ],
+      "pin_count": 4,
+      "pins": [
+        {
+          "x": 205,
+          "y": 812,
+          "label": "SCL"
+        },
+        {
+          "x": 205,
+          "y": 827,
+          "label": "SDA"
+        },
+        {
+          "x": 205,
+          "y": 842,
+          "label": "-UCC"
+        },
+        {
+          "x": 205,
+          "y": 857,
+          "label": "GND"
+        }
+      ],
+      "connected": []
+    },
+    {
+      "component_id": 7,
+      "bbox": [
+        206,
+        958,
+        260,
+        1038
+      ],
+      "pin_count": 4,
+      "pins": [
+        {
+          "x": 204,
+          "y": 977,
+          "label": "SCL"
+        },
+        {
+          "x": 204,
+          "y": 992,
+          "label": "SDA"
+        },
+        {
+          "x": 204,
+          "y": 1007,
+          "label": "UCC"
+        },
+        {
+          "x": 204,
+          "y": 1022,
+          "label": "GND"
+        }
+      ],
+      "connected": []
+    },
+    {
+      "component_id": 8,
+      "bbox": [
+        432,
+        988,
+        468,
+        1038
+      ],
+      "pin_count": 3,
+      "pins": [
+        {
+          "x": 469,
+          "y": 1014,
+          "label": "J5"
+        },
+        {
+          "x": 430,
+          "y": 1007,
+          "label": ""
+        },
+        {
+          "x": 430,
+          "y": 1022,
+          "label": "INT"
+        }
+      ],
+      "connected": []
+    },
+    {
+      "component_id": 9,
+      "bbox": [
+        1535,
+        919,
+        1624,
+        947
+      ],
+      "pin_count": 2,
+      "pins": [
+        {
+          "x": 1533,
+          "y": 932,
+          "label": "qwik"
+        },
+        {
+          "x": 1548,
+          "y": 949,
+          "label": "qwik"
+        }
+      ],
+      "connected": []
+    }
+  ]
+}

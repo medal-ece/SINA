@@ -1,0 +1,6 @@
+* SPICE netlist for circuit015.png
+X1 SCL WP SCL SCL SDA A1 A1 AO SUBCKT
+X2 SCL SCL SDA WP A1 A1 GND GND SUBCKT
+R3 vcc N1 1k
+R4 Vcc N2 1k
+.end
