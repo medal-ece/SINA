@@ -1,9 +1,0 @@
-number of components: 4
-types:
-  Voltage_src: 1
-  Capacitor: 3
-
-(This compoennt was drawn like a circle with a plus and minus sign which fits voltage source descpriciton)V1: 1V
-(This compoennt was drawn like two parallel lines which fits capacitor descpriciton)C1: 10µF
-(This compoennt was drawn like two parallel lines which fits capacitor descpriciton)C2: 20µF
-(This compoennt was drawn like two parallel lines which fits capacitor descpriciton)C3: 30µF

@@ -1,7 +1,0 @@
-```
-Voltage_src_1:V1, 1 2, 15V
-Resistor_1:Resistor_1, 1 2, 10KΩ
-===
-V1 1 2 DC 15
-R1 1 2 10k
-```

@@ -1,9 +1,0 @@
-number of components: 4
-(This component was drawn like a circle with + and - symbols which fits voltage source description)V2: 9
-(This component was drawn like zig-zag line which fits resistor description)R1: 10k
-(This component was drawn like a three-terminal device with a gate, drain, and source which fits MOSFET description)M1:
-(This component was drawn like a circle with + and - symbols which fits voltage source description)V1: 5
-types:
-  Voltage_src: 2
-  Resistor: 1
-  Transistor_MOSFET: 1

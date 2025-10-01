@@ -1,7 +1,0 @@
-```
-Voltage_src_1:Vs, 1 2, 1V
-Capacitor_1:Ctotal, 1 2, 5.45µF
-===
-Vs 1 2 DC 1
-Ctotal 1 2 5.45u
-```
