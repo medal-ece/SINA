@@ -1,5 +1,0 @@
-* SPICE netlist for circuit038.png
-X1 VDD OUT GND -COUT- SUBCKT
-R2 UCC UCC 1k
-X3 N1 N2 N3 SUBCKT
-.end

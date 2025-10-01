@@ -1,8 +1,0 @@
-* SPICE netlist for circuit023.png
-X1 OUT OUT #ENADJ #ENADJ #ENADJ #ENADJ SUBCKT
-R2 N JP5 1k
-R3 JP5 VCC 1k
-R4 JP2 N1 1k
-R5 P1 P2 1k
-R6 9V 9V 1k
-.end
