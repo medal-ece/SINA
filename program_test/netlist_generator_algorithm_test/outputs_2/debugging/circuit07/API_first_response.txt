@@ -1,9 +1,0 @@
-number of components: 4
-(This component was drawn like a circle with an arrow inside which fits current source description)I1: 100m
-(This component was drawn like a triangle with three lines which fits BJT description)Q1:
-(This component was drawn like a circle with + and - symbols which fits voltage source description)V1: 4
-(This component was drawn like a circle with + and - symbols which fits voltage source description)V2: 9
-types:
-  Current_src: 1
-  Transistor_BJT: 1
-  Voltage_src: 2

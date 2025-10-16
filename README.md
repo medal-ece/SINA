@@ -1,111 +1,209 @@
-# **Netlist Generator**
+# SINA - Schematic Image to Netlist Analyzer
 
-Welcome to the **Netlist Generator** repository! This project is designed to convert an image of a circuit schematic into a netlist, which is outputted as a text file. The netlist represents the electrical connections between circuit components, serving as a textual representation of the circuit.
-
-## **Directory Structure**
-
-### **1. model_training**
-
--   Resources for training the YOLO model.
--   Contents:
-    -   Datasets
-    -   Data preprocessing scripts
-    -   Training pipeline and configuration
-    -   CVAT-to-COCO format conversion tool
-
-### **2. program_test**
-
--   Tools and scripts to evaluate model performance and test netlist generation.
--   Contents:
-    -   Model testing scripts
-    -   Netlist generation and comparison scripts
-    -   Debugging tools
-
-### **3. current_trained_model**
-
--   Contains the latest trained YOLO model used for inference.
-
-### **4. .gitignore**
-
--   Specifies ignored files/directories for Git.
+Welcome to **SINA**! This project is a computer vision-based system that automatically converts circuit schematic images into netlists for both **Integrated Circuits (IC)** and **Printed Circuit Boards (PCB)**. The system uses YOLOv8 object detection, OpenCV image processing, and OCR to detect circuit components, analyze wire connections, handle wire crossings, and generate structured netlists.
 
 ---
 
-## **Project Setup Guide**
+## Project Overview
 
-## 1) Install Python
+SINA consists of two main modules:
 
--   Download **Python 3.12** (version 3.13 may work, but revert to 3.12 if you encounter issues).
--   [Python Downloads Page](https://www.python.org/downloads/)
+### IC Netlist Generator
 
-## 2) Set Up Python Virtual Environment
+Converts integrated circuit schematic images into netlists by detecting circuit components, analyzing wire connections, and handling crossing points.
 
--   Navigate to your project folder.
+[View IC Documentation](Netlist%20Generator/IC/README.md)
 
--   Create a new Python virtual environment. Replace `env_netlist` with your preferred name if desired:
-    -  Windows:
+### PCB Netlist Generator
+
+Processes printed circuit board schematics with advanced text removal, pin detection, and multi-stage netlist generation with SPICE output support.
+
+[View PCB Documentation](Netlist%20Generator/PCB/README.md)
+
+---
+
+## Repository Structure
+
+```
+SINA/
+├── Netlist Generator/
+│   ├── IC/                     # IC netlist generator module
+│   │   ├── model_training/     # YOLO training resources
+│   │   ├── program_test/       # Testing and validation tools
+│   │   └── current_trained_model/
+│   │
+│   └── PCB/                    # PCB netlist generator module
+│       ├── Model training/     # Training scripts and tools
+│       ├── Program test/       # Testing utilities
+│       ├── Current trained model/
+│       ├── all models/Final/   # Production-ready scripts
+│       └── other/              # Additional utilities
+│
+├── Database/                   # Project database files
+└── README.md                   # This file
+```
+
+---
+
+## Quick Start
+
+### Prerequisites
+
+-   **Python 3.12** ([Download](https://www.python.org/downloads/))
+-   NVIDIA GPU (recommended for faster processing)
+-   CUDA Toolkit (if using GPU)
+
+### Installation
+
+1. **Clone the repository**
+
+    ```bash
+    git clone <repository-url>
+    cd SINA
+    ```
+
+2. **Set up a virtual environment**
+
+    **Windows:**
+
     ```bash
     py -m venv env_netlist
-    ```
-    -  macOS/Linux:
-    ```bash
-    python3 -m venv env_netlist
-    ```
-### Activate the Virtual Environment
-
--   To activate the virtual environment, run:
-    -   Windows:
-    ```bash
     env_netlist\Scripts\activate
     ```
-    -   macOS/Linux:
+
+    **macOS/Linux:**
+
     ```bash
+    python3 -m venv env_netlist
     source env_netlist/bin/activate
     ```
 
-**Note:** You’ll know the environment is activated when you see the environment name in parentheses before the command prompt:
+3. **Upgrade pip**
+
+    ```bash
+    pip install --upgrade pip
+    ```
+
+4. **Install PyTorch** (match your CUDA version)
+
+    Visit [PyTorch Installation Guide](https://pytorch.org/get-started/locally/) and select your configuration.
+
+    Example for CUDA 12.4:
+
+    ```bash
+    pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+    ```
+
+5. **Install common dependencies**
+
+    ```bash
+    pip install ultralytics opencv-python easyocr numpy matplotlib
+    ```
+
+6. **Module-specific dependencies**
+
+    **For IC:**
+
+    ```bash
+    pip install python-dotenv
+    ```
+
+    **For PCB:**
+
+    ```bash
+    pip install google-cloud-vision "numpy<2.0"
+    ```
+
+---
+
+## Getting Started
+
+### For IC Netlist Generation
+
+1. Navigate to the IC module:
+
+    ```bash
+    cd "Netlist Generator/IC"
+    ```
+
+2. Follow the [IC README](Netlist%20Generator/IC/README.md) for detailed instructions.
+
+3. Run your first netlist generation:
+    ```bash
+    cd program_test/netlist_generator_algorithm_test
+    py netlist_generator.py
+    ```
+
+### For PCB Netlist Generation
+
+1. Navigate to the PCB module:
+
+    ```bash
+    cd "Netlist Generator/PCB"
+    ```
+
+2. Follow the [PCB README](Netlist%20Generator/PCB/README.md) for detailed instructions.
+
+3. Set up Google Cloud Vision credentials (see PCB README).
+
+4. Run the complete pipeline:
+    ```bash
+    cd "all models/Final"
+    python index.py --input data/input --output data/output
+    ```
+
+---
+
+## Key Features
+
+-   **Automated Component Detection** - YOLOv8-based object detection
+-   **Text Removal** - OCR-based text filtering for cleaner analysis
+-   **Pin Detection** - Edge scanning and keypoint detection
+-   **Wire Tracing** - Skeletonization and crossing detection
+-   **Netlist Generation** - JSON and SPICE format output
+-   **Model Training** - Custom YOLO training pipeline with CVAT support
+
+---
+
+## Documentation
+
+-   [IC Netlist Generator Documentation](Netlist%20Generator/IC/README.md)
+-   [PCB Netlist Generator Documentation](Netlist%20Generator/PCB/README.md)
+
+---
+
+## How to Run Scripts
+
+All scripts in this project are Python-based:
+
+**Windows:**
 
 ```bash
-(env_netlist) C:\your\path\here>
+py script_name.py
+# or
+python script_name.py
 ```
 
-## 3) Upgrade Pip
+**macOS/Linux:**
 
-- Run the following command to upgrade `pip`:
-
-    ```bash
-    py -m pip install --upgrade pip
-    ```
-
-## 4) Install PyTorch
-
-- Go to the PyTorch website (https://pytorch.org/get-started/locally/) and select the options that fit your machine for example mine were:
-   - **Stable** always pick stable
-   - **Windows** my machine
-   - **Pip** 
-   - **Python** pick python
-   - **CUDA 12.4** (for NVIDIA GPUs)
-   - Copy the provided install command and run it.
-   - **Example command:**
-     
-    ```bash
-    pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
-    ```
-
-## 5) Install Ultralytics
-
-- Install the `ultralytics` package (for YOLO):
-
-    ```bash
-    pip install ultralytics
-    ```
----
-
-## **How to run files**
-
-- This project is written entirely in Python, so all files can be executed using the same method from the command line or terminal.
-   - For windows: `py .\file_name.py` or `python .\file_name.py`
-   - For Mac and Linux: `python3 ./file_name.py`
+```bash
+python3 script_name.py
+```
 
 ---
-Test
+
+## Environment Variables
+
+For certain features (like OpenAI API integration in IC module), create a `.env` file:
+
+```env
+OPENAI_API_KEY=your_api_key_here
+```
+
+---
+
+## License
+
+See [LICENSE.txt](LICENSE.txt) for details.
+
+---

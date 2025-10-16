@@ -1,9 +1,0 @@
-```
-Transistor_BJT_1:Tr1, 1 2 3
-Resistor_1:R2, 2 3
-Resistor_2:R1, 1 2
-===
-Q1 1 2 3
-R2 2 3
-R1 1 2
-```
