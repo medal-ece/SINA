@@ -1,0 +1,298 @@
+{
+  "image": "circuit013.png",
+  "components": [
+    {
+      "component_id": 1,
+      "bbox": [
+        1195,
+        113,
+        1243,
+        192
+      ],
+      "pin_count": 5,
+      "pins": [
+        {
+          "x": 1220,
+          "y": 111,
+          "label": "CONN3G"
+        },
+        {
+          "x": 1245,
+          "y": 130,
+          "label": "GND"
+        },
+        {
+          "x": 1245,
+          "y": 145,
+          "label": "OSDA"
+        },
+        {
+          "x": 1245,
+          "y": 160,
+          "label": "OSDA"
+        },
+        {
+          "x": 1245,
+          "y": 175,
+          "label": "SCL"
+        }
+      ],
+      "connected": [
+        3
+      ]
+    },
+    {
+      "component_id": 2,
+      "bbox": [
+        866,
+        98,
+        914,
+        192
+      ],
+      "pin_count": 5,
+      "pins": [
+        {
+          "x": 916,
+          "y": 115,
+          "label": ""
+        },
+        {
+          "x": 916,
+          "y": 130,
+          "label": "SCL"
+        },
+        {
+          "x": 916,
+          "y": 145,
+          "label": "SDA"
+        },
+        {
+          "x": 916,
+          "y": 160,
+          "label": "SQW"
+        },
+        {
+          "x": 916,
+          "y": 175,
+          "label": "SQW"
+        }
+      ],
+      "connected": []
+    },
+    {
+      "component_id": 3,
+      "bbox": [
+        1390,
+        113,
+        1438,
+        191
+      ],
+      "pin_count": 5,
+      "pins": [
+        {
+          "x": 1400,
+          "y": 111,
+          "label": "GONN4GS1"
+        },
+        {
+          "x": 1388,
+          "y": 130,
+          "label": "VCC"
+        },
+        {
+          "x": 1388,
+          "y": 145,
+          "label": "SDA"
+        },
+        {
+          "x": 1388,
+          "y": 160,
+          "label": "SDA"
+        },
+        {
+          "x": 1388,
+          "y": 175,
+          "label": "SCL"
+        }
+      ],
+      "connected": [
+        1
+      ]
+    },
+    {
+      "component_id": 4,
+      "bbox": [
+        782,
+        459,
+        906,
+        535
+      ],
+      "pin_count": 8,
+      "pins": [
+        {
+          "x": 780,
+          "y": 475,
+          "label": "VDD"
+        },
+        {
+          "x": 908,
+          "y": 475,
+          "label": "XI"
+        },
+        {
+          "x": 780,
+          "y": 490,
+          "label": "INTI"
+        },
+        {
+          "x": 908,
+          "y": 490,
+          "label": "CLK"
+        },
+        {
+          "x": 780,
+          "y": 505,
+          "label": "SCL"
+        },
+        {
+          "x": 908,
+          "y": 505,
+          "label": "VBAT"
+        },
+        {
+          "x": 780,
+          "y": 520,
+          "label": "SDA"
+        },
+        {
+          "x": 908,
+          "y": 520,
+          "label": "VSS"
+        }
+      ],
+      "connected": [
+        6,
+        9
+      ]
+    },
+    {
+      "component_id": 5,
+      "bbox": [
+        565,
+        99,
+        583,
+        130
+      ],
+      "pin_count": 2,
+      "pins": [
+        {
+          "x": 574,
+          "y": 97,
+          "label": ""
+        },
+        {
+          "x": 574,
+          "y": 132,
+          "label": ""
+        }
+      ],
+      "connected": []
+    },
+    {
+      "component_id": 6,
+      "bbox": [
+        671,
+        459,
+        687,
+        493
+      ],
+      "pin_count": 2,
+      "pins": [
+        {
+          "x": 679,
+          "y": 457,
+          "label": "SDA"
+        },
+        {
+          "x": 679,
+          "y": 495,
+          "label": "SDA"
+        }
+      ],
+      "connected": [
+        4
+      ]
+    },
+    {
+      "component_id": 7,
+      "bbox": [
+        152,
+        121,
+        185,
+        138
+      ],
+      "pin_count": 2,
+      "pins": [
+        {
+          "x": 150,
+          "y": 130,
+          "label": "1K"
+        },
+        {
+          "x": 187,
+          "y": 130,
+          "label": "1K"
+        }
+      ],
+      "connected": []
+    },
+    {
+      "component_id": 8,
+      "bbox": [
+        461,
+        83,
+        476,
+        116
+      ],
+      "pin_count": 2,
+      "pins": [
+        {
+          "x": 469,
+          "y": 81,
+          "label": ""
+        },
+        {
+          "x": 469,
+          "y": 118,
+          "label": ""
+        }
+      ],
+      "connected": []
+    },
+    {
+      "component_id": 9,
+      "bbox": [
+        626,
+        459,
+        642,
+        491
+      ],
+      "pin_count": 2,
+      "pins": [
+        {
+          "x": 634,
+          "y": 457,
+          "label": "VCC"
+        },
+        {
+          "x": 634,
+          "y": 493,
+          "label": ""
+        }
+      ],
+      "connected": [
+        4
+      ]
+    }
+  ]
+}

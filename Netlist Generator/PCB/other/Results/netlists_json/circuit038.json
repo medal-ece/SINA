@@ -1,0 +1,93 @@
+{
+  "image": "circuit038.png",
+  "components": [
+    {
+      "component_id": 1,
+      "bbox": [
+        317,
+        361,
+        424,
+        422
+      ],
+      "pin_count": 4,
+      "pins": [
+        {
+          "x": 315,
+          "y": 377,
+          "label": "VDD"
+        },
+        {
+          "x": 426,
+          "y": 377,
+          "label": "OUT"
+        },
+        {
+          "x": 315,
+          "y": 407,
+          "label": "GND"
+        },
+        {
+          "x": 426,
+          "y": 407,
+          "label": "-COUT-"
+        }
+      ],
+      "connected": [
+        3
+      ]
+    },
+    {
+      "component_id": 2,
+      "bbox": [
+        1068,
+        525,
+        1100,
+        588
+      ],
+      "pin_count": 2,
+      "pins": [
+        {
+          "x": 1084,
+          "y": 523,
+          "label": "UCC"
+        },
+        {
+          "x": 1084,
+          "y": 590,
+          "label": "UCC"
+        }
+      ],
+      "connected": []
+    },
+    {
+      "component_id": 3,
+      "bbox": [
+        1196,
+        346,
+        1236,
+        409
+      ],
+      "pin_count": 3,
+      "pins": [
+        {
+          "x": 1194,
+          "y": 362,
+          "label": ""
+        },
+        {
+          "x": 1194,
+          "y": 377,
+          "label": ""
+        },
+        {
+          "x": 1194,
+          "y": 392,
+          "label": ""
+        }
+      ],
+      "connected": [
+        1
+      ]
+    }
+  ]
+}

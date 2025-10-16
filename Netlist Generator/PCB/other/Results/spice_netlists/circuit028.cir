@@ -1,0 +1,9 @@
+* SPICE netlist for circuit028.png
+X1 VBUS D D GND SUBCKT
+R2 R3 10K 1k
+R3 R2 10K 1k
+X4 VDD VBAT PROG VSS SUBCKT
+R5 CON X3G 1k
+R6 2K N1 1k
+R7 R1 R1 1k
+.end

@@ -1,0 +1,410 @@
+{
+  "image": "circuit018.png",
+  "components": [
+    {
+      "component_id": 1,
+      "bbox": [
+        888,
+        519,
+        1039,
+        746
+      ],
+      "pin_count": 10,
+      "pins": [
+        {
+          "x": 1041,
+          "y": 580,
+          "label": "VDD"
+        },
+        {
+          "x": 886,
+          "y": 610,
+          "label": "AINO"
+        },
+        {
+          "x": 1041,
+          "y": 610,
+          "label": "SDA"
+        },
+        {
+          "x": 886,
+          "y": 625,
+          "label": "AIN1"
+        },
+        {
+          "x": 1041,
+          "y": 625,
+          "label": "ADDR"
+        },
+        {
+          "x": 886,
+          "y": 640,
+          "label": "AIN2"
+        },
+        {
+          "x": 1041,
+          "y": 640,
+          "label": "ALERT"
+        },
+        {
+          "x": 886,
+          "y": 655,
+          "label": "AIN3"
+        },
+        {
+          "x": 1041,
+          "y": 655,
+          "label": "ALERT"
+        },
+        {
+          "x": 1041,
+          "y": 685,
+          "label": "GND"
+        }
+      ],
+      "connected": [
+        4,
+        7,
+        9,
+        10
+      ]
+    },
+    {
+      "component_id": 2,
+      "bbox": [
+        221,
+        383,
+        268,
+        492
+      ],
+      "pin_count": 6,
+      "pins": [
+        {
+          "x": 219,
+          "y": 400,
+          "label": "JP2"
+        },
+        {
+          "x": 270,
+          "y": 415,
+          "label": ""
+        },
+        {
+          "x": 219,
+          "y": 430,
+          "label": "SCL"
+        },
+        {
+          "x": 219,
+          "y": 445,
+          "label": "ADDR"
+        },
+        {
+          "x": 219,
+          "y": 460,
+          "label": "ALERT"
+        },
+        {
+          "x": 219,
+          "y": 475,
+          "label": "ALERT"
+        }
+      ],
+      "connected": []
+    },
+    {
+      "component_id": 3,
+      "bbox": [
+        431,
+        383,
+        479,
+        492
+      ],
+      "pin_count": 6,
+      "pins": [
+        {
+          "x": 429,
+          "y": 400,
+          "label": "AIN3"
+        },
+        {
+          "x": 429,
+          "y": 415,
+          "label": "AIN2"
+        },
+        {
+          "x": 429,
+          "y": 430,
+          "label": "AIN2"
+        },
+        {
+          "x": 429,
+          "y": 445,
+          "label": "AINO"
+        },
+        {
+          "x": 429,
+          "y": 460,
+          "label": "AINO"
+        },
+        {
+          "x": 429,
+          "y": 475,
+          "label": "AINO"
+        }
+      ],
+      "connected": []
+    },
+    {
+      "component_id": 4,
+      "bbox": [
+        1270,
+        669,
+        1287,
+        699
+      ],
+      "pin_count": 2,
+      "pins": [
+        {
+          "x": 1280,
+          "y": 667,
+          "label": ""
+        },
+        {
+          "x": 1280,
+          "y": 701,
+          "label": "GND"
+        }
+      ],
+      "connected": [
+        1,
+        10
+      ]
+    },
+    {
+      "component_id": 5,
+      "bbox": [
+        1195,
+        113,
+        1243,
+        192
+      ],
+      "pin_count": 5,
+      "pins": [
+        {
+          "x": 1220,
+          "y": 111,
+          "label": "CONN3G"
+        },
+        {
+          "x": 1245,
+          "y": 130,
+          "label": "GND"
+        },
+        {
+          "x": 1245,
+          "y": 145,
+          "label": "OSDA"
+        },
+        {
+          "x": 1245,
+          "y": 160,
+          "label": "OSDA"
+        },
+        {
+          "x": 1245,
+          "y": 175,
+          "label": "SCL"
+        }
+      ],
+      "connected": [
+        6
+      ]
+    },
+    {
+      "component_id": 6,
+      "bbox": [
+        1390,
+        113,
+        1438,
+        191
+      ],
+      "pin_count": 5,
+      "pins": [
+        {
+          "x": 1400,
+          "y": 111,
+          "label": "GONN4GS1"
+        },
+        {
+          "x": 1388,
+          "y": 130,
+          "label": "VCC"
+        },
+        {
+          "x": 1388,
+          "y": 145,
+          "label": "SDA"
+        },
+        {
+          "x": 1388,
+          "y": 160,
+          "label": "SDA"
+        },
+        {
+          "x": 1388,
+          "y": 175,
+          "label": "SCL"
+        }
+      ],
+      "connected": [
+        5
+      ]
+    },
+    {
+      "component_id": 7,
+      "bbox": [
+        1120,
+        504,
+        1136,
+        535
+      ],
+      "pin_count": 2,
+      "pins": [
+        {
+          "x": 1130,
+          "y": 502,
+          "label": ""
+        },
+        {
+          "x": 1130,
+          "y": 537,
+          "label": ""
+        }
+      ],
+      "connected": [
+        1
+      ]
+    },
+    {
+      "component_id": 8,
+      "bbox": [
+        461,
+        114,
+        477,
+        146
+      ],
+      "pin_count": 2,
+      "pins": [
+        {
+          "x": 469,
+          "y": 112,
+          "label": ""
+        },
+        {
+          "x": 469,
+          "y": 148,
+          "label": ""
+        }
+      ],
+      "connected": []
+    },
+    {
+      "component_id": 9,
+      "bbox": [
+        1166,
+        504,
+        1182,
+        536
+      ],
+      "pin_count": 2,
+      "pins": [
+        {
+          "x": 1175,
+          "y": 502,
+          "label": ""
+        },
+        {
+          "x": 1175,
+          "y": 538,
+          "label": ""
+        }
+      ],
+      "connected": [
+        1
+      ]
+    },
+    {
+      "component_id": 10,
+      "bbox": [
+        1212,
+        504,
+        1228,
+        536
+      ],
+      "pin_count": 3,
+      "pins": [
+        {
+          "x": 1220,
+          "y": 502,
+          "label": ""
+        },
+        {
+          "x": 1211,
+          "y": 519,
+          "label": ""
+        },
+        {
+          "x": 1220,
+          "y": 538,
+          "label": ""
+        }
+      ],
+      "connected": [
+        1,
+        4
+      ]
+    },
+    {
+      "component_id": 11,
+      "bbox": [
+        102,
+        168,
+        116,
+        182
+      ],
+      "pin_count": 1,
+      "pins": [
+        {
+          "x": 118,
+          "y": 175,
+          "label": "FERRITE"
+        }
+      ],
+      "connected": []
+    },
+    {
+      "component_id": 12,
+      "bbox": [
+        102,
+        78,
+        117,
+        92
+      ],
+      "pin_count": 2,
+      "pins": [
+        {
+          "x": 101,
+          "y": 85,
+          "label": "FB3"
+        },
+        {
+          "x": 120,
+          "y": 85,
+          "label": "FERRITE"
+        }
+      ],
+      "connected": []
+    }
+  ]
+}

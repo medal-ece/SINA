@@ -1,0 +1,144 @@
+{
+  "image": "circuit049.png",
+  "components": [
+    {
+      "component_id": 1,
+      "bbox": [
+        318,
+        227,
+        439,
+        393
+      ],
+      "pin_count": 14,
+      "pins": [
+        {
+          "x": 316,
+          "y": 242,
+          "label": "VDD"
+        },
+        {
+          "x": 441,
+          "y": 242,
+          "label": "SDA"
+        },
+        {
+          "x": 316,
+          "y": 257,
+          "label": "VDD_10"
+        },
+        {
+          "x": 441,
+          "y": 257,
+          "label": "SCL"
+        },
+        {
+          "x": 441,
+          "y": 272,
+          "label": "CS"
+        },
+        {
+          "x": 441,
+          "y": 287,
+          "label": "SDOI"
+        },
+        {
+          "x": 441,
+          "y": 302,
+          "label": "SDX"
+        },
+        {
+          "x": 441,
+          "y": 317,
+          "label": "SCX"
+        },
+        {
+          "x": 441,
+          "y": 332,
+          "label": "SDO_AUX"
+        },
+        {
+          "x": 441,
+          "y": 347,
+          "label": "OCS"
+        },
+        {
+          "x": 316,
+          "y": 362,
+          "label": "GND"
+        },
+        {
+          "x": 441,
+          "y": 362,
+          "label": "INT1"
+        },
+        {
+          "x": 316,
+          "y": 377,
+          "label": "GND"
+        },
+        {
+          "x": 441,
+          "y": 377,
+          "label": "INT2"
+        }
+      ],
+      "connected": []
+    },
+    {
+      "component_id": 2,
+      "bbox": [
+        393,
+        722,
+        448,
+        798
+      ],
+      "pin_count": 4,
+      "pins": [
+        {
+          "x": 450,
+          "y": 737,
+          "label": "SCL-"
+        },
+        {
+          "x": 450,
+          "y": 752,
+          "label": "SDA"
+        },
+        {
+          "x": 450,
+          "y": 767,
+          "label": "UCC"
+        },
+        {
+          "x": 450,
+          "y": 782,
+          "label": "GND-"
+        }
+      ],
+      "connected": []
+    },
+    {
+      "component_id": 3,
+      "bbox": [
+        138,
+        736,
+        178,
+        799
+      ],
+      "pin_count": 2,
+      "pins": [
+        {
+          "x": 180,
+          "y": 752,
+          "label": "INT1"
+        },
+        {
+          "x": 180,
+          "y": 782,
+          "label": ""
+        }
+      ],
+      "connected": []
+    }
+  ]
+}

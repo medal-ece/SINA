@@ -1,0 +1,239 @@
+{
+  "image": "circuit016.png",
+  "components": [
+    {
+      "component_id": 1,
+      "bbox": [
+        632,
+        624,
+        709,
+        747
+      ],
+      "pin_count": 8,
+      "pins": [
+        {
+          "x": 630,
+          "y": 640,
+          "label": "LEDA"
+        },
+        {
+          "x": 711,
+          "y": 651,
+          "label": ""
+        },
+        {
+          "x": 711,
+          "y": 666,
+          "label": ""
+        },
+        {
+          "x": 630,
+          "y": 670,
+          "label": "LEDCT"
+        },
+        {
+          "x": 630,
+          "y": 700,
+          "label": "EMIT"
+        },
+        {
+          "x": 711,
+          "y": 706,
+          "label": "TCRT1000_VERT"
+        },
+        {
+          "x": 711,
+          "y": 722,
+          "label": "TCRT1000_VERT"
+        },
+        {
+          "x": 630,
+          "y": 730,
+          "label": "COL"
+        }
+      ],
+      "connected": [
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "component_id": 2,
+      "bbox": [
+        191,
+        639,
+        238,
+        702
+      ],
+      "pin_count": 0,
+      "pins": [],
+      "connected": []
+    },
+    {
+      "component_id": 3,
+      "bbox": [
+        100,
+        640,
+        149,
+        702
+      ],
+      "pin_count": 0,
+      "pins": [],
+      "connected": []
+    },
+    {
+      "component_id": 4,
+      "bbox": [
+        266,
+        639,
+        314,
+        702
+      ],
+      "pin_count": 0,
+      "pins": [],
+      "connected": []
+    },
+    {
+      "component_id": 5,
+      "bbox": [
+        476,
+        429,
+        493,
+        461
+      ],
+      "pin_count": 2,
+      "pins": [
+        {
+          "x": 484,
+          "y": 427,
+          "label": ""
+        },
+        {
+          "x": 484,
+          "y": 463,
+          "label": ""
+        }
+      ],
+      "connected": []
+    },
+    {
+      "component_id": 6,
+      "bbox": [
+        386,
+        759,
+        401,
+        791
+      ],
+      "pin_count": 2,
+      "pins": [
+        {
+          "x": 394,
+          "y": 757,
+          "label": ""
+        },
+        {
+          "x": 394,
+          "y": 793,
+          "label": ""
+        }
+      ],
+      "connected": [
+        1,
+        7
+      ]
+    },
+    {
+      "component_id": 7,
+      "bbox": [
+        581,
+        773,
+        597,
+        807
+      ],
+      "pin_count": 2,
+      "pins": [
+        {
+          "x": 589,
+          "y": 771,
+          "label": "1BK"
+        },
+        {
+          "x": 589,
+          "y": 809,
+          "label": "VIN"
+        }
+      ],
+      "connected": [
+        1,
+        6
+      ]
+    },
+    {
+      "component_id": 8,
+      "bbox": [
+        581,
+        595,
+        597,
+        627
+      ],
+      "pin_count": 2,
+      "pins": [
+        {
+          "x": 589,
+          "y": 594,
+          "label": ""
+        },
+        {
+          "x": 589,
+          "y": 629,
+          "label": ""
+        }
+      ],
+      "connected": [
+        1,
+        9
+      ]
+    },
+    {
+      "component_id": 9,
+      "bbox": [
+        584,
+        490,
+        597,
+        516
+      ],
+      "pin_count": 5,
+      "pins": [
+        {
+          "x": 589,
+          "y": 488,
+          "label": ""
+        },
+        {
+          "x": 599,
+          "y": 496,
+          "label": "3314J"
+        },
+        {
+          "x": 582,
+          "y": 504,
+          "label": "3314J"
+        },
+        {
+          "x": 599,
+          "y": 511,
+          "label": "3314J"
+        },
+        {
+          "x": 589,
+          "y": 518,
+          "label": "3314J"
+        }
+      ],
+      "connected": [
+        8
+      ]
+    }
+  ]
+}
