@@ -1,4 +1,4 @@
-# SINA - Schematic Image to Netlist Analyzer
+# SINA - Schematic Image to Netlist Tool
 
 Welcome to **SINA**! This project is a computer vision-based system that automatically converts circuit schematic images into netlists for both **Integrated Circuits (IC)** and **Printed Circuit Boards (PCB)**. The system uses YOLOv8 object detection, OpenCV image processing, and OCR to detect circuit components, analyze wire connections, handle wire crossings, and generate structured netlists.
 
