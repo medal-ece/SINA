@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<annotations>
+  <version>1.1</version>
+  <meta>
+    <task>
+      <id>1280925</id>
+      <name>Inductors</name>
+      <size>35</size>
+      <mode>annotation</mode>
+      <overlap>0</overlap>
+      <bugtracker></bugtracker>
+      <created>2025-03-26 14:26:31.172449+00:00</created>
+      <updated>2025-03-26 14:38:06.604011+00:00</updated>
+      <subset>default</subset>
+      <start_frame>0</start_frame>
+      <stop_frame>34</stop_frame>
+      <frame_filter></frame_filter>
+      <segments>
+        <segment>
+          <id>2264438</id>
+          <start>0</start>
+          <stop>34</stop>
+          <url>https://app.cvat.ai/api/jobs/2262027</url>
+        </segment>
+      </segments>
+      <owner>
+        <username>saudkjk</username>
+        <email>saudkjk@gmail.com</email>
+      </owner>
+      <assignee></assignee>
+      <labels>
+        <label>
+          <name>Resistor</name>
+          <color>#0976d7</color>
+          <type>any</type>
+          <attributes>
+          </attributes>
+        </label>
+        <label>
+          <name>Transistor_BJT</name>
+          <color>#6906f2</color>
+          <type>any</type>
+          <attributes>
+          </attributes>
+        </label>
+        <label>
+          <name>Capacitor</name>
+          <color>#b5614a</color>
+          <type>any</type>
+          <attributes>
+          </attributes>
+        </label>
+        <label>
+          <name>Inductor</name>
+          <color>#7b63da</color>
+          <type>any</type>
+          <attributes>
+          </attributes>
+        </label>
+        <label>
+          <name>Voltage_src</name>
+          <color>#699cf9</color>
+          <type>any</type>
+          <attributes>
+          </attributes>
+        </label>
+        <label>
+          <name>Current_src</name>
+          <color>#2d852a</color>
+          <type>any</type>
+          <attributes>
+          </attributes>
+        </label>
+        <label>
+          <name>Transistor_MOSFET</name>
+          <color>#04e11c</color>
+          <type>any</type>
+          <attributes>
+          </attributes>
+        </label>
+        <label>
+          <name>GND</name>
+          <color>#fdf885</color>
+          <type>any</type>
+          <attributes>
+          </attributes>
+        </label>
+        <label>
+          <name>Op-Amp_v1</name>
+          <color>#677221</color>
+          <type>any</type>
+          <attributes>
+          </attributes>
+        </label>
+        <label>
+          <name>Op-Amp_v2</name>
+          <color>#367149</color>
+          <type>any</type>
+          <attributes>
+          </attributes>
+        </label>
+      </labels>
+    </task>
+    <dumped>2025-03-26 14:38:16.831263+00:00</dumped>
+  </meta>
+  <image id="0" name="circuit_0121.jpg" width="649" height="206">
+    <points label="Inductor" source="manual" occluded="0" points="600.16,62.08;601.28,110.40" z_order="0">
+    </points>
+    <points label="Inductor" source="manual" occluded="0" points="206.39,63.10;207.37,111.43" z_order="0">
+    </points>
+    <box label="Inductor" source="manual" occluded="0" xtl="590.40" ytl="60.94" xbr="610.90" ybr="111.86" z_order="0">
+    </box>
+    <box label="Inductor" source="manual" occluded="0" xtl="196.31" ytl="61.88" xbr="219.21" ybr="113.40" z_order="0">
+    </box>
+  </image>
+  <image id="1" name="circuit_0122.jpg" width="587" height="253">
+    <box label="Inductor" source="manual" occluded="0" xtl="199.57" ytl="107.65" xbr="219.14" ybr="180.20" z_order="0">
+    </box>
+    <points label="Inductor" source="manual" occluded="0" points="205.23,108.61;205.23,178.31" z_order="0">
+    </points>
+  </image>
+  <image id="2" name="circuit_0123.jpg" width="362" height="170">
+    <box label="Inductor" source="manual" occluded="0" xtl="160.26" ytl="48.67" xbr="180.50" ybr="97.18" z_order="0">
+    </box>
+    <points label="Inductor" source="manual" occluded="0" points="169.96,50.11;170.61,95.92" z_order="0">
+    </points>
+  </image>
+  <image id="3" name="circuit_0124.jpg" width="542" height="511">
+    <box label="Inductor" source="manual" occluded="0" xtl="418.55" ytl="116.70" xbr="465.48" ybr="357.71" z_order="0">
+    </box>
+    <points label="Inductor" source="manual" occluded="0" points="432.72,120.57;432.29,352.05" z_order="0">
+    </points>
+  </image>
+  <image id="4" name="circuit_0125.jpg" width="960" height="720">
+    <box label="Inductor" source="manual" occluded="0" xtl="385.63" ytl="485.17" xbr="420.90" ybr="563.38" z_order="0">
+    </box>
+    <points label="Inductor" source="manual" occluded="0" points="395.23,487.48;395.23,560.71" z_order="0">
+    </points>
+  </image>
+  <image id="5" name="circuit_0126.jpg" width="350" height="233">
+    <box label="Inductor" source="manual" occluded="0" xtl="36.74" ytl="55.41" xbr="61.62" ybr="119.25" z_order="0">
+    </box>
+    <points label="Inductor" source="manual" occluded="0" points="55.20,56.99;55.20,117.11" z_order="0">
+    </points>
+  </image>
+  <image id="6" name="circuit_0127.jpg" width="800" height="376">
+    <points label="Inductor" source="manual" occluded="0" points="265.51,109.36;327.27,110.07" z_order="0">
+    </points>
+    <box label="Inductor" source="manual" occluded="0" xtl="263.95" ytl="92.83" xbr="328.98" ybr="123.84" z_order="0">
+    </box>
+    <box label="Inductor" source="manual" occluded="0" xtl="513.21" ytl="92.60" xbr="578.01" ybr="127.31" z_order="0">
+    </box>
+    <points label="Inductor" source="manual" occluded="0" points="515.42,110.07;576.46,110.43" z_order="0">
+    </points>
+  </image>
+  <image id="7" name="circuit_0128.jpg" width="480" height="384">
+    <box label="Inductor" source="manual" occluded="0" xtl="342.61" ytl="105.76" xbr="402.11" ybr="227.31" z_order="0">
+    </box>
+    <points label="Inductor" source="manual" occluded="0" points="353.84,222.50;353.84,109.53" z_order="0">
+    </points>
+  </image>
+  <image id="8" name="circuit_0129.jpg" width="322" height="155">
+    <box label="Inductor" source="manual" occluded="0" xtl="223.96" ytl="57.84" xbr="234.42" ybr="93.90" z_order="0">
+    </box>
+    <points label="Inductor" source="manual" occluded="0" points="154.01,65.45;186.81,65.15" z_order="0">
+    </points>
+    <box label="Inductor" source="manual" occluded="0" xtl="153.15" ytl="57.38" xbr="187.75" ybr="68.79" z_order="0">
+    </box>
+    <points label="Inductor" source="manual" occluded="0" points="231.31,58.35;231.41,93.05" z_order="0">
+    </points>
+    <box label="Inductor" source="manual" occluded="0" xtl="84.60" ytl="58.19" xbr="96.27" ybr="93.87" z_order="0">
+    </box>
+    <points label="Inductor" source="manual" occluded="0" points="92.71,92.25;92.11,58.95" z_order="0">
+    </points>
+  </image>
+  <image id="9" name="circuit_0130.jpg" width="850" height="515">
+    <points label="Inductor" source="manual" occluded="0" points="250.72,367.30;250.58,443.11" z_order="0">
+    </points>
+    <points label="Inductor" source="manual" occluded="0" points="424.43,205.36;424.95,283.01" z_order="0">
+    </points>
+    <box label="Inductor" source="manual" occluded="0" xtl="418.77" ytl="203.54" xbr="445.94" ybr="285.04" z_order="0">
+    </box>
+    <points label="Inductor" source="manual" occluded="0" points="609.68,285.81;609.86,206.93" z_order="0">
+    </points>
+    <box label="Inductor" source="manual" occluded="0" xtl="603.60" ytl="205.80" xbr="628.38" ybr="287.18" z_order="0">
+    </box>
+    <box label="Inductor" source="manual" occluded="0" xtl="243.85" ytl="365.80" xbr="271.07" ybr="444.88" z_order="0">
+    </box>
+  </image>
+  <image id="10" name="circuit_0131.jpg" width="751" height="340">
+    <points label="Inductor" source="manual" occluded="0" points="203.93,73.54;269.03,73.21" z_order="0">
+    </points>
+    <box label="Inductor" source="manual" occluded="0" xtl="447.70" ytl="117.01" xbr="461.80" ybr="184.91" z_order="0">
+    </box>
+    <box label="Inductor" source="manual" occluded="0" xtl="559.61" ytl="64.06" xbr="624.36" ybr="77.75" z_order="0">
+    </box>
+    <box label="Inductor" source="manual" occluded="0" xtl="329.31" ytl="117.30" xbr="344.16" ybr="183.93" z_order="0">
+    </box>
+    <box label="Inductor" source="manual" occluded="0" xtl="202.65" ytl="64.07" xbr="270.72" ybr="79.28" z_order="0">
+    </box>
+    <points label="Inductor" source="manual" occluded="0" points="560.71,73.88;623.39,73.55" z_order="0">
+    </points>
+    <points label="Inductor" source="manual" occluded="0" points="458.54,183.67;458.38,118.24" z_order="0">
+    </points>
+    <points label="Inductor" source="manual" occluded="0" points="405.42,118.40;405.42,183.67" z_order="0">
+    </points>
+    <points label="Inductor" source="manual" occluded="0" points="339.82,118.24;340.31,183.02" z_order="0">
+    </points>
+    <box label="Inductor" source="manual" occluded="0" xtl="401.33" ytl="117.01" xbr="415.45" ybr="184.90" z_order="0">
+    </box>
+  </image>
+  <image id="11" name="circuit_0132.jpg" width="331" height="239">
+    <points label="Inductor" source="manual" occluded="0" points="288.33,177.10;287.93,128.00" z_order="0">
+    </points>
+    <box label="Inductor" source="manual" occluded="0" xtl="283.30" ytl="126.75" xbr="298.67" ybr="177.87" z_order="0">
+    </box>
+  </image>
+  <image id="12" name="circuit_0133.jpg" width="847" height="849">
+    <points label="Inductor" source="manual" occluded="0" points="649.08,359.34;725.03,359.34" z_order="0">
+    </points>
+    <points label="Inductor" source="manual" occluded="0" points="646.37,77.39;726.89,77.25" z_order="0">
+    </points>
+    <box label="Inductor" source="manual" occluded="0" xtl="648.20" ytl="347.52" xbr="726.71" ybr="365.25" z_order="0">
+    </box>
+    <box label="Inductor" source="manual" occluded="0" xtl="645.74" ytl="64.51" xbr="728.35" ybr="84.21" z_order="0">
+    </box>
+    <box label="Inductor" source="manual" occluded="0" xtl="648.48" ytl="631.00" xbr="727.58" ybr="647.98" z_order="0">
+    </box>
+    <points label="Inductor" source="manual" occluded="0" points="649.38,642.24;726.47,642.24" z_order="0">
+    </points>
+  </image>
+  <image id="13" name="circuit_0134.jpg" width="383" height="327">
+    <box label="Inductor" source="manual" occluded="0" xtl="137.60" ytl="50.28" xbr="158.63" ybr="138.67" z_order="0">
+    </box>
+    <box label="Inductor" source="manual" occluded="0" xtl="220.20" ytl="188.23" xbr="240.16" ybr="278.56" z_order="0">
+    </box>
+    <points label="Inductor" source="manual" occluded="0" points="227.23,189.85;227.70,277.09" z_order="0">
+    </points>
+    <points label="Inductor" source="manual" occluded="0" points="144.96,136.42;144.48,52.02" z_order="0">
+    </points>
+  </image>
+  <image id="14" name="circuit_0135.jpg" width="1159" height="449">
+    <box label="Inductor" source="manual" occluded="0" xtl="645.94" ytl="50.46" xbr="770.67" ybr="91.10" z_order="0">
+    </box>
+    <points label="Inductor" source="manual" occluded="0" points="646.83,78.58;768.58,78.44" z_order="0">
+    </points>
+  </image>
+  <image id="15" name="circuit_0136.jpg" width="432" height="218">
+    <points label="Inductor" source="manual" occluded="0" points="238.79,167.27;329.89,166.77" z_order="0">
+    </points>
+    <box label="Inductor" source="manual" occluded="0" xtl="238.11" ytl="153.77" xbr="331.40" ybr="182.38" z_order="0">
+    </box>
+  </image>
+  <image id="16" name="circuit_0137.jpg" width="471" height="421">
+    <box label="Inductor" source="manual" occluded="0" xtl="263.91" ytl="69.80" xbr="291.25" ybr="152.94" z_order="0">
+    </box>
+    <points label="Inductor" source="manual" occluded="0" points="275.48,151.40;274.87,70.82" z_order="0">
+    </points>
+  </image>
+  <image id="17" name="circuit_0138.jpg" width="1870" height="1121">
+    <points label="Inductor" source="manual" occluded="0" points="722.77,334.21;722.77,231.52" z_order="0">
+    </points>
+    <points label="Inductor" source="manual" occluded="0" points="1570.58,239.15;1569.43,335.89" z_order="0">
+    </points>
+    <points label="Inductor" source="manual" occluded="0" points="1513.80,238.00;1513.59,333.92" z_order="0">
+    </points>
+    <box label="Inductor" source="manual" occluded="0" xtl="1551.47" ytl="237.17" xbr="1581.03" ybr="337.37" z_order="0">
+    </box>
+    <box label="Inductor" source="manual" occluded="0" xtl="713.85" ytl="229.50" xbr="739.03" ybr="335.91" z_order="0">
+    </box>
+    <box label="Inductor" source="manual" occluded="0" xtl="1506.84" ytl="235.99" xbr="1531.67" ybr="336.49" z_order="0">
+    </box>
+  </image>
+  <image id="18" name="circuit_0139.jpg" width="832" height="675">
+    <box label="Inductor" source="manual" occluded="0" xtl="279.37" ytl="291.37" xbr="456.53" ybr="334.55" z_order="0">
+    </box>
+    <points label="Inductor" source="manual" occluded="0" points="450.68,306.88;286.00,304.21" z_order="0">
+    </points>
+    <points label="Inductor" source="manual" occluded="0" points="606.64,234.96;609.31,77.25" z_order="0">
+    </points>
+    <box label="Inductor" source="manual" occluded="0" xtl="597.00" ytl="75.07" xbr="626.83" ybr="238.69" z_order="0">
+    </box>
+  </image>
+  <image id="19" name="circuit_0140.jpg" width="1456" height="1010">
+    <box label="Inductor" source="manual" occluded="0" xtl="1207.89" ytl="265.91" xbr="1320.18" ybr="310.09" z_order="0">
+    </box>
+    <points label="Inductor" source="manual" occluded="0" points="1211.17,286.95;1318.27,290.14" z_order="0">
+    </points>
+  </image>
+  <image id="20" name="circuit_0141.jpg" width="842" height="496">
+    <points label="Inductor" source="manual" occluded="0" points="518.06,226.28;518.28,326.97" z_order="0">
+    </points>
+    <box label="Inductor" source="manual" occluded="0" xtl="502.86" ytl="222.85" xbr="538.79" ybr="330.25" z_order="0">
+    </box>
+  </image>
+  <image id="21" name="circuit_0142.jpg" width="554" height="379">
+    <box label="Inductor" source="manual" occluded="0" xtl="158.11" ytl="73.09" xbr="180.24" ybr="147.44" z_order="0">
+    </box>
+    <points label="Inductor" source="manual" occluded="0" points="62.07,72.75;62.07,151.15" z_order="0">
+    </points>
+    <box label="Inductor" source="manual" occluded="0" xtl="45.96" ytl="71.35" xbr="82.01" ybr="152.41" z_order="0">
+    </box>
+    <points label="Inductor" source="manual" occluded="0" points="164.94,145.78;164.54,74.34" z_order="0">
+    </points>
+  </image>
+  <image id="22" name="circuit_0143.jpg" width="577" height="223">
+    <points label="Inductor" source="manual" occluded="0" points="472.03,85.38;471.71,15.33" z_order="0">
+    </points>
+    <box label="Inductor" source="manual" occluded="0" xtl="160.91" ytl="55.47" xbr="179.82" ybr="102.21" z_order="0">
+    </box>
+    <box label="Inductor" source="manual" occluded="0" xtl="42.69" ytl="55.27" xbr="60.39" ybr="101.87" z_order="0">
+    </box>
+    <box label="Inductor" source="manual" occluded="0" xtl="402.74" ytl="55.30" xbr="419.78" ybr="100.90" z_order="0">
+    </box>
+    <box label="Inductor" source="manual" occluded="0" xtl="457.34" ytl="13.78" xbr="485.18" ybr="86.62" z_order="0">
+    </box>
+    <points label="Inductor" source="manual" occluded="0" points="171.39,100.90;171.39,56.40" z_order="0">
+    </points>
+    <points label="Inductor" source="manual" occluded="0" points="291.59,100.40;291.49,56.50" z_order="0">
+    </points>
+    <points label="Inductor" source="manual" occluded="0" points="51.29,101.11;51.59,56.11" z_order="0">
+    </points>
+    <points label="Inductor" source="manual" occluded="0" points="411.34,100.36;411.24,56.26" z_order="0">
+    </points>
+    <box label="Inductor" source="manual" occluded="0" xtl="281.79" ytl="55.75" xbr="300.15" ybr="101.23" z_order="0">
+    </box>
+  </image>
+  <image id="23" name="circuit_0144.jpg" width="376" height="180">
+    <points label="Inductor" source="manual" occluded="0" points="147.62,58.34;224.62,58.54" z_order="0">
+    </points>
+    <box label="Inductor" source="manual" occluded="0" xtl="146.70" ytl="46.72" xbr="225.66" ybr="62.00" z_order="0">
+    </box>
+  </image>
+  <image id="24" name="circuit_0145.jpg" width="500" height="176">
+    <box label="Inductor" source="manual" occluded="0" xtl="461.76" ytl="54.91" xbr="477.78" ybr="127.54" z_order="0">
+    </box>
+    <points label="Inductor" source="manual" occluded="0" points="469.07,126.13;468.94,56.58" z_order="0">
+    </points>
+  </image>
+  <image id="25" name="circuit_0146.jpg" width="632" height="483">
+  </image>
+  <image id="26" name="circuit_0147.jpg" width="452" height="397">
+  </image>
+  <image id="27" name="circuit_0148.jpg" width="641" height="280">
+    <box label="Inductor" source="manual" occluded="0" xtl="404.24" ytl="60.64" xbr="415.61" ybr="114.64" z_order="0">
+    </box>
+    <points label="Inductor" source="manual" occluded="0" points="205.25,125.13;205.01,70.89" z_order="0">
+    </points>
+    <points label="Inductor" source="manual" occluded="0" points="87.89,123.57;87.89,71.97" z_order="0">
+    </points>
+    <points label="Inductor" source="manual" occluded="0" points="413.35,113.69;413.15,61.39" z_order="0">
+    </points>
+    <box label="Inductor" source="manual" occluded="0" xtl="196.76" ytl="69.90" xbr="207.10" ybr="126.02" z_order="0">
+    </box>
+    <box label="Inductor" source="manual" occluded="0" xtl="78.99" ytl="71.19" xbr="90.51" ybr="124.35" z_order="0">
+    </box>
+  </image>
+  <image id="28" name="circuit_0149.jpg" width="800" height="335">
+    <points label="Inductor" source="manual" occluded="0" points="301.62,240.73;301.80,114.03" z_order="0">
+    </points>
+    <box label="Inductor" source="manual" occluded="0" xtl="294.34" ytl="112.51" xbr="322.55" ybr="241.88" z_order="0">
+    </box>
+  </image>
+  <image id="29" name="circuit_0150.jpg" width="674" height="289">
+    <points label="Inductor" source="manual" occluded="0" points="218.81,70.87;165.92,70.76" z_order="0">
+    </points>
+    <box label="Inductor" source="manual" occluded="0" xtl="491.79" ytl="111.16" xbr="510.11" ybr="168.25" z_order="0">
+    </box>
+    <box label="Inductor" source="manual" occluded="0" xtl="287.50" ytl="59.00" xbr="344.91" ybr="79.06" z_order="0">
+    </box>
+    <box label="Inductor" source="manual" occluded="0" xtl="165.28" ytl="58.79" xbr="219.66" ybr="78.60" z_order="0">
+    </box>
+    <points label="Inductor" source="manual" occluded="0" points="540.53,168.89;540.03,112.49" z_order="0">
+    </points>
+    <points label="Inductor" source="manual" occluded="0" points="497.76,112.11;498.64,167.37" z_order="0">
+    </points>
+    <points label="Inductor" source="manual" occluded="0" points="344.15,71.60;288.10,70.76" z_order="0">
+    </points>
+    <box label="Inductor" source="manual" occluded="0" xtl="528.30" ytl="111.46" xbr="548.26" ybr="170.06" z_order="0">
+    </box>
+  </image>
+  <image id="30" name="circuit_0151.jpg" width="462" height="186">
+    <points label="Inductor" source="manual" occluded="0" points="172.18,29.61;139.28,29.01" z_order="0">
+    </points>
+    <box label="Inductor" source="manual" occluded="0" xtl="138.43" ytl="18.43" xbr="173.13" ybr="32.23" z_order="0">
+    </box>
+    <box label="Inductor" source="manual" occluded="0" xtl="137.83" ytl="63.73" xbr="173.43" ybr="78.33" z_order="0">
+    </box>
+    <points label="Inductor" source="manual" occluded="0" points="172.58,75.31;138.58,75.51" z_order="0">
+    </points>
+  </image>
+  <image id="31" name="circuit_0152.jpg" width="477" height="437">
+    <box label="Inductor" source="manual" occluded="0" xtl="161.75" ytl="67.34" xbr="303.36" ybr="101.07" z_order="0">
+    </box>
+    <points label="Inductor" source="manual" occluded="0" points="300.94,90.55;163.64,84.76" z_order="0">
+    </points>
+  </image>
+  <image id="32" name="circuit_0153.jpg" width="600" height="202">
+    <points label="Inductor" source="manual" occluded="0" points="498.25,96.26;497.06,136.62" z_order="0">
+    </points>
+    <points label="Inductor" source="manual" occluded="0" points="195.45,139.28;195.88,94.36" z_order="0">
+    </points>
+    <box label="Inductor" source="manual" occluded="0" xtl="187.09" ytl="93.52" xbr="205.92" ybr="139.88" z_order="0">
+    </box>
+    <box label="Inductor" source="manual" occluded="0" xtl="487.24" ytl="95.18" xbr="508.28" ybr="137.42" z_order="0">
+    </box>
+  </image>
+  <image id="33" name="circuit_0154.jpg" width="430" height="355">
+    <box label="Inductor" source="manual" occluded="0" xtl="362.08" ytl="183.02" xbr="399.43" ybr="276.98" z_order="0">
+    </box>
+    <points label="Inductor" source="manual" occluded="0" points="378.07,275.28;378.23,184.66" z_order="0">
+    </points>
+  </image>
+  <image id="34" name="circuit_0155.jpg" width="755" height="297">
+    <box label="Inductor" source="manual" occluded="0" xtl="351.47" ytl="27.70" xbr="420.49" ybr="50.25" z_order="0">
+    </box>
+    <points label="Inductor" source="manual" occluded="0" points="692.68,38.02;626.29,37.82" z_order="0">
+    </points>
+    <points label="Inductor" source="manual" occluded="0" points="151.50,38.22;84.50,37.72" z_order="0">
+    </points>
+    <points label="Inductor" source="manual" occluded="0" points="419.00,37.61;352.88,37.49" z_order="0">
+    </points>
+    <box label="Inductor" source="manual" occluded="0" xtl="625.42" ytl="25.54" xbr="693.86" ybr="49.86" z_order="0">
+    </box>
+    <box label="Inductor" source="manual" occluded="0" xtl="83.59" ytl="27.31" xbr="152.62" ybr="49.66" z_order="0">
+    </box>
+  </image>
+</annotations>
