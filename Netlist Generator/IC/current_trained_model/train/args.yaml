@@ -1,10 +1,10 @@
 task: detect
 mode: train
 model: yolo11m.pt
-data: /content/newDataset.yaml
-epochs: 150
+data: C:\Users\saudk\Desktop\Research projects\medal\Netlist-Generator\model_training/config.yaml
+epochs: 300
 time: null
-patience: 20
+patience: 25
 batch: 16
 imgsz: 640
 save: true
@@ -12,8 +12,8 @@ save_period: -1
 cache: false
 device: null
 workers: 8
-project: /content/drive/MyDrive/Netlist_Notebook/trainOut3
-name: train
+project: C:\Users\saudk\Desktop\Research projects\medal\Netlist-Generator\runs
+name: train10
 exist_ok: false
 pretrained: true
 optimizer: auto
@@ -102,4 +102,4 @@ auto_augment: randaugment
 erasing: 0.4
 cfg: null
 tracker: botsort.yaml
-save_dir: /content/drive/MyDrive/Netlist_Notebook/trainOut3/train
+save_dir: C:\Users\saudk\Desktop\Research projects\medal\Netlist-Generator\runs\train10
