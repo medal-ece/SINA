@@ -9,10 +9,10 @@ def main():
     source_path, destination_path = prepare_paths(project_path)
 
     # Step 2: Load and train the YOLO model
-    model = YOLO('yolo11n-pose.pt')
+    model = YOLO('yolo11m.pt')
     model.train(
         data=config_path,  # Use the prepared config file
-        epochs=100,
+        epochs=300,
         project=source_path,
         patience=20,  # Stop training if no improvement for 20 epochs
         imgsz=640,

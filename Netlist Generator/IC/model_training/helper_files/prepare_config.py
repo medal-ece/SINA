@@ -15,9 +15,7 @@ train: images/train # train images (relative to 'path')
 val: images/val # val images (relative to 'path')
 """
     # Static sections of the config
-    static_section = """\n# Keypoints
-kpt_shape: [5, 3] # [number of keypoints, number of dim]
-
+    static_section = """
 # Classes
 names:
     0: Resistor
@@ -28,8 +26,8 @@ names:
     5: Voltage_src
     6: Current_src
     7: GND
-    8: Op-Amp_v1
-    9: Op-Amp_v2
+    8: Op-Amp
+    9: Diode
 """
 
     # Combine both sections
