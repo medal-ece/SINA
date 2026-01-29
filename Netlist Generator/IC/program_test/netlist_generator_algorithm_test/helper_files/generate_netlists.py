@@ -7,11 +7,70 @@ import re
 from dotenv import load_dotenv
 import base64
 import requests
+import time
+
+def fix_mosfet_nodes(netlist_lines):
+    """
+    Post-process netlist to ensure all MOSFETs have 4 nodes.
+    Fixes cases where VLM outputs only 3 nodes.
+
+    Args:
+        netlist_lines: List of netlist lines
+
+    Returns:
+        List of corrected netlist lines
+    """
+    fixed_lines = []
+    for line in netlist_lines:
+        # Skip directive lines and comments
+        if line.startswith('.') or line.startswith('*'):
+            fixed_lines.append(line)
+            continue
+
+        # Check if this is a MOSFET line (starts with M)
+        if re.match(r'^M\w+\s+', line, re.IGNORECASE):
+            parts = line.split()
+
+            # Check node count (parts[0]=name, parts[1-3 or 1-4]=nodes, last=model)
+            # Valid MOSFET: Mname node1 node2 node3 node4 model
+            # Invalid MOSFET: Mname node1 node2 node3 model (only 3 nodes)
+
+            if len(parts) == 5:  # Mname + 3 nodes + model = 5 parts
+                # This is a 3-node MOSFET - need to add Bulk
+                name = parts[0]
+                node1, node2, node3 = parts[1], parts[2], parts[3]
+                model = parts[4]
+
+                # Determine if NMOS or PMOS based on model name
+                if 'PMOS' in model.upper():
+                    # PMOS: Bulk = Source (node3)
+                    bulk = node3
+                else:
+                    # NMOS (default): Bulk = 0
+                    bulk = '0'
+
+                # Reconstruct line with 4 nodes
+                fixed_line = f"{name} {node1} {node2} {node3} {bulk} {model}"
+                print(f"  Fixed MOSFET: '{line}' → '{fixed_line}'")
+                fixed_lines.append(fixed_line)
+            else:
+                # Already has 4 nodes or different format - keep as is
+                fixed_lines.append(line)
+        else:
+            # Not a MOSFET - keep as is
+            fixed_lines.append(line)
+
+    return fixed_lines
 
 def generate_named_netlist(raw_netlist_lines, api_lines, ocr_text, image_path=None):
     """
     Replace internal component IDs in the netlist with real labels and values
     using the API response and OCR results. Includes reasoning per component.
+
+    Returns:
+        tuple: (final_netlist_lines, ground_node_number)
+            - final_netlist_lines: List of SPICE netlist lines
+            - ground_node_number: VLM-identified ground node (int or None)
     """
     load_dotenv()
     api_key = os.getenv("OPENAI_API_KEY")
@@ -38,16 +97,45 @@ def generate_named_netlist(raw_netlist_lines, api_lines, ocr_text, image_path=No
             "image_url": {"url": f"data:image/jpeg;base64,{base64_image}"}
         })
 
+
     prompt = (
-    "You are a circuit assistant tasked with transforming a raw netlist into a labeled and value-annotated version.\n\n"
+    "You are a circuit assistant tasked with transforming a raw netlist into a labeled and value-annotated LTspice netlist.\n\n"
     "You are provided with the following data:\n"
     "- A RAW NETLIST showing internal component IDs and their node connections. Example: `Resistor_1 1 2`\n"
     "- A LABEL:VALUE list from an API vision model. Each line may have parenthetical descriptions before the label — ignore these completely. Example: `(This component was drawn like two parallel lines which fits capacitor description)C3: 100uF`\n"
     "- OCR results showing detected text with confidence scores, organized by component and proximity.\n\n"
 
+    "\n"
+    "CRITICAL OUTPUT RULES - READ FIRST\n"
+     "\n"
+    "Before processing anything, memorize these non-negotiable rules:\n\n"
+
+    "1. MOSFET MANDATORY 4-NODE FORMAT:\n"
+    "   ALL M devices MUST have exactly 4 nodes: Mname Drain Gate Source Bulk Model\n"
+    "   - If raw netlist shows only 3 nodes, YOU MUST ADD the 4th Bulk node:\n"
+    "     * NMOS devices: Add 0 as Bulk → Example: M1 3 2 1 0 NMOS1\n"
+    "     * PMOS devices: Duplicate Source as Bulk → Example: M2 3 2 1 1 PMOS1\n"
+    "   - NEVER output a MOSFET with fewer than 4 nodes.\n\n"
+
+    "2. DO NOT DUPLICATE SPICE PREFIXES:\n"
+    "   If label already starts with correct prefix, use it as-is:\n"
+    "   - Use 'R1' NOT 'RR1', 'C3' NOT 'CC3', 'Q2' NOT 'QQ2', 'M1' NOT 'MM1'\n\n"
+
+    "\n\n"
+
     "Your job is to:\n"
     "1. Parse the LABEL:VALUE list. For each line, extract only the component label and its value after the colon. Completely ignore any parenthetical text before the label.\n\n"
     
+    "INTERNAL ID WARNING (CRITICAL):\n"
+    "The RAW NETLIST component IDs (e.g., Resistor_1, Capacitor_2, VoltageSource_3, Transistor_BJT_1, MOSFET_1) are INTERNAL placeholders only.\n"
+    "They are NOT the same as schematic labels (R1, R2, R3, C1, Q1, M1, etc.).\n"
+    "The numeric suffix in an internal ID (e.g., the '1' in Resistor_1) has NO relationship to the schematic label number (e.g., R1).\n"
+    "Therefore:\n"
+    "  - NEVER use the internal ID number to guess or force the real label number.\n"
+    "  - NEVER assume Resistor_1 corresponds to R1, Capacitor_2 corresponds to C2, etc.\n"
+    "  - Use internal IDs ONLY to determine component TYPE (resistor vs capacitor vs transistor) and to link OCR proximity data for that same internal ID.\n"
+    "All real labels MUST come from the API LABEL:VALUE mapping and/or OCR evidence, not from the internal ID numbering.\n\n"
+
     "2. For each component in the RAW NETLIST:\n"
     "   a) LABEL MATCHING: Find the real-world label using this process:\n"
     "      - Start with API labels for components of the same type\n"
@@ -69,14 +157,8 @@ def generate_named_netlist(raw_netlist_lines, api_lines, ocr_text, image_path=No
     "      - ASSISTANCE: Use OCR text near the component as hints to help confirm, enhance, or correct values\n"
     "      - CORRECTION: If API value doesn't make sense, look for value hints in OCR near the component\n"
     "      - ENHANCEMENT: If API has label but no value, use OCR value hints if they make sense for the component\n\n"
-    
-    "3. Output format for each component:\n"
-    "   - `component ID:<LABEL>, <NODE1> <NODE2>, <VALUE>` (for 2-terminal components)\n"
-    "   - `component ID:<LABEL>, <NODE1> <NODE2> <NODE3>, <VALUE>` (for 3-terminal components)\n"
-    "   - Include the value only if confidently determined and sensible\n"
-    "   - If no confident label/value match found, copy the original raw netlist line\n\n"
-    
-    "4. IMPORTANT GUIDELINES:\n"
+
+    "3. IMPORTANT GUIDELINES:\n"
     "   - Balance API reasoning with OCR guidance - neither should be ignored\n"
     "   - OCR provides valuable hints (~90% accuracy) but should be weighed against logical patterns\n"
     "   - Strong OCR evidence (high confidence, clear text) should influence assignments significantly\n"
@@ -84,15 +166,143 @@ def generate_named_netlist(raw_netlist_lines, api_lines, ocr_text, image_path=No
     "   - Consider OCR confidence scores when available to gauge reliability\n"
     "   - For components without useful OCR hints, rely on API reasoning and assignment patterns\n"
     "   - Do NOT invent any labels or values not supported by the data\n"
-    "   - Do NOT include any reasoning, comments, or explanations in your output\n"
     "   - Always validate that values make sense for the component type\n\n"
 
-    "5. FINAL REVIEW STEP:\n"
+    "4. FINAL REVIEW STEP:\n"
     "   - Before submitting your answer, review your complete netlist for consistency\n"
     "   - Check that no component labels are duplicated (e.g., two different components both labeled Q1)\n"
     "   - Ensure all available labels of each type are used before any duplicates occur\n"
-    "   - Verify that component types match their assigned labels (transistors get Q labels, resistors get R labels, etc.)\n"
+    "   - Verify that component types have the correct SPICE prefix (transistors need Q prefix, resistors need R prefix, etc.)\n"
     "   - If you find duplicates, reassign one of them to an unused label of the same type\n\n"
+
+    "5. GENERIC TRANSISTOR MODEL HANDLING (LTspice):\n"
+    "The RAW NETLIST may contain BJTs and MOSFETs whose model names are missing or not defined by any .model line.\n"
+    "Your output MUST be simulatable in LTspice.\n"
+    "A) If a BJT (Q-device) references a model name that is NOT defined anywhere in the netlist:\n"
+    "   - Ensure the Q-device line ends with a model name token.\n"
+    "   - Use the generic model name `QMOD` for all such undefined NPN BJTs unless a different valid model is explicitly provided.\n"
+    "   - Append exactly one model definition (only if needed):\n"
+    "     .model QMOD NPN(BF=100 IS=1e-14)\n"
+    "B) If a MOSFET (M-device) references a model name that is NOT defined anywhere in the netlist:\n"
+    "   - Ensure the M-device line ends with a model name token.\n"
+    "   - Use the generic model name `NMOS1` for undefined NMOS devices, and `PMOS1` for undefined PMOS devices (only if you can confidently infer PMOS; otherwise default to NMOS1).\n"
+    "   - Append required model definition(s) (only if needed):\n"
+    "     .model NMOS1 NMOS (VTO=1 KP=1m)\n"
+    "     .model PMOS1 PMOS (VTO=-1 KP=1m)\n"
+    "C) Do NOT add any .model lines if every referenced model name is already defined.\n"
+    "   Example: If raw netlist has `Qp 3 4 8 BC547` and `.model BC547 NPN(...)`, keep both as-is.\n"
+    "D) Do NOT create multiple duplicate model definitions for the same name; each generic model must appear at most once.\n"
+    "E) Do NOT invent manufacturer-specific models.\n\n"
+
+    "6. TRANSISTOR PIN ORDER ENFORCEMENT (CRITICAL):\n"
+    "SPICE transistor devices have fixed, non-negotiable pin ordering rules.\n"
+    "A) BJT DEVICES (Q):\n"
+    "   - Format: Qname Collector Base Emitter [Substrate] Model\n"
+    "   - The first three nodes MUST be interpreted in this order: Collector → Base → Emitter\n"
+    "   - Do NOT reorder nodes unless the RAW NETLIST explicitly violates this order AND there is strong evidence for correction.\n"
+    "   - If node meaning is ambiguous, preserve the original node order exactly.\n"
+    "B) MOSFET DEVICES (M):\n"
+    "   - Format: Mname Drain Gate Source Bulk Model\n"
+    "   - The four nodes MUST be interpreted in this order: Drain → Gate → Source → Bulk\n"
+    "   - CRITICAL: MOSFETs MUST have exactly 4 nodes. Never output a MOSFET with only 3 nodes.\n"
+    "   - If the raw netlist has fewer nodes, you must add the missing Bulk node following these rules:\n"
+    "     * For NMOS devices: Add node 0 as the Bulk node\n"
+    "     * For PMOS devices: Add the Source node as the Bulk node (duplicate the Source node number)\n"
+    "     * If device type is unclear, default to NMOS behavior (use 0)\n"
+    "   - Bulk is often tied to Source or Ground (node 0), but must still be present.\n"
+    "   - Do NOT reorder nodes unless the RAW NETLIST explicitly violates this order AND there is strong evidence for correction.\n"
+    "   - If node meaning is ambiguous, preserve the original node order exactly.\n"
+    "C) ABSOLUTE CONSTRAINTS:\n"
+    "   - Never infer pin order from schematic drawing orientation.\n"
+    "   - Never reorder transistor nodes based solely on visual assumptions.\n\n"
+
+    "7. OUTPUT REQUIREMENTS (STRICT):\n"
+    "You must output ONLY ONE thing: a single LTspice-compatible netlist.\n"
+    "Rules:\n"
+    "   - Do NOT include any reasoning, comments, explanations, headers, or separators.\n"
+    "   - Do NOT output internal component IDs (like Resistor_1) in the final netlist.\n"
+    "   - Use proper SPICE element prefixes (R, C, V, I, Q, M, etc.) followed by a unique identifier (which may be numeric, alphanumeric, or descriptive).\n"
+    "   - CRITICAL LABEL PREFIX RULES:\n"
+    "     * ALWAYS preserve the exact identified label from the API/OCR - DO NOT modify, shorten, or replace it\n"
+    "     * If the identified label already starts with the correct SPICE prefix for that component type, use it as-is (e.g., resistor with label 'R1' → use 'R1' NOT 'RR1', BJT with label 'Q3' → use 'Q3' NOT 'QQ3')\n"
+    "     * If the identified label does NOT start with the correct prefix, add ONLY the correct SPICE letter at the beginning, keeping the rest exactly as identified (e.g., resistor with label '5' → use 'R5', BJT with label '2' → use 'Q2')\n"
+    "   - CRITICAL FOR MOSFETS: All M devices MUST have exactly 4 nodes (Drain Gate Source Bulk). If you see only 3 nodes in the raw netlist, ADD the 4th Bulk node:\n"
+    "     * NMOS: Use 0 for Bulk (e.g., M1 3 2 1 0 NMOS1)\n"
+    "     * PMOS: Duplicate the Source node for Bulk (e.g., M2 3 2 1 1 PMOS1)\n"
+    "   - Preserve node names exactly as provided (the numeric node IDs). Do NOT rename nodes (no N### convention).\n"
+    "   - Place any required `.model` statements at the end.\n\n"
+    "   - Do NOT wrap the output in triple backticks (```), code fences, Markdown, or any formatting.\n"
+    "   - Output must be plain text only.\n"
+
+    "COMPONENT VALUE VALIDATION (CRITICAL):\n"
+    "You MUST validate all component values before including them in the netlist.\n\n"
+
+    "ACCEPT these value formats:\n"
+    "   - Numeric values with standard SPICE units: 10k, 1uF, 2.2mH, 100, 1e-6, 3.3M\n"
+    "   - SPICE multipliers like k, m, u, M are part of the value (10k, 1u, 2m)\n"
+    "   - Do NOT add unit names: use '1k' not '1k ohm', '15' not '15V', '1u' not '1uF'\n"
+    "   - SPICE time-varying functions: SIN(0 5 1k), PULSE(0 5 0 1n 1n 10u 20u), PWL(...)\n"
+    "   - Valid voltage/current specifications for sources: 12, 3.3, DC 5\n\n"
+
+    "REJECT these value formats (omit value entirely if found):\n"
+    "   - Symbolic variables: v₅(t), i(t), Vcc, Vdd, R, C, L, V, etc.\n"
+    "   - Component type letters used as values: R1 2 3 R (wrong - omit 'R') same for other components.\n"
+    "   - Mathematical expressions without SPICE functions: 2*V1, V+5\n"
+    "   - Ambiguous text: varies, see datasheet, TBD\n\n"
+
+    "If a value is invalid or ambiguous:\n"
+    "   - For resistors, capacitors, inductors: Omit the value (e.g., 'R1 2 3' without value)\n"
+    "   - For voltage/current sources: Omit the value if it's symbolic; if no valid value exists, still include the component line\n"
+    "   - Never include values that would cause SPICE simulation errors\n\n"
+
+    "NODE CONNECTIVITY IMMUTABILITY (CRITICAL):\n"
+    "The RAW NETLIST provides the correct and authoritative node connectivity.\n"
+    "You MUST preserve node ordering and node numbers exactly as given.\n\n"
+    "Rules:\n"
+    "- For ALL non-transistor components (resistors, capacitors, voltage sources, current sources, inductors, etc.):\n"
+    "  - You are NOT allowed to change, reorder, infer, swap, or reinterpret node connections.\n"
+    "  - The node numbers and their order MUST be copied exactly from the RAW NETLIST.\n\n"
+    "- For transistor devices ONLY (BJT and MOSFET):\n"
+    "  - You may interpret node meaning strictly according to SPICE pin order rules\n"
+    "    (BJT: Collector Base Emitter, MOSFET: Drain Gate Source Bulk).\n"
+    "  - You may ONLY adjust transistor node ordering if there is strong explicit evidence that the RAW NETLIST violates SPICE ordering.\n"
+    "  - If there is any ambiguity, preserve the original node order exactly.\n\n"
+    "- You are NEVER allowed to invent new nodes, remove nodes, or merge nodes.\n"
+    "- You are NEVER allowed to change connectivity for readability, aesthetics, or perceived correctness.\n\n"
+    "If a circuit's behavior appears incorrect, DO NOT fix it by altering nodes.\n"
+    "Only labels, values, and model references may be adjusted.\n\n"
+
+    "9. GROUND NODE IDENTIFICATION (CRITICAL):\n"
+    "After generating the netlist, you MUST identify which node should be treated as the ground reference (node 0).\n\n"
+
+    "Ground Identification Rules (apply in priority order):\n"
+    "A) EXPLICIT NODE LABELS:\n"
+    "   - If any node in the circuit is explicitly labeled '0' (via OCR or schematic annotation), that is the ground node.\n"
+    "   - This takes highest priority.\n\n"
+
+    "B) VOLTAGE SOURCE NEGATIVE TERMINAL:\n"
+    "   - If the circuit contains voltage sources (batteries, DC supplies), the negative terminal node is typically ground.\n"
+    "   - Look for components prefixed with V (e.g., V1, V_supply, Vbat).\n"
+    "   - The second node in a voltage source component line is the negative terminal.\n"
+    "   - Example: 'V1 5 3 12V' → node 3 is the negative terminal, likely ground.\n\n"
+
+    "C) MOST COMMON NODE (CIRCUIT ANALYSIS):\n"
+    "   - If no voltage sources exist, analyze the netlist to find the node that appears most frequently.\n"
+    "   - The most common node often serves as the circuit's reference/ground.\n\n"
+
+    "D) BEST ENGINEERING JUDGMENT:\n"
+    "   - If none of the above applies, use circuit topology and standard practices to make your best guess.\n"
+    "   - Common ground: bottom rail in schematics, source of n-channel MOSFETs, emitter of common-emitter BJTs.\n\n"
+
+    "OUTPUT REQUIREMENT:\n"
+    "After the complete netlist, on a new line, output EXACTLY:\n"
+    "GROUND_NODE: <node_number>\n\n"
+
+    "Where <node_number> is the node ID from the raw netlist that should be treated as ground.\n"
+    "Example: If you determine node 3 should be ground, output: 'GROUND_NODE: 3'\n\n"
+
+    "This line MUST appear after the .end directive.\n\n"
+
 
     "=== RAW NETLIST ===\n"
     f"{raw_netlist_text}\n\n"
@@ -100,9 +310,6 @@ def generate_named_netlist(raw_netlist_lines, api_lines, ocr_text, image_path=No
     f"{component_label_text}\n\n"
     "=== OCR RESULTS ===\n"
     f"{ocr_text}\n\n"
-    "Output only the final netlist, one line per component. No comments, no reasoning, no extra text."
-
-    "After finishing add === to a new line then provide a netlist compatible with LTspice. IMPORTANT: keep nodes names the same (the provided numbers) don't use the N### convention."
 )
 
 
@@ -132,7 +339,36 @@ def generate_named_netlist(raw_netlist_lines, api_lines, ocr_text, image_path=No
     response.raise_for_status()
     result = response.json()['choices'][0]['message']['content']
 
-    return [line.strip() for line in result.splitlines() if line.strip()]
+    # Remove markdown code fence blocks if LLM wrapped response in ```
+    result = result.strip()
+    if result.startswith("```"):
+        lines = result.split('\n')
+        # Remove first line if it's a code fence (e.g., ```spice or just ```)
+        if lines[0].startswith("```"):
+            lines = lines[1:]
+        # Remove last line if it's a closing code fence
+        if lines and lines[-1].strip() == "```":
+            lines = lines[:-1]
+        result = '\n'.join(lines)
+
+    # Post-process to fix any 3-node MOSFETs
+    result_lines = result.splitlines()
+    result_lines = fix_mosfet_nodes(result_lines)
+
+    # Parse the response to extract ground node
+    ground_node = None
+    for i, line in enumerate(result_lines):
+        if line.strip().startswith("GROUND_NODE:"):
+            ground_node_str = line.split(":", 1)[1].strip()
+            try:
+                ground_node = int(ground_node_str)
+                # Remove this line from the final netlist
+                result_lines.pop(i)
+            except ValueError:
+                print(f"Warning: Could not parse ground node from VLM response: {ground_node_str}")
+            break
+
+    return [line.strip() for line in result_lines if line.strip()], ground_node
 
 def identify_crossing_nodes(crossing_data, node_labels, region_to_node_mapping=None):
     """
@@ -284,19 +520,18 @@ def overlay_and_find_nodes_with_connected_regions(node_labels, components, test_
 
     sorted_regions = sorted(region_top_left.items(), key=lambda x: (x[1][0], x[1][1]))
     new_region_to_node = {}
+
+    # First, assign node 0 to all ground regions
+    for region in gnd_regions:
+        if region in region_to_node:
+            new_region_to_node[region] = 0
+
+    # Then assign sequential IDs (starting from 1) to non-ground nodes
     new_node_id = 1
     for region, _ in sorted_regions:
-        if region in region_to_node:
+        if region in region_to_node and region not in gnd_regions:
             new_region_to_node[region] = new_node_id
             new_node_id += 1
-
-    # Normalize GND nodes
-    gnd_nodes = [new_region_to_node[region] for region in gnd_regions if region in new_region_to_node]
-    if gnd_nodes:
-        smallest_gnd_node = min(gnd_nodes)
-        for region in gnd_regions:
-            if region in new_region_to_node:
-                new_region_to_node[region] = smallest_gnd_node
 
     # Save region-to-node mapping for crossing detection use
     results_folder = os.path.join(test_results_path, os.path.splitext(image_file)[0])
@@ -401,6 +636,7 @@ def generate_netlist_for_image(image_file, output_files_path, test_results_path,
             print(f"No crossing data found at {crossing_data_path}")
 
 def generate_all_netlists(approved_images_path, output_files_path, test_results_path, create_test_netlist=True):
+
     os.makedirs(test_results_path, exist_ok=True)
     image_files = [f for f in os.listdir(approved_images_path) if f.lower().endswith(('.jpg', '.jpeg', '.png'))]
 
@@ -433,7 +669,51 @@ def generate_all_netlists(approved_images_path, output_files_path, test_results_
             ocr_text = f.read()
 
         # === Generate final netlist ===
-        final_netlist = generate_named_netlist(raw_netlist, api_lines, ocr_text)
+        final_netlist, vlm_ground_node = generate_named_netlist(raw_netlist, api_lines, ocr_text)
+
+        # === Ground Node Remapping ===
+        # If VLM identified a ground node and it's not already 0, remap it
+        if vlm_ground_node is not None and vlm_ground_node != 0:
+            # Check if the netlist already has a node 0 (from explicit GND)
+            has_explicit_ground = any(' 0 ' in line or line.startswith('0 ') or line.endswith(' 0')
+                                       for line in final_netlist if not line.startswith('.'))
+
+            if not has_explicit_ground:
+                print(f"  VLM identified node {vlm_ground_node} as ground. Remapping to node 0...")
+                # Remap the VLM-suggested node to 0 throughout the netlist
+                remapped_netlist = []
+                for line in final_netlist:
+                    # Skip directive lines (starting with .)
+                    if line.startswith('.'):
+                        remapped_netlist.append(line)
+                    else:
+                        # Use regex to replace whole-word node numbers
+                        # Replace node number as whole word (surrounded by spaces or line boundaries)
+                        updated_line = re.sub(rf'\b{vlm_ground_node}\b', '0', line)
+                        remapped_netlist.append(updated_line)
+                final_netlist = remapped_netlist
+            else:
+                print(f"  Node 0 already exists in netlist (explicit GND). Ignoring VLM ground suggestion.")
+        elif vlm_ground_node == 0:
+            print(f"  VLM confirmed node 0 as ground (already correct).")
+        else:
+            print(f"  VLM did not identify a ground node.")
+
+        # === Add hardcoded analysis block ===
+        analysis_block = [
+            ".control",
+            "tran 1m 1s uic",
+            "print all",
+            "quit",
+            ".endc"
+        ]
+
+        # Find .end and insert analysis block before it
+        if final_netlist and final_netlist[-1].strip() == ".end":
+            final_netlist = final_netlist[:-1] + analysis_block + [".end"]
+        else:
+            final_netlist.extend(analysis_block)
+            final_netlist.append(".end")
 
         # === Print final output ===
         print(f"\nFinal named netlist for {image_file}:\n" + "=" * 40)
@@ -491,6 +771,9 @@ def generate_all_netlists(approved_images_path, output_files_path, test_results_
                         generate_crossing_disambiguation_images_and_netlists(
                             image_file, output_files_path, test_results_path, crossing_data, image_basename
                         )
+
+        # Add delay between circuits to avoid OpenAI API rate limiting
+        time.sleep(10)
 
 
 def generate_crossing_disambiguation_images_and_netlists(image_file, output_files_path, test_results_path, crossing_data, image_basename):
