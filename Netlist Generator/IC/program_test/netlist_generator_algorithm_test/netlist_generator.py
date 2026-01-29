@@ -35,11 +35,3 @@ if __name__ == '__main__':
     # Step 2: Generate netlists from connection points (with test_netlist enabled)
     approved_images_path = os.path.join(script_dir, 'outputs', 'approved_images')
     generate_all_netlists(approved_images_path, output_files_path, test_results_path, create_test_netlist=True)
-
-
-
-
-
-
-
-    
