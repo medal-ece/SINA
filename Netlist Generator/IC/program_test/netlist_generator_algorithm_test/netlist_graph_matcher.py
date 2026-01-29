@@ -76,7 +76,7 @@ class ImprovedNetlistMatcher:
     
     def __init__(self, true_path: str = None, test_path: str = None):
         self.true_path = true_path or os.path.join(os.getcwd(), 'inputs', 'true_netlists_structure')
-        self.test_path = test_path or os.path.join(os.getcwd(), 'outputs', 'test_results')
+        self.test_path = test_path or os.path.join(os.getcwd(), 'outputs', 'adjusted_netlist_structure')
         self.results: List[MatchingResult] = []
         
     def read_netlist(self, file_path: str) -> List[Component]:
@@ -388,19 +388,18 @@ class ImprovedNetlistMatcher:
                     print(f"\n{'='*60}")
                     print(f"Analyzing: {file_name}")
                     print(f"{'='*60}")
-                else:
-                    # Simple progress indicator
-                    print(f"Processing {i+1}/{len(test_files)}: {file_name}", end="\r")
-                
+
                 result = self.compare_netlists(
                     true_files[file_name],
                     test_files[file_name],
                     file_name
                 )
-                
+
                 self.results.append(result)
                 if verbose:
                     self._print_result(result)
+                else:
+                    self._print_file_errors(result)
         
         # Generate summary report
         self._generate_summary_report()
@@ -410,20 +409,20 @@ class ImprovedNetlistMatcher:
     
     def _print_result(self, result: MatchingResult) -> None:
         """Print detailed result for a single comparison"""
-        
+
         status = "[MATCH]" if result.is_isomorphic else "[MISMATCH]"
         print(f"\nStatus: {status}")
         print(f"Overall Accuracy: {result.accuracy_score:.1f}%")
-        
+
         print(f"\nComponent Metrics:")
         print(f"  Precision: {result.component_precision:.3f}")
         print(f"  Recall: {result.component_recall:.3f}")
         print(f"  F1 Score: {result.component_f1:.3f}")
-        
+
         print(f"\nConnection Metrics:")
         print(f"  Connection Accuracy: {result.connection_accuracy:.1f}%")
         print(f"  Topology Score: {result.topology_score:.1f}%")
-        
+
         if result.missing_components:
             print(f"\n[WARNING] Missing Components: {', '.join(result.missing_components)}")
         if result.extra_components:
@@ -432,7 +431,27 @@ class ImprovedNetlistMatcher:
             print(f"[WARNING] Wrong Connections: {len(result.wrong_connections)} issues")
             for conn in result.wrong_connections[:3]:  # Show first 3
                 print(f"    - {conn}")
-    
+
+    def _print_file_errors(self, result: MatchingResult) -> None:
+        """Print concise error summary for a single file"""
+        has_errors = (result.missing_components or
+                      result.extra_components or
+                      result.wrong_connections or
+                      not result.is_isomorphic)
+
+        if not has_errors:
+            print(f"[OK] {result.file_name} (Accuracy: {result.accuracy_score:.1f}%)")
+        else:
+            print(f"\n[ERRORS] {result.file_name} (Accuracy: {result.accuracy_score:.1f}%)")
+            if result.missing_components:
+                print(f"  Missing components: {', '.join(result.missing_components)}")
+            if result.extra_components:
+                print(f"  Extra components: {', '.join(result.extra_components)}")
+            if result.wrong_connections:
+                print(f"  Wrong connections ({len(result.wrong_connections)}):")
+                for conn in result.wrong_connections:
+                    print(f"    - {conn}")
+
     def _generate_summary_report(self) -> None:
         """Generate comprehensive summary report"""
         

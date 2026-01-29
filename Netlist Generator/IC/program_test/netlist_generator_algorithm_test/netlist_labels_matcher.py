@@ -100,7 +100,7 @@ def compare_folders(folder1, folder2):
 
 def main():
     folder1 = os.path.join(os.getcwd(), 'inputs', 'true_netlists')
-    folder2 = os.path.join(os.getcwd(), 'outputs', 'test_results')
+    folder2 = os.path.join(os.getcwd(), 'outputs', 'adjusted_netlists')
 
     results = compare_folders(folder1, folder2)
 

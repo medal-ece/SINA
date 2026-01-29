@@ -7,6 +7,7 @@ from helper_files.proximity_analysis import assign_text_to_nearest_component
 from ultralytics import YOLO
 import traceback
 import json
+import time
 import matplotlib
 matplotlib.use('Agg') 
 
@@ -197,123 +198,6 @@ def check_component_consistency(api_response_lines, circuit_json_path, image_pat
 
     return passed
 
-def extract_components_from_image_api(image_path, output_path=None):
-    load_dotenv()   
-    api_key = os.getenv("OPENAI_API_KEY")
-
-    if not api_key:
-        raise RuntimeError("OPENAI_API_KEY not found in environment.")
-
-    with open(image_path, "rb") as img_file:
-        base64_image = base64.b64encode(img_file.read()).decode("utf-8")
-
-    prompt = (
-    "You are a vision model with expert knowledge in electronics and circuit schematics.\n\n"
-    "Your task is to analyze the provided circuit schematic image and extract components that are actually *drawn* using proper circuit symbols.\n\n"
-    
-    "CRITICAL RULES:\n"
-    "- ONLY include components with drawn symbols (zig-zag lines, parallel lines, transistor symbols, etc.)\n"
-    "- DO NOT include text-only references like 'use 10V supply' or 'connect resistor here'\n"
-    "- DO NOT include ground symbols, connection dots, wire junctions, or connecting wires\n"
-    "- Skip components with no visible labels entirely\n"
-    "- Think like a circuit simulator — only drawn symbols that can be electrically connected\n\n"
-    
-    "COMPONENT SYMBOLS TO RECOGNIZE:\n"
-    "- Resistor: zig-zag line OR rectangular box\n"
-    "- Capacitor: two parallel lines OR curved line with straight line (treat all as 'Capacitor')\n"
-    "- Inductor: series of loops/coils\n"
-    "- Transistor_BJT: triangle with lines (any BJT symbol regardless of NPN/PNP)\n"
-    "- Transistor_MOSFET: gate symbol with channel\n"
-    "- Voltage_src: circle with +/- OR battery symbol\n"
-    "- Current_src: circle with arrow\n"
-    "- Op-Amp: triangle amplifier symbol\n\n"
-    
-    "LABEL AND VALUE EXTRACTION:\n"
-    "- For each drawn component, find nearby text that serves as its label (R1, C2, Tr1, V_supply, etc.)\n"
-    "- Accept any naming convention that appears to be a component label\n"
-    "- Extract the component value if visible (10kΩ, 1µF, 12V, etc.)\n"
-    "- If multiple values are present, include all of them\n"
-    "- If labels are partially obscured, make your best guess\n"
-    "- Extract values in their exact format as shown (don't convert '10000 ohms' to '10kΩ')\n\n"
-    
-    "MANDATORY FORMAT:\n"
-    "For each component, you MUST include a description of how it's drawn:\n"
-    "\"(This component was drawn like [description of the actual symbol you see])\"\n\n"
-    
-    "=== OUTPUT FORMAT ===\n"
-    "number of components: <TOTAL_COUNT>\n"
-    "types:\n"
-    "  <Type>: <count_of_that_type>\n\n"
-    
-    "For each component:\n"
-    "(This component was drawn like [symbol description])ComponentLabel: ComponentValue\n\n"
-    
-    "EXAMPLES:\n"
-    "(This component was drawn like zig-zag line which fits resistor description)R1: 10kΩ\n"
-    "(This component was drawn like two parallel lines which fits capacitor description)C2: 1µF\n"
-    "(This component was drawn like a series of loops which fits inductor description)L1: 100mH\n"
-    "(This component was drawn like a triangle with three lines which fits BJT description)Q1: 2N3904\n"
-    "(This component was drawn like a circle with + and - symbols which fits voltage source description)V_bat: 9V\n"
-    "(This component was drawn like zig-zag line which fits resistor description)R_load:\n"
-    
-    "EXAMPLE OUTPUT:\n"
-    "number of components: 6\n"
-    "types:\n"
-    "  Resistor: 2\n"
-    "  Capacitor: 1\n"
-    "  Inductor: 1\n"
-    "  Transistor_BJT: 1\n"
-    "  Voltage_src: 1\n\n"
-    
-    "IMPORTANT NOTES:\n"
-    "- If component value is unknown/unclear, leave blank after colon (e.g., 'C1:')\n"
-    "- Keep original label names exactly as written (don't standardize them)\n"
-    "- If multiple values are near one component, include all: 'R1: 10kΩ, 5%, 0.25W'\n"
-    "- Only count actual drawn symbols, not text references\n\n"
-    
-    "Return only the formatted output. No extra explanations."
-)
-
-    headers = {
-        "Authorization": f"Bearer {api_key}",
-        "Content-Type": "application/json"
-    }
-
-    payload = {
-        "model": "gpt-4o",
-        "messages": [
-            {
-                "role": "user",
-                "content": [
-                    {"type": "text", "text": prompt},
-                    {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{base64_image}"}}
-                ]
-            }
-        ],
-        "max_tokens": 1800,
-        "temperature": 0
-    }
-
-    response = requests.post(
-        "https://api.openai.com/v1/chat/completions",
-        headers=headers,
-        json=payload,
-        timeout=30
-    )
-    response.raise_for_status()
-
-    result_text = response.json()['choices'][0]['message']['content'].strip()
-
-    # Save response
-    if output_path is None:
-        output_path = os.path.join(os.path.dirname(image_path), "API_first_response.txt")
-
-    with open(output_path, 'w', encoding='utf-8') as f:
-        f.write(result_text)
-
-    return result_text.splitlines()
-
-
 def process_circuit_image(image_path, model_path, output_folder, use_ocr=True, use_gpu=True, detect_crossings=True, crossing_data=None, disambiguation_context=None):
     os.makedirs(output_folder, exist_ok=True)
     model = YOLO(model_path)
@@ -443,5 +327,8 @@ def process_all_images(images_folder, model_path, output_folder, use_ocr=True, u
         except Exception as e:
             print(f"  Error processing {image_file}: {str(e)}")
             traceback.print_exc()
+
+        # Add delay between images to avoid OpenAI API rate limiting
+        time.sleep(10)
 
 
