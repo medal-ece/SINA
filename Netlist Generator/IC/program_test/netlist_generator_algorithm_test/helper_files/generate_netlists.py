@@ -1184,7 +1184,3 @@ def clean_crossing_netlist(crossing_netlist_path):
     except Exception as e:
         print(f"Error reading crossing netlist: {e}")
         return []
-
-
-
-
