@@ -15,7 +15,7 @@ build/
 runs/
 /old_detect_models
 /program_test/model_test/outputs
-# /program_test/netlist_generator_algorithm_test/outputs
+/program_test/netlist_generator_algorithm_test/outputs
 /model_training/yolo11n-pose.pt
 /model_training/cvat_to_coco_keypoints/outputs
 /program_test/intersection_detection
@@ -33,3 +33,5 @@ model_training/data/labels/val.cache
 /CROSSING_DETECTION_INTEGRATION_SUMMARY.md
 /program_test/netlist_generator_algorithm_test/inputs
 /program_test/model_test/inputs
+/model_training/yolo11m.pt
+/model_training/yolo26n.pt
